@@ -1,8 +1,3 @@
----
-Title: R-Ladies Bergen
-numbersections: true
----
-
 
 # Welcome
 
@@ -23,7 +18,7 @@ If you want to contribute or have questions, do not hesitate to contact us:
 
 # Meeting list
 
-## Kick-off meeting
+### 1. Kick-off meeting
 
 __Date__ 24.11.2019, 5PM
 
