@@ -5,15 +5,15 @@ This repository collects information about R-Ladies Bergen chapter. We will post
 
 If you want to contribute or have questions, do not hesitate to contact us:
 
-* Jonelle Villar (@jonellevillar)[https://github.com/jonellevillar]
-* Julia Romanowska (@jromanowska)[https://github.com/jromanowska]
+* Jonelle Villar [\@jonellevillar](https://github.com/jonellevillar)
+* Julia Romanowska [\@jromanowska](https://github.com/jromanowska)
 * Astrid Lunde (https://www.uib.no/en/persons/Astrid.Lunde)
 
 # R-Ladies Bergen on the net
 
-* (Meetup web-page)[https://www.meetup.com/rladies-bergen/] - all the meetings will be announced here; register here!
-* (Facebook page)[https://www.facebook.com/R-Ladies-Bergen-113661500068523/]
-* (Twitter account)[https://twitter.com/RLadiesBergen]
+* [Meetup web-page](https://www.meetup.com/rladies-bergen/) - all the meetings will be announced here; register here!
+* [Facebook page](https://www.facebook.com/R-Ladies-Bergen-113661500068523/)
+* [Twitter account](https://twitter.com/RLadiesBergen)
 * email: bergen@Rladies.org
 
 # Meeting list
