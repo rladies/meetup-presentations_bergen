@@ -14,7 +14,7 @@ If you want to contribute or have questions, do not hesitate to contact us:
 * [Meetup web-page](https://www.meetup.com/rladies-bergen/) - all the meetings will be announced here; register here!
 * [Facebook page](https://www.facebook.com/R-Ladies-Bergen-113661500068523/)
 * [Twitter account](https://twitter.com/RLadiesBergen)
-* email: bergen@Rladies.org
+* email: bergen@rladies.org
 
 # Meeting list
 
