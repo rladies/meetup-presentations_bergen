@@ -1,0 +1,38 @@
+---
+title: "R-Ladies Bergen Kick-off Meeting"
+author: "Julia Romanowska"
+date: "`r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: "Bergen"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# R-Ladies Global
+
+
+# R-Ladies Bergen
+
+- Jonelle Villar Dickov
+- Julia Romanowska
+- Astrid Lunde
+
+# Poll results
+
+## How advanced in R are you?
+
+```{r poll1}
+
+```
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
