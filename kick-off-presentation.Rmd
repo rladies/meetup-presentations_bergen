@@ -15,9 +15,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## What is R-Ladies?
 
-- some
-- points
-- here
+- A global community of ladies who use R
+- that seeks to support and inspire others
+- through teaching, sharing, and mentorship
 
 # R-Ladies Bergen
 
