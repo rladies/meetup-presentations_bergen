@@ -23,7 +23,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Who are we?
 
-- Jonelle Villar Dickov
+- Jonelle Dickow Villar
 - Julia Romanowska
 - Astrid Lunde
 
