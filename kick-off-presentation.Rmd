@@ -3,10 +3,8 @@ title: "R-Ladies Bergen Kick-off Meeting"
 author: "Julia Romanowska"
 date: "`r Sys.Date()`"
 output:
-  beamer_presentation:
-    theme: "Bergen"
-    colortheme: "dolphin"
-    fonttheme: "structurebold"
+  ioslides_presentation:
+    logo: R-Ladies-horiz-bergen.png
 ---
 
 ```{r setup, include=FALSE}
@@ -15,8 +13,15 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # R-Ladies Global
 
+## What is R-Ladies?
+
+- some
+- points
+- here
 
 # R-Ladies Bergen
+
+## Who are we?
 
 - Jonelle Villar Dickov
 - Julia Romanowska
@@ -36,3 +41,10 @@ knitr::opts_chunk$set(echo = FALSE)
 plot(pressure)
 ```
 
+# Aim of the meeting
+
+## Aims
+
+- Get to know one another
+- Learn something new in R
+- Get ideas for future meetings
