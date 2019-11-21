@@ -1,6 +1,6 @@
 ---
 title: "R-Ladies Bergen Kick-off Meeting"
-author: "Julia Romanowska"
+author: "Julia & Jonelle"
 date: "`r Sys.Date()`"
 output:
   ioslides_presentation:
@@ -9,6 +9,8 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library( ggplot2 )
+library( tidyverse )
 ```
 
 # R-Ladies Global
@@ -27,18 +29,31 @@ knitr::opts_chunk$set(echo = FALSE)
 - Julia Romanowska
 - Astrid Lunde
 
+## Meetup group
+
+- ca. 50 members already!
+- who are we?
+- why did we gather here?
+
 # Poll results
 
 ## How advanced in R are you?
 
-```{r poll1}
+```{r poll1-data,echo=FALSE}
+# here - create the tibble
+# I want to learn!
+# I’ve learned basics and I want more!
+# R is one of many programming languages I know
+# I am Hadley Wickham (she/her) ;)
 
-```
-
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
+poll.q1 <- tribble( ~q1.alt, ~answers,
+                    "I want to learn!", NA,
+                    "I’ve learned basics and I want more!", NA,
+                    "R is one of many programming languages I know", NA,
+                    "I am Hadley Wickham (she/her) ;)", NA
+                  )
+ggplot( poll.q1, aes( q1.alt, answers ) ) +
+  geom_col()
 ```
 
 # Aim of the meeting
