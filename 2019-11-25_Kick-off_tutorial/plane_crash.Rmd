@@ -1,0 +1,72 @@
+---
+title: "Plane crash data visualized"
+author: "Julia Romanowska"
+date: 'r{date()}'
+output:
+  html_document:
+    toc: true
+---
+
+```{r intro,echo=FALSE}
+library("dplyr")
+library("xml2")
+library("rvest")
+library("tidyr")
+library("magrittr")
+
+setwd( "~/Naukowe/varie_R" )
+```
+
+# Importing data
+
+First, lets fetch the data, from years 2000 through 2016.
+
+* generate URLs per each year
+
+```{r}
+years <- as.character( 2010:2016 )
+urlYears <- paste0("http://www.planecrashinfo.com/", years, "/", years, ".htm")
+```
+
+* retrieve data from each year
+
+```{r}
+urls <- mapply(function(urlYear, year) {
+  rowNumber <- urlYear %>% 
+    read_html %>% 
+    html_table(header = TRUE) %>% 
+    .[[1]] %>% nrow
+  
+  urlsSpec <- paste0("http://www.planecrashinfo.com/", year, 
+                     "/", year, "-", 1:rowNumber, ".htm")
+},
+urlYears,
+years
+) %>% unlist
+
+data <- lapply(urls, function(url) {
+  url %>% 
+    # read each crash table
+    read_html %>% 
+    html_table %>% 
+    data.frame %>%  
+    setNames(c("Vars", "Vals")) %>%
+    # header is a colunm and values are in a column -> tidy up
+    spread(Vars, Vals) %>% 
+    .[-1]
+})
+
+str( data )
+```
+
+* cleanup data
+
+```{r}
+# data list to data.frame and set appropriate variable names
+data %<>% 
+  bind_rows %>% 
+  setNames(gsub(":", "", colnames(.)) %>% tolower)
+
+# pick relevant variables
+data %<>% select(date, location, route, operator, aboard, fatalities)
+```
