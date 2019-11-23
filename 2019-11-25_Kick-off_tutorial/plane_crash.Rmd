@@ -13,8 +13,10 @@ library("xml2")
 library("rvest")
 library("tidyr")
 library("magrittr")
+library("here")
 
-setwd( "~/Naukowe/varie_R" )
+here()
+
 ```
 
 # Importing data
