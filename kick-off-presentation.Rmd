@@ -128,3 +128,4 @@ ggplot( poll.q3, aes( q.alt, answers, fill = q.alt ) ) +
 - Get to know one another
 - Learn something new in R
 - Get ideas for future meetings
+- Introduce R-Ladies Global on social media
