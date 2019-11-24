@@ -129,3 +129,19 @@ ggplot( poll.q3, aes( q.alt, answers, fill = q.alt ) ) +
 - Learn something new in R
 - Get ideas for future meetings
 - Introduce R-Ladies Global on social media
+
+## Tips for future meetings 
+
+- Themed evenings
+  - GitHub, Tidyverse, R Markdown, data visualization, functional programming, machine learning 
+
+- SatRday workshops - mentoring hands-on 
+
+- Lightening talks presenting research projects 
+
+- Hackathon-events such as Reproducibility Hackathon for
+  * teaching tools for sharing reproducible code
+  * gaining experience with reproducing #opendata #opencode papers
+  * connecting with #openscience fans from other disciplines
+
+
