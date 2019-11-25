@@ -76,8 +76,7 @@ First, create a tibble of locations using longitude and latitude
 ```{r}
 
 StoreLunge.places <- tibble(
-  location = c("Bergen legevakt",
-     "Ado",
+  location = c("Bergen legevakt","Ado",
      "Bergen døvsenter"),
       lon = c(5.336120,5.338080,5.350060),
       lat = c(60.377760,60.385660,60.384740))
@@ -92,10 +91,18 @@ Try using geom_text( ) to also add labels for your locations.
 Notice that you can treat the ggmap( ) function like ggplot( ).
 
 
-```{r, echo = FALSE}
+```{r}
 ggmap(StoreLunge.watercolor.map, extent="device") +
   geom_point(data = StoreLunge.places, aes(x = lon, y = lat), color = 'red', size = 3) +
   geom_text(data = StoreLunge.places, aes(label = location), hjust=0, vjust=-1)
 
 ```
 
+Stretch your learning!
+
+Plotting on a world map using ggmap
+http://www.milanor.net/blog/maps-in-r-plotting-data-points-on-a-map/
+
+
+How to find coordinates for cities with R
+https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc-with-r/
