@@ -8,7 +8,7 @@ output:
 ---
 
 ```{r intro,include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 library( tidyverse )
 library( magrittr )
 ```
@@ -26,16 +26,103 @@ data <- read_delim( "plane_crash_2010-2019.dat", delim = "|" )
 ```{r tidy_dt}
 # pick relevant variables
 data %<>% select( date, location, route, type, operator, aboard, fatalities, route )
-head( data )
+data
 ```
 
 # Explore the data 
+
+We need to change the type of the `date` column
+
+```{r date_type_change}
+class( data$date )
+head( data$date )
+
+# change the locale temporary, so that the `as.Date` will recognize month names
+old.locale <- Sys.getlocale( category = "LC_TIME" )
+Sys.setlocale( category = "LC_TIME", locale = "en_GB.utf8" )
+
+data$date <- as.Date( data$date, format = "%B %e, %Y" )
+data
+Sys.setlocale( category = "LC_TIME", locale = old.locale )
+```
+
+Extract year and month from each date.
+
+```{r date_extract}
+yr.month.date <- lapply( data$date, function(x){
+  tribble( ~year, ~month,
+           format( as.Date( x ), "%Y" ), format( as.Date( x ), "%m" ) )
+})
+yr.month.date %<>% bind_rows()
+yr.month.date
+
+data <- bind_cols( data, yr.month.date )
+```
+
+Are there any specific airlines that had more crashes?
+
+```{r}
+sort( table( data$operator ) )
+```
+
+The `aboard` column includes more info
+
+```{r parse_aboard}
+head( data$aboard )
+aboard.list <- lapply( data$aboard, function(x){
+  # extract the first number
+  total <- str_extract( x, "^[[:digit:]]+" )
+  passengers <- unlist( str_split( str_extract( x, "passengers:[[:digit:]]+"), ":" ) )[2]
+  crew <- unlist( str_split( str_extract( x, "crew:[[:digit:]]+"), ":" ) )[2]
+  return( tribble( ~aboard.total, ~aboard.pass, ~aboard.crew,
+                   as.integer( total ) , as.integer( passengers ), as.integer( crew ) ) )
+})
+aboard.tbl <- bind_rows( aboard.list )
+aboard.tbl
+
+# merge this new information into our table
+data <- bind_cols( select( data, -aboard ), aboard.tbl )
+```
+
+## Exercise 1
+
+Parse the `fatalities` column in a similar way
 
 ```{r}
 
 ```
 
+## Exercise 2
+
+What are the levels in the `type` column?
+
+```{r}
+
+```
+
+
 # Plot
+
+Let's check whether the crashes have any pattern.
+
+* total number of crashes per year
+
+```{r group_by_year}
+ggplot( data, aes( year ) ) +
+  geom_bar()
+```
+
+* total number of passengers aboard all planes per year
+
+```{r passengers_group_per_year}
+ggplot( data, aes( aboard.pass ) ) +
+  geom_bar() +
+  facet_wrap( vars( year ), ncol = 5 )
+```
+
+## Exercise 3
+
+Plot total number of crashes per month, per year
 
 ```{r}
 

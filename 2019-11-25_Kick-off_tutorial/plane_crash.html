@@ -12,7 +12,7 @@
 
 <meta name="author" content="Julia Romanowska" />
 
-<meta name="date" content="2019-11-23" />
+<meta name="date" content="2019-11-25" />
 
 <title>Plane crash data visualized</title>
 
@@ -365,21 +365,27 @@ summary {
 
 <h1 class="title toc-ignore">Plane crash data visualized</h1>
 <h4 class="author">Julia Romanowska</h4>
-<h4 class="date">2019-11-23</h4>
+<h4 class="date">2019-11-25</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
 <li><a href="#importing-data">Importing data</a></li>
-<li><a href="#explore-the-data">Explore the data</a></li>
-<li><a href="#plot">Plot</a></li>
+<li><a href="#explore-the-data">Explore the data</a><ul>
+<li><a href="#exercise-1">Exercise 1</a></li>
+<li><a href="#exercise-2">Exercise 2</a></li>
+</ul></li>
+<li><a href="#plot">Plot</a><ul>
+<li><a href="#exercise-3">Exercise 3</a></li>
+</ul></li>
 </ul>
 </div>
 
 <div id="importing-data" class="section level1">
 <h1>Importing data</h1>
 <p>First, lets fetch the data, from years 2010 through 2019.</p>
+<pre class="r"><code>data &lt;- read_delim( &quot;plane_crash_2010-2019.dat&quot;, delim = &quot;|&quot; )</code></pre>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   aboard = col_character(),
@@ -399,21 +405,572 @@ summary {
 <ul>
 <li>tidy the data</li>
 </ul>
-<pre><code>## # A tibble: 6 x 7
-##   date    location      route       type      operator    aboard    fatalities  
-##   &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;       
-## 1 Januar… Off Sand Poi… Sand Point… Beechcra… Alaska Cen… 2   (pas… 2   (passen…
-## 2 Januar… Off Na'ameh,… Beirut, Le… Boeing 7… Ethiopian … 90   (pa… 90   (passe…
-## 3 Januar… Near Senador… Belem - Se… Embraer … Piquiatuba… 10   (pa… 2   (passen…
-## 4 Januar… Cotabato Cit… Cotabato C… GAF N22B… Military -… 8   (pas… 8   (passen…
-## 5 Februa… Near Saada, … ?           Helicopt… Military -… 11   (pa… 11   (passe…
-## 6 April … Smolensk, Ru… Warsaw, Po… Tupolev … Military -… 96   (pa… 96   (passe…</code></pre>
+<pre class="r"><code># pick relevant variables
+data %&lt;&gt;% select( date, location, route, type, operator, aboard, fatalities, route )
+data</code></pre>
+<pre><code>## # A tibble: 233 x 7
+##    date    location     route       type      operator    aboard    fatalities  
+##    &lt;chr&gt;   &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;       
+##  1 Januar… Off Sand Po… Sand Point… Beechcra… Alaska Cen… 2   (pas… 2   (passen…
+##  2 Januar… Off Na'ameh… Beirut, Le… Boeing 7… Ethiopian … 90   (pa… 90   (passe…
+##  3 Januar… Near Senado… Belem - Se… Embraer … Piquiatuba… 10   (pa… 2   (passen…
+##  4 Januar… Cotabato Ci… Cotabato C… GAF N22B… Military -… 8   (pas… 8   (passen…
+##  5 Februa… Near Saada,… ?           Helicopt… Military -… 11   (pa… 11   (passe…
+##  6 April … Smolensk, R… Warsaw, Po… Tupolev … Military -… 96   (pa… 96   (passe…
+##  7 April … Near Yelizo… Elizovo - … Mi-8      Kamchatka … 18   (pa… 10   (passe…
+##  8 April … Monterey, M… Mexico Cit… Airbus A… Airborne F… 5   (pas… 5   (passen…
+##  9 April … Pampanga, P… Cebu - Pam… Antonov … Interislan… 6   (pas… 3   (passen…
+## 10 May 12… Tripoli, Li… Johannesbu… Airbus A… Afriqiyah … 104   (p… 103   (pass…
+## # … with 223 more rows</code></pre>
 </div>
 <div id="explore-the-data" class="section level1">
 <h1>Explore the data</h1>
+<p>We need to change the type of the <code>date</code> column</p>
+<pre class="r"><code>class( data$date )</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<pre class="r"><code>head( data$date )</code></pre>
+<pre><code>## [1] &quot;January 22, 2010&quot;  &quot;January 25, 2010&quot;  &quot;January 25, 2010&quot; 
+## [4] &quot;January 28, 2010&quot;  &quot;February 14, 2010&quot; &quot;April 10, 2010&quot;</code></pre>
+<pre class="r"><code># change the locale temporary, so that the `as.Date` will recognize month names
+old.locale &lt;- Sys.getlocale( category = &quot;LC_TIME&quot; )
+Sys.setlocale( category = &quot;LC_TIME&quot;, locale = &quot;en_GB.utf8&quot; )</code></pre>
+<pre><code>## [1] &quot;en_GB.utf8&quot;</code></pre>
+<pre class="r"><code>data$date &lt;- as.Date( data$date, format = &quot;%B %e, %Y&quot; )
+data</code></pre>
+<pre><code>## # A tibble: 233 x 7
+##    date       location     route      type     operator    aboard   fatalities  
+##    &lt;date&gt;     &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;       
+##  1 2010-01-22 Off Sand Po… Sand Poin… Beechcr… Alaska Cen… 2   (pa… 2   (passen…
+##  2 2010-01-25 Off Na'ameh… Beirut, L… Boeing … Ethiopian … 90   (p… 90   (passe…
+##  3 2010-01-25 Near Senado… Belem - S… Embraer… Piquiatuba… 10   (p… 2   (passen…
+##  4 2010-01-28 Cotabato Ci… Cotabato … GAF N22… Military -… 8   (pa… 8   (passen…
+##  5 2010-02-14 Near Saada,… ?          Helicop… Military -… 11   (p… 11   (passe…
+##  6 2010-04-10 Smolensk, R… Warsaw, P… Tupolev… Military -… 96   (p… 96   (passe…
+##  7 2010-04-10 Near Yelizo… Elizovo -… Mi-8     Kamchatka … 18   (p… 10   (passe…
+##  8 2010-04-13 Monterey, M… Mexico Ci… Airbus … Airborne F… 5   (pa… 5   (passen…
+##  9 2010-04-21 Pampanga, P… Cebu - Pa… Antonov… Interislan… 6   (pa… 3   (passen…
+## 10 2010-05-12 Tripoli, Li… Johannesb… Airbus … Afriqiyah … 104   (… 103   (pass…
+## # … with 223 more rows</code></pre>
+<pre class="r"><code>Sys.setlocale( category = &quot;LC_TIME&quot;, locale = old.locale )</code></pre>
+<pre><code>## [1] &quot;nb_NO.UTF-8&quot;</code></pre>
+<p>Extract year and month from each date.</p>
+<pre class="r"><code>yr.month.date &lt;- lapply( data$date, function(x){
+  tribble( ~year, ~month,
+           format( as.Date( x ), &quot;%Y&quot; ), format( as.Date( x ), &quot;%m&quot; ) )
+})
+yr.month.date %&lt;&gt;% bind_rows()
+yr.month.date</code></pre>
+<pre><code>## # A tibble: 233 x 2
+##    year  month
+##    &lt;chr&gt; &lt;chr&gt;
+##  1 2010  01   
+##  2 2010  01   
+##  3 2010  01   
+##  4 2010  01   
+##  5 2010  02   
+##  6 2010  04   
+##  7 2010  04   
+##  8 2010  04   
+##  9 2010  04   
+## 10 2010  05   
+## # … with 223 more rows</code></pre>
+<pre class="r"><code>data &lt;- bind_cols( data, yr.month.date )</code></pre>
+<p>Are there any specific airlines that had more crashes?</p>
+<pre class="r"><code>sort( table( data$operator ) )</code></pre>
+<pre><code>## 
+##                                                 ? 
+##                                                 1 
+##                                     Ace Air Cargo 
+##                                                 1 
+##                                       AE Aviation 
+##                                                 1 
+##                                     Aerocaribbean 
+##                                                 1 
+##           Aeroflot Russian International Airlines 
+##                                                 1 
+##                                           Aéropro 
+##                                                 1 
+##                                Aerosucre Colombia 
+##                                                 1 
+##                                 Afriqiyah Airways 
+##                                                 1 
+##                                       Air Algerie 
+##                                                 1 
+##                                         Air Bagan 
+##                                                 1 
+##                                Air Cargo Carriers 
+##                                                 1 
+##                                 Air Evac Lifeteam 
+##                                                 1 
+## Air Force of the Democratic Republic of the Congo 
+##                                                 1 
+##                                 Air India Express 
+##                                                 1 
+##                                       Air Niugini 
+##                                                 1 
+##                                         Air Sirin 
+##                                                 1 
+##                                           AirAsia 
+##                                                 1 
+##                                           Airblue 
+##                                                 1 
+##                    Airborne Freight Company Union 
+##                                                 1 
+##                                    AIRES Colombia 
+##                                                 1 
+##                                       Airline PNG 
+##                                                 1 
+##                            Alaska Central Express 
+##                                                 1 
+##                                     Alfa Airlines 
+##                                                 1 
+##                                 Alisansa Colombia 
+##                                                 1 
+##                                  All West Freight 
+##                                                 1 
+##                                        Allied Air 
+##                                                 1 
+##                           Allied Services Limited 
+##                                                 1 
+##                                 Alpine Adventures 
+##                                                 1 
+##                                AmazonavesAir Taxi 
+##                                                 1 
+##                                   Angara Airlines 
+##                                                 1 
+##                                      Angel Flight 
+##                                                 1 
+##                       Archipelagos Service Aereos 
+##                                                 1 
+##                           Arctic Sunwest Charters 
+##                                                 1 
+##                               Associated Aviation 
+##                                                 1 
+##                          Atlas Air serving Amazon 
+##                                                 1 
+##         Australian Corporate Jet Centres PTY. LTD 
+##                                                 1 
+##                             Aviatour's Fly'n Inc. 
+##                                                 1 
+##                                         Avis Amur 
+##                                                 1 
+##                                   Avistar Mandari 
+##                                                 1 
+##                                 Bearskin Airlines 
+##                                                 1 
+##                                    Bhoja Airlines 
+##                                                 1 
+##                          Blue Hawaiian Helicopter 
+##                                                 1 
+##                               Blue Wings Airlines 
+##                                                 1 
+##                            Bond Air Services Ltd. 
+##                                                 1 
+##                          Branch River Air Service 
+##                                                 1 
+##                                        Buddha Air 
+##                                                 1 
+##                          Central American Airways 
+##                                                 1 
+##                            CHC Helikopter Service 
+##                                                 1 
+##                                 Chilean Air Force 
+##                                                 1 
+##             Compagnie Africaine d' Aviation (CAA) 
+##                                                 1 
+##                                  Conviasa Airline 
+##                                                 1 
+##                                   Costal Aviation 
+##                                                 1 
+##                   Cubana (leased from Global Air) 
+##                                                 1 
+##                                   Daallo Airlines 
+##                                                 1 
+##                                 Dagestan Airlines 
+##                                                 1 
+##                                          Dana Air 
+##                                                 1 
+##                                          EgyptAir 
+##                                                 1 
+##                                          Emirates 
+##                                                 1 
+##                                   ETA Air Charter 
+##                                                 1 
+##                                            Filair 
+##                                                 1 
+##                                         First Air 
+##                                                 1 
+##                               Fly Jamaica Airways 
+##                                                 1 
+##                                    Fly Montserrat 
+##                                                 1 
+##                                          Flydubai 
+##                                                 1 
+##                             Fuerza Aerea Mexicana 
+##                                                 1 
+##                          GCI Communications Corp. 
+##                                                 1 
+##                                       Germanwings 
+##                                                 1 
+##                                          Guicango 
+##                                                 1 
+##                                Hageland Aviiation 
+##                                                 1 
+##              Heart of Texas Hot Air Balloon Rides 
+##                                                 1 
+##                         Helicopters Inc / KOMO TV 
+##                                                 1 
+##                                         HeliCusco 
+##                                                 1 
+##                                    Henan Airlines 
+##                                                 1 
+##                                Heringer Taxi Aero 
+##                                                 1 
+##                                           Hevlift 
+##                                                 1 
+##                                 Hewa Bora Airways 
+##                                                 1 
+##                                    Illegal flight 
+##                                                 1 
+##                              Indonesian Air Force 
+##                                                 1 
+##                                 Indonesian Police 
+##                                                 1 
+##                              Interisland Airlines 
+##                                                 1 
+##           International Security Assistance Force 
+##                                                 1 
+##                                          Iran Air 
+##                                                 1 
+##                              Iran Aseman Airlines 
+##                                                 1 
+##                                            IrAvia 
+##                                                 1 
+##                                   Jet One Express 
+##                                                 1 
+##                                            JS Air 
+##                                                 1 
+##                                            Ju Air 
+##                                                 1 
+##                                Kamchatka Airlines 
+##                                                 1 
+##                             Kasthamandap Airlines 
+##                                                 1 
+##                                 Katekavia Airline 
+##                                                 1 
+##                                        Kogalmavia 
+##                                                 1 
+##                                        Komala Air 
+##                                                 1 
+##                                     LAMIA Bolivia 
+##                                                 1 
+##                                      Lao Airlines 
+##                                                 1 
+##                                    Laos Air Force 
+##                                                 1 
+##                              Laser Aereo Colombia 
+##                                                 1 
+##                               Liberty Helicopters 
+##                                                 1 
+##                                  Libyan Air Cargo 
+##                                                 1 
+##                                           LifeNet 
+##                                                 1 
+##                         Lineas Aereas Comerciales 
+##                                                 1 
+##                                   Majuba Aviation 
+##                                                 1 
+##                                             Manx2 
+##                                                 1 
+##                           Marquise Aviation Corp. 
+##                                                 1 
+##                                          MASwings 
+##                                                 1 
+##                              Med-Trans Corporaion 
+##                                                 1 
+##                        Merpati Nusantara Airlines 
+##                                                 1 
+##                                          Metrojet 
+##                                                 1 
+##                     Military - Colombia Air Force 
+##                                                 1 
+##                           Military - Ecuador Army 
+##                                                 1 
+##                    Military - Ethiopian Air Force 
+##                                                 1 
+##     Military - FANA Forca Aerea Nacional Angolana 
+##                                                 1 
+##                       Military - Indian Air Force 
+##                                                 1 
+##                        Military - Indonesian Army 
+##                                                 1 
+##               Military - Kazakhstan Border Guards 
+##                                                 1 
+##                      Military - Myanmar Air Force 
+##                                                 1 
+##                          Military - Pakistan Army 
+##                                                 1 
+##                   Military - Philippine Air Force 
+##                                                 1 
+##                       Military - Polish Air Force 
+##                                                 1 
+##                    Military - Romainian Air Force 
+##                                                 1 
+##               Military - Royal Moroccan Air Force 
+##                                                 1 
+##                      Military - Russian Air Force 
+##                                                 1 
+##                Military - South African Air Force 
+##                                                 1 
+##                     Military - Sudanese Air Force 
+##                                                 1 
+##                   Military - Tajik National Guard 
+##                                                 1 
+##                    Military - Turkish Army (NATO) 
+##                                                 1 
+##                      Military - Ukraine Air Force 
+##                                                 1 
+##              Military - Venezuelan National Guard 
+##                                                 1 
+##        Military - Vietnam People's Army Air Force 
+##                                                 1 
+##                        Military - Yemen Air Force 
+##                                                 1 
+##                             Military - Yemeni Arm 
+##                                                 1 
+##                 Military -Fuerza Aerea Colombiana 
+##                                                 1 
+##                                Mozambique Airline 
+##                                                 1 
+##                  My Cargo Airlines (ACT Airlines) 
+##                                                 1 
+##                                              NARZ 
+##                                                 1 
+##                                         Naure Air 
+##                                                 1 
+##                                    Nepal Airlines 
+##                                                 1 
+##                                NOAR Linhas Aéreas 
+##                                                 1 
+##                     Northern Thunderbird Air Inc. 
+##                                                 1 
+##                               Nusantara Buana Air 
+##                                                 1 
+##                               Ornge Air Ambulance 
+##                                                 1 
+##                   Pakistan International Airlines 
+##                                                 1 
+##                                    Pamir Airlines 
+##                                                 1 
+##                                          Papillon 
+##                                                 1 
+##                       Pawan Hans Helicopters Ltd. 
+##                                                 1 
+##                People's Liberation Army Air Force 
+##                                                 1 
+##            Petropavlovsk-Kamchatsky Air Enteprise 
+##                                                 1 
+##                             Piquiatuba Taxi Aereo 
+##                                                 1 
+##                         Private - Aero Trans Corp 
+##                                                 1 
+##                                       Promech Air 
+##                                                 1 
+##                                Rainbow King Lodge 
+##                                                 1 
+##                                Red Wings Airlines 
+##                                                 1 
+##                                       Rediske Air 
+##                                                 1 
+##                                         Rovos Air 
+##                                                 1 
+##                                   RusAir Airlines 
+##                                                 1 
+##                                 Russian Air Force 
+##                                                 1 
+##                              Safari Express Cargo 
+##                                                 1 
+##                                          Saha Air 
+##                                                 1 
+##                                  Saratov Airlines 
+##                                                 1 
+##                                          SCAT Air 
+##                                                 1 
+##                Scoala Superioara de Aviatie Civla 
+##                                                 1 
+##                                        Senegalair 
+##                                                 1 
+##                                  Sepahan Airlines 
+##                                                 1 
+##                                 Silk Way Airlines 
+##                                                 1 
+##                                          Sita Air 
+##                                                 1 
+##                              Sky Dive New Zealand 
+##                                                 1 
+##                    Skyward International Aviation 
+##                                                 1 
+##                        Smoky Mountain Helicopters 
+##                                                 1 
+##                                 SOL Lineas Aereas 
+##                                                 1 
+##                                    South Airlines 
+##                                                 1 
+##                                Southwest Airlines 
+##                                                 1 
+##                           Starwood Management LLC 
+##                                                 1 
+##                                            Sukhoi 
+##                                                 1 
+##                                        Summit Air 
+##                                                 1 
+##                                           Sun Way 
+##                                                 1 
+##                                  Sunbird Aviation 
+##                                                 1 
+##                         Sundance Helicopters Inc. 
+##                                                 1 
+##                          Suomen Urheiluilmailijat 
+##                                                 1 
+##                                     Swan Aviation 
+##                                                 1 
+##                                  Syrian Air Force 
+##                                                 1 
+##                               Tararstan Airlilnes 
+##                                                 1 
+##                                            Tracep 
+##                                                 1 
+##                             TRACEP Congo Aviation 
+##                                                 1 
+##                                   Trans Air Cargo 
+##                                                 1 
+##                                   Transaereo 5074 
+##                                                 1 
+##                                         Transasia 
+##                                                 1 
+##                                 TransAsia Airways 
+##                                                 1 
+##                                True Aviation Ltd. 
+##                                                 1 
+##                                      Turuhan Avia 
+##                                                 1 
+##                           TVPX Aircraft Solutions 
+##                                                 1 
+##                                    United Nations 
+##                                                 1 
+##                             United Parcel Service 
+##                                                 1 
+##                        United Parcel Service- UPS 
+##                                                 1 
+##                                US-Bangla Airlines 
+##                                                 1 
+##                                              USMC 
+##                                                 1 
+##                                             UTAir 
+##                                                 1 
+##                 Valan International Cargo Charter 
+##                                                 1 
+##                                   West Air Sweden 
+##                                                 1 
+##                                West Wind Aviation 
+##                                                 1 
+##                                       YAK Service 
+##                                                 1 
+##                                      Aero Service 
+##                                                 2 
+##                                           Aerocon 
+##                                                 2 
+##                                          Agni Air 
+##                                                 2 
+##                                   Asiana Airlines 
+##                                                 2 
+##                                Ethiopian Airlines 
+##                                                 2 
+##                                  Indian Air Force 
+##                                                 2 
+##                                          Lion Air 
+##                                                 2 
+##                                 Malaysia Airlines 
+##                                                 2 
+##                     Military - Algerian Air Force 
+##                                                 2 
+##                   Military - Indonesian Air Force 
+##                                                 2 
+##                              Military - U.S. Army 
+##                                                 2 
+##                           Military - US Air Force 
+##                                                 2 
+##                                National Air Cargo 
+##                                                 2 
+##                                           Private 
+##                                                 2 
+##                                          Tara Air 
+##                                                 2 
+##                               Trigana Air Service 
+##                                                 2 
+##                              Ukraine Air Alliance 
+##                                                 2</code></pre>
+<p>The <code>aboard</code> column includes more info</p>
+<pre class="r"><code>head( data$aboard )</code></pre>
+<pre><code>## [1] &quot;2   (passengers:0  crew:2)&quot;   &quot;90   (passengers:82  crew:8)&quot;
+## [3] &quot;10   (passengers:8  crew:2)&quot;  &quot;8   (passengers:6  crew:2)&quot;  
+## [5] &quot;11   (passengers:9  crew:2)&quot;  &quot;96   (passengers:88  crew:8)&quot;</code></pre>
+<pre class="r"><code>aboard.list &lt;- lapply( data$aboard, function(x){
+  # extract the first number
+  total &lt;- str_extract( x, &quot;^[[:digit:]]+&quot; )
+  passengers &lt;- unlist( str_split( str_extract( x, &quot;passengers:[[:digit:]]+&quot;), &quot;:&quot; ) )[2]
+  crew &lt;- unlist( str_split( str_extract( x, &quot;crew:[[:digit:]]+&quot;), &quot;:&quot; ) )[2]
+  return( tribble( ~aboard.total, ~aboard.pass, ~aboard.crew,
+                   as.integer( total ) , as.integer( passengers ), as.integer( crew ) ) )
+})
+aboard.tbl &lt;- bind_rows( aboard.list )
+aboard.tbl</code></pre>
+<pre><code>## # A tibble: 233 x 3
+##    aboard.total aboard.pass aboard.crew
+##           &lt;int&gt;       &lt;int&gt;       &lt;int&gt;
+##  1            2           0           2
+##  2           90          82           8
+##  3           10           8           2
+##  4            8           6           2
+##  5           11           9           2
+##  6           96          88           8
+##  7           18          15           3
+##  8            5           0           5
+##  9            6           0           6
+## 10          104          93          11
+## # … with 223 more rows</code></pre>
+<pre class="r"><code># merge this new information into our table
+data &lt;- bind_cols( select( data, -aboard ), aboard.tbl )</code></pre>
+<div id="exercise-1" class="section level2">
+<h2>Exercise 1</h2>
+<p>Parse the <code>fatalities</code> column in a similar way</p>
+</div>
+<div id="exercise-2" class="section level2">
+<h2>Exercise 2</h2>
+<p>What are the levels in the <code>type</code> column?</p>
+</div>
 </div>
 <div id="plot" class="section level1">
 <h1>Plot</h1>
+<p>Let’s check whether the crashes have any pattern.</p>
+<ul>
+<li>total number of crashes per year</li>
+</ul>
+<pre class="r"><code>ggplot( data, aes( year ) ) +
+  geom_bar()</code></pre>
+<p><img src="data:image/png;base64,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" width="672" /></p>
+<ul>
+<li>total number of passengers aboard all planes per year</li>
+</ul>
+<pre class="r"><code>ggplot( data, aes( aboard.pass ) ) +
+  geom_bar() +
+  facet_wrap( vars( year ), ncol = 5 )</code></pre>
+<pre><code>## Warning: Removed 7 rows containing non-finite values (stat_count).</code></pre>
+<p><img src="data:image/png;base64,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" width="672" /></p>
+<div id="exercise-3" class="section level2">
+<h2>Exercise 3</h2>
+<p>Plot total number of crashes per month, per year</p>
+</div>
 </div>
 
 
