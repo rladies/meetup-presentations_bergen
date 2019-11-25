@@ -170,3 +170,21 @@ ggplot( poll.q3, aes( q.alt, answers, fill = q.alt ) ) +
 - **Slack** workspace: `rladies-norway`
 
 - **github**: https://github.com/rladies/meetup-presentations_bergen
+
+## Save the date!
+
+The European R users meeting (eRum) comes to Milan.
+
+The event will feature multiple parallel sessions on topics
+
+- data science, 
+- statistics
+- machine learning
+
+With international speakers, lightening talks and workshops.  
+
+27-30 May, 2020 
+
+R-Ladies from different European chapters will be there!  
+
+http://2020.erum.io
