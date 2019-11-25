@@ -165,7 +165,7 @@ ggplot( poll.q3, aes( q.alt, answers, fill = q.alt ) ) +
 
 - **Facebook:**           R-Ladies-Bergen
 
-- Sign up on **Meetup**:  https://www.meetup.com/rladies-bergen/
+- Sign up on **Meetup**:  https://meetup.com/rladies-bergen/
 
 - **Slack** workspace: `rladies-norway`
 
