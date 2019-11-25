@@ -45,8 +45,8 @@ subtitle <- "(out of 45 registered on Meetup)"
 
 # here - create the tibble
 poll.q1 <- tribble( ~q.alt, ~answers,
-                    "I want to learn!", 2,
-                    "I’ve learned basics and I want more!", 8,
+                    "I want to learn!", 3,
+                    "I’ve learned basics and I want more!", 9,
                     "R is one of many programming languages I know", 3,
                     "I am Hadley Wickham (she/her) ;)", 1
                   )
@@ -54,9 +54,11 @@ poll.q1 <- tribble( ~q.alt, ~answers,
 poll.q1$q.alt <- factor( poll.q1$q.alt, levels = rev( poll.q1$q.alt ), ordered = TRUE )
 tot.ans.q1 <- sum( poll.q1$answers )
 
+y.ticks <- seq( 0, 10, 2 )
 ggplot( poll.q1, aes( q.alt, answers, fill = q.alt ) ) +
   geom_col() + coord_flip() +
   theme_minimal() +
+  scale_y_continuous( breaks = y.ticks, labels = as.character( y.ticks ) ) +
   theme( 
     plot.title = element_text( hjust = 1 ),
     plot.subtitle = element_text( hjust = 1 ),
@@ -72,7 +74,7 @@ ggplot( poll.q1, aes( q.alt, answers, fill = q.alt ) ) +
 ```{r poll2-data,echo=FALSE}
 poll.q2 <- tribble( ~q.alt, ~answers,
     "Bioinformatics / structural bioinformatics", 3,
-    "Statistics", 6,
+    "Statistics", 7,
     "Applied mathematics", 0,
     "Political science", 0,
     "Economics", 2,
@@ -80,7 +82,7 @@ poll.q2 <- tribble( ~q.alt, ~answers,
     "History / Literature", 0,
     "Meteorology", 0,
     "Cheminformatics", 0,
-    "Biology", 1,
+    "Biology", 2,
     "AI / Machine learning", 0,
     "Other", 3
 )
@@ -104,20 +106,21 @@ ggplot( poll.q2, aes( q.alt, answers, fill = q.alt ) ) +
 
 ```{r poll3-data,echo=FALSE}
 poll.q3 <- tribble( ~q.alt, ~answers,
-    "Plotting", 0,
+    "Plotting", 1,
     "Organizing tables", 0,
-    "Exploring the data", 1,
+    "Exploring the data", 0,
     "Specific analyses", 0,
-    "Everything", 11,
+    "Everything", 12,
     "Nothing (yet!)", 3
 )
 poll.q3$q.alt <- factor( poll.q3$q.alt, levels = rev( poll.q3$q.alt ), ordered = TRUE )
 tot.ans.q3 <- sum( poll.q3$answers )
 
+y.ticks <- seq( 0, 12, 2 )
 ggplot( poll.q3, aes( q.alt, answers, fill = q.alt ) ) +
   geom_col() + coord_flip() +
   theme_minimal() +
-  scale_y_continuous( breaks = seq( 0, 12, 2 ), labels = as.character( seq( 0, 12, 2 ) ) ) +
+  scale_y_continuous( breaks = y.ticks, labels = as.character( y.ticks ) ) +
   theme( 
     plot.title = element_text( hjust = 1 ),
     plot.subtitle = element_text( hjust = 1 ),
@@ -150,6 +153,16 @@ ggplot( poll.q3, aes( q.alt, answers, fill = q.alt ) ) +
   * teaching tools for sharing reproducible code
   * gaining experience with reproducing `#opendata` `#opencode` papers
   * connecting with `#openscience` fans from other disciplines
+
+## Warm up!
+
+- Groups of 4 or 5
+
+- Say hi to everyone within the group
+  - why did they come here?
+  - where do they use R?
+
+- Discuss: *how do you want future meetings to look like?*
 
 ##  Check out R-Ladies on social media 
 
