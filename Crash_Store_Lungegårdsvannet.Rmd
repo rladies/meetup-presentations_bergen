@@ -93,7 +93,7 @@ Try using geom_text( ) to also add labels for your locations.
 Notice that you can treat the ggmap( ) function like ggplot( ).
 
 
-```{r, echo = FALSE}
+```{r}
 ggmap(StoreLunge.watercolor.map, extent="device") +
   geom_point(data = StoreLunge.places, aes(x = lon, y = lat), color = 'red', size = 3) +
   geom_text(data = StoreLunge.places, aes(label = location), hjust=0, vjust=-1)
