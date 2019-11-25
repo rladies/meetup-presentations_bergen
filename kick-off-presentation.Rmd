@@ -1,6 +1,6 @@
 ---
 title: "R-Ladies Bergen Kick-off Meeting"
-author: "Julia & Jonelle"
+author: "Julia, Jonelle & Astrid"
 date: "`r Sys.Date()`"
 output:
   ioslides_presentation:
@@ -18,8 +18,8 @@ library( tidyverse )
 ## What is R-Ladies?
 
 - A global community of ladies who use R
-- that seeks to support and inspire others
-- through teaching, sharing, and mentorship
+- that seeks to _support_ and _inspire_ others
+- through **teaching**, **sharing**, and **mentorship**
 
 # R-Ladies Bergen
 
@@ -31,7 +31,7 @@ library( tidyverse )
 
 ## Meetup group
 
-- ca. 50 members already!
+- 45 members already!
 - who are we?
 - why did we gather here?
 
@@ -40,17 +40,19 @@ library( tidyverse )
 ## How advanced in R are you?
 
 ```{r poll1-data,echo=FALSE}
-# updated by Julia on 22 Nov.2019
+# updated by Julia on 25 Nov.2019
+subtitle <- "(out of 45 registered on Meetup)"
 
 # here - create the tibble
 poll.q1 <- tribble( ~q.alt, ~answers,
                     "I want to learn!", 2,
-                    "I’ve learned basics and I want more!", 7,
+                    "I’ve learned basics and I want more!", 8,
                     "R is one of many programming languages I know", 3,
                     "I am Hadley Wickham (she/her) ;)", 1
                   )
 # explicitly setting the order of labels
 poll.q1$q.alt <- factor( poll.q1$q.alt, levels = rev( poll.q1$q.alt ), ordered = TRUE )
+tot.ans.q1 <- sum( poll.q1$answers )
 
 ggplot( poll.q1, aes( q.alt, answers, fill = q.alt ) ) +
   geom_col() + coord_flip() +
@@ -61,7 +63,8 @@ ggplot( poll.q1, aes( q.alt, answers, fill = q.alt ) ) +
     legend.position = "none"
   ) +
   ylab("") + xlab("") +
-  labs( title = "Total of 13 R-Ladies answered", subtitle = "(out of 40 registered on Meetup)" )
+  labs( title = paste( "Total of", tot.ans.q1, "R-Ladies answered"),
+        subtitle = subtitle )
 ```
 
 ## What is the field where you (would) use R the most?
@@ -72,7 +75,7 @@ poll.q2 <- tribble( ~q.alt, ~answers,
     "Statistics", 6,
     "Applied mathematics", 0,
     "Political science", 0,
-    "Economics", 1,
+    "Economics", 2,
     "Visualization", 0,
     "History / Literature", 0,
     "Meteorology", 0,
@@ -82,6 +85,7 @@ poll.q2 <- tribble( ~q.alt, ~answers,
     "Other", 3
 )
 poll.q2$q.alt <- factor( poll.q2$q.alt, levels = rev( poll.q2$q.alt ), ordered = TRUE )
+tot.ans.q2 <- sum( poll.q2$answers )
 
 ggplot( poll.q2, aes( q.alt, answers, fill = q.alt ) ) +
   geom_col() + coord_flip() +
@@ -92,7 +96,8 @@ ggplot( poll.q2, aes( q.alt, answers, fill = q.alt ) ) +
     legend.position = "none"
   ) +
   ylab("") + xlab("") +
-  labs( title = "Total of 13 R-Ladies answered", subtitle = "(out of 40 registered on Meetup)" )
+  labs( title = paste( "Total of", tot.ans.q2, "R-Ladies answered"),
+        subtitle = subtitle )
 ```
 
 ## What do you use R for?
@@ -103,22 +108,24 @@ poll.q3 <- tribble( ~q.alt, ~answers,
     "Organizing tables", 0,
     "Exploring the data", 1,
     "Specific analyses", 0,
-    "Everything", 10,
-    "Nothing (yet!)", 2
+    "Everything", 11,
+    "Nothing (yet!)", 3
 )
 poll.q3$q.alt <- factor( poll.q3$q.alt, levels = rev( poll.q3$q.alt ), ordered = TRUE )
+tot.ans.q3 <- sum( poll.q3$answers )
 
 ggplot( poll.q3, aes( q.alt, answers, fill = q.alt ) ) +
   geom_col() + coord_flip() +
   theme_minimal() +
-  scale_y_continuous( breaks = seq( 0, 10, 2 ), labels = as.character( seq( 0, 10, 2 ) ) ) +
+  scale_y_continuous( breaks = seq( 0, 12, 2 ), labels = as.character( seq( 0, 12, 2 ) ) ) +
   theme( 
     plot.title = element_text( hjust = 1 ),
     plot.subtitle = element_text( hjust = 1 ),
     legend.position = "none"
   ) +
   ylab("") + xlab("") +
-  labs( title = "Total of 14 R-Ladies answered", subtitle = "(out of 40 registered on Meetup)" )
+  labs( title = paste( "Total of", tot.ans.q3, "R-Ladies answered"),
+        subtitle = subtitle )
 ```
 
 # Aim of the meeting
@@ -132,30 +139,34 @@ ggplot( poll.q3, aes( q.alt, answers, fill = q.alt ) ) +
 
 ## Tips for future meetings 
 
-- Themed evenings
-  - GitHub, Tidyverse, R Markdown, data visualization, functional programming, machine learning 
+- **Themed evenings**
+  * GitHub, Tidyverse, R Markdown, data visualization, functional programming, machine learning 
 
-- SatRday workshops - mentoring hands-on 
+- **SatRday workshops** - mentoring hands-on 
 
-- Lightening talks presenting research projects 
+- **Lightening talks** presenting research projects 
 
-- Hackathon-events such as Reproducibility Hackathon for
+- **Hackathon-events** such as Reproducibility Hackathon for
   * teaching tools for sharing reproducible code
-  * gaining experience with reproducing #opendata #opencode papers
-  * connecting with #openscience fans from other disciplines
+  * gaining experience with reproducing `#opendata` `#opencode` papers
+  * connecting with `#openscience` fans from other disciplines
 
 ##  Check out R-Ladies on social media 
 
-Join the directory:  http://rladies.org/directory/
+- Join the directory:  http://rladies.org/directory/
 
-Twitter 
+- **Twitter**
 
-- R-Ladies Bergen:  @RLadiesBergen
+  - R-Ladies Bergen:  @RLadiesBergen
 
-- R-Ladies Global:  @RLadiesGlobal
+  - R-Ladies Global:  @RLadiesGlobal
 
-- We are R-Ladies:  @WeAreRLadies
+  - We are R-Ladies:  @WeAreRLadies
 
-Facebook:           R-Ladies-Bergen
+- **Facebook:**           R-Ladies-Bergen
 
-Sign up on Meetup:  https://www.meetup.com/rladies-bergen/
+- Sign up on **Meetup**:  https://www.meetup.com/rladies-bergen/
+
+- **Slack** workspace: `rladies-norway`
+
+- **github**: https://github.com/rladies/meetup-presentations_bergen
