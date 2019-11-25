@@ -78,8 +78,7 @@ First, create a tibble of locations using longitude and latitude
 ```{r}
 
 StoreLunge.places <- tibble(
-  location = c("Bergen legevakt",
-     "Ado",
+  location = c("Bergen legevakt","Ado",
      "Bergen døvsenter"),
       lon = c(5.336120,5.338080,5.350060),
       lat = c(60.377760,60.385660,60.384740))
