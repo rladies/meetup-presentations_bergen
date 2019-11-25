@@ -98,3 +98,11 @@ ggmap(StoreLunge.watercolor.map, extent="device") +
 
 ```
 
+Stretch your learning!
+
+Plotting on a world map using ggmap
+http://www.milanor.net/blog/maps-in-r-plotting-data-points-on-a-map/
+
+
+How to find coordinates for cities with R
+https://www.andybeger.com/2013/08/06/finding-coordinates-for-cities-etc-with-r/
