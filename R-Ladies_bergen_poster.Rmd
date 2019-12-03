@@ -1,0 +1,128 @@
+---
+title: '**R-Ladies Bergen**'
+author:
+  - name: '**Julia Romanowska**'
+    affil: 1
+    main: true
+    email: 'Julia.Romanowska@uib.no'
+  - name: '**Jonelle Dickow Villar**'
+    affil: 2
+    main: true
+    email: 'Jonelle.Villar@uib.no'
+  - name: '**Astrid Lunde**'
+    email: 'Astrid.Lunde@uib.no'
+    main: true
+    affil: 1
+affiliation:
+  - num: 1
+    address: Department of Global Public Health and Primary Care, University of Bergen, Norway
+  - num: 2
+    address: Department of Clinical Science, University of Bergen, Norway
+main_findings:
+  - "Come and join us at the next **R-Ladies Bergen** meeting!"
+  - '![](R-Ladies-horiz-bergen_cropped_transp.png){.main_pic}'
+logoright_name: '![](https://raw.githubusercontent.com/rladies/starter-kit/master/logo/R-LadiesGlobal_RBG_online_LogoWithText_Horizontal.png){.main-img-right}'
+primary_colour: "#88398a"
+secondary_colour: "#a7a9ac"
+output: 
+  posterdown::posterdown_betterland:
+    self_contained: false
+    pandoc_args: --mathjax
+    highlight: haddock
+    number_sections: false
+link-citations: true
+---
+
+<!---
+CAUTION: do not knit with rmarkdown, but with pagedown::chrome_print("file.Rmd").
+This produces also a pdf file, which looks correct; while the html file does not
+retain columns nicely!
+--->
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(results = 'asis',
+                      echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+```
+
+```{r myplot, include=FALSE}
+svg('myplot.svg')
+plot(iris$Sepal.Length, iris$Sepal.Width)
+dev.off()
+```
+
+# Introduction
+
+This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
+
+```{r, include=FALSE}
+knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
+```
+
+## Objectives
+
+1. Pick a template layout.
+2. Write/ create your poster content distraction free.
+3. Let posterdown do its thing!
+
+# Methods
+
+I will show here how to include poster elements that may be useful, such as an equation using mathjax:
+
+$$
+E = mc^2
+$$
+
+To reference a citation you can add your `.bib` file to the working directory and name it in the YAML metadata or generate an automated one as done here, then you only need to reference the label value in the `.bib` file. For example this package is built on top of the wonderful {pagedown} package and I will cite it at the end of this sentance using this in the rmd `[@R-pagedown]` [@R-pagedown].
+
+To get a better understanding of how to include features like these please refer to the {posterdown} [wiki](https://github.com/posterdown/wiki).
+
+**_Now on to the results!_**
+
+<br>
+
+# Results
+
+Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
+
+```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).', out.width="80%"}
+par(mar=c(2,2,0,1))
+plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
+     col = iris$Species, pch = 19, xlab = "Sepal Length",
+     ylab = "Sepal Width")
+```
+
+Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
+
+```{r myprettycode, echo=FALSE,collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
+#trim whitespace
+par(mar=c(2,2,0,0))
+#plot boxplots
+boxplot(iris$Sepal.Width~iris$Species,
+        col = "#008080", 
+        border = "#0b4545",
+        ylab = "Sepal Width (cm)",
+        xlab = "Species")
+```
+
+How about a neat table of data? See, Table \@ref(tab:iristable):
+
+```{r, iristable}
+knitr::kable(
+  iris[1:8,1:5], format = "html",
+  caption = "A table made with the **knitr::kable** function.",
+  align = "c", col.names = c("Sepal <br> Length",
+                             "Sepal <br> Width",
+                             "Petal <br> Length",
+                             "Petal <br> Width",
+                             "Species"),
+  escape = FALSE)
+```
+
+# References
