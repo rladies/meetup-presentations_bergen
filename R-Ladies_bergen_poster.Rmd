@@ -19,11 +19,13 @@ affiliation:
   - num: 2
     address: Department of Clinical Science, University of Bergen, Norway
 main_findings:
+  - "Do you know **R**? Or want to learn?"
   - "Come and join us at the next **R-Ladies Bergen** meeting!"
   - '![](R-Ladies-horiz-bergen_cropped_transp.png){.main_pic}'
 logoright_name: '![](https://raw.githubusercontent.com/rladies/starter-kit/master/logo/R-LadiesGlobal_RBG_online_LogoWithText_Horizontal.png){.main-img-right}'
 primary_colour: "#88398a"
 secondary_colour: "#a7a9ac"
+accent_colour: "#88398a"
 output: 
   posterdown::posterdown_betterland:
     self_contained: false
@@ -51,78 +53,67 @@ knitr::opts_chunk$set(results = 'asis',
 options(knitr.table.format = "html") 
 ```
 
-```{r myplot, include=FALSE}
-svg('myplot.svg')
-plot(iris$Sepal.Length, iris$Sepal.Width)
-dev.off()
-```
+# R-Ladies Global
 
-# Introduction
+## What is R-Ladies?
 
-This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
+- A global community of ladies who use R
+- that seeks to _support_ and _inspire_ others
+- through **teaching**, **sharing**, and **mentorship**
 
-```{r, include=FALSE}
-knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
-```
+# R-Ladies Bergen
 
-## Objectives
+## Who are we?
 
-1. Pick a template layout.
-2. Write/ create your poster content distraction free.
-3. Let posterdown do its thing!
+- Jonelle Dickow Villar
+- Julia Romanowska:  
+data scientist who loves visualization and programming  
+https://jrom.bitbucket.io/homepage/
 
-# Methods
+- Astrid Lunde
 
-I will show here how to include poster elements that may be useful, such as an equation using mathjax:
+## What is it all about?
 
-$$
-E = mc^2
-$$
+- We are a group of cool people
+- We gather roughly bi-monthly
+- We support each other by e.g., help with programming
+- We inspire each other through discussions and presentations
+- We learn from each other through tutorials
 
-To reference a citation you can add your `.bib` file to the working directory and name it in the YAML metadata or generate an automated one as done here, then you only need to reference the label value in the `.bib` file. For example this package is built on top of the wonderful {pagedown} package and I will cite it at the end of this sentance using this in the rmd `[@R-pagedown]` [@R-pagedown].
+## How to join?
 
-To get a better understanding of how to include features like these please refer to the {posterdown} [wiki](https://github.com/posterdown/wiki).
+- create your profile at meetup.com
+- join our group _(check out the link below)_
 
-**_Now on to the results!_**
+## How to contribute?
+
+We're always looking for people who want to help!
+
+- If you want to take part in organizing a meeting,  
+or would like to give a tutorial/talk
+
+- If you or your company can support us financially  
+or with practical things  
+
+drop us a message on our fb page or via e-mail
 
 <br>
 
-# Results
+## Links on the net
 
-Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
+* Meetup web-page  
+https://www.meetup.com/rladies-bergen/
 
-```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).', out.width="80%"}
-par(mar=c(2,2,0,1))
-plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
-     col = iris$Species, pch = 19, xlab = "Sepal Length",
-     ylab = "Sepal Width")
-```
+* Facebook page  
+https://www.facebook.com/R-Ladies-Bergen-113661500068523/
 
-Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
+* Twitter account  
+https://twitter.com/RLadiesBergen
 
-```{r myprettycode, echo=FALSE,collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
-#trim whitespace
-par(mar=c(2,2,0,0))
-#plot boxplots
-boxplot(iris$Sepal.Width~iris$Species,
-        col = "#008080", 
-        border = "#0b4545",
-        ylab = "Sepal Width (cm)",
-        xlab = "Species")
-```
+* Github repo  
+https://github.com/rladies/meetup-presentations_bergen
 
-How about a neat table of data? See, Table \@ref(tab:iristable):
+* email: bergen@Rladies.org
 
-```{r, iristable}
-knitr::kable(
-  iris[1:8,1:5], format = "html",
-  caption = "A table made with the **knitr::kable** function.",
-  align = "c", col.names = c("Sepal <br> Length",
-                             "Sepal <br> Width",
-                             "Petal <br> Length",
-                             "Petal <br> Width",
-                             "Species"),
-  escape = FALSE)
-```
+* slack workspace: _rladies-norway_ (send e-mail to one of us to get an invitation)
 
-# References
