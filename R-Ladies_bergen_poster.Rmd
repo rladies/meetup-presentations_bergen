@@ -26,6 +26,7 @@ logoright_name: '![](https://raw.githubusercontent.com/rladies/starter-kit/maste
 primary_colour: "#88398a"
 secondary_colour: "#a7a9ac"
 accent_colour: "#88398a"
+body_textsize: "50px"
 output: 
   posterdown::posterdown_betterland:
     self_contained: false
@@ -60,6 +61,7 @@ options(knitr.table.format = "html")
 - A global community of ladies who use R
 - that seeks to _support_ and _inspire_ others
 - through **teaching**, **sharing**, and **mentorship**
+- check out more here: https://rladies.org/
 
 # R-Ladies Bergen
 
@@ -67,7 +69,7 @@ options(knitr.table.format = "html")
 
 - Jonelle Dickow Villar
 - Julia Romanowska:  
-data scientist who loves visualization and programming  
+_data scientist who loves visualization and programming_  
 https://jrom.bitbucket.io/homepage/
 
 - Astrid Lunde
@@ -76,13 +78,15 @@ https://jrom.bitbucket.io/homepage/
 
 - We are a group of cool people
 - We gather roughly bi-monthly
-- We support each other by e.g., help with programming
-- We inspire each other through discussions and presentations
-- We learn from each other through tutorials
+- We _support_ each other by e.g., help with programming
+- We _inspire_ each other through discussions and presentations
+- We _learn_ from each other through tutorials
+
+<br>
 
 ## How to join?
 
-- create your profile at meetup.com
+- create your profile at Meetup.com
 - join our group _(check out the link below)_
 
 ## How to contribute?
@@ -96,8 +100,6 @@ or would like to give a tutorial/talk
 or with practical things  
 
 drop us a message on our fb page or via e-mail
-
-<br>
 
 ## Links on the net
 
