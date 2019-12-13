@@ -68,6 +68,9 @@ options(knitr.table.format = "html")
 ## Who are we?
 
 - Jonelle Dickow Villar
+_Clinician who loves R
+https://w3.uib.no/nb/personer/Jonelle.M.Dickow.Villar
+
 - Julia Romanowska:  
 _data scientist who loves visualization and programming_  
 https://jrom.bitbucket.io/homepage/
