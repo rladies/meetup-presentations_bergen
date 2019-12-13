@@ -22,7 +22,8 @@ main_findings:
   - "Do you know **R**? Or want to learn?"
   - "Come and join us at the next **R-Ladies Bergen** meeting!"
   - '![](R-Ladies-horiz-bergen_cropped_transp.png){.main_pic}'
-logoright_name: '![](https://raw.githubusercontent.com/rladies/starter-kit/master/logo/R-LadiesGlobal_RBG_online_LogoWithText_Horizontal.png){.main-img-right}'
+logoright_name: 'Part of R-Ladies Global ![](https://raw.githubusercontent.com/rladies/starter-kit/master/logo/R-LadiesGlobal_RBG_online_LogoWithText_Horizontal.png){.main-img-right}'
+logoleft_name: 'Sponsor:![](cbu_logo_blue_transparent.png){.main-img-left}'
 primary_colour: "#88398a"
 secondary_colour: "#a7a9ac"
 accent_colour: "#88398a"
@@ -37,7 +38,7 @@ link-citations: true
 ---
 
 <!---
-CAUTION: do not knit with rmarkdown, but with pagedown::chrome_print("file.Rmd").
+CAUTION: do not knit with rmarkdown, but with pagedown::chrome_print("R-Ladies_bergen_poster.Rmd").
 This produces also a pdf file, which looks correct; while the html file does not
 retain columns nicely!
 --->
