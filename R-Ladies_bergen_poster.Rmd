@@ -22,12 +22,13 @@ main_findings:
   - "Do you know **R**? Or want to learn?"
   - "Come and join us at the next **R-Ladies Bergen** meeting!"
   - '![](R-Ladies-horiz-bergen_cropped_transp.png){.main_pic}'
-logoright_name: 'Part of R-Ladies Global ![](https://raw.githubusercontent.com/rladies/starter-kit/master/logo/R-LadiesGlobal_RBG_online_LogoWithText_Horizontal.png){.main-img-right}'
-logoleft_name: 'Sponsor:![](cbu_logo_blue_transparent.png){.main-img-left}'
-primary_colour: "#88398a"
-secondary_colour: "#a7a9ac"
+main_width: 0.3
+logoright_name: '![](https://raw.githubusercontent.com/rladies/starter-kit/master/logo/R-LadiesGlobal_RBG_online_LogoWithText_Horizontal.png){.main-img-right}'
+logoleft_name: '[](cbu_logo_blue_transparent.png){.main-img-left}'
 accent_colour: "#88398a"
-body_textsize: "50px"
+primary_colour: "#a7a9ac"
+secondary_colour: "#88398a"
+body_textsize: "52px"
 output: 
   posterdown::posterdown_betterland:
     self_contained: false
@@ -70,7 +71,7 @@ options(knitr.table.format = "html")
 
 - Jonelle Dickow Villar
 _Clinician who loves R_
-https://w3.uib.no/nb/personer/Jonelle.M.Dickow.Villar
+https://www.uib.no/nb/personer/Jonelle.M.Dickow.Villar
 
 - Julia Romanowska:  
 _Data scientist who loves visualization and programming_  
@@ -97,13 +98,11 @@ https://jrom.bitbucket.io/homepage/
 
 We're always looking for people who want to help!
 
-- If you want to take part in organizing a meeting,  
-or would like to give a tutorial/talk
+- If you want to take part in organizing a meeting, or would like to give a tutorial/talk
 
-- If you or your company can support us financially  
-or with practical things  
+- If you or your company can support us financially or with practical things  
 
-drop us a message on our fb page or via e-mail
+drop us a message on our page or via e-mail
 
 ## Links on the net
 
@@ -121,5 +120,6 @@ https://github.com/rladies/meetup-presentations_bergen
 
 * email: bergen@Rladies.org
 
-* slack workspace: _rladies-norway_ (send e-mail to one of us to get an invitation)
+* slack workspace: _rladies-norway_  
+(send e-mail to one of us to get an invitation)
 
