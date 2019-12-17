@@ -1,34 +1,17 @@
 ---
-title: '**R-Ladies Bergen**'
-author:
-  - name: '**Julia Romanowska**'
-    affil: 1
-    main: true
-    email: 'Julia.Romanowska@uib.no'
-  - name: '**Jonelle Dickow Villar**'
-    affil: 2
-    main: true
-    email: 'Jonelle.Villar@uib.no'
-  - name: '**Astrid Lunde**'
-    email: 'Astrid.Lunde@uib.no'
-    main: true
-    affil: 1
-affiliation:
-  - num: 1
-    address: Department of Global Public Health and Primary Care, University of Bergen, Norway
-  - num: 2
-    address: Department of Clinical Science, University of Bergen, Norway
 main_findings:
   - "Do you know **R**? Or want to learn?"
   - "Come and join us at the next **R-Ladies Bergen** meeting!"
   - '![](R-Ladies-horiz-bergen_cropped_transp.png){.main_pic}'
 main_width: 0.3
 logoright_name: '![](https://raw.githubusercontent.com/rladies/starter-kit/master/logo/R-LadiesGlobal_RBG_online_LogoWithText_Horizontal.png){.main-img-right}'
-logoleft_name: '[](cbu_logo_blue_transparent.png){.main-img-left}'
+logoleft_name: '![](cbu_logo_blue_transparent.png){.main-img-left}'
 accent_colour: "#88398a"
 primary_colour: "#a7a9ac"
 secondary_colour: "#88398a"
 body_textsize: "52px"
+author_textcol: "#88398a"
+affiliation_textcol: "#00000"
 output: 
   posterdown::posterdown_betterland:
     self_contained: false
@@ -69,15 +52,17 @@ options(knitr.table.format = "html")
 
 ## Who are we?
 
-- Jonelle Dickow Villar
+- Jonelle Dickow Villar:  
 _Clinician who loves R_
-https://www.uib.no/nb/personer/Jonelle.M.Dickow.Villar
+[https://www.uib.no/nb/personer/ Jonelle.M.Dickow.Villar](https://www.uib.no/nb/personer/Jonelle.M.Dickow.Villar)
 
 - Julia Romanowska:  
 _Data scientist who loves visualization and programming_  
 https://jrom.bitbucket.io/homepage/
 
-- Astrid Lunde
+- Astrid Lunde:  
+_Statistician that loves numbers_
+
 
 ## What is it all about?
 
@@ -87,6 +72,15 @@ https://jrom.bitbucket.io/homepage/
 - We _inspire_ each other through discussions and presentations
 - We _learn_ from each other through tutorials
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 
 ## How to join?
