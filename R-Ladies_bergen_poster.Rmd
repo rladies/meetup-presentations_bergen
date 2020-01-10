@@ -9,7 +9,7 @@ logoleft_name: '![](cbu_logo_blue_transparent.png){.main-img-left}'
 accent_colour: "#88398a"
 primary_colour: "#a7a9ac"
 secondary_colour: "#88398a"
-body_textsize: "52px"
+body_textsize: "56px"
 author_textcol: "#88398a"
 affiliation_textcol: "#00000"
 output: 
@@ -53,7 +53,7 @@ options(knitr.table.format = "html")
 ## Who are we?
 
 - Jonelle Dickow Villar:  
-_Clinician who loves R_
+_Clinician who loves R_  
 [https://www.uib.no/nb/personer/ Jonelle.M.Dickow.Villar](https://www.uib.no/nb/personer/Jonelle.M.Dickow.Villar)
 
 - Julia Romanowska:  
@@ -61,7 +61,7 @@ _Data scientist who loves visualization and programming_
 https://jrom.bitbucket.io/homepage/
 
 - Astrid Lunde:  
-_Statistician that loves numbers_
+_Statistician who loves numbers_
 
 
 ## What is it all about?
@@ -72,13 +72,6 @@ _Statistician that loves numbers_
 - We _inspire_ each other through discussions and presentations
 - We _learn_ from each other through tutorials
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>
