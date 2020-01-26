@@ -1,16 +1,26 @@
 ---
 title: "Introduction to Tidyverse"
-author: "R-Ladies Bergen - co-organziers Julia, Astrid, Jonelle"
-date: '`r Sys.Date()`'
-output:
+author: "-Ladies Bergen - co-organziers Julia, Astrid, Jonelle"
+date: "`r Sys.Date()`"
+output: 
   xaringan::moon_reader:
-    css: [default, fc, fc-fonts, "hygge"]
+css: [default, fc, fc-fonts, "hygge"]
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
-     
 ---
+
+<!-- edit name1 and name2 in the YAML above -->
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(tidyverse) # load tidyverse package
+
+
+```
+
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -60,25 +70,3 @@ https://r4ds.had.co.nz
 library( tidyverse )
 ```
 
-
-## GitHub Documents
-
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
-
-## Including Code
-
-You can include R code in the document as follows:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
