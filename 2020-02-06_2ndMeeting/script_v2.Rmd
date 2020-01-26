@@ -13,6 +13,12 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+remotes::install_github('yihui/xaringan')
+
+```
+
+
+```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
 
