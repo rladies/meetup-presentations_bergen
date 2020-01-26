@@ -1,0 +1,251 @@
+---
+title: "Introduction to Tidyverse"
+author: "R-Ladies Bergen - Julia & Jonelle"
+date: '`r Sys.Date()`'
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    toc: true
+    number_sections: true
+---
+
+```{r intro,include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+background-image: url(img/)
+background-position: 90% 60%
+background-size:500px 
+
+---
+
+background-image: url(img/)
+background-position: 90% 60%
+background-size:500px 
+
+
+
+The tidyverse is fundamentally human centred. 
+
+It is not just a collection of packages — it is also the community of people who use them. 
+
+The tidyverse  ⟹  a diverse, inclusive, and welcoming community.
+
+
+
+---
+
+background-image: url(img/tidyverse-flow.png)
+background-position: 90% 60%
+background-size:500px 
+
+
+---
+
+R for Data Science
+
+https://r4ds.had.co.nz
+
+
+
+- Install all the packages in the tidyverse by running
+
+- install.packages("tidyverse").
+
+- Run library(tidyverse) to load the core tidyverse.
+
+```{r}
+library( tidyverse )
+```
+
+# READ DATA
+
+Read the data from the file (downloaded from SSB, public data):
+
+```{r}
+orig.table <- read_csv2( file = "PasientSomatSykeh.csv", skip = 2 )
+orig.table
+```
+
+#  REORDER TABLE 
+
+Create a "year" variable
+
+```{r}
+tab.reordered <- orig.table %>%
+	gather( key = "gruppe", value = "antall.pasienter", ends_with( "2012" ) )
+tab.reordered
+
+tab.reordered %>% select( region, kjonn, alder, gruppe, antall.pasienter )
+```
+
+ok, that's working - do the same with the other columns
+
+```{r}
+tab.new <- orig.table %>%
+	gather( key = "gruppe", value = "antall.pasienter", starts_with( "Pasienter" ) )
+tab.new
+```
+
+##  EXERCISE 1 
+
+Use 'select' to remove the 'region' variable
+
+```{r}
+tab.new <- tab.new %>% select( -region )
+```
+
+Now, we need to extract year
+
+```{r}
+tab.new2 <- tab.new %>% 
+	mutate( aar = word(gruppe, -1)) %>%
+	  mutate( gruppe = word(gruppe, 1, -2)) %>%
+	  mutate( aar = as.numeric(aar))
+tab.new2
+class( tab.new2$gruppe )
+unique( tab.new2$gruppe )
+```
+
+##  EXERCISE 2
+
+Do the same (check what class and unique values) with the 'aar' variable
+
+```{r}
+class( tab.new2$aar )
+unique( tab.new2$aar )
+```
+
+Now, we'll re-format the year
+
+```{r}
+tab.new2$aar <- as.numeric( tab.new2$aar )
+
+tab.new2
+```
+
+#  CALCULATE AND MANIPULATE DATA
+
+group by year
+
+```{r}
+tab.groupped <- tab.new2 %>% group_by( aar )
+tab.groupped
+```
+
+##  EXERCISE 3
+
+Group by "gruppe" additionally to "aar"
+
+```{r}
+tab.groupped <- tab.new2 %>% group_by( aar, gruppe )
+```
+
+How to use this grouping? Calculate sum of patients per year and group
+
+```{r}
+tab.sum <- tab.groupped %>% summarise( sum = sum( antall.pasienter ) )
+tab.sum
+```
+
+#  PLOT
+
+plotting total numbers for each year
+
+```{r}
+ggplot( tab.sum, aes( x = as.factor( aar ), y = sum ) ) +
+	geom_col()
+```
+
+plotting the same using lines
+
+```{r}
+ggplot( tab.sum, aes( x = as.factor( aar ), y = sum ) ) +
+	geom_line( aes( group = gruppe ) )
+```
+
+add color
+
+```{r}
+ggplot( tab.sum, aes( x = as.factor( aar ), y = sum ) ) +
+	geom_line( aes( group = gruppe, col = gruppe ) )
+```
+
+##  EXERCISE 4
+
+Exercise: plotting totals, using bars, fill color by "gruppe"
+
+```{r}
+ggplot( tab.sum, aes( x = as.factor( aar ), y = sum ) ) +
+	geom_col( aes( fill = gruppe ) )
+```
+
+Now, plotting totals, grouped, non-stacked
+
+```{r}
+ggplot( tab.sum, aes( x = as.factor( aar ), y = sum ) ) +
+	geom_col( aes( fill = gruppe ), position = position_dodge() )
+```
+
+splitting this - checking difference with regard to gender
+
+```{r}
+ggplot( tab.groupped, aes( x = as.factor( aar ), y = antall.pasienter ) ) +
+	geom_col( aes( fill = gruppe ), position = position_dodge() ) +
+	facet_wrap( facets = vars( kjonn ) ) +
+	theme( legend.position = "bottom" )
+```
+
+splitting again - with regard to age
+
+```{r}
+final.plot <- ggplot( tab.groupped, aes( x = as.factor( aar ), y = antall.pasienter ) ) +
+	geom_col( aes( fill = gruppe ), position = position_dodge() ) +
+	facet_grid( rows = vars( kjonn ), cols = vars( alder ) ) +
+	theme( legend.position = "bottom" )
+final.plot
+```
+
+##  EXERCISE 5
+Exercise: plot the same (final.plot) using lines
+
+```{r}
+final.plot.lines <- ggplot( tab.groupped, aes( x = as.factor( aar ), y = antall.pasienter ) ) +
+	geom_line( aes( col = gruppe, group = gruppe ) ) +
+	facet_grid( rows = vars( kjonn ), cols = vars( alder ) ) +
+	theme( legend.position = "bottom" )
+final.plot.lines
+```
+
+Now, adjusting the looks:
+
+- better axis titles and title
+
+```{r}
+final.plot <- final.plot +
+	xlab( "år" ) + ylab( "antall pasienter" ) +
+	labs( title = "Pasienter på sykehus", subtitle = "gruppert ved kjønn og alder" )
+final.plot
+```
+
+- vertical x axis labels
+
+```{r}
+final.plot <- final.plot + theme( axis.text.x = element_text( angle = 90 ) )
+final.plot
+```
+
+- two rows in legend
+
+```{r}
+final.plot <- final.plot + guides( fill = guide_legend( nrow = 2 ) )
+final.plot
+```
+
+
+Additional things:
++ anything else they want to change in the layout?
++ save the plot to a file
++ show them where to search for help
++ click on "compile"
