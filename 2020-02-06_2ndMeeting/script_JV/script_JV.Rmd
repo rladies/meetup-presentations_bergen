@@ -24,27 +24,24 @@ library(tidyverse)
 class: center, top
 
 
-#The tidyverse is fundamentally human-centered. 
+#The tidyverse is<br /> <br /> fundamentally human-centered.<br /> <br />
 
-.Large[It is not just a collection of packages — 
+.red[It is not just a collection of packages<br /> <br /> although it is that!<br /> <br />
 
-- it is also the community of people who use them; 
+It is also the community of people who use these packages;<br /> <br /> 
 
-- a diverse, inclusive, and welcoming community.]
+a diverse, inclusive, and welcoming community.]
 
 ---
+class: top, middle
 
 background-image: url(img/tidyverse-flow.png)
-background-position: 90% 60%
+background-position: contain
 background-size:500px 
 
+class: top, middle
 
 ---
-
-R for Data Science
-
-https://r4ds.had.co.nz
-
 
 
 - Install all the packages in the tidyverse by running
@@ -53,4 +50,13 @@ https://r4ds.had.co.nz
 
 - Run library(tidyverse) to load the core tidyverse.
 
+---
 
+class: top, middle
+
+#Resources:  
+R for Data Science
+
+https://r4ds.had.co.nz
+
+---
