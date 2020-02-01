@@ -1,49 +1,36 @@
 ---
-title: "Introduction to Tidyverse"
-author: "-Ladies Bergen - co-organziers Julia, Astrid, Jonelle"
-date: "`r Sys.Date()`"
-output: 
+output:
   xaringan::moon_reader:
-css: [default, fc, fc-fonts, "hygge"]
-    lib_dir: libs
     nature:
-      highlightStyle: github
-      highlightLines: true
+      titleSlideClass: ["left", "middle", "inverse"]
 ---
+class:inverse, center, middle
+background-image:url(img/hex_fabric.png)
+background-size: cover
 
-<!-- edit name1 and name2 in the YAML above -->
+#Introduction to Tidyverse
+<img src = "img/tidyverse-logo.png" width = "300px"/>
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(warning = FALSE, message = FALSE)
-library(tidyverse) # load tidyverse package
+##R-Ladies Bergen | Julia, Astrid, Jonelle | February 6, 2020
 
-
-```
-
+---
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
-
+library(tidyverse)
 ```
 
-background-image: url(img/tidyverse-logo.png)
-background-position: contain
-background-size:500px 
-
-class: middle, top
+class: center, top
 
 
-The tidyverse is fundamentally human centred. 
+#The tidyverse is fundamentally human-centered. 
 
-It is not just a collection of packages — 
+.Large[It is not just a collection of packages — 
 
-- it is also the community of people who use them. 
+- it is also the community of people who use them; 
 
-- diverse, inclusive, and welcoming community.
-
-
+- a diverse, inclusive, and welcoming community.]
 
 ---
 
@@ -66,7 +53,4 @@ https://r4ds.had.co.nz
 
 - Run library(tidyverse) to load the core tidyverse.
 
-```{r}
-library( tidyverse )
-```
 

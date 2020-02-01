@@ -1,0 +1,99 @@
+---
+title: "Introduction to Tidyverse"
+author: "R-Ladies Bergen - co-organziers Julia, Astrid, Jonelle"
+date: "`r Sys.Date()`"
+output: xaringan::moon_reader:
+css: [default, fc, fc-fonts, "hygge"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+
+---
+
+<!-- edit name1 and name2 in the YAML above -->
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(tidyverse) # load tidyverse package
+library(babynames) # load babynames package
+#library(leaflet) # uncomment to use if you install
+```
+
+```{r eval = FALSE}
+# optional package installs if you want to do more below
+install.packages("leaflet")
+```
+
+
+<!-- introduce yourself here -->
+
+Hello my name is `r rmarkdown::metadata$author`!
+
+Say something about what you do, what you use R Markdown for, your favorite R package, etc.
+
+<!-- include an image here, if you have a GitHub account use your profile pic! -->
+
+```{r photo, echo = FALSE}
+knitr::include_graphics("https://github.com/USERNAME.png") # update USERNAME here
+```
+
+
+
+<!-- we make the data here -->
+
+```{r filterdata}
+# getting the data
+namedata <- babynames %>%
+  filter(name == params$name1 | 
+           name == params$name2) %>% 
+  filter(sex == "F") 
+```
+
+<!-- get and see top years for each name -->
+
+```{r gettopyears}
+topyears <- namedata %>% 
+  group_by(name) %>% 
+  top_n(1, prop) 
+```
+
+
+```{r topyear-name1}
+topyears %>% 
+  filter(name == params$name1)
+```
+
+
+```{r topyear-name2}
+topyears %>% 
+  filter(name == params$name2)
+```
+
+
+<!-- plot name popularity over time -->
+
+
+```{r}
+ggplot(namedata, 
+  aes(x = year, 
+      y = prop,  
+      group = name, 
+      color = name)) + 
+  geom_line() 
+```
+
+
+<!-- where are you from? -->
+
+
+```{r eval = FALSE}
+# erase this chunk option if you want to include a map
+library(leaflet)
+leaflet() %>% addTiles() %>% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
+```
+
+
+
+
