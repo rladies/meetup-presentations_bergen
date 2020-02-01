@@ -33,24 +33,39 @@ It is also the community of people who use these packages;<br /> <br />
 a diverse, inclusive, and welcoming community.]
 
 ---
-class: top, middle
+class: top, center
 
 background-image: url(img/tidyverse-flow.png)
 background-position: contain
-background-size:500px 
+background-size:600px 
 
-class: top, middle
+#Tidyverse flow
 
 ---
+class: top, middle
 
-
-- Install all the packages in the tidyverse by running
+#Install all the packages in the tidyverse by running
 
 - install.packages("tidyverse").
 
 - Run library(tidyverse) to load the core tidyverse.
 
 ---
+
+class: top, middle
+
+dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:
+
+mutate() adds new variables that are functions of existing variables
+select() picks variables based on their names.
+filter() picks cases based on their values.
+summarise() reduces multiple values down to a single summary.
+arrange() changes the ordering of the rows.
+sample_n() and sample_frac() to take random samples.
+
+
+
+
 
 class: top, middle
 
