@@ -45,35 +45,89 @@ background-size:600px
 ---
 class: top, middle
 
-#Install all the packages in the tidyverse by running
+#Install core packages in the tidyverse &lt;br /&gt; &lt;br /&gt;
 
-- install.packages("tidyverse").
+##install.packages("tidyverse"). &lt;br /&gt; &lt;br /&gt;
 
-- Run library(tidyverse) to load the core tidyverse.
+##library("tidyverse") 
 
 ---
+background-image: url(img/tidyr.png), url(img/dplyr.png), url(img/ggplot2.png)
+background-position: 18%75%, 55%50%, 93%30%
+background-size:250px, 250px, 250px
 
+class:top, center 
+
+#Tidy, transform, visualize 
+
+
+---
 class: top, middle
 
-dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:
+#tidyr
 
-mutate() adds new variables that are functions of existing variables
-select() picks variables based on their names.
-filter() picks cases based on their values.
-summarise() reduces multiple values down to a single summary.
-arrange() changes the ordering of the rows.
-sample_n() and sample_frac() to take random samples.
+##In tidy data:
 
+.Large[Each variable forms a column.&lt;br /&gt; &lt;br /&gt;
 
+Each observation forms a row.&lt;br /&gt; &lt;br /&gt;
 
+Each type of observational unit forms a table.]
 
 
+---
 class: top, middle
 
-#Resources:  
-R for Data Science
+#Tibbles
 
-https://r4ds.had.co.nz
+##A tibble is a reinterpretation of data.frame
+- they don’t change variable names or types&lt;br /&gt; &lt;br /&gt;
+- they don’t do partial matching&lt;br /&gt; &lt;br /&gt;
+- they complain more (e.g. when a variable does not exist)&lt;br /&gt; &lt;br /&gt;
+- print() in consol eases use of large dataset&lt;br /&gt; &lt;br /&gt; 
+
+**This forces you to confront problems earlier.**
+
+---
+class: top, middle
+
+# dplyr
+
+A consistent set of verbs for the most common data manipulation challenges:
+
+* `select()` extracts variables by column names
+* `filter()` extracts cases
+* `mutate()` creates new variables in new column
+* `arrange()` reorders the cases by rows
+* `group_by()` make groupwise operations on cases
+* `summarise()` creates tables of mini summaries
+
+* Connect operations with *the pipe* `%&gt;%` 
+---
+# get an example in here ---  work on this? or add to script .rmd
+
+* Use `left_join()`, `right_join()`, `full_join()`, or `inner_join()` to join datasets
+
+* Use `semi_join()` or `anti_join()` to filter datasets against each other
+
+https://r4ds.had.co.nz/transform.html
+
+---
+# switch over to script?
+---
+background-image: url(img/RLadiesGlobal.jpg)
+background-position: 50%40%
+background-size:500px
+
+class: top, center
+
+#Resources
+
+&lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt;
+
+**R-Ladies Global, R-Ladies Norway, R-Ladies Bergen**
+
+**R for Data Science** https://r4ds.had.co.nz
 
 ---
     </textarea>

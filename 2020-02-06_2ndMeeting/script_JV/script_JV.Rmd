@@ -103,7 +103,7 @@ A consistent set of verbs for the most common data manipulation challenges:
 
 * Connect operations with *the pipe* `%>%` 
 ---
-# get an example in here 
+# get an example in here ---  work on this? or add to script .rmd
 
 * Use `left_join()`, `right_join()`, `full_join()`, or `inner_join()` to join datasets
 
@@ -111,18 +111,21 @@ A consistent set of verbs for the most common data manipulation challenges:
 
 https://r4ds.had.co.nz/transform.html
 
-
-
-
-
 ---
-#get some data in here
+# switch over to script?
 ---
-class: top, middel
+background-image: url(img/RLadiesGlobal.jpg)
+background-position: 50%40%
+background-size:500px
 
-#Resources:  
-#**R for Data Science**
+class: top, center
 
-https://r4ds.had.co.nz
+#Resources
+
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+
+**R-Ladies Global, R-Ladies Norway, R-Ladies Bergen**
+
+**R for Data Science** https://r4ds.had.co.nz
 
 ---
