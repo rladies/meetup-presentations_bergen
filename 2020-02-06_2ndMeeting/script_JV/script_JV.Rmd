@@ -44,34 +44,84 @@ background-size:600px
 ---
 class: top, middle
 
-#Install all the packages in the tidyverse
+#Install core packages in the tidyverse <br /> <br />
 
-```{r, echo = FALSE}
-install.packages("tidyverse").
+##install.packages("tidyverse"). <br /> <br />
 
-library("tidyverse") 
-```
+##library("tidyverse") 
+
 ---
+background-image: url(img/tidyr.png), url(img/dplyr.png), url(img/ggplot2.png)
+background-position: 18%75%, 55%50%, 93%30%
+background-size:250px, 250px, 250px
 
+class:top, center 
+
+#Tidy, transform, visualize 
+
+
+---
 class: top, middle
 
-dplyr is a grammar of data manipulation; a consistent set of verbs for the most common data manipulation challenges:
+#tidyr
 
-mutate() adds new variables that are functions of existing variables
-select() picks variables based on their names.
-filter() picks cases based on their values.
-summarise() reduces multiple values down to a single summary.
-arrange() changes the ordering of the rows.
-sample_n() and sample_frac() to take random samples.
+##In tidy data:
+
+.Large[Each variable forms a column.<br /> <br />
+
+Each observation forms a row.<br /> <br />
+
+Each type of observational unit forms a table.]
+
+
+---
+class: top, middle
+
+#Tibbles
+
+##A tibble is a reinterpretation of data.frame
+- they don’t change variable names or types<br /> <br />
+- they don’t do partial matching<br /> <br />
+- they complain more (e.g. when a variable does not exist)<br /> <br />
+- print() in consol eases use of large dataset<br /> <br /> 
+
+**This forces you to confront problems earlier.**
+
+---
+class: top, middle
+
+# dplyr
+
+A consistent set of verbs for the most common data manipulation challenges:
+
+* `select()` extracts variables by column names
+* `filter()` extracts cases
+* `mutate()` creates new variables in new column
+* `arrange()` reorders the cases by rows
+* `group_by()` make groupwise operations on cases
+* `summarise()` creates tables of mini summaries
+
+* Connect operations with *the pipe* `%>%` 
+---
+# get an example in here 
+
+* Use `left_join()`, `right_join()`, `full_join()`, or `inner_join()` to join datasets
+
+* Use `semi_join()` or `anti_join()` to filter datasets against each other
+
+https://r4ds.had.co.nz/transform.html
+
+
+
+
 
 ---
 #get some data in here
 ---
-
-class: top, middle
+class: top, middel
 
 #Resources:  
-R for Data Science
+#**R for Data Science**
 
 https://r4ds.had.co.nz
 
