@@ -129,3 +129,17 @@ class: top, center
 **R for Data Science** https://r4ds.had.co.nz
 
 ---
+class: top, center
+
+#Many resources available for the<br /> base R-curious!
+
+<br /> 
+
+##Try the two-part blog by Rebecca Barter
+
+<br />
+
+###http://www.rebeccabarter.com/blog/2019-08-05_base_r_to_tidyverse/
+
+###http://www.rebeccabarter.com/blog/2019-08-05_base_r_to_tidyverse_pt2/
+
