@@ -28,7 +28,7 @@ class: center, top
 
 .red[It is not just a collection of packages<br /> <br /> although it is that!<br /> <br />
 
-It is also the community of people who use these packages;<br /> <br /> 
+It is also a community of people who use these packages;<br /> <br /> 
 
 a diverse, inclusive, and welcoming community.]
 
@@ -129,6 +129,19 @@ class: top, center
 **R for Data Science** https://r4ds.had.co.nz
 
 ---
+background-image: url(img/viz.png), url(img/data-import.png), url(img/data-transformation.png), url(img/rmarkdown-2.0.png), url(img/factors.png)
+background-position: 10%90%, 30%75%, 50%60%, 60%40%, 90%10%
+background-size:300px, 300px, 300px, 300px, 300px
+
+class: top, left
+
+#Cheet sheets galore!
+https://rstudio.cloud/learn/cheat-sheets
+
+
+
+
+---
 class: top, center
 
 #Many resources available for the<br /> base R-curious!
@@ -143,3 +156,16 @@ class: top, center
 
 ###http://www.rebeccabarter.com/blog/2019-08-05_base_r_to_tidyverse_pt2/
 
+---
+background-image: url(img/Isabelle.png)
+background-position: 50%40%
+background-size:500px
+
+class: top, center
+
+
+#RStudio:conf
+
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
+
+http://ivalette.github.io/rstudioconf20.html
