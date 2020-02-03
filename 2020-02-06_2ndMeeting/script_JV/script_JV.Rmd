@@ -21,6 +21,15 @@ knitr::opts_chunk$set(fig.retina = 3, warning = FALSE, message = FALSE)
 library(tidyverse)
 ```
 
+class: top, center
+
+background-image: url(img/2020-conf-fb.jpg)
+background-position: contain
+background-size:700px 
+
+#R Studio Conference 2020
+
+---
 class: center, top
 
 
@@ -101,7 +110,7 @@ A consistent set of verbs for the most common data manipulation challenges:
 * `group_by()` make groupwise operations on cases
 * `summarise()` creates tables of mini summaries
 
-* Connect operations with *the pipe* `%>%` 
+* Connect operations with **the pipe** `%>%` 
 ---
 # get an example in here ---  work on this? or add to script .rmd
 
@@ -158,14 +167,17 @@ class: top, center
 
 ---
 background-image: url(img/Isabelle.png)
-background-position: 50%40%
-background-size:500px
+background-position: 50%50%
+background-size:600px
 
 class: top, center
 
 
 #RStudio:conf
 
-<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
 
 http://ivalette.github.io/rstudioconf20.html
+
+---
+
