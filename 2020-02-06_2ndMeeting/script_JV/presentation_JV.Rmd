@@ -179,5 +179,5 @@ class: top, center
 
 http://ivalette.github.io/rstudioconf20.html
 
----
+
 
