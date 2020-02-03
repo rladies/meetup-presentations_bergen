@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>script_JV.utf8</title>
+    <meta charset="utf-8" />
+    <link href="script_JV_files/remark-css/default.css" rel="stylesheet" />
+    <link href="script_JV_files/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class:inverse, center, middle
+background-image:url(img/hex_fabric.png)
+background-size: cover
+
+#Introduction to Tidyverse
+&lt;img src = "img/tidyverse-logo.png" width = "300px"/&gt;
+
+##R-Ladies Bergen | Julia, Astrid, Jonelle | February 6, 2020
+
+---
+
+
+
+class: top, center
+
+background-image: url(img/2020-conf-fb.jpg)
+background-position: contain
+background-size:700px 
+
+#R Studio Conference 2020
+
+---
+class: center, top
+
+
+#The tidyverse is&lt;br /&gt; &lt;br /&gt; fundamentally human-centered.&lt;br /&gt; &lt;br /&gt;
+
+.red[It is not just a collection of packages&lt;br /&gt; &lt;br /&gt; although it is that!&lt;br /&gt; &lt;br /&gt;
+
+It is also a community of people who use these packages;&lt;br /&gt; &lt;br /&gt; 
+
+a diverse, inclusive, and welcoming community.]
+
+---
+class: top, center
+
+background-image: url(img/tidyverse-flow.png)
+background-position: contain
+background-size:600px 
+
+#Tidyverse flow
+
+---
+class: top, middle
+
+#Install core packages in the tidyverse &lt;br /&gt; &lt;br /&gt;
+
+##install.packages("tidyverse"). &lt;br /&gt; &lt;br /&gt;
+
+##library("tidyverse") 
+
+---
+background-image: url(img/tidyr.png), url(img/dplyr.png), url(img/ggplot2.png)
+background-position: 18%75%, 55%50%, 93%30%
+background-size:250px, 250px, 250px
+
+class:top, center 
+
+#Tidy, transform, visualize 
+
+
+---
+class: top, middle
+
+#tidyr
+
+##In tidy data:
+
+.Large[Each variable forms a column.&lt;br /&gt; &lt;br /&gt;
+
+Each observation forms a row.&lt;br /&gt; &lt;br /&gt;
+
+Each type of observational unit forms a table.]
+
+
+---
+class: top, middle
+
+#Tibbles
+
+##A tibble is a reinterpretation of data.frame
+- they don’t change variable names or types&lt;br /&gt; &lt;br /&gt;
+- they don’t do partial matching&lt;br /&gt; &lt;br /&gt;
+- they complain more (e.g. when a variable does not exist)&lt;br /&gt; &lt;br /&gt;
+- print() in consol eases use of large dataset&lt;br /&gt; &lt;br /&gt; 
+
+**This forces you to confront problems earlier.**
+
+---
+class: top, middle
+
+# dplyr
+
+A consistent set of verbs for the most common data manipulation challenges:
+
+* `select()` extracts variables by column names
+* `filter()` extracts cases
+* `mutate()` creates new variables in new column
+* `arrange()` reorders the cases by rows
+* `group_by()` make groupwise operations on cases
+* `summarise()` creates tables of mini summaries
+
+* Connect operations with **the pipe** `%&gt;%` 
+---
+# get an example in here ---  work on this? or add to script .rmd
+
+* Use `left_join()`, `right_join()`, `full_join()`, or `inner_join()` to join datasets
+
+* Use `semi_join()` or `anti_join()` to filter datasets against each other
+
+https://r4ds.had.co.nz/transform.html
+
+---
+# switch over to script?
+---
+background-image: url(img/RLadiesGlobal.jpg)
+background-position: 50%40%
+background-size:500px
+
+class: top, center
+
+#Resources
+
+&lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt;
+
+**R-Ladies Global, R-Ladies Norway, R-Ladies Bergen**
+
+**R for Data Science** https://r4ds.had.co.nz
+
+---
+background-image: url(img/viz.png), url(img/data-import.png), url(img/data-transformation.png), url(img/rmarkdown-2.0.png), url(img/shiny.png), url(img/strings.png)
+background-position: 10%90%, 30%75%, 50%60%, 60%45%, 78%30%, 90%15%
+background-size:300px, 300px, 300px, 300px, 300px, 300px
+
+class: top, left
+
+#Cheet sheets galore!
+https://rstudio.cloud/learn/cheat-sheets
+
+
+
+
+---
+class: top, center
+
+#Many resources available for the&lt;br /&gt; base R-curious!
+
+&lt;br /&gt; 
+
+##Try the two-part blog by Rebecca Barter
+
+&lt;br /&gt;
+
+###http://www.rebeccabarter.com/blog/2019-08-05_base_r_to_tidyverse/
+
+###http://www.rebeccabarter.com/blog/2019-08-05_base_r_to_tidyverse_pt2/
+
+---
+background-image: url(img/Isabelle.png)
+background-position: 50%50%
+background-size:600px
+
+class: top, center
+
+
+#RStudio:conf
+
+&lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; 
+
+http://ivalette.github.io/rstudioconf20.html
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
