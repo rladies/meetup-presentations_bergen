@@ -3,15 +3,16 @@ title: "Working with Tidyverse"
 output: github_document
 ---
 
-#install.packages(c("babynames", "fivethirtyeight", "gapminder", "nycflights13", "rmarkdown", "skimr", "tidyverse"))
+#install.packages(c("tidyverse", "babynames", "fivethirtyeight", "gapminder", "nycflights13", "rmarkdown", "skimr"))
 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(babynames)
-library(nycflights13)
+library(fivethirtyeight)
 library(gapminder)
+library(nycflights13)
 library(skimr)
 ```
 
@@ -128,6 +129,16 @@ table2 %>%
 
 
 #Transforming data with dplyr
+
+Dplyr gives you three _general_ functions for manipulating data: `mutate()`, `summarise()`, and `group_by()`. These may be augmented these with functions from the packages below, which focus on specific types of data.
+
+Package   | Data Type
+--------- | --------
+forcats   | factors
+stringr   | strings
+hms       | times
+lubridate | dates and times
+
 
 ## Babynames
 
@@ -515,6 +526,271 @@ airports %>%
   semi_join(flights, by = c("faa" = "dest")) %>%
   distinct(faa)
 ```
+
+#Data types 
+
+What kind of object is the `marital` variable?  
+
+```{r}
+gss_cat
+```
+
+* Factors are R's way of storing categorical data.
+* They have a set of allowable values called **levels**.
+* Internally they are stored as integers.
+
+
+Using the data `gss_cat`, find the average hours of tv watched (`tvhours`) for each category of marital status (`marital`).
+
+```{r}
+gss_cat %>%
+  group_by(marital) %>% 
+  summarise(avg_tv = mean(tvhours))
+```
+
+Is this likely?
+
+## Your Turn 21
+
+Fix your summary of average hours of tv watched (`tvhours`) by marital status (`marital`), to drop missing values in `tvhours`, then create a plot to examine the results.
+
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  group_by(marital) %>% 
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(aes(avg_tvhours, marital))
+
+```
+
+## Your Turn 22
+
+Explore the average hours of tv watched by religion.
+
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  group_by(relig) %>%
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(mapping = aes(x = avg_tvhours, 
+      y = fct_reorder(relig, avg_tvhours)))
+```
+
+## Quiz 
+
+Why is this plot not very useful?
+
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  group_by(denom) %>%
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(mapping = aes(x = avg_tvhours,
+      y = fct_reorder(denom, avg_tvhours)))
+```
+
+There are too many categories, and the categories are poorly labelled.
+
+## Your Turn 23
+
+Edit the code to also relabel some other Baptist denominations:
+
+* "Baptist-dk which"    
+* "Other baptists"  
+
+```{r}
+gss_cat %>%
+  mutate(denom = fct_recode(denom,
+    "Baptist - Southern" = "Southern baptist",
+    "Baptist - Don't know" = "Baptist-dk which",
+    "Baptist - Other" = "Other baptists")
+  ) %>%
+  pull(denom) %>%
+  levels()
+```
+
+## Your Turn 24
+
+What does the function `detect_denom()` do?
+
+```{r}
+detect_denom <- function(x){
+  case_when(
+    str_detect(x, "[Bb]ap") ~ "Baptist", 
+    str_detect(x, "[Pp]res") ~ "Presbyterian",
+    str_detect(x, "[Ll]uth") ~ "Lutheran",
+    str_detect(x, "[Mm]eth") ~ "Methodist",
+    TRUE ~ x
+  )
+}
+
+gss_cat %>% pull(denom) %>% levels() %>% detect_denom()
+```
+
+It tries to detect a higher level grouping by looking for patterns in the denomination strings.
+
+This is ideal for combining with `fct_revel()`:
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  mutate(denom_higher = fct_relabel(denom, detect_denom) %>%
+      fct_reorder(tvhours, mean)) %>%
+  group_by(denom_higher, denom) %>%
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(mapping = aes(x = avg_tvhours,
+      y = denom_higher)) 
+```
+
+# Strings
+
+Predict what these might return:
+
+```{r}
+strings <- c("Apple", "Pineapple", "Orange")
+
+str_detect(strings, pattern = "pp")
+str_detect(strings, pattern =  "apple")
+str_detect(strings, pattern = "[Aa]pple")
+```
+
+#Finally getting to ggplot2 - Yea!
+
+## Bechdel test data
+
+We're going to start by playing with data collected by the website FiveThirtyEight on movies and [the Bechdel test](https://en.wikipedia.org/wiki/Bechdel_test). It is a measure of the representation of women in fiction. It asks whether a work features at least two women who talk to each other about something other than a man. 
+
+Preview the data. 
+
+```{r}
+bechdel
+```
+
+## Consider
+What relationship do you expect to see between movie budget (budget) and domestic gross(domgross)?
+
+## Your Turn 25
+
+Run the code in the chunk to make a graph. 
+
+```{r}
+ggplot(data = bechdel) +
+  geom_point(mapping = aes(x = budget, y = domgross))
+```
+
+## Your Turn 26
+
+Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph. Experiment.  
+
+```{r}
+ggplot(data = bechdel) +
+  geom_point(mapping = aes(x = budget, y = domgross, color=clean_test))
+
+ggplot(bechdel) + 
+  geom_point(mapping = aes(x = budget, y = domgross, size=clean_test))
+ggplot(bechdel) + 
+  geom_point(mapping = aes(x = budget, y = domgross, shape=clean_test))
+ggplot(bechdel) + 
+  geom_point(mapping = aes(x = budget, y = domgross, alpha=clean_test))
+
+```
+
+## Declaring the color outside of the aes mapping
+
+```{r}
+ggplot(bechdel) + 
+    geom_point(mapping = aes(x = budget, y = domgross), color="blue")
+```
+
+## Your Turn 27
+
+Replace this scatterplot with one that draws boxplots. 
+
+```{r}
+ggplot(data = bechdel) + geom_point(aes(x = clean_test, y = budget))
+
+ggplot(data = bechdel) + geom_boxplot(aes(x = clean_test, y = budget))
+```
+
+## Your Turn 28
+
+Make a histogram of the `budget` variable from `bechdel`.
+
+```{r}
+ggplot(bechdel) + 
+  geom_histogram(aes(x=budget))
+```
+
+## Your Turn 29
+Try to find a better binwidth for `budget`.
+
+```{r}
+ggplot(data = bechdel) +
+  geom_histogram(mapping = aes(x = budget), binwidth=10000000)
+```
+
+## Your Turn 30
+
+Make a density plot of `budget` colored by `clean_test`.
+
+```{r}
+ggplot(data = bechdel) +
+  geom_density(mapping = aes(x = budget))
+
+ggplot(data = bechdel) +
+  geom_density(mapping = aes(x = budget, color=clean_test))
+```
+
+
+## Your Turn 31
+
+Make a barchart of `clean_test` colored by `clean_test`.
+
+```{r}
+ggplot(data=bechdel) +
+  geom_bar(mapping = aes(x = clean_test, fill = clean_test))
+```
+
+
+## Your Turn 32
+
+Predict what this code will do. Then run it.
+
+```{r}
+ggplot(bechdel) + 
+  geom_point(aes(budget, domgross)) +
+  geom_smooth(aes(budget, domgross))
+```
+
+## global vs local
+
+```{r}
+ggplot(data = bechdel, mapping = aes(x = budget, y = domgross)) +
+  geom_point(mapping = aes(color = clean_test)) +
+  geom_smooth()
+```
+
+```{r}
+library(dplyr)
+ggplot(data = bechdel, mapping = aes(x = budget, y = domgross)) +
+  geom_point(mapping = aes(color = clean_test)) +
+  geom_smooth(data = filter(bechdel, clean_test == "ok"))
+```
+
+## Your Turn 33
+
+Save the last plot. 
+
+```{r}
+ggsave("my-plot.png")
+```
+
+
+
+
 
 # Take aways
 
