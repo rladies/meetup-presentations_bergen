@@ -666,9 +666,17 @@ str_detect(strings, pattern = "[Aa]pple")
 
 #Finally getting to ggplot2 - Yea!
 
-## Bechdel test data
+* Start with `ggplot()`
+* Supply a dataset and aesthetic mapping (with `aes()`)
+* Add on layers (like `geom_point()` or `geom_histogram()`)
+* Add on scales (like `scale_colour_brewer()`)
+* Add on faceting specifications (like `facet_wrap()`)
+* Add on coordinate systems (like `coord_flip`)
 
-We're going to start by playing with data collected by the website FiveThirtyEight on movies and [the Bechdel test](https://en.wikipedia.org/wiki/Bechdel_test). It is a measure of the representation of women in fiction. It asks whether a work features at least two women who talk to each other about something other than a man. 
+
+## Start with Bechdel test data
+
+This data on movies and [the Bechdel test](https://en.wikipedia.org/wiki/Bechdel_test) was collected by the website FiveThirtyEight. The Bechdel test is a measure of the representation of women in fiction. It asks whether a work features at least two women who talk to each other about something other than a man. 
 
 Preview the data. 
 
@@ -793,6 +801,8 @@ Save the last plot.
 
 ```{r}
 ggsave("my-plot.png")
+ggsave("my-plot.pdf", width = 6, height = 6)
+
 ```
 
 
