@@ -61,6 +61,15 @@ class: top, middle
 ##library("tidyverse") 
 
 ---
+class: top, center
+
+background-image: url(img/install_Tidyverse.png)
+background-position: 50%70%
+background-size:700px 
+
+#Only core packages are available when you call library("tidyverse")
+
+---
 background-image: url(img/tidyr.png), url(img/dplyr.png), url(img/ggplot2.png)
 background-position: 18%75%, 55%50%, 93%30%
 background-size:250px, 250px, 250px
@@ -71,18 +80,15 @@ class:top, center
 
 
 ---
-class: top, middle
+background-image: url(img/tidydata.png)
+background-position: 30%60%
+background-size:700px 
 
+class: top, center
+&lt;br /&gt; 
 #tidyr
 
 ##In tidy data:
-
-.Large[Each variable forms a column.&lt;br /&gt; &lt;br /&gt;
-
-Each observation forms a row.&lt;br /&gt; &lt;br /&gt;
-
-Each type of observational unit forms a table.]
-
 
 ---
 class: top, middle
@@ -102,7 +108,7 @@ class: top, middle
 
 # dplyr
 
-A consistent set of verbs for the most common data manipulation challenges:
+##A consistent set of verbs for the most common data manipulation challenges:
 
 * `select()` extracts variables by column names
 * `filter()` extracts cases
@@ -111,18 +117,19 @@ A consistent set of verbs for the most common data manipulation challenges:
 * `group_by()` make groupwise operations on cases
 * `summarise()` creates tables of mini summaries
 
-* Connect operations with **the pipe** `%&gt;%` 
----
-# get an example in here ---  work on this? or add to script .rmd
+&lt;br /&gt;
+**Including lots of exciting filtering and joining operations** 
 
-* Use `left_join()`, `right_join()`, `full_join()`, or `inner_join()` to join datasets
-
-* Use `semi_join()` or `anti_join()` to filter datasets against each other
-
-https://r4ds.had.co.nz/transform.html
+###Connect them with **the pipe** `%&gt;%`
 
 ---
-# switch over to script?
+background-image: url(img/recipe.png), url(img/example.png)
+background-position: 80%30%, 10%80%
+background-size:450px, 500px
+
+# ggplot2 for data visualization 
+
+
 ---
 background-image: url(img/RLadiesGlobal.jpg)
 background-position: 50%40%
@@ -147,8 +154,6 @@ class: top, left
 
 #Cheet sheets galore!
 https://rstudio.cloud/learn/cheat-sheets
-
-
 
 
 ---
@@ -179,11 +184,9 @@ class: top, center
 &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; &lt;br /&gt; 
 
 http://ivalette.github.io/rstudioconf20.html
-
----
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js"></script>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create();
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
