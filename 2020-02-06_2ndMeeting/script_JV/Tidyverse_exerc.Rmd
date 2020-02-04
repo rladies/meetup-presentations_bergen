@@ -93,6 +93,13 @@ On a sheet of paper, draw how the cases data set would look if it had the same v
 -----------------------------
 
 
+##Tidy verbs include: 
+`pivot_longer()`  to make data longer 
+`pivot_wider()`   to make data wider
+`separate()`      to split a column
+`separate_rows()` to separate rows
+`unite()`         to unite columns
+
 ## Your Turn 2
 
 Use `pivot_longer()` to reorganize `table4a` into three columns: **country**, **year**, and **cases**.
@@ -787,8 +794,6 @@ Save the last plot.
 ```{r}
 ggsave("my-plot.png")
 ```
-
-
 
 
 
