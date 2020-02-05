@@ -4,7 +4,7 @@ Working with Tidyverse
 install.packages(c(“tidyverse”, “babynames”, “fivethirtyeight”,
 “gapminder”, “nycflights13”, “rmarkdown”, “skimr”))
 
-## Tidy data
+# Tidy data
 
 Data comes in many formats but R prefers just one: *tidy data*.
 
@@ -166,7 +166,7 @@ table2 %>%
     ## 5 China        1999 212258 1272915272
     ## 6 China        2000 213766 1280428583
 
-## Transforming data with dplyr
+# Transforming data with dplyr
 
 Dplyr gives you three *general* functions for manipulating data:
 `mutate()`, `summarise()`, and `group_by()`. These may be augmented
@@ -180,7 +180,7 @@ types of data.
 | hms       | times           |
 | lubridate | dates and times |
 
-## Babynames
+# Babynames
 
 ``` r
 babynames
@@ -304,7 +304,7 @@ lets you have several skimming functions in a single R session, but it
 also means that you need to assign the return of skim\_with() before you
 can use it.
 
-## Mastering dplyr verbs
+# Mastering dplyr verbs
 
 ## Select
 
@@ -779,7 +779,7 @@ babynames %>%
     ##   <int> <dbl>
     ## 1  1964  2011
 
-## Toy dataset for transforming data with dplyr
+# Toy dataset for transforming data with dplyr
 
 ``` r
 pollution <- tribble(
@@ -965,7 +965,7 @@ babynames %>%
     ## 10 Thomas    M      11  
     ## # … with 107,963 more rows
 
-## Joining data
+# Joining data
 
 ## Practicing with toy dataset
 
@@ -1293,7 +1293,288 @@ airports %>%
     ## 10 BHM  
     ## # … with 91 more rows
 
-## Data types
+# Strings
+
+Predict what these might return:
+
+``` r
+strings <- c("Apple", "Pineapple", "Orange")
+
+str_detect(strings, pattern = "pp")
+```
+
+    ## [1]  TRUE  TRUE FALSE
+
+``` r
+str_detect(strings, pattern =  "apple")
+```
+
+    ## [1] FALSE  TRUE FALSE
+
+``` r
+str_detect(strings, pattern = "[Aa]pple")
+```
+
+    ## [1]  TRUE  TRUE FALSE
+
+# Finally getting to ggplot2 - Yea\!
+
+  - Start with `ggplot()`
+  - Supply a dataset and aesthetic mapping (with `aes()`)
+  - Add on layers (like `geom_point()` or `geom_histogram()`)
+  - Add on scales (like `scale_colour_brewer()`)
+  - Add on faceting specifications (like `facet_wrap()`)
+  - Add on coordinate systems (like `coord_flip`)
+
+## Start with Bechdel test data
+
+This data on movies and [the Bechdel
+test](https://en.wikipedia.org/wiki/Bechdel_test) was collected by the
+website FiveThirtyEight. The Bechdel test is a measure of the
+representation of women in fiction. It asks whether a work features at
+least two women who talk to each other about something other than a man.
+
+Preview the data.
+
+``` r
+bechdel
+```
+
+    ## # A tibble: 1,794 x 15
+    ##     year imdb  title test  clean_test binary budget domgross intgross code 
+    ##    <int> <chr> <chr> <chr> <ord>      <chr>   <int>    <dbl>    <dbl> <chr>
+    ##  1  2013 tt17… 21 &… nota… notalk     FAIL   1.30e7 25682380   4.22e7 2013…
+    ##  2  2012 tt13… Dred… ok-d… ok         PASS   4.50e7 13414714   4.09e7 2012…
+    ##  3  2013 tt20… 12 Y… nota… notalk     FAIL   2.00e7 53107035   1.59e8 2013…
+    ##  4  2013 tt12… 2 Gu… nota… notalk     FAIL   6.10e7 75612460   1.32e8 2013…
+    ##  5  2013 tt04… 42    men   men        FAIL   4.00e7 95020213   9.50e7 2013…
+    ##  6  2013 tt13… 47 R… men   men        FAIL   2.25e8 38362475   1.46e8 2013…
+    ##  7  2013 tt16… A Go… nota… notalk     FAIL   9.20e7 67349198   3.04e8 2013…
+    ##  8  2013 tt21… Abou… ok-d… ok         PASS   1.20e7 15323921   8.73e7 2013…
+    ##  9  2013 tt18… Admi… ok    ok         PASS   1.30e7 18007317   1.80e7 2013…
+    ## 10  2013 tt18… Afte… nota… notalk     FAIL   1.30e8 60522097   2.44e8 2013…
+    ## # … with 1,784 more rows, and 5 more variables: budget_2013 <int>,
+    ## #   domgross_2013 <dbl>, intgross_2013 <dbl>, period_code <int>,
+    ## #   decade_code <int>
+
+## Consider
+
+What relationship do you expect to see between movie budget (budget) and
+domestic gross(domgross)?
+
+## Your Turn 25
+
+Run the code in the chunk to make a graph.
+
+``` r
+ggplot(data = bechdel) +
+  geom_point(mapping = aes(x = budget, y = domgross))
+```
+
+    ## Warning: Removed 17 rows containing missing values (geom_point).
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-45-1.png)<!-- -->
+
+## Your Turn 26
+
+Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph.
+Experiment.
+
+``` r
+ggplot(data = bechdel) +
+  geom_point(mapping = aes(x = budget, y = domgross, color=clean_test))
+```
+
+    ## Warning: Removed 17 rows containing missing values (geom_point).
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-46-1.png)<!-- -->
+
+``` r
+ggplot(bechdel) + 
+  geom_point(mapping = aes(x = budget, y = domgross, size=clean_test))
+```
+
+    ## Warning: Removed 17 rows containing missing values (geom_point).
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-46-2.png)<!-- -->
+
+``` r
+ggplot(bechdel) + 
+  geom_point(mapping = aes(x = budget, y = domgross, shape=clean_test))
+```
+
+    ## Warning: Using shapes for an ordinal variable is not advised
+    
+    ## Warning: Removed 17 rows containing missing values (geom_point).
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-46-3.png)<!-- -->
+
+``` r
+ggplot(bechdel) + 
+  geom_point(mapping = aes(x = budget, y = domgross, alpha=clean_test))
+```
+
+    ## Warning: Removed 17 rows containing missing values (geom_point).
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-46-4.png)<!-- -->
+
+## Declaring the color outside of the aes mapping
+
+``` r
+ggplot(bechdel) + 
+    geom_point(mapping = aes(x = budget, y = domgross), color="blue")
+```
+
+    ## Warning: Removed 17 rows containing missing values (geom_point).
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-47-1.png)<!-- -->
+
+## Your Turn 27
+
+Replace this scatterplot with one that draws boxplots.
+
+``` r
+ggplot(data = bechdel) + geom_point(aes(x = clean_test, y = budget))
+```
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-48-1.png)<!-- -->
+
+``` r
+ggplot(data = bechdel) + geom_boxplot(aes(x = clean_test, y = budget))
+```
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-48-2.png)<!-- -->
+
+## Your Turn 28
+
+Make a histogram of the `budget` variable from `bechdel`.
+
+``` r
+ggplot(bechdel) + 
+  geom_histogram(aes(x=budget))
+```
+
+    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-49-1.png)<!-- -->
+
+## Your Turn 29
+
+Try to find a better binwidth for `budget`.
+
+``` r
+ggplot(data = bechdel) +
+  geom_histogram(mapping = aes(x = budget), binwidth=10000000)
+```
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-50-1.png)<!-- -->
+
+## Your Turn 30
+
+Make a density plot of `budget` colored by `clean_test`.
+
+``` r
+ggplot(data = bechdel) +
+  geom_density(mapping = aes(x = budget))
+```
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-51-1.png)<!-- -->
+
+``` r
+ggplot(data = bechdel) +
+  geom_density(mapping = aes(x = budget, color=clean_test))
+```
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-51-2.png)<!-- -->
+
+## Your Turn 31
+
+Make a barchart of `clean_test` colored by `clean_test`.
+
+``` r
+ggplot(data=bechdel) +
+  geom_bar(mapping = aes(x = clean_test, fill = clean_test))
+```
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-52-1.png)<!-- -->
+
+## Your Turn 32
+
+Predict what this code will do. Then run it.
+
+``` r
+ggplot(bechdel) + 
+  geom_point(aes(budget, domgross)) +
+  geom_smooth(aes(budget, domgross))
+```
+
+    ## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+
+    ## Warning: Removed 17 rows containing non-finite values (stat_smooth).
+
+    ## Warning: Removed 17 rows containing missing values (geom_point).
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-53-1.png)<!-- -->
+
+## global vs local
+
+``` r
+ggplot(data = bechdel, mapping = aes(x = budget, y = domgross)) +
+  geom_point(mapping = aes(color = clean_test)) +
+  geom_smooth()
+```
+
+    ## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+
+    ## Warning: Removed 17 rows containing non-finite values (stat_smooth).
+
+    ## Warning: Removed 17 rows containing missing values (geom_point).
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-54-1.png)<!-- -->
+
+``` r
+library(dplyr)
+ggplot(data = bechdel, mapping = aes(x = budget, y = domgross)) +
+  geom_point(mapping = aes(color = clean_test)) +
+  geom_smooth(data = filter(bechdel, clean_test == "ok"))
+```
+
+    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+
+    ## Warning: Removed 9 rows containing non-finite values (stat_smooth).
+
+    ## Warning: Removed 17 rows containing missing values (geom_point).
+
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-55-1.png)<!-- -->
+
+## Your Turn 33
+
+Save the last
+    plot.
+
+``` r
+ggsave("my-plot.png")
+```
+
+    ## Saving 7 x 5 in image
+
+    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+
+    ## Warning: Removed 9 rows containing non-finite values (stat_smooth).
+
+    ## Warning: Removed 17 rows containing missing values (geom_point).
+
+``` r
+ggsave("my-plot.pdf", width = 6, height = 6)
+```
+
+    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+
+    ## Warning: Removed 9 rows containing non-finite values (stat_smooth).
+    
+    ## Warning: Removed 17 rows containing missing values (geom_point).
+
+# Data types
 
 What kind of object is the `marital` variable?
 
@@ -1356,7 +1637,7 @@ gss_cat %>%
     geom_point(aes(avg_tvhours, marital))
 ```
 
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-45-1.png)<!-- -->
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-59-1.png)<!-- -->
 
 ## Your Turn 22
 
@@ -1372,9 +1653,9 @@ gss_cat %>%
       y = fct_reorder(relig, avg_tvhours)))
 ```
 
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-46-1.png)<!-- -->
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-60-1.png)<!-- -->
 
-## Quiz
+# Quiz
 
 Why is this plot not very useful?
 
@@ -1388,7 +1669,7 @@ gss_cat %>%
       y = fct_reorder(denom, avg_tvhours)))
 ```
 
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-47-1.png)<!-- -->
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-61-1.png)<!-- -->
 
 There are too many categories, and the categories are poorly labelled.
 
@@ -1467,288 +1748,7 @@ gss_cat %>%
       y = denom_higher)) 
 ```
 
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-50-1.png)<!-- -->
-
-# Strings
-
-Predict what these might return:
-
-``` r
-strings <- c("Apple", "Pineapple", "Orange")
-
-str_detect(strings, pattern = "pp")
-```
-
-    ## [1]  TRUE  TRUE FALSE
-
-``` r
-str_detect(strings, pattern =  "apple")
-```
-
-    ## [1] FALSE  TRUE FALSE
-
-``` r
-str_detect(strings, pattern = "[Aa]pple")
-```
-
-    ## [1]  TRUE  TRUE FALSE
-
-## Finally getting to ggplot2 - Yea\!
-
-  - Start with `ggplot()`
-  - Supply a dataset and aesthetic mapping (with `aes()`)
-  - Add on layers (like `geom_point()` or `geom_histogram()`)
-  - Add on scales (like `scale_colour_brewer()`)
-  - Add on faceting specifications (like `facet_wrap()`)
-  - Add on coordinate systems (like `coord_flip`)
-
-## Start with Bechdel test data
-
-This data on movies and [the Bechdel
-test](https://en.wikipedia.org/wiki/Bechdel_test) was collected by the
-website FiveThirtyEight. The Bechdel test is a measure of the
-representation of women in fiction. It asks whether a work features at
-least two women who talk to each other about something other than a man.
-
-Preview the data.
-
-``` r
-bechdel
-```
-
-    ## # A tibble: 1,794 x 15
-    ##     year imdb  title test  clean_test binary budget domgross intgross code 
-    ##    <int> <chr> <chr> <chr> <ord>      <chr>   <int>    <dbl>    <dbl> <chr>
-    ##  1  2013 tt17… 21 &… nota… notalk     FAIL   1.30e7 25682380   4.22e7 2013…
-    ##  2  2012 tt13… Dred… ok-d… ok         PASS   4.50e7 13414714   4.09e7 2012…
-    ##  3  2013 tt20… 12 Y… nota… notalk     FAIL   2.00e7 53107035   1.59e8 2013…
-    ##  4  2013 tt12… 2 Gu… nota… notalk     FAIL   6.10e7 75612460   1.32e8 2013…
-    ##  5  2013 tt04… 42    men   men        FAIL   4.00e7 95020213   9.50e7 2013…
-    ##  6  2013 tt13… 47 R… men   men        FAIL   2.25e8 38362475   1.46e8 2013…
-    ##  7  2013 tt16… A Go… nota… notalk     FAIL   9.20e7 67349198   3.04e8 2013…
-    ##  8  2013 tt21… Abou… ok-d… ok         PASS   1.20e7 15323921   8.73e7 2013…
-    ##  9  2013 tt18… Admi… ok    ok         PASS   1.30e7 18007317   1.80e7 2013…
-    ## 10  2013 tt18… Afte… nota… notalk     FAIL   1.30e8 60522097   2.44e8 2013…
-    ## # … with 1,784 more rows, and 5 more variables: budget_2013 <int>,
-    ## #   domgross_2013 <dbl>, intgross_2013 <dbl>, period_code <int>,
-    ## #   decade_code <int>
-
-## Consider
-
-What relationship do you expect to see between movie budget (budget) and
-domestic gross(domgross)?
-
-## Your Turn 25
-
-Run the code in the chunk to make a graph.
-
-``` r
-ggplot(data = bechdel) +
-  geom_point(mapping = aes(x = budget, y = domgross))
-```
-
-    ## Warning: Removed 17 rows containing missing values (geom_point).
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-53-1.png)<!-- -->
-
-## Your Turn 26
-
-Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph.
-Experiment.
-
-``` r
-ggplot(data = bechdel) +
-  geom_point(mapping = aes(x = budget, y = domgross, color=clean_test))
-```
-
-    ## Warning: Removed 17 rows containing missing values (geom_point).
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-54-1.png)<!-- -->
-
-``` r
-ggplot(bechdel) + 
-  geom_point(mapping = aes(x = budget, y = domgross, size=clean_test))
-```
-
-    ## Warning: Removed 17 rows containing missing values (geom_point).
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-54-2.png)<!-- -->
-
-``` r
-ggplot(bechdel) + 
-  geom_point(mapping = aes(x = budget, y = domgross, shape=clean_test))
-```
-
-    ## Warning: Using shapes for an ordinal variable is not advised
-    
-    ## Warning: Removed 17 rows containing missing values (geom_point).
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-54-3.png)<!-- -->
-
-``` r
-ggplot(bechdel) + 
-  geom_point(mapping = aes(x = budget, y = domgross, alpha=clean_test))
-```
-
-    ## Warning: Removed 17 rows containing missing values (geom_point).
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-54-4.png)<!-- -->
-
-## Declaring the color outside of the aes mapping
-
-``` r
-ggplot(bechdel) + 
-    geom_point(mapping = aes(x = budget, y = domgross), color="blue")
-```
-
-    ## Warning: Removed 17 rows containing missing values (geom_point).
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-55-1.png)<!-- -->
-
-## Your Turn 27
-
-Replace this scatterplot with one that draws boxplots.
-
-``` r
-ggplot(data = bechdel) + geom_point(aes(x = clean_test, y = budget))
-```
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-56-1.png)<!-- -->
-
-``` r
-ggplot(data = bechdel) + geom_boxplot(aes(x = clean_test, y = budget))
-```
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-56-2.png)<!-- -->
-
-## Your Turn 28
-
-Make a histogram of the `budget` variable from `bechdel`.
-
-``` r
-ggplot(bechdel) + 
-  geom_histogram(aes(x=budget))
-```
-
-    ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-57-1.png)<!-- -->
-
-## Your Turn 29
-
-Try to find a better binwidth for `budget`.
-
-``` r
-ggplot(data = bechdel) +
-  geom_histogram(mapping = aes(x = budget), binwidth=10000000)
-```
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-58-1.png)<!-- -->
-
-## Your Turn 30
-
-Make a density plot of `budget` colored by `clean_test`.
-
-``` r
-ggplot(data = bechdel) +
-  geom_density(mapping = aes(x = budget))
-```
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-59-1.png)<!-- -->
-
-``` r
-ggplot(data = bechdel) +
-  geom_density(mapping = aes(x = budget, color=clean_test))
-```
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-59-2.png)<!-- -->
-
-## Your Turn 31
-
-Make a barchart of `clean_test` colored by `clean_test`.
-
-``` r
-ggplot(data=bechdel) +
-  geom_bar(mapping = aes(x = clean_test, fill = clean_test))
-```
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-60-1.png)<!-- -->
-
-## Your Turn 32
-
-Predict what this code will do. Then run it.
-
-``` r
-ggplot(bechdel) + 
-  geom_point(aes(budget, domgross)) +
-  geom_smooth(aes(budget, domgross))
-```
-
-    ## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
-
-    ## Warning: Removed 17 rows containing non-finite values (stat_smooth).
-
-    ## Warning: Removed 17 rows containing missing values (geom_point).
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-61-1.png)<!-- -->
-
-## global vs local
-
-``` r
-ggplot(data = bechdel, mapping = aes(x = budget, y = domgross)) +
-  geom_point(mapping = aes(color = clean_test)) +
-  geom_smooth()
-```
-
-    ## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
-
-    ## Warning: Removed 17 rows containing non-finite values (stat_smooth).
-
-    ## Warning: Removed 17 rows containing missing values (geom_point).
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-62-1.png)<!-- -->
-
-``` r
-library(dplyr)
-ggplot(data = bechdel, mapping = aes(x = budget, y = domgross)) +
-  geom_point(mapping = aes(color = clean_test)) +
-  geom_smooth(data = filter(bechdel, clean_test == "ok"))
-```
-
-    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
-
-    ## Warning: Removed 9 rows containing non-finite values (stat_smooth).
-
-    ## Warning: Removed 17 rows containing missing values (geom_point).
-
-![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-63-1.png)<!-- -->
-
-## Your Turn 33
-
-Save the last
-    plot.
-
-``` r
-ggsave("my-plot.png")
-```
-
-    ## Saving 7 x 5 in image
-
-    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
-
-    ## Warning: Removed 9 rows containing non-finite values (stat_smooth).
-
-    ## Warning: Removed 17 rows containing missing values (geom_point).
-
-``` r
-ggsave("my-plot.pdf", width = 6, height = 6)
-```
-
-    ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
-
-    ## Warning: Removed 9 rows containing non-finite values (stat_smooth).
-    
-    ## Warning: Removed 17 rows containing missing values (geom_point).
+![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-64-1.png)<!-- -->
 
 # Take aways
 

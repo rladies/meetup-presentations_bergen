@@ -16,7 +16,7 @@ library(nycflights13)
 library(skimr)
 ```
 
-## Tidy data
+# Tidy data
 
 Data comes in many formats but R prefers just one: _tidy data_.
 
@@ -134,7 +134,7 @@ table2 %>%
 ```
 
 
-## Transforming data with dplyr
+# Transforming data with dplyr
 
 Dplyr gives you three _general_ functions for manipulating data: `mutate()`, `summarise()`, and `group_by()`. These may be augmented these with functions from the packages below, which focus on specific types of data.
 
@@ -146,7 +146,7 @@ hms       | times
 lubridate | dates and times
 
 
-## Babynames
+# Babynames
 
 ```{r}
 babynames
@@ -166,7 +166,7 @@ Run the skim_with() command, and then try skimming `babynames` again to see how 
 
 skim_with() is a closure: a function that returns a new function. This lets you have several skimming functions in a single R session, but it also means that you need to assign the return of skim_with() before you can use it.
 
-## Mastering dplyr verbs
+# Mastering dplyr verbs
 
 ## Select
 
@@ -325,7 +325,7 @@ babynames %>%
 ```
 
 
-## Toy dataset for transforming data with dplyr
+# Toy dataset for transforming data with dplyr
 
 ```{r}
 
@@ -416,7 +416,7 @@ babynames %>%
   arrange(score)
 ```
 
-## Joining data
+# Joining data
 
 ## Practicing with toy dataset
 
@@ -532,123 +532,6 @@ airports %>%
   distinct(faa)
 ```
 
-## Data types 
-
-What kind of object is the `marital` variable?  
-
-```{r}
-gss_cat
-```
-
-* Factors are R's way of storing categorical data.
-* They have a set of allowable values called **levels**.
-* Internally they are stored as integers.
-
-
-Using the data `gss_cat`, find the average hours of tv watched (`tvhours`) for each category of marital status (`marital`).
-
-```{r}
-gss_cat %>%
-  group_by(marital) %>% 
-  summarise(avg_tv = mean(tvhours))
-```
-
-Is this likely?
-
-## Your Turn 21
-
-Fix your summary of average hours of tv watched (`tvhours`) by marital status (`marital`), to drop missing values in `tvhours`, then create a plot to examine the results.
-
-```{r}
-gss_cat %>%
-  drop_na(tvhours) %>%
-  group_by(marital) %>% 
-  summarise(avg_tvhours = mean(tvhours)) %>%
-  ggplot() +
-    geom_point(aes(avg_tvhours, marital))
-
-```
-
-## Your Turn 22
-
-Explore the average hours of tv watched by religion.
-
-```{r}
-gss_cat %>%
-  drop_na(tvhours) %>%
-  group_by(relig) %>%
-  summarise(avg_tvhours = mean(tvhours)) %>%
-  ggplot() +
-    geom_point(mapping = aes(x = avg_tvhours, 
-      y = fct_reorder(relig, avg_tvhours)))
-```
-
-## Quiz 
-
-Why is this plot not very useful?
-
-```{r}
-gss_cat %>%
-  drop_na(tvhours) %>%
-  group_by(denom) %>%
-  summarise(avg_tvhours = mean(tvhours)) %>%
-  ggplot() +
-    geom_point(mapping = aes(x = avg_tvhours,
-      y = fct_reorder(denom, avg_tvhours)))
-```
-
-There are too many categories, and the categories are poorly labelled.
-
-## Your Turn 23
-
-Edit the code to also relabel some other Baptist denominations:
-
-* "Baptist-dk which"    
-* "Other baptists"  
-
-```{r}
-gss_cat %>%
-  mutate(denom = fct_recode(denom,
-    "Baptist - Southern" = "Southern baptist",
-    "Baptist - Don't know" = "Baptist-dk which",
-    "Baptist - Other" = "Other baptists")
-  ) %>%
-  pull(denom) %>%
-  levels()
-```
-
-## Your Turn 24
-
-What does the function `detect_denom()` do?
-
-```{r}
-detect_denom <- function(x){
-  case_when(
-    str_detect(x, "[Bb]ap") ~ "Baptist", 
-    str_detect(x, "[Pp]res") ~ "Presbyterian",
-    str_detect(x, "[Ll]uth") ~ "Lutheran",
-    str_detect(x, "[Mm]eth") ~ "Methodist",
-    TRUE ~ x
-  )
-}
-
-gss_cat %>% pull(denom) %>% levels() %>% detect_denom()
-```
-
-It tries to detect a higher level grouping by looking for patterns in the denomination strings.
-
-This is ideal for combining with `fct_revel()`:
-```{r}
-gss_cat %>%
-  drop_na(tvhours) %>%
-  mutate(denom_higher = fct_relabel(denom, detect_denom) %>%
-      fct_reorder(tvhours, mean)) %>%
-  group_by(denom_higher, denom) %>%
-  summarise(avg_tvhours = mean(tvhours)) %>%
-  ggplot() +
-    geom_point(mapping = aes(x = avg_tvhours,
-      y = denom_higher)) 
-```
 
 # Strings
 
@@ -662,7 +545,8 @@ str_detect(strings, pattern =  "apple")
 str_detect(strings, pattern = "[Aa]pple")
 ```
 
-## Finally getting to ggplot2 - Yea!
+
+# Finally getting to ggplot2 - Yea!
 
 * Start with `ggplot()`
 * Supply a dataset and aesthetic mapping (with `aes()`)
@@ -804,6 +688,123 @@ ggsave("my-plot.pdf", width = 6, height = 6)
 ```
 
 
+# Data types 
+
+What kind of object is the `marital` variable?  
+
+```{r}
+gss_cat
+```
+
+* Factors are R's way of storing categorical data.
+* They have a set of allowable values called **levels**.
+* Internally they are stored as integers.
+
+
+Using the data `gss_cat`, find the average hours of tv watched (`tvhours`) for each category of marital status (`marital`).
+
+```{r}
+gss_cat %>%
+  group_by(marital) %>% 
+  summarise(avg_tv = mean(tvhours))
+```
+
+Is this likely?
+
+## Your Turn 21
+
+Fix your summary of average hours of tv watched (`tvhours`) by marital status (`marital`), to drop missing values in `tvhours`, then create a plot to examine the results.
+
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  group_by(marital) %>% 
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(aes(avg_tvhours, marital))
+
+```
+
+## Your Turn 22
+
+Explore the average hours of tv watched by religion.
+
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  group_by(relig) %>%
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(mapping = aes(x = avg_tvhours, 
+      y = fct_reorder(relig, avg_tvhours)))
+```
+
+# Quiz 
+
+Why is this plot not very useful?
+
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  group_by(denom) %>%
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(mapping = aes(x = avg_tvhours,
+      y = fct_reorder(denom, avg_tvhours)))
+```
+
+There are too many categories, and the categories are poorly labelled.
+
+## Your Turn 23
+
+Edit the code to also relabel some other Baptist denominations:
+
+* "Baptist-dk which"    
+* "Other baptists"  
+
+```{r}
+gss_cat %>%
+  mutate(denom = fct_recode(denom,
+    "Baptist - Southern" = "Southern baptist",
+    "Baptist - Don't know" = "Baptist-dk which",
+    "Baptist - Other" = "Other baptists")
+  ) %>%
+  pull(denom) %>%
+  levels()
+```
+
+## Your Turn 24
+
+What does the function `detect_denom()` do?
+
+```{r}
+detect_denom <- function(x){
+  case_when(
+    str_detect(x, "[Bb]ap") ~ "Baptist", 
+    str_detect(x, "[Pp]res") ~ "Presbyterian",
+    str_detect(x, "[Ll]uth") ~ "Lutheran",
+    str_detect(x, "[Mm]eth") ~ "Methodist",
+    TRUE ~ x
+  )
+}
+
+gss_cat %>% pull(denom) %>% levels() %>% detect_denom()
+```
+
+It tries to detect a higher level grouping by looking for patterns in the denomination strings.
+
+This is ideal for combining with `fct_revel()`:
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  mutate(denom_higher = fct_relabel(denom, detect_denom) %>%
+      fct_reorder(tvhours, mean)) %>%
+  group_by(denom_higher, denom) %>%
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(mapping = aes(x = avg_tvhours,
+      y = denom_higher)) 
+```
 
 # Take aways
 
