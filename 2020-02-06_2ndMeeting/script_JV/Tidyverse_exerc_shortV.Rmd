@@ -57,7 +57,7 @@ pollution <- tribble(
 
 ## Tidy and untidy data
 
-`table1` is tidy:
+We begin with `table1` from the gapminder dataset. `table1` is tidy:
 ```{r}
 table1 
 ```
