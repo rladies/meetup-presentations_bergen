@@ -432,8 +432,7 @@ flights %>%
 ```      
 
 
-
-# Strings (?)
+# Working with character strings 
 
 Predict what these might return:
 
@@ -509,7 +508,7 @@ Replace this scatterplot with one that draws boxplots.
 ```{r}
 ggplot(data = bechdel) + geom_point(aes(x = clean_test, y = budget))
 
-ggplot(data = bechdel) + geom_boxplot(aes(x = clean_test, y = budget))
+ggplot(data = bechdel) + geom_boxplot(aes(x = clean_test, y = budget), color = "dark green")
 ```
 
 ## Your Turn 28
