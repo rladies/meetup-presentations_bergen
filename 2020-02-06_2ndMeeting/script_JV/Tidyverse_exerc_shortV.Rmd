@@ -62,40 +62,32 @@ We begin with `table1` from the gapminder dataset. `table1` is tidy:
 table1 
 ```
 
-For example, it's easy to add a rate column with `mutate()`:
+It's tidy because:
+* Each variable has its own column
+* Each observation has its own row
+* Each value has its own cell
+
+
+It's easy to manipulate tidy data. Here we add a rate column with `mutate()`:
 ```{r}
 table1 %>%
   mutate(rate = cases/population)
 ```
 
-`table2` isn't tidy, the count column really contains two variables:
+Is `table2` tidy?
 ```{r}
 table2
 ```
 
-It makes it very hard to manipulate.
+Consider the count column. Untidy data makes it very hard to manipulate.
 
 ## Your Turn 1
 
-On a sheet of paper, draw how the cases data set would look if it had the same values grouped into three columns: **country**, **year**, **n**
+On a sheet of paper, draw how the cases data set would look if it had the same values grouped into three columns: **country**, **year**, **n** 
 
------------------------------
-   country     year   cases  
-------------- ------ --------
- Afghanistan   1999    745   
+Discuss with your neighbor.
 
- Afghanistan   2000    2666  
-
-   Brazil      1999   37737  
-
-   Brazil      2000   80488  
-
-    China      1999   212258 
-
-    China      2000   213766 
------------------------------
-
-
+ 
 ## Tidy verbs include: 
 `pivot_longer()`  to make data longer 
 `pivot_wider()`   to make data wider
@@ -115,17 +107,9 @@ table4a %>%
 
 ## Your Turn 3
 
-On a sheet of paper, draw how this data set would look if it had the same values grouped into three columns: **city**, **large**, **small**
+On a sheet of paper, draw how the pollution data set would look if it had the same values grouped into three columns: **city**, **large**, **small**
 
---------------------------
-   city     large   small 
----------- ------- -------
- Beijing     121     121  
-
-  London     22      16   
-
- New York    23      14   
---------------------------
+Discuss with your neighbor.
 
 
 ## Your Turn 4
@@ -171,8 +155,9 @@ skim_with() is a closure: a function that returns a new function. This lets you 
 
 ## Select
 
+Proportion of names
 ```{r}
-select(babynames, name, prop)
+select(babynames)
 ```
 
 ## Your Turn 5
@@ -180,14 +165,16 @@ select(babynames, name, prop)
 Alter the code to select just the `n` column:
 
 ```{r}
-select(babynames, n)
+select(babynames,   )
 ```
 
 
 ## Filter
 
+Girls named `Mary`
+
 ```{r}
-filter(babynames, name == "Amelia")
+filter(babynames,  )
 ```
 
 ## Your Turn 6
@@ -199,9 +186,9 @@ Show:
 * All of the names that have a missing value for `n`  
 
 ```{r}
-filter(babynames, prop >= 0.08)
-filter(babynames, name == "Sea")
-filter(babynames, is.na(n))
+filter(babynames,  )
+filter(babynames,  )
+filter(babynames,  )
 ```
 
 ## Your Turn 7
@@ -211,13 +198,14 @@ Use Boolean operators to alter the code below to return only the rows that conta
 * Girls named Sea  
 
 ```{r}
-filter(babynames, name == "Sea", sex == "F")
+filter(babynames, )
 ```
 
 ## Arrange
 
+Arrange names by usage in dataset
 ```{r}
-arrange(babynames, n)
+arrange(babynames,  )
 ```
 
 ## Your Turn 8
@@ -225,13 +213,13 @@ arrange(babynames, n)
 Arrange babynames by `n`. Add `prop` as a second (tie breaking) variable to arrange on. Can you tell what the smallest value of `n` is?
 
 ```{r}
-arrange(babynames, n, prop)
+arrange(babynames,  )
 ```
 
 ## desc
 
 ```{r}
-arrange(babynames, desc(n))
+arrange(babynames,  )
 ```
 
 ## Your Turn 9
@@ -239,7 +227,7 @@ arrange(babynames, desc(n))
 Use `desc()` to find the names with the highest prop.
 
 ```{r}
-arrange(babynames, desc(prop))
+arrange(babynames,  )
 ```
 
 ## Steps and *the pipe*
@@ -260,10 +248,8 @@ Use `%>%` to write a sequence of functions that:
 3. Arrange the results so that the most popular names are near the top.
 
 ```{r}
-babynames %>% 
-  filter(year == 2015, sex == "F") %>% 
-  select(name, n) %>% 
-  arrange(desc(n))
+babynames 
+  
 ```
 
 ## Your Turn 12 (*)
@@ -275,10 +261,8 @@ Use summarise() to compute three statistics about the data:
 3. The total number of children represented in the data
 
 ```{r}
-babynames %>% 
-  summarise(first = min(year), 
-            last = max(year), 
-            total = sum(n))
+babynames 
+  
 ```
 
 
@@ -300,14 +284,14 @@ pollution <- tribble(
 ## Summarize
 
 ```{r}
-pollution %>% 
- summarise(mean = mean(amount), sum = sum(amount), n = n())
+pollution 
+
 ```
 
+We introduce `group_by` to pull the cities together. Find the mean, sum and n. 
 ```{r}
-pollution %>% 
-  group_by(city) %>%
-  summarise(mean = mean(amount), sum = sum(amount), n = n())
+pollution 
+  
 ```
 
 ## Your Turn 14
@@ -333,9 +317,10 @@ babynames %>%
 
 ## Mutate
 
+Make a new column with the percent of the proportion rounded to 2 decimal figures.
 ```{r}
-babynames %>%
-  mutate(percent = round(prop*100, 2))
+babynames 
+  
 ```
 
 ## Your Turn 16
@@ -343,8 +328,8 @@ babynames %>%
 Use `min_rank()` and `mutate()` to rank each row in `babynames` from largest `n` to lowest `n`.
 
 ```{r}
-babynames %>% 
-  mutate(rank = min_rank(desc(prop)))
+babynames 
+ 
 ```
 
 # Joining data
@@ -385,7 +370,7 @@ band %>% full_join(instrument, by = "name")
 band %>% inner_join(instrument, by = "name")
 
 ```
-## Working with different names of variable columns
+## Working with different names of variable columns. Just tell dplyr which two variables are alike.
 
 ```{r}
 band %>% left_join(instrument2, by = c("name" = "artist"))
@@ -418,8 +403,9 @@ skim(flights)
 
 Which airlines had the largest arrival delays?  Work in groups to complete the code below.
 
-1. Join `airlines` to `flights`
-2. Compute and order the average arrival delays by airline. Display full names, no codes.
+1. Use `drop_na` to eliminate NA 
+2. Join `airlines` to `flights`
+3. Compute and order the average arrival delays by airline. Display full names, no codes.
 
 
 ```{r}
@@ -506,9 +492,9 @@ ggplot(bechdel) +
 Replace this scatterplot with one that draws boxplots. 
 
 ```{r}
-ggplot(data = bechdel) + geom_point(aes(x = clean_test, y = budget))
+ggplot(data = bechdel) + geom_point(aes(x = clean_test, y = budget), color = "dark green")
 
-ggplot(data = bechdel) + geom_boxplot(aes(x = clean_test, y = budget), color = "dark green")
+ggplot(data = bechdel) 
 ```
 
 ## Your Turn 28
@@ -516,8 +502,8 @@ ggplot(data = bechdel) + geom_boxplot(aes(x = clean_test, y = budget), color = "
 Make a histogram of the `budget` variable from `bechdel`.
 
 ```{r}
-ggplot(bechdel) + 
-  geom_histogram(aes(x=budget))
+ggplot(bechdel)  
+  
 ```
 
 ## Your Turn 29
@@ -525,19 +511,19 @@ Try to find a better binwidth for `budget`.
 
 ```{r}
 ggplot(data = bechdel) +
-  geom_histogram(mapping = aes(x = budget), binwidth=10000000)
+  geom_histogram(mapping = aes(x = budget), binwidth= )
 ```
 
 ## Your Turn 30
 
-Make a density plot of `budget` colored by `clean_test`.
+Make a density plot of `budget` and then one colored by `clean_test`.
 
 ```{r}
-ggplot(data = bechdel) +
-  geom_density(mapping = aes(x = budget))
+ggplot(data = bechdel) 
+  
 
-ggplot(data = bechdel) +
-  geom_density(mapping = aes(x = budget, color=clean_test))
+ggplot(data = bechdel) 
+  
 ```
 
 
@@ -546,15 +532,15 @@ ggplot(data = bechdel) +
 Make a barchart of `clean_test` colored by `clean_test`.
 
 ```{r}
-ggplot(data=bechdel) +
-  geom_bar(mapping = aes(x = clean_test, fill = clean_test))
+ggplot(data=bechdel) 
+ 
 ```
 
 
 
 ## Your Turn 33
 
-Save the last plot. 
+Save the last plot. Note ggsave with save your plots with custom size in inches.
 
 ```{r}
 ggsave("my-plot.png")
@@ -579,9 +565,8 @@ gss_cat
 Using the data `gss_cat`, find the average hours of tv watched (`tvhours`) for each category of marital status (`marital`).
 
 ```{r}
-gss_cat %>%
-  group_by(marital) %>% 
-  summarise(avg_tv = mean(tvhours))
+gss_cat 
+ 
 ```
 
 Is this likely?
@@ -595,8 +580,8 @@ gss_cat %>%
   drop_na(tvhours) %>%
   group_by(marital) %>% 
   summarise(avg_tvhours = mean(tvhours)) %>%
-  ggplot() +
-    geom_point(aes(avg_tvhours, marital))
+  ggplot() 
+    
 
 ```
 

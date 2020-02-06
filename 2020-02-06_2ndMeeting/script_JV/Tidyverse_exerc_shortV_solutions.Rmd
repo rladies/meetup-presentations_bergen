@@ -62,22 +62,29 @@ We begin with `table1` from the gapminder dataset. `table1` is tidy:
 table1 
 ```
 
-For example, it's easy to add a rate column with `mutate()`:
+It's tidy because:
+* Each variable has its own column
+* Each observation has its own row
+* Each value has its own cell
+
+It's easy to manipulate tidy data. Here we add a rate column with `mutate()`:
 ```{r}
 table1 %>%
   mutate(rate = cases/population)
 ```
 
-`table2` isn't tidy, the count column really contains two variables:
+Is `table2` tidy?
 ```{r}
 table2
 ```
 
-It makes it very hard to manipulate.
+Consider the count column. Untidy data makes it very hard to manipulate.
 
 ## Your Turn 1
 
 On a sheet of paper, draw how the cases data set would look if it had the same values grouped into three columns: **country**, **year**, **n**
+
+Discuss with your neighbor.
 
 -----------------------------
    country     year   cases  
@@ -115,7 +122,9 @@ table4a %>%
 
 ## Your Turn 3
 
-On a sheet of paper, draw how this data set would look if it had the same values grouped into three columns: **city**, **large**, **small**
+On a sheet of paper, draw how the pollution data set would look if it had the same values grouped into three columns: **city**, **large**, **small**
+
+Discuss with your neighbor.
 
 --------------------------
    city     large   small 
@@ -171,6 +180,8 @@ skim_with() is a closure: a function that returns a new function. This lets you 
 
 ## Select
 
+Proportion of names
+
 ```{r}
 select(babynames, name, prop)
 ```
@@ -186,8 +197,10 @@ select(babynames, n)
 
 ## Filter
 
+Girls named `Mary`
+
 ```{r}
-filter(babynames, name == "Amelia")
+filter(babynames, name == "Mary")
 ```
 
 ## Your Turn 6
