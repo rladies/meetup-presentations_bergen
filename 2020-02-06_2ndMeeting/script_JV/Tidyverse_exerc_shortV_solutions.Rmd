@@ -1,0 +1,698 @@
+---
+title: "Working with Tidyverse"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+    toc: true
+---
+
+install.packages(c("tidyverse", "babynames", "fivethirtyeight", "gapminder", "nycflights13", "rmarkdown", "skimr"))
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(babynames)
+library(fivethirtyeight)
+library(gapminder)
+library(nycflights13)
+library(skimr)
+```
+
+# Tidy data
+
+Data comes in many formats but R prefers just one: _tidy data_.
+
+A data set is tidy if and only if:
+
+1. Every variable is in its own column
+2. Every observation is in its own row
+3. Every value is in its own cell
+
+## We begin with a toy dataset
+
+
+```{r}
+
+cases <- tribble(
+  ~Country, ~"2011", ~"2012", ~"2013",
+      "FR",    7000,    6900,    7000,
+      "DE",    5800,    6000,    6200,
+      "US",   15000,   14000,   13000
+)
+
+pollution <- tribble(
+       ~city,   ~size, ~amount,
+  "New York", "large",      23,
+  "New York", "small",      14,
+    "London", "large",      22,
+    "London", "small",      16,
+   "Beijing", "large",     121,
+   "Beijing", "small",     56
+)
+
+```
+
+
+## Tidy and untidy data
+
+We begin with `table1` from the gapminder dataset. `table1` is tidy:
+```{r}
+table1 
+```
+
+For example, it's easy to add a rate column with `mutate()`:
+```{r}
+table1 %>%
+  mutate(rate = cases/population)
+```
+
+`table2` isn't tidy, the count column really contains two variables:
+```{r}
+table2
+```
+
+It makes it very hard to manipulate.
+
+## Your Turn 1
+
+On a sheet of paper, draw how the cases data set would look if it had the same values grouped into three columns: **country**, **year**, **n**
+
+-----------------------------
+   country     year   cases  
+------------- ------ --------
+ Afghanistan   1999    745   
+
+ Afghanistan   2000    2666  
+
+   Brazil      1999   37737  
+
+   Brazil      2000   80488  
+
+    China      1999   212258 
+
+    China      2000   213766 
+-----------------------------
+
+
+## Tidy verbs include: 
+`pivot_longer()`  to make data longer 
+`pivot_wider()`   to make data wider
+`separate()`      to split a column
+`separate_rows()` to separate rows
+`unite()`         to unite columns
+
+## Your Turn 2
+
+Use `pivot_longer()` to reorganize `table4a` into three columns: **country**, **year**, and **cases**.
+
+```{r}
+table4a %>%
+ pivot_longer(-country, names_to = "year", 
+    values_to = "cases") 
+```
+
+## Your Turn 3
+
+On a sheet of paper, draw how this data set would look if it had the same values grouped into three columns: **city**, **large**, **small**
+
+--------------------------
+   city     large   small 
+---------- ------- -------
+ Beijing     121     121  
+
+  London     22      16   
+
+ New York    23      14   
+--------------------------
+
+
+## Your Turn 4
+
+Use `pivot_wider()` to reorganize `table2` into four columns: **country**, **year**, **cases**, and **population**.
+
+```{r}
+table2 %>%
+  pivot_wider(names_from = type, values_from = count)
+```
+
+
+# Transforming data with dplyr
+
+Dplyr gives you three _general_ functions for manipulating data: `mutate()`, `summarise()`, and `group_by()`. These may be augmented these with functions from the packages below, which focus on specific types of data.
+
+Package   | Data Type
+--------- | --------
+forcats   | factors
+stringr   | strings
+hms       | times
+lubridate | dates and times
+
+
+# Babynames
+
+```{r}
+babynames
+print(babynames) 
+```
+
+## Using skimr to view the data 
+
+```{r}
+skim(babynames)
+my_skim <- skim_with(numeric = sfl(p25 = NULL, p75=NULL))
+my_skim(babynames)
+```
+
+skim_with() is a closure: a function that returns a new function. This lets you have several skimming functions in a single R session, but it also means that you need to assign the return of skim_with() before you can use it.
+
+# Mastering dplyr verbs
+
+## Select
+
+```{r}
+select(babynames, name, prop)
+```
+
+## Your Turn 5
+
+Alter the code to select just the `n` column:
+
+```{r}
+select(babynames, n)
+```
+
+
+## Filter
+
+```{r}
+filter(babynames, name == "Amelia")
+```
+
+## Your Turn 6
+
+Show:
+
+* All of the names where prop is greater than or equal to 0.08  
+* All of the children named "Sea"  
+* All of the names that have a missing value for `n`  
+
+```{r}
+filter(babynames, prop >= 0.08)
+filter(babynames, name == "Sea")
+filter(babynames, is.na(n))
+```
+
+## Your Turn 7
+
+Use Boolean operators to alter the code below to return only the rows that contain:
+
+* Girls named Sea  
+
+```{r}
+filter(babynames, name == "Sea", sex == "F")
+```
+
+## Arrange
+
+```{r}
+arrange(babynames, n)
+```
+
+## Your Turn 8
+
+Arrange babynames by `n`. Add `prop` as a second (tie breaking) variable to arrange on. Can you tell what the smallest value of `n` is?
+
+```{r}
+arrange(babynames, n, prop)
+```
+
+## desc
+
+```{r}
+arrange(babynames, desc(n))
+```
+
+## Your Turn 9
+
+Use `desc()` to find the names with the highest prop.
+
+```{r}
+arrange(babynames, desc(prop))
+```
+
+## Steps and *the pipe*
+
+```{r}
+babynames %>%
+  filter(year == 2015, sex == "M") %>%
+  select(name, n) %>%
+  arrange(desc(n))
+```
+
+## Your Turn 10
+
+Use `%>%` to write a sequence of functions that: 
+
+1. Filter babynames to just the girls that were born in 2015  
+2. Select the `name` and `n` columns  
+3. Arrange the results so that the most popular names are near the top.
+
+```{r}
+babynames %>% 
+  filter(year == 2015, sex == "F") %>% 
+  select(name, n) %>% 
+  arrange(desc(n))
+```
+
+## Your Turn 12 (*)
+
+Use summarise() to compute three statistics about the data:
+
+1. The first (minimum) year in the dataset  
+2. The last (maximum) year in the dataset  
+3. The total number of children represented in the data
+
+```{r}
+babynames %>% 
+  summarise(first = min(year), 
+            last = max(year), 
+            total = sum(n))
+```
+
+
+# Toy dataset for transforming data with dplyr
+
+```{r}
+
+pollution <- tribble(
+       ~city,   ~size, ~amount, 
+  "New York", "large",       23,
+  "New York", "small",       14,
+    "London", "large",       22,
+    "London", "small",       16,
+   "Beijing", "large",      121,
+   "Beijing", "small",       56
+)
+```
+
+## Summarize
+
+```{r}
+pollution %>% 
+ summarise(mean = mean(amount), sum = sum(amount), n = n())
+```
+
+```{r}
+pollution %>% 
+  group_by(city) %>%
+  summarise(mean = mean(amount), sum = sum(amount), n = n())
+```
+
+## Your Turn 14
+
+Use `group_by()`, `summarise()`, and `arrange()` to display the ten most popular baby names. Compute popularity as the total number of children of a single gender given a name.
+
+```{r}
+babynames %>%
+  group_by(name, sex) %>% 
+  summarise(total = sum(n)) %>% 
+  arrange(desc(total))
+```
+
+
+## Ungroup
+
+```{r}
+babynames %>%
+  group_by(name, sex) %>% 
+  summarise(total = sum(n)) %>% 
+  arrange(desc(total))
+```
+
+## Mutate
+
+```{r}
+babynames %>%
+  mutate(percent = round(prop*100, 2))
+```
+
+## Your Turn 16
+
+Use `min_rank()` and `mutate()` to rank each row in `babynames` from largest `n` to lowest `n`.
+
+```{r}
+babynames %>% 
+  mutate(rank = min_rank(desc(prop)))
+```
+
+# Joining data
+
+## Practicing with toy dataset
+
+```{r}
+band <- tribble(
+   ~name,     ~band,
+  "Mick",  "Stones",
+  "John", "Beatles",
+  "Paul", "Beatles"
+)
+
+instrument <- tribble(
+    ~name,   ~plays,
+   "John", "guitar",
+   "Paul",   "bass",
+  "Keith", "guitar"
+)
+
+instrument2 <- tribble(
+    ~artist,   ~plays,
+   "John", "guitar",
+   "Paul",   "bass",
+  "Keith", "guitar"
+)
+```
+
+## Mutating joins
+
+## Types of joins
+
+```{r}
+band %>% left_join(instrument, by = "name")
+band %>% right_join(instrument, by = "name")
+band %>% full_join(instrument, by = "name")
+band %>% inner_join(instrument, by = "name")
+
+```
+## Working with different names of variable columns
+
+```{r}
+band %>% left_join(instrument2, by = c("name" = "artist"))
+```
+
+## Filtering joins
+
+What is the same/different between the two datasets?
+
+```{r}
+band %>% semi_join(instrument, by = "name")
+band %>% anti_join(instrument, by = "name")
+```
+
+
+## Now with flight data
+
+```{r}
+library(nycflights13)
+library(lubridate)
+```
+
+## Flights data
+```{r}
+flights
+skim(flights)
+```
+
+## Your Turn 18
+
+Which airlines had the largest arrival delays?  Work in groups to complete the code below.
+
+1. Join `airlines` to `flights`
+2. Compute and order the average arrival delays by airline. Display full names, no codes.
+
+
+```{r}
+flights %>% 
+  drop_na(arr_delay) %>%
+  left_join(airlines, by = "carrier") %>%
+  group_by(name) %>%
+  summarise(delay = mean(arr_delay)) %>%
+  arrange(delay)
+```      
+
+
+# Working with character strings 
+
+Predict what these might return:
+
+```{r}
+strings <- c("Apple", "Pineapple", "Orange")
+
+str_detect(strings, pattern = "pp")
+str_detect(strings, pattern =  "apple")
+str_detect(strings, pattern = "[Aa]pple")
+```
+
+
+# Finally getting to ggplot2 - Yea!
+
+* Start with `ggplot()`
+* Supply a dataset and aesthetic mapping (with `aes()`)
+* Add on layers (like `geom_point()` or `geom_histogram()`)
+* Add on scales (like `scale_colour_brewer()`)
+* Add on faceting specifications (like `facet_wrap()`)
+* Add on coordinate systems (like `coord_flip`)
+
+
+## Start with Bechdel test data
+
+This data on movies and [the Bechdel test](https://en.wikipedia.org/wiki/Bechdel_test) was collected by the website FiveThirtyEight. The Bechdel test is a measure of the representation of women in fiction. It asks whether a work features at least two women who talk to each other about something other than a man. 
+
+Preview the data. 
+
+```{r}
+bechdel
+```
+
+## Consider
+What relationship do you expect to see between movie budget (budget) and domestic gross(domgross)?
+
+## Your Turn 25
+
+Run the code in the chunk to make a graph. 
+
+```{r}
+ggplot(data = bechdel) +
+  geom_point(mapping = aes(x = budget, y = domgross))
+```
+
+## Your Turn 26
+
+Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph. Experiment.  
+
+```{r}
+ggplot(data = bechdel) +
+  geom_point(mapping = aes(x = budget, y = domgross, color=clean_test))
+
+ggplot(bechdel) + 
+  geom_point(mapping = aes(x = budget, y = domgross, size=clean_test))
+ggplot(bechdel) + 
+  geom_point(mapping = aes(x = budget, y = domgross, shape=clean_test))
+ggplot(bechdel) + 
+  geom_point(mapping = aes(x = budget, y = domgross, alpha=clean_test))
+
+```
+
+## Declaring the color outside of the aes mapping
+
+```{r}
+ggplot(bechdel) + 
+    geom_point(mapping = aes(x = budget, y = domgross), color="blue")
+```
+
+## Your Turn 27
+
+Replace this scatterplot with one that draws boxplots. 
+
+```{r}
+ggplot(data = bechdel) + geom_point(aes(x = clean_test, y = budget))
+
+ggplot(data = bechdel) + geom_boxplot(aes(x = clean_test, y = budget), color = "dark green")
+```
+
+## Your Turn 28
+
+Make a histogram of the `budget` variable from `bechdel`.
+
+```{r}
+ggplot(bechdel) + 
+  geom_histogram(aes(x=budget))
+```
+
+## Your Turn 29
+Try to find a better binwidth for `budget`.
+
+```{r}
+ggplot(data = bechdel) +
+  geom_histogram(mapping = aes(x = budget), binwidth=10000000)
+```
+
+## Your Turn 30
+
+Make a density plot of `budget` colored by `clean_test`.
+
+```{r}
+ggplot(data = bechdel) +
+  geom_density(mapping = aes(x = budget))
+
+ggplot(data = bechdel) +
+  geom_density(mapping = aes(x = budget, color=clean_test))
+```
+
+
+## Your Turn 31
+
+Make a barchart of `clean_test` colored by `clean_test`.
+
+```{r}
+ggplot(data=bechdel) +
+  geom_bar(mapping = aes(x = clean_test, fill = clean_test))
+```
+
+
+
+## Your Turn 33
+
+Save the last plot. 
+
+```{r}
+ggsave("my-plot.png")
+ggsave("my-plot.pdf", width = 6, height = 6)
+
+```
+
+
+# Data types(*)
+
+What kind of object is the `marital` variable?  
+
+```{r}
+gss_cat
+```
+
+* Factors are R's way of storing categorical data.
+* They have a set of allowable values called **levels**.
+* Internally they are stored as integers.
+
+
+Using the data `gss_cat`, find the average hours of tv watched (`tvhours`) for each category of marital status (`marital`).
+
+```{r}
+gss_cat %>%
+  group_by(marital) %>% 
+  summarise(avg_tv = mean(tvhours))
+```
+
+Is this likely?
+
+## Your Turn 21
+
+Fix your summary of average hours of tv watched (`tvhours`) by marital status (`marital`), to drop missing values in `tvhours`, then create a plot to examine the results.
+
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  group_by(marital) %>% 
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(aes(avg_tvhours, marital))
+
+```
+
+## Your Turn 22
+
+Explore the average hours of tv watched by religion.
+
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  group_by(relig) %>%
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(mapping = aes(x = avg_tvhours, 
+      y = fct_reorder(relig, avg_tvhours)))
+```
+
+# Quiz 
+
+Why is this plot not very useful?
+
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  group_by(denom) %>%
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(mapping = aes(x = avg_tvhours,
+      y = fct_reorder(denom, avg_tvhours)))
+```
+
+There are too many categories, and the categories are poorly labelled.
+
+## Your Turn 23
+
+Edit the code to also relabel some other Baptist denominations:
+
+* "Baptist-dk which"    
+* "Other baptists"  
+
+```{r}
+gss_cat %>%
+  mutate(denom = fct_recode(denom,
+    "Baptist - Southern" = "Southern baptist",
+    "Baptist - Don't know" = "Baptist-dk which",
+    "Baptist - Other" = "Other baptists")
+  ) %>%
+  pull(denom) %>%
+  levels()
+```
+
+## Your Turn 24
+
+What does the function `detect_denom()` do?
+
+```{r}
+detect_denom <- function(x){
+  case_when(
+    str_detect(x, "[Bb]ap") ~ "Baptist", 
+    str_detect(x, "[Pp]res") ~ "Presbyterian",
+    str_detect(x, "[Ll]uth") ~ "Lutheran",
+    str_detect(x, "[Mm]eth") ~ "Methodist",
+    TRUE ~ x
+  )
+}
+
+gss_cat %>% pull(denom) %>% levels() %>% detect_denom()
+```
+
+It tries to detect a higher level grouping by looking for patterns in the denomination strings.
+
+This is ideal for combining with `fct_revel()`:
+```{r}
+gss_cat %>%
+  drop_na(tvhours) %>%
+  mutate(denom_higher = fct_relabel(denom, detect_denom) %>%
+      fct_reorder(tvhours, mean)) %>%
+  group_by(denom_higher, denom) %>%
+  summarise(avg_tvhours = mean(tvhours)) %>%
+  ggplot() +
+    geom_point(mapping = aes(x = avg_tvhours,
+      y = denom_higher)) 
+```
+
+# Take aways
+
+* Extract variables with `select()`  
+* Extract cases with `filter()`  
+* Arrange cases, with `arrange()`  
+
+* Make tables of summaries with `summarise()`  
+* Make new variables, with `mutate()`  
+* Do groupwise operations with `group_by()`
+
+* Connect operations with `%>%`  
+
+* Use `left_join()`, `right_join()`, `full_join()`, or `inner_join()` to join datasets
+* Use `semi_join()` or `anti_join()` to filter datasets against each other
+
