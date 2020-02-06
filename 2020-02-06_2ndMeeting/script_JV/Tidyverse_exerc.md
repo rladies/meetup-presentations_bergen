@@ -1293,7 +1293,7 @@ airports %>%
     ## 10 BHM  
     ## # … with 91 more rows
 
-# Strings
+# Charachter strings
 
 Predict what these might return:
 
@@ -1431,7 +1431,8 @@ ggplot(bechdel) +
 
 ## Your Turn 27
 
-Replace this scatterplot with one that draws boxplots.
+Replace this scatterplot with one that draws
+boxplots.
 
 ``` r
 ggplot(data = bechdel) + geom_point(aes(x = clean_test, y = budget))
@@ -1440,7 +1441,7 @@ ggplot(data = bechdel) + geom_point(aes(x = clean_test, y = budget))
 ![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-48-1.png)<!-- -->
 
 ``` r
-ggplot(data = bechdel) + geom_boxplot(aes(x = clean_test, y = budget))
+ggplot(data = bechdel) + geom_boxplot(aes(x = clean_test, y = budget), color = "dark green")
 ```
 
 ![](Tidyverse_exerc_files/figure-gfm/unnamed-chunk-48-2.png)<!-- -->
