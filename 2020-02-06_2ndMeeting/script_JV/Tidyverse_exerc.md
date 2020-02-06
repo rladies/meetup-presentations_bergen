@@ -864,28 +864,19 @@ babynames %>%
 
 ## Ungroup
 
+Ungroup the previous grouping by year
+
 ``` r
 babynames %>%
-  group_by(name, sex) %>% 
+  ungroup( ) %>% 
   summarise(total = sum(n)) %>% 
   arrange(desc(total))
 ```
 
-    ## # A tibble: 107,973 x 3
-    ## # Groups:   name [97,310]
-    ##    name    sex     total
-    ##    <chr>   <chr>   <int>
-    ##  1 James   M     5150472
-    ##  2 John    M     5115466
-    ##  3 Robert  M     4814815
-    ##  4 Michael M     4350824
-    ##  5 Mary    F     4123200
-    ##  6 William M     4102604
-    ##  7 David   M     3611329
-    ##  8 Joseph  M     2603445
-    ##  9 Richard M     2563082
-    ## 10 Charles M     2386048
-    ## # … with 107,963 more rows
+    ## # A tibble: 1 x 1
+    ##       total
+    ##       <int>
+    ## 1 348120517
 
 ## Mutate
 

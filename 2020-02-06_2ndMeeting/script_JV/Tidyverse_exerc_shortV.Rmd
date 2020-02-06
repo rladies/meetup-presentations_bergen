@@ -308,9 +308,10 @@ babynames %>%
 
 ## Ungroup
 
+Ungroup the previous grouping by name, sex
 ```{r}
 babynames %>%
-  group_by(name, sex) %>% 
+  ungroup( ) %>% 
   summarise(total = sum(n)) %>% 
   arrange(desc(total))
 ```

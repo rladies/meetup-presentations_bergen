@@ -988,25 +988,15 @@ code span.ot { color: #007020; }
 </div>
 <div id="ungroup" class="section level2">
 <h2>Ungroup</h2>
+<p>Ungroup the previous grouping by name, sex</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" data-line-number="1">babynames <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb53-2" data-line-number="2"><span class="st">  </span><span class="kw">group_by</span>(name, sex) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb53-2" data-line-number="2"><span class="st">  </span><span class="kw">ungroup</span>( ) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb53-3" data-line-number="3"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb53-4" data-line-number="4"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(total))</a></code></pre></div>
-<pre><code>## # A tibble: 107,973 x 3
-## # Groups:   name [97,310]
-##    name    sex     total
-##    &lt;chr&gt;   &lt;chr&gt;   &lt;int&gt;
-##  1 James   M     5150472
-##  2 John    M     5115466
-##  3 Robert  M     4814815
-##  4 Michael M     4350824
-##  5 Mary    F     4123200
-##  6 William M     4102604
-##  7 David   M     3611329
-##  8 Joseph  M     2603445
-##  9 Richard M     2563082
-## 10 Charles M     2386048
-## # … with 107,963 more rows</code></pre>
+<pre><code>## # A tibble: 1 x 1
+##       total
+##       &lt;int&gt;
+## 1 348120517</code></pre>
 </div>
 <div id="mutate" class="section level2">
 <h2>Mutate</h2>
