@@ -1772,3 +1772,22 @@ gss_cat %>%
 
   - Use `semi_join()` or `anti_join()` to filter datasets against each
     other
+
+# Reading in data
+
+This *Introduction to Tidyverse* session has presented toy data and
+libraries of datasets.
+
+Try importing your own data with the `readr` package which supports
+seven file formats, or the `readxl` package for Excel, either .xls or
+.xlsx format.
+
+Try `read_csv()` for comma separated (CSV) files and `read_excel()` for
+Excel.
+
+More information on `readr` and importing other file types can be found
+in the data import chapter in R for Data Science.
+
+<https://r4ds.had.co.nz/data-import.html>
+
+`Enjoy!`
