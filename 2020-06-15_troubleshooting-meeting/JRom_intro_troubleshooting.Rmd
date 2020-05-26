@@ -1,0 +1,50 @@
+---
+title: "Some notes on R and error messages"
+author: "Julia Romanowska"
+institute: "BIOS, UiB"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(xaringanthemer)
+style_solarized_light()
+```
+
+# OVERVIEW
+
+- PROGRAMMING BASICS
+    - CPU, disk, memory = computer
+    - memory mapping
+    - code can crash due to lack of memory
+- R BASICS
+    - variable
+    - function
+    - argument
+    - object ~ closure
+    - what happens under the hood?
+    - ?? lazy evaluation ??
+    - !! __environment__ !!
+      - very important when writing functions
+      - also important when knitting Rmarkdown file
+      - sometimes it helps to solve a problem by restarting R and re-running the code
+
+- FUNCTIONS THAT HELP FIND THE SOURCE OF ERROR
+    - ``traceback()``
+    - ``browser()``
+    - from the ``rlang`` package: ``last_error()``, ``last_trace()``, and ``trace_back()``
+
+- WHERE TO SEARCH FOR HELP?
+    - manual pages: https://aosmith.rbind.io/2020/04/28/r-documentation/
+    - cheatsheets
+    - RStudio webpages
+    - RLadies slack
+    - stackoverflow
