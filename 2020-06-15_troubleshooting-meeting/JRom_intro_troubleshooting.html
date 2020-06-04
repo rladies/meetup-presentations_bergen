@@ -4,7 +4,7 @@
     <title>Some notes on R and error messages</title>
     <meta charset="utf-8" />
     <meta name="author" content="Julia Romanowska" />
-    <meta name="date" content="2020-05-28" />
+    <meta name="date" content="2020-06-04" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -127,8 +127,207 @@ Successful program - requirements:
 - _permission to read/write_
 
 ---
+class: center, inverse
 
 # R BASICS
+
+---
+
+
+```r
+this.variable.has &lt;- "value"
+
+this.is.result.of &lt;- function( argument ){
+  #function body
+  return( "a result" )
+}
+```
+
+--
+
+- functional programming
+- variables are *pointers*
+
+--
+
+
+```r
+a &lt;- 1
+*b &lt;- a
+a &lt;- a + 1
+a
+```
+
+```
+## [1] 2
+```
+
+*What is the value of b?*
+
+---
+
+## ...let's check
+
+
+```r
+*b 
+```
+
+```
+## [1] 1
+```
+
+**copying on demand**
+
+---
+class: center, inverse
+
+# R BASICS
+## Environment
+
+---
+
+
+```r
+a &lt;- 1
+my.fun &lt;- function( a ){
+  c &lt;- 2
+  a &lt;- c + a
+  return( a )
+}
+my.fun( a )
+```
+
+```
+## [1] 3
+```
+
+*What is the value of a now?*
+
+--
+
+
+```r
+*a 
+```
+
+```
+## [1] 1
+```
+
+**Each function has its own environment!**
+
+"Environment is like a bag of names." Read more in *"Advanced R"* by Hadley Wickham https://adv-r.hadley.nz/
+
+???
+
+OK, but what if we actually want to change the value of the variable in the global environment?
+
+---
+
+## Environment - ctd.
+
+*Super assignment:* assign a value in the parent environment
+
+
+```r
+my.fun2 &lt;- function( a ){
+  c &lt;- 2
+  a &lt;- c + a
+  return( a )
+}
+*my.fun2( a )
+```
+
+```
+## [1] 3
+```
+
+```r
+*a 
+```
+
+```
+## [1] 1
+```
+
+**NOTE:** this can be dangerous!
+
+---
+
+## Environment - ctd.
+
+
+```r
+my.fun &lt;- function( a ){
+* c &lt;- 2
+  a &lt;- c + a
+  return( a )
+}
+```
+
+*What is the value of c outside the function?*
+
+--
+
+
+```r
+*c 
+```
+
+```
+## function (...)  .Primitive("c")
+```
+
+???
+
+`c` exists only in the function's environment!
+
+This is important when writing the functions and also when knitting an .Rmd file!
+
+---
+
+class: center, inverse
+
+# CAUSE OF ERROR
+
+---
+
+## Useful functions
+
+- `base::traceback`
+
+    - envoke right after the error!
+    
+- `base::browser`
+
+    - use in a program to peek into environment content
+
+- from the `rlang` package: `last_error`, `last_trace`, and `trace_back`
+
+    - often more informative than the `base` version
+
+---
+
+class: center, inverse
+
+# HOW TO FIND SOLUTIONS?
+
+---
+
+# Where to search for help?
+
+- manual pages: https://aosmith.rbind.io/2020/04/28/r-documentation/
+
+--
+
+- cheatsheets: https://rstudio.com/resources/cheatsheets/
+- RStudio webpages: https://rstudio.com/resources/webinars/
+
+--
+
+- RLadies slack *(send us an e-mail!)*
+- stackoverflow: https://stackoverflow.com/questions/tagged/r
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

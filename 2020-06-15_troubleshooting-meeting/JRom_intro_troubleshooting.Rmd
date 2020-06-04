@@ -134,7 +134,167 @@ Successful program - requirements:
 - _permission to read/write_
 
 ---
+class: center, inverse
 
 # R BASICS
 
+---
 
+```{r,eval=FALSE}
+this.variable.has <- "value"
+
+this.is.result.of <- function( argument ){
+  #function body
+  return( "a result" )
+}
+```
+
+--
+
+- functional programming
+- variables are *pointers*
+
+--
+
+```{r}
+a <- 1
+b <- a #<<
+a <- a + 1
+a
+```
+
+*What is the value of b?*
+
+---
+
+## ...let's check
+
+```{r}
+b #<<
+```
+
+**copying on demand**
+
+---
+class: center, inverse
+
+# R BASICS
+## Environment
+
+---
+
+```{r}
+a <- 1
+my.fun <- function( a ){
+  d <- 2
+  a <- d + a
+  return( a )
+}
+my.fun( a )
+```
+
+*What is the value of `a` now?*
+
+--
+
+```{r}
+a #<<
+```
+
+**Each function has its own environment!**
+
+*"Environment is like a bag of names."*
+
+Read more in *"Advanced R"* by Hadley Wickham https://adv-r.hadley.nz/
+
+???
+
+OK, but what if we actually want to change the value of the variable in the global environment?
+
+---
+
+## Environment - ctd.
+
+*Super assignment:* assign a value in the parent environment
+
+```{r}
+my.fun2 <- function( a ){
+  d <- 2
+  a <<- d + a
+  return( a )
+}
+my.fun2( a ) #<<
+a #<<
+```
+
+**NOTE:** this can be dangerous!
+
+---
+
+## Environment - ctd.
+
+```{r}
+my.fun <- function( a ){
+  d <- 2 #<<
+  a <- d + a
+  return( a )
+}
+```
+
+*What is the value of `d` outside the function?*
+
+--
+
+```{r}
+d #<<
+```
+
+???
+
+`d` exists only in the function's environment!
+
+This is important when writing the functions and also when knitting an .Rmd file!
+
+---
+
+class: center, inverse
+
+# CAUSE OF ERROR
+
+---
+
+## Useful functions
+
+- `base::traceback`
+
+    - envoke right after the error!
+    
+- `base::browser`
+
+    - use in a program to peek into environment content
+
+- from the `rlang` package: `last_error`, `last_trace`, and `trace_back`
+
+    - often more informative than the `base` version
+
+---
+
+class: center, inverse
+
+# HOW TO FIND SOLUTIONS?
+
+---
+
+# Where to search for help?
+
+- manual pages: https://aosmith.rbind.io/2020/04/28/r-documentation/
+
+--
+
+- cheatsheets: https://rstudio.com/resources/cheatsheets/
+- RStudio webpages: https://rstudio.com/resources/webinars/
+
+--
+
+- RLadies slack *(send us an e-mail!)*
+- stackoverflow: https://stackoverflow.com/questions/tagged/r
