@@ -165,9 +165,9 @@ a
 
 *What is the value of b?*
 
----
+--
 
-## ...let's check
+...let's check
 
 ```{r}
 b #<<
@@ -245,7 +245,7 @@ my.fun <- function( a ){
 
 --
 
-```{r}
+```{r,error=TRUE}
 d #<<
 ```
 
@@ -298,3 +298,13 @@ class: center, inverse
 
 - RLadies slack *(send us an e-mail!)*
 - stackoverflow: https://stackoverflow.com/questions/tagged/r
+
+---
+
+class: right, bottom
+
+background-image: url("jeshoots-com-PpYOQgsZDM4-unsplash.jpg")
+background-position: center
+background-size: contain
+
+Photo by JESHOOTS.COM on Unsplash
