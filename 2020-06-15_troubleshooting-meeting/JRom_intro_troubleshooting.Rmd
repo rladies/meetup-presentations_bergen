@@ -138,6 +138,12 @@ class: center, inverse
 
 # R BASICS
 
+
+???
+
+Now that we know what a program needs in general, let's focus on some
+specific points for R code.
+
 ---
 
 ```{r,eval=FALSE}
@@ -149,10 +155,37 @@ this.is.result.of <- function( argument ){
 }
 ```
 
+???
+
+R is smart and it does much for us in the background, but we need to be
+aware of that when we code.
+
+The first line of code takes the string and *assigns it* to a variable. This
+is actually three operations:
+
+- create a variable and set its type to "character"
+- block enough memory to hold the string
+- take the address of the memory and point it to the variable
+
+When we see the arrow in assigning, it may help us remember that what R does
+is that it actually assigns the memory address to the variable - it creates
+*pointers* in the background.
+
+Next, there is a function. A function describes what will happen with variables
+when we envoke it. A function can have *arguments* and can return *results*.
+
 --
 
 - functional programming
 - variables are *pointers*
+
+???
+
+Even though there exist classes and objects in R, it is a *functional programming language*
+because we do not need to operate on objects and classes.
+
+And, as I've mentioned, variables are actually pointers to a memory address.
+Let's see why it is important to understand.
 
 --
 
@@ -165,6 +198,12 @@ a
 
 *What is the value of b?*
 
+???
+
+First, we assign `1` to `a`, then we assign `a` to `b`, then we add `1` to
+the value of `a` and we can see that `a` now points to `2`, which is
+expected. So what is the value of `b`?
+
 --
 
 ...let's check
@@ -175,25 +214,43 @@ b #<<
 
 **copying on demand**
 
+???
+
+That's another trick of R - whenever two variables point to one value and one of
+the variables changes, a copy of the value is created so that the other, unchanged,
+variable points still to the unchanged value. This process is called *copy on demand*.
+
 ---
 class: center, inverse
 
 # R BASICS
 ## Environment
 
+???
+
+There are many other aspects of R that we will not talk about, but one of the
+most important is *environment*.
+
 ---
 
 ```{r}
 a <- 1
-my.fun <- function( a ){
+my_fun <- function( a ){
   d <- 2
   a <- d + a
   return( a )
 }
-my.fun( a )
+my_fun( a )
 ```
 
 *What is the value of `a` now?*
+
+???
+
+Let's consider another piece of code. First, we assign a value to `a`. Next,
+we write a function that also uses `a` as a variable name, and finally, we
+call this function using our variable as the argument. As expected, the
+result of the function is `r my_fun( a )`. But has `a` changed?
 
 --
 
@@ -209,7 +266,11 @@ Read more in *"Advanced R"* by Hadley Wickham https://adv-r.hadley.nz/
 
 ???
 
-OK, but what if we actually want to change the value of the variable in the global environment?
+There is one environment that holds all the other environments - called
+*global environment*.
+
+OK, but what if we actually want to change the value of the variable in the
+global environment?
 
 ---
 
@@ -218,12 +279,12 @@ OK, but what if we actually want to change the value of the variable in the glob
 *Super assignment:* assign a value in the parent environment
 
 ```{r}
-my.fun2 <- function( a ){
+my_fun2 <- function( a ){
   d <- 2
   a <<- d + a
   return( a )
 }
-my.fun2( a ) #<<
+my_fun2( a ) #<<
 a #<<
 ```
 
@@ -234,7 +295,7 @@ a #<<
 ## Environment - ctd.
 
 ```{r}
-my.fun <- function( a ){
+my_fun <- function( a ){
   d <- 2 #<<
   a <- d + a
   return( a )
