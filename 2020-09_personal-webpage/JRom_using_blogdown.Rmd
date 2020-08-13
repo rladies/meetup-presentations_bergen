@@ -1,0 +1,41 @@
+---
+title: "Building a webpage with blogdown"
+author: "Julia Romanowska"
+institute: "BIOS, UiB"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    seal: false
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(xaringanthemer)
+style_solarized_light()
+xaringanExtra::use_clipboard()
+xaringanExtra::use_fit_screen()
+```
+
+class: center, inverse
+
+# Building a webpage with blogdown
+
+## Julia Romanowska
+
+![](R-Ladies-horiz-bergen_cropped_small.png)
+
+### 3 September 2020
+
+---
+
+class: inverse, left, bottom
+
+# OVERVIEW
+
+
