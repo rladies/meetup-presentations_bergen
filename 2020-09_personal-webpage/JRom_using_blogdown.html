@@ -4,7 +4,7 @@
     <title>Building a webpage with blogdown</title>
     <meta charset="utf-8" />
     <meta name="author" content="Julia Romanowska" />
-    <meta name="date" content="2020-08-14" />
+    <meta name="date" content="2020-08-24" />
     <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
@@ -41,6 +41,8 @@ class: inverse, left, bottom
 
 ???
 
+Here's what this short course is going to cover:
+
 - Modern webpage anatomy
   - HTML
   - CSS
@@ -55,31 +57,65 @@ class: inverse, left, bottom
   - `build_site()`
   - `serve_site()`
 
-Check the anatomy of directories after "new_site" is called.
-
 ---
 
 ## Modern webpage anatomy
 
 | HTML  |  CSS   |   javascript |
-|-------|--------|--------------|
+|:-----:|:------:|:------------:|
 | &lt;img src="html.png" width="200px"/&gt; | &lt;img src="css.png" width="200px"/&gt; | &lt;img src="magic.png" width="200px"/&gt; |
 
 ???
 
-- HTML = hypertext markup language
+I need to precise here: we're talking about a _static_ webpage, where the
+user does not have possibility to create new content live.
 
-- CSS = cascade style sheets
+The webpage elements are as follows:
 
-- javascript
+- **HTML** = hypertext markup language
+    - this is the content part
+    - includes all the text and images displayed, and some meta-information, but it doesn't have to include _formatting_ or _styling_
+- **CSS** = cascade style sheets
+    - this collects all the information about _formatting_
+    - if one wants to refresh the webpage look, changes need to be made here
+- **javascript**
+    - optional, but often used element that allows for some _special effects_
+    - e.g., displaying a message box in response to a click
+
+Think about the HTML part as a bag of containers that sort the content of the webpage into tabs, parts, or paragraphs. These containers can then be styled by the CSS rules (e.g., stating that one paragraph should be beside another one, text in the headline should be bold and green, while yet another container should be on the margin, and with yellow text). Finally, the optional javascript can be used to make some animations, etc.
+
+However, thanks to blogdown (and Hugo), we do not need to learn all these elements from scratch when we want to build a simple static webpage.
 
 ---
 
 ## Blogdown elements
 
-???
+&gt; _Blogdown is a package that ports Hugo to R and Rmarkdown_
 
 https://bookdown.org/yihui/blogdown/static-sites.html
+
+Key elements to master:
+
+- **Rmarkdown**
+- **TOML** = Tom's Obvious Minimal Language
+    - https://toml.io/en/
+
+???
+
+Key elements to master:
+
+- **Rmarkdown**
+    - we can generate html webpages with Rmarkdown!
+    - hint: do not use the ``output`` parameter in YAML header
+    - https://bookdown.org/yihui/blogdown/content.html
+- **TOML**
+    - this is the language of the configuration script for Hugo
+    - deals with parameters and some formatting of the webpages
+    - blogdown also allows **YAML** (Yet Another Markup Language)
+    - https://bookdown.org/yihui/blogdown/configuration.html#toml-syntax
+
+We'll see some examples soon, but what is important is to note that Hugo creates
+all the necessary files, so we will need to only change some stuff.
 
 ---
 
@@ -87,11 +123,29 @@ https://bookdown.org/yihui/blogdown/static-sites.html
 
 - create a new RStudio project (e.g., `blogdown_test`)
 - run `blogdown::new_site()`
-- checkout the directories and output
+- check the directories and output
 - stop the server with `servr::daemon_stop(1)`
 - make some changes in the `content` directory and/or `config.toml`
 - re-create the webpage with `blogdown::build_site()`
 - check the visual part with `blogdown::serve_site()`
+
+???
+
+Check the anatomy of directories after "new_site" is called.
+
+General hierarchy:
+
+- **config.toml**
+    - here are all the parameters, title, author, images, location of extra files, etc.
+- **content/**
+    - here you can put all the .Rmd or .md files with content
+- **static/**
+    - here is the place for all the images and/or javascript, css
+- **themes/**
+    - you can have copies of the webpage themes here and alter between them by tweaking ``config.toml``
+- **layouts/**
+    - here are configuration files (.toml) for the parts of the webpage that are common for all the sub-pages (i.e., header, menu, footer, etc.)
+
 
 ---
 
@@ -107,7 +161,7 @@ https://bookdown.org/yihui/blogdown/static-sites.html
   - copy the directories from the `example_site`: `content`, `static`, `layouts`
   - compare `config.toml` from Blogdown default and your chosen theme
 
-- Run the commands and enjoy
+- Run the following commands and enjoy
 
 
 ```r
@@ -117,7 +171,7 @@ blogdown::serve_site()
 
 ???
 
-There is always a directory named "example_site" where everything is publication-ready
+There is always a directory named "example_site", where everything is publication-ready
 and there one can check and learn how to manipulate everything.
 
 ---
@@ -127,6 +181,10 @@ and there one can check and learn how to manipulate everything.
 - GitHub instructions: https://pages.github.com/
 - Bitbucket instructions: https://support.atlassian.com/bitbucket-cloud/docs/publishing-a-website-on-bitbucket-cloud/
 - other possibilities: https://bookdown.org/yihui/blogdown/deployment.html
+
+???
+
+When publishing, push to the server only the contents of the ``public`` directory in your blogdown folder!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
