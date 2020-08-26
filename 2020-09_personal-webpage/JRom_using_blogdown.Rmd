@@ -69,6 +69,10 @@ Here's what this short course is going to cover:
 |:-----:|:------:|:------------:|
 | <img src="html.png" width="200px"/> | <img src="css.png" width="200px"/> | <img src="magic.png" width="200px"/> |
 
+<br><br>
+
+<p style="font-size: small; font-style: italic; text-align: right;">TIP: to view my notes, press P</p>
+
 ???
 
 I need to precise here: we're talking about a _static_ webpage, where the
@@ -128,10 +132,10 @@ all the necessary files, so we will need to only change some stuff.
 - create a new RStudio project (e.g., `blogdown_test`)
 - run `blogdown::new_site()`
 - check the directories and output
-- stop the server with `servr::daemon_stop(1)`
+- check the visual part with `blogdown::serve_site()`
 - make some changes in the `content` directory and/or `config.toml`
 - re-create the webpage with `blogdown::build_site()`
-- check the visual part with `blogdown::serve_site()`
+- _when you're ready, stop the server with `servr::daemon_stop(1)`_
 
 ???
 
