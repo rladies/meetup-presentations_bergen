@@ -54,15 +54,15 @@ options(knitr.table.format = "html")
 
 - Jonelle Dickow Villar:  
 _Clinician who loves R_  
-[https://www.uib.no/nb/personer/ Jonelle.M.Dickow.Villar](https://www.uib.no/nb/personer/Jonelle.M.Dickow.Villar)
+[https://www.uib.no/en/persons/ Jonelle.M.Dickow.Villar](https://www.uib.no/en/persons/Jonelle.M.Dickow.Villar)
 
 - Julia Romanowska:  
 _Data scientist who loves visualization and programming_  
 https://jrom.bitbucket.io/homepage/
 
 - Astrid Lunde:  
-_Statistician who loves numbers_
-
+_Statistician who loves numbers_  
+[https://www.uib.no/en/persons/ Astrid.Lunde](https://www.uib.no/en/persons/Astrid.Lunde)
 
 ## What is it all about?
 
@@ -72,8 +72,6 @@ _Statistician who loves numbers_
 - We _inspire_ each other through discussions and presentations
 - We _learn_ from each other through tutorials
 
-<br>
-<br>
 <br>
 
 ## How to join?

@@ -34,6 +34,41 @@ class: center, inverse
 
 ---
 
+class: inverse
+
+## What is R-Ladies?
+
+# R-Ladies Global
+
+- A global community of ladies who use R
+- that seeks to _support_ and _inspire_ others
+- through **teaching**, **sharing**, and **mentorship**
+
+# R-Ladies Bergen
+
+- Jonelle Dickow Villar (https://www.uib.no/en/persons/Jonelle.M.Dickow.Villar)
+- Julia Romanowska (https://jrom.bitbucket.io/homepage/)
+- Astrid Lunde (https://www.uib.no/en/persons/Astrid.Lunde)
+
+---
+
+##  Check out R-Ladies on social media 
+
+- Main webpage:  http://rladies.org/
+- **Twitter**
+    - R-Ladies Bergen:  @RLadiesBergen
+    - R-Ladies Global:  @RLadiesGlobal
+    - We are R-Ladies:  @WeAreRLadies
+- **Facebook:**           R-Ladies-Bergen
+- Sign up on **Meetup**:  https://meetup.com/rladies-bergen/
+- **Slack** workspace:
+    - `rladies-norway` *(send us an e-mail to get the invitation!)*
+    - `rladies-community` https://rladies-community-slack.herokuapp.com/
+- **github**: https://github.com/rladies/meetup-presentations_bergen
+
+
+---
+
 class: inverse, left, bottom
 
 # OVERVIEW
