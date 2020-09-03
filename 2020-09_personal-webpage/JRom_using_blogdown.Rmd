@@ -65,6 +65,7 @@ class: inverse
     - `rladies-norway` *(send us an e-mail to get the invitation!)*
     - `rladies-community` https://rladies-community-slack.herokuapp.com/
 - **github**: https://github.com/rladies/meetup-presentations_bergen
+- **YouTube**: https://www.youtube.com/c/RLadiesGlobal/Videos
 
 
 ---
@@ -95,6 +96,14 @@ Here's what this short course is going to cover:
   - `new_site()`
   - `build_site()`
   - `serve_site()`
+
+---
+
+class: inverse, left, middle
+
+# PRE-COURSE QUIZ!
+
+## Go to www.menti.com on your phone and enter the code `66 67 77`
 
 ---
 
@@ -225,6 +234,14 @@ and there one can check and learn how to manipulate everything.
 - Bitbucket instructions: https://support.atlassian.com/bitbucket-cloud/docs/publishing-a-website-on-bitbucket-cloud/
 - other possibilities: https://bookdown.org/yihui/blogdown/deployment.html
 
-???
+<br>
 
-When publishing, push to the server only the contents of the ``public`` directory in your blogdown folder!
+> NOTE: When publishing, push to the server only the contents of the `public` directory in your blogdown folder!
+
+---
+
+class: inverse, left, middle
+
+# AFTER-COURSE QUIZ!
+
+## Go to www.menti.com on your phone and enter the code `66 67 77`

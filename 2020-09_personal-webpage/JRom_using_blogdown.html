@@ -4,7 +4,7 @@
     <title>Building a webpage with blogdown</title>
     <meta charset="utf-8" />
     <meta name="author" content="Julia Romanowska" />
-    <meta name="date" content="2020-09-01" />
+    <meta name="date" content="2020-09-03" />
     <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
@@ -61,6 +61,7 @@ class: inverse
     - `rladies-norway` *(send us an e-mail to get the invitation!)*
     - `rladies-community` https://rladies-community-slack.herokuapp.com/
 - **github**: https://github.com/rladies/meetup-presentations_bergen
+- **YouTube**: https://www.youtube.com/c/RLadiesGlobal/Videos
 
 
 ---
@@ -91,6 +92,14 @@ Here's what this short course is going to cover:
   - `new_site()`
   - `build_site()`
   - `serve_site()`
+
+---
+
+class: inverse, left, middle
+
+# PRE-COURSE QUIZ!
+
+## Go to www.menti.com on your phone and enter the code `66 67 77`
 
 ---
 
@@ -223,9 +232,17 @@ and there one can check and learn how to manipulate everything.
 - Bitbucket instructions: https://support.atlassian.com/bitbucket-cloud/docs/publishing-a-website-on-bitbucket-cloud/
 - other possibilities: https://bookdown.org/yihui/blogdown/deployment.html
 
-???
+&lt;br&gt;
 
-When publishing, push to the server only the contents of the ``public`` directory in your blogdown folder!
+&gt; NOTE: When publishing, push to the server only the contents of the `public` directory in your blogdown folder!
+
+---
+
+class: inverse, left, middle
+
+# AFTER-COURSE QUIZ!
+
+## Go to www.menti.com on your phone and enter the code `66 67 77`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -273,6 +290,32 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -290,17 +333,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {
