@@ -22,4 +22,30 @@ If you want to contribute or have questions, do not hesitate to contact us:
 
 __Date__ 25.11.2019, 5PM
 
+### 2. Intro to tidyverse
+
+__Date__ 06.02.2020, 5PM
+
+### 3. Troubleshooting
+
+__Date__ 15.06.2020, 4PM
+
+### 4. Building a webpage with blogdown
+
+__Date__ 03.09.2020, 6:15PM
+
+
+## COMING UP!
+
+### 5. Guest talk: Athanasia Mowinckel [\@Athanasiamo](https://github.com/Athanasiamo)
+
+__Date__ 06.10.2020
+
+### 6. Guest talk: Maëlle Salmon [\@maelle](https://github.com/maelle)
+
+__Date__ 11.2020
+
+### 5. Guest talk: Cosima Meyer [\@cosimameyer](https://github.com/cosimameyer)
+
+__Date__ 12.2020
 
