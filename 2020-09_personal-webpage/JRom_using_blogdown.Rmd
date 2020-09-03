@@ -65,6 +65,7 @@ class: inverse
     - `rladies-norway` *(send us an e-mail to get the invitation!)*
     - `rladies-community` https://rladies-community-slack.herokuapp.com/
 - **github**: https://github.com/rladies/meetup-presentations_bergen
+- **YouTube**: https://www.youtube.com/c/RLadiesGlobal/Videos
 
 
 ---
