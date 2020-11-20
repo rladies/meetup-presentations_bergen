@@ -8,6 +8,7 @@ If you want to contribute or have questions, do not hesitate to contact us:
 * Jonelle Villar [\@jonellevillar](https://github.com/jonellevillar)
 * Julia Romanowska [\@jromanowska](https://github.com/jromanowska)
 * Astrid Lunde (https://www.uib.no/en/persons/Astrid.Lunde)
+* Diandian Yi [\@diandianyi](https://github.com/DiandianYi)
 
 # R-Ladies Bergen on the net
 
@@ -39,11 +40,18 @@ __Date__ 03.09.2020, 6:15PM (CEST)
 
 __Date__ 06.10.2020, 4:30PM (CEST)
 
-## COMING UP!
+__Webpage__ https://athanasiamo.github.io/LME_introduction_workshop/    
+and __github repo__ https://github.com/Athanasiamo/LME_introduction_workshop
 
 ### 6. Guest talk: Maëlle Salmon [\@maelle](https://github.com/maelle)
 
 __Date__ 11.2020, 3:30PM (CEST)
+
+__Webpage__ https://new-r-dev.netlify.app/    
+__github repo__ https://github.com/maelle/r-pkg-dev-rladies-bergen    
+and ___recording___ available [on R-Ladies Global YouTube channel](https://www.youtube.com/watch?v=ZX0iI_P__ic&t=2s)
+
+## COMING UP!
 
 ### 5. Guest talk: Cosima Meyer [\@cosimameyer](https://github.com/cosimameyer)
 
