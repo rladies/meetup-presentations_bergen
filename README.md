@@ -51,9 +51,13 @@ __Webpage__ https://new-r-dev.netlify.app/
 __github repo__ https://github.com/maelle/r-pkg-dev-rladies-bergen    
 and ___recording___ available [on R-Ladies Global YouTube channel](https://www.youtube.com/watch?v=ZX0iI_P__ic&t=2s)
 
-## COMING UP!
-
 ### 5. Guest talk: Cosima Meyer [\@cosimameyer](https://github.com/cosimameyer)
 
 __Date__ 8.12.2020, 4PM (CEST)
 
+__Webpage__ https://nlp-bergen.netlify.app/    
+__github repo__ https://github.com/cosimameyer/nlp-rladies-bergen    
+
+## COMING UP!
+
+### 6. Sharing and outlook workshop: My experience with R and the next step!
