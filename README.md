@@ -57,6 +57,7 @@ __Date__ 8.12.2020, 4PM (CEST)
 
 __Webpage__ https://nlp-bergen.netlify.app/    
 __github repo__ https://github.com/cosimameyer/nlp-rladies-bergen    
+and __recording__ available [on R-Ladies Global YouTube channel](https://www.youtube.com/watch?v=bvqur70ZmyM)
 
 ### 6. Sharing and outlook workshop: My experience with R and the next step!
 
@@ -66,7 +67,8 @@ A journalist's was to learn coding [Shazia Majid](https://twitter.com/ShaziaSarw
 
 __Date__ Friday, January 15, 2021, 6PM (CET)
 
-__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/275580600/
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/275580600/    
+and __recording__ available [on R-Ladies Global YouTube channel](https://www.youtube.com/watch?v=ofEX4pNG028)
 
 ### 8. A statistician's story of learning and teaching with R and R Markdown
 
@@ -82,7 +84,8 @@ An interview with two visualization freelancers using R, [Shirley Wu](https://tw
 
 __Date__ Monday, March 8, 2021, 6PM (CET)
 
-__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/276414695/
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/276414695/    
+and __recording__ available [on R-Ladies Global YouTube channel](https://www.youtube.com/watch?v=1q2o9DOni5U)
 
 ## COMING UP!
 
