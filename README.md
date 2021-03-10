@@ -58,6 +58,46 @@ __Date__ 8.12.2020, 4PM (CEST)
 __Webpage__ https://nlp-bergen.netlify.app/    
 __github repo__ https://github.com/cosimameyer/nlp-rladies-bergen    
 
+### 6. Sharing and outlook workshop: My experience with R and the next step!
+
+### 7. gReat SKUP!
+
+A journalist's was to learn coding [Shazia Majid](https://twitter.com/ShaziaSarwar)
+
+__Date__ Friday, January 15, 2021, 6PM (CET)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/275580600/
+
+### 8. A statistician's story of learning and teaching with R and R Markdown
+
+Guest talk by statistician and R-Lady [Mette Langaas](https://www.ntnu.edu/employees/mette.langaas) ([\@mettelang](https://github.com/mettelang)).
+
+__Date__ Tuesday, February 23, 2021, 6PM (CET)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/275859899/
+
+### 9. cReating visualizations and a book!
+
+An interview with two visualization freelancers using R, [Shirley Wu](https://twitter.com/sxywu) and [Nadieh Bremer](https://twitter.com/NadiehBremer), who collaborated for a fantastic project that became a book! [datasketches](https://www.datasketch.es/)
+
+__Date__ Monday, March 8, 2021, 6PM (CET)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/276414695/
+
 ## COMING UP!
 
-### 6. Sharing and outlook workshop: My experience with R and the next step!
+### 10. Best coding practices
+
+__Date__ Monday, March 22, 2021, 4PM (CET)
+
+### 11. Bayesian statistics
+
+__Date__ Thursday, April 15, 2021, 1:30PM (CET)
+
+### 12. Statistrikk!
+
+__Date__ May 20, 2021, 6PM (CET)
+
+### 13. Plotting with genomic data
+
+__Date__ June, 2021
