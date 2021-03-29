@@ -87,11 +87,13 @@ __Date__ Monday, March 8, 2021, 6PM (CET)
 __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/276414695/    
 and __recording__ available [on R-Ladies Global YouTube channel](https://www.youtube.com/watch?v=1q2o9DOni5U)
 
-## COMING UP!
-
 ### 10. Best coding practices
 
 __Date__ Monday, March 22, 2021, 4PM (CET)
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/276102013/    
+and __recording__ available [on R-Ladies Global YouTube channel](https://youtu.be/EvvverTVgY0)
+
+## COMING UP!
 
 ### 11. Bayesian statistics
 
