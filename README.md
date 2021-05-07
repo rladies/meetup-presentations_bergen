@@ -95,10 +95,6 @@ and __recording__ available [on R-Ladies Global YouTube channel](https://youtu.b
 
 ## COMING UP!
 
-__Recording__ available [on R-Ladies Global YouTube channel](https://youtu.be/EvvverTVgY0)
-
-## COMING UP!
-
 ### 11. Bayesian statistics
 
 __Date__ Tuesday, May 11, 2021, 1:30PM (CET)
