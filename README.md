@@ -93,16 +93,22 @@ __Date__ Monday, March 22, 2021, 4PM (CET)
 __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/276102013/    
 and __recording__ available [on R-Ladies Global YouTube channel](https://youtu.be/EvvverTVgY0)
 
+### 11. Statistrikk!
+
+__Date__ May 20, 2021, 6PM (CEST)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/277543752/
+
+### 12. Bayesian statistics
+
+__Date__ Monday, May 31, 2021, 12:00PM (CEST)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/278142805/
+
 ## COMING UP!
 
-### 11. Bayesian statistics
+### 13. Large scale time series forecasting
 
-__Date__ Tuesday, May 11, 2021, 1:30PM (CET)
+__Date__ June 14, 2021, 2:00PM (CEST)
 
-### 12. Statistrikk!
-
-__Date__ May 20, 2021, 6PM (CET)
-
-### 13. Plotting with genomic data
-
-__Date__ June, 2021
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/278319207/
