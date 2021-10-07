@@ -105,10 +105,25 @@ __Date__ Monday, May 31, 2021, 12:00PM (CEST)
 
 __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/278142805/
 
-## COMING UP!
-
 ### 13. Large scale time series forecasting
 
 __Date__ June 14, 2021, 2:00PM (CEST)
 
 __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/278319207/
+
+### 14. Reproducible analysis in anthropology
+
+__Date__ September 7, 2021, 6:00PM (CEST)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/280175121/
+and __recording__ available [on R-Ladies Global YouTube channel](https://youtu.be/IyjtW41Bfbo)
+
+### 15. FAIR research data & citable code
+
+__Date__ October 7, 2021, 12:30PM (CEST)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/280789276/
+and __slides__ available [on Zenodo](https://zenodo.org/record/5553307#.YV7iY3uxVrk)
+
+## COMING UP!
+
