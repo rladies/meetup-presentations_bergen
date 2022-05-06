@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>How not to panic</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Julia Romanowska" />
+    <meta name="date" content="2022-05-06" />
+    <script src="horror_messages_JRom_2022-05-12_files/header-attrs/header-attrs.js"></script>
+    <script src="horror_messages_JRom_2022-05-12_files/fabric/fabric.min.js"></script>
+    <link href="horror_messages_JRom_2022-05-12_files/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="horror_messages_JRom_2022-05-12_files/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <script src="horror_messages_JRom_2022-05-12_files/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+background-image: url("figs/greg-rosenke-WX4LFn24RxQ-unsplash.jpg")
+background-size: cover
+
+class: left, top, inverse
+
+&lt;p style="font-weight: 900; font-family: Georgia; font-size: 2.5rem; color: white; text-shadow: 2px 2px black;"&gt;
+How not to panic
+&lt;/p&gt;
+
+&lt;p style="font-weight: 900; font-family: Georgia; font-size: 2rem; color: white; text-shadow: 2px 2px black;"&gt;
+in face of an error message
+&lt;/p&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;p style="font-weight: 900; font-family: Georgia; font-size: 1.8rem; color: white; text-shadow: 2px 2px black;"&gt;
+Julia Romanowska
+&lt;/p&gt;
+
+&lt;p style="font-weight: 900; font-family: Georgia; font-size: 1rem; color: white; text-shadow: 2px 2px black;"&gt;
+May 12, 2022
+&lt;/p&gt;
+
+
+&lt;p style="font-size: 12pt; font-weight: bold; right: 10px; bottom: 20px; position: absolute; "&gt;
+Photo by &lt;a href="https://unsplash.com/@greg_rosenke?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"&gt;Greg Rosenke&lt;/a&gt; on &lt;a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"&gt;Unsplash&lt;/a&gt;
+&lt;/p&gt;
+
+---
+
+class: invert, right, middle
+
+## Overview
+
+### Computer basics
+
+### Types of instructions
+
+### How to translate a problem?
+
+### Program execution
+
+### Exercise
+
+---
+
+### Computer basics
+
+&gt; _What is a computer?_
+
+.pull-left[
+**Physical machine**
+
+- CPU
+
+- RAM
+
+- disk
+]
+
+--
+
+.pull-right[
+**Mental model**
+
+- instructions
+
+- processing:
+  1. input
+  2. store / analyse
+  3. output
+]
+
+???
+
+In each of these three steps there can be an error!
+
+---
+
+### Types of instructions
+
+.pull-left[
+**1. Declaration**
+
+&gt; **variable** = space allocated in RAM to hold some data
+
+- **variable type**
+  - character
+  - numeric
+  - date
+
+--
+
+**2. Input**
+
+]
+
+???
+
+Various types can have various features - e.g., we cannot perform an addition
+on two character variables.
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

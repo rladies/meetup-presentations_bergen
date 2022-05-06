@@ -1,0 +1,65 @@
+---
+title: "Questionnaire"
+author: "Julia Romanowska"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+These questions are ment to check what is the most difficult for you and
+whether this short workshop helped you.
+
+Answer the questions _before_ and _after_ today's session.
+
+### How do you feel when you encounter an error message?
+
+|    |            | _before_ | _after_ 
+|----|------------|----------|---------
+| A  | frustrated |          |
+| B  | challenged |          |
+| C  | scared or angry |     |
+| D  | other: ______________ | | 
+
+### Why do you think you feel like that?
+
+_before:_ __________________________________________________________
+
+<br>
+_after:_ __________________________________________________________
+
+### What do you do after you've encountered an error message?
+
+|    |            | _before_ | _after_ 
+|----|------------|----------|---------
+| A  | shut down the PC |          |
+| B  | ask my friend/teacher for help |          |
+| C  | read the msg to understand what's wrong |     |
+| D  | other: ______________ | | 
+
+### Can you understand the following messages?
+
+_Write 'YES/NO'_
+
+|    |            | _before_ | _after_ 
+|----|------------|----------|---------
+| A  | `Cannot allocate a vector of size ...` |          |
+| B  | `Error in 'mutate()':`  |  | 
+|    | `! Problem while computing ...` | | 
+|    | `Caused by error in '...':` | | 
+|    | `! object 'HRf' not found` |          |
+| C  | `Error in ... : non-numeric argument to binary operator` |     |
+| D  |  | | 
+
+### Do you know what might be the cause of each error from the previous question?
+
+_Write 'YES/NO'_
+
+|    |            | _before_ | _after_ 
+|----|------------|----------|---------
+| A  | `Cannot allocate a vector of size ...` |          |
+| B  |  |          |
+| C  |  |     |
+| D  |  | | 

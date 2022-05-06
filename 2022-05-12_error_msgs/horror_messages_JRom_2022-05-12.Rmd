@@ -1,0 +1,145 @@
+---
+title: "How not to panic"
+subtitle: "in face of an error message"  
+author: "Julia Romanowska"
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    seal: false
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+library(fontawesome)
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#1381B0",
+  secondary_color = "#FF961C",
+  inverse_header_color = "#FFFFFF"
+)
+library(xaringanExtra)
+use_scribble()
+use_fit_screen()
+```
+
+background-image: url("figs/greg-rosenke-WX4LFn24RxQ-unsplash.jpg")
+background-size: cover
+
+class: left, top, inverse
+
+<p style="font-weight: 900; font-family: Georgia; font-size: 2.5rem; color: white; text-shadow: 2px 2px black;">
+How not to panic
+</p>
+
+<p style="font-weight: 900; font-family: Georgia; font-size: 2rem; color: white; text-shadow: 2px 2px black;">
+in face of an error message
+</p>
+
+<br>
+<br>
+<br>
+<br>
+<p style="font-weight: 900; font-family: Georgia; font-size: 1.8rem; color: white; text-shadow: 2px 2px black;">
+Julia Romanowska
+</p>
+
+<p style="font-weight: 900; font-family: Georgia; font-size: 1rem; color: white; text-shadow: 2px 2px black;">
+May 12, 2022
+</p>
+
+
+<p style="font-size: 12pt; font-weight: bold; right: 10px; bottom: 20px; position: absolute; ">
+Photo by <a href="https://unsplash.com/@greg_rosenke?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Greg Rosenke</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+</p>
+
+---
+
+class: invert, right, middle
+
+## Overview
+
+### Computer basics
+
+### Types of instructions
+
+### How to translate a problem?
+
+### Program execution
+
+### Exercise
+
+---
+
+### Computer basics
+
+> _What is a computer?_
+
+.pull-left[
+**Physical machine**
+
+- CPU
+
+- RAM
+
+- disk
+]
+
+--
+
+.pull-right[
+**Mental model**
+
+- instructions
+
+- processing:
+  1. input
+  2. store / analyse
+  3. output
+]
+
+???
+
+In each of these three steps there can be an error!
+
+---
+
+### Types of instructions
+
+.pull-left[
+**1. Declaration**
+
+> **variable** = space allocated in RAM to hold some data
+
+- **variable type**
+  - character
+  - numeric
+  - date
+
+--
+
+**2. Input**
+
+]
+
+???
+
+Various types can have various features - e.g., we cannot perform an addition
+on two character variables.
+
+
