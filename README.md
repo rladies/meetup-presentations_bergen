@@ -89,7 +89,7 @@ and __recording__ available [on R-Ladies Global YouTube channel](https://www.you
 
 ### 10. Best coding practices
 
-__Date__ Monday, March 22, 2021, 4PM (CET)
+__Date__ Monday, March 22, 2021, 4PM (CET)    
 __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/276102013/    
 and __recording__ available [on R-Ladies Global YouTube channel](https://youtu.be/EvvverTVgY0)
 
@@ -124,6 +124,23 @@ __Date__ October 7, 2021, 12:30PM (CEST)
 
 __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/280789276/
 and __slides__ available [on Zenodo](https://zenodo.org/record/5553307#.YV7iY3uxVrk)
+
+### 16. exploratory data analysis (EDA) workflow
+
+__Date__ October 21, 2021, 3PM (CEST)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/281243389/ ,    
+__slides__ available [on github](https://github.com/priyankagagneja/Talks/blob/main/EDA_workflow/EDA_workflow.pdf),    
+and __recording__ available [on YouTube](https://youtu.be/UeIE4uZ6Jns)
+
+### 17. Data visualization in R
+
+__Date__ November 30, 2021, 5:00PM (CEST)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/281945467/ ,    
+code available [on github](https://github.com/aniaskrzydlo/datavis),    
+and __recording__ available [on R-Ladies Global YouTube channel](https://www.youtube.com/watch?v=pVkv1XGTcwo)
+
 
 ## COMING UP!
 
