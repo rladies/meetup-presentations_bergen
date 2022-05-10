@@ -2,18 +2,23 @@
 title: "Cheatsheet"
 author: "Julia Romanowska"
 date: '2022-05-10'
-output: html_document
+output: 
+  html_document:
+    theme: lumen
+    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-> This is based on the work presented in Khalife, J. T. **(2006)**. 
-> _Threshold for the introduction of programming: Providing learners with a_
-> _simple computer model._ Proceedings of the International Conference on
-> Information Technology Interfaces, ITI, 71–76. 
-> https://doi.org/10.1109/iti.2006.1708454
+<div class="alert-info" style="padding: 20px; border-radius: 10px;">
+This is based on the work presented in Khalife, J. T. **(2006)**. 
+_Threshold for the introduction of programming: Providing learners with a_
+_simple computer model._ Proceedings of the International Conference on
+Information Technology Interfaces, ITI, 71–76. 
+https://doi.org/10.1109/iti.2006.1708454
+</div>
 
 ## Generic instructions
 
@@ -42,16 +47,22 @@ Numeric a
 This reserves an empty space in RAM that is enough to hold any single numeric
 value and then, stores the address of this RAM space under name `a`.
 
-> NOTE: when writing R code, we do not need to _declare_ a variable before
-> assigning a value, system will do it invisibly for us when executing the code.
-> However, when learning how to translate a problem from natural language to a
-> code, it's a good idea to show each declaration explicitly.
+<div class="alert-success" style="padding: 10px; border-radius: 10px;">
+NOTE: when writing R code, we do not need to _declare_ a variable before
+assigning a value, system will do it invisibly for us when executing the code.
+However, when learning how to translate a problem from natural language to a
+code, it's a good idea to show each declaration explicitly.
+</div>
 
-> NOTE (2): **Be careful when naming variables!** In each programming
-> language, there are special names that should not be used as variable
-> names, e.g., `pi`, `break`. Short, abbreviated names are discouraged (e.g.,
-> `dnt2`, `tmp_a`), since these are not telling what type of values they 
-> would store. Try names such as `blood_pressure` or `AllPatientsHospital` instead.
+<br>
+
+<div class="alert-success" style="padding: 10px; border-radius: 10px;">
+NOTE (2): **Be careful when naming variables!** In each programming
+language, there are special names that should not be used as variable
+names, e.g., `pi`, `break`. Short, abbreviated names are discouraged (e.g.,
+`dnt2`, `tmp_a`), since these are not telling what type of values they 
+would store. Try names such as `blood_pressure` or `AllPatientsHospital` instead.
+</div>
 
 ### Input
 
@@ -64,7 +75,9 @@ KeyboardRead name
 This waits for the user to enter a sequence of signs and press `Enter` on a
 keyboard. Then, the sequence of signs will be stored in the variable `name`.
 
-> NOTE: the _type_ of the variable needs to be defined beforehand.
+<div class="alert-success" style="padding: 10px; border-radius: 10px;">
+NOTE: the _type_ of the variable needs to be defined beforehand.
+</div>
 
 ### Output
 
@@ -83,9 +96,11 @@ we need to assign these to variables.
 circumf <- 2*pi*radius
 ```
 
-> NOTE: _Before_ this line of pseudocode, there should be declaration of
-> `circumf` and `radius` numeric variables. `pi` is usually pre-defined in
-> various programming languages.
+<div class="alert-success" style="padding: 10px; border-radius: 10px;">
+NOTE: _Before_ this line of pseudocode, there should be declaration of
+`circumf` and `radius` numeric variables. `pi` is usually pre-defined in
+various programming languages.
+</div>
 
 ## Diagram of instructions flow
 
