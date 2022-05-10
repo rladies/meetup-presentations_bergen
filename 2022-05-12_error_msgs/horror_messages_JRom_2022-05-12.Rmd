@@ -68,6 +68,16 @@ May 12, 2022
 Photo by <a href="https://unsplash.com/@greg_rosenke?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Greg Rosenke</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 </p>
 
+???
+
+Any programming requires understanding not only of how to use syntax of a
+given programming language or script, but also how the instructions are
+evaluated. Because when we know what's going on under the hood in each
+step of the program, then we can easily search for sources of error _when_
+it occurs. Note that I use "when", not "if" - because there will always be
+errors, even if you're super experienced. That's why I don't want you to be
+intimidated by the errors - treat them as a challenge.
+
 ---
 
 class: inverse, right, middle
@@ -84,6 +94,15 @@ class: inverse, right, middle
 
 ### Exercise
 
+???
+
+Today, I will provide you with a simple model of a computer in action. I will
+briefly recap how a computer is made, then I will introduce the most important
+types of instructions, next, I will show you how can we translate a simple
+question into a program prototype and how an execution of such a program runs.
+
+After this, I will give you a problem to solve.
+
 ---
 
 ### Computer basics
@@ -93,12 +112,24 @@ class: inverse, right, middle
 .pull-left[
 **Physical machine**
 
-- CPU
+- `r fa("microchip")` CPU
 
-- RAM
+- `r fa("memory")` RAM
 
-- disk
+- <img src="figs/hard-drive-solid.svg" style="width: 20px;"> disk
 ]
+
+???
+
+CPU = central processing unit
+
+RAM = random access memory
+
+disk
+
+These are all connected. CPU reads from and writes to memory, so to analyse
+anything, we need to read it from a disk into the memory. Then, to save it for
+later, we need to save it to disk.
 
 --
 
@@ -114,6 +145,9 @@ class: inverse, right, middle
 ]
 
 ???
+
+For now, however, let's forget the hardware and focus on a computer as a 
+machine that processes data according to instructions.
 
 In each of these three steps there can be an error!
 
@@ -143,13 +177,6 @@ In each of these three steps there can be an error!
 
 ]
 
-???
-
-Various types can have various features - e.g., we cannot perform an addition
-on two character variables.
-
---
-
 .pull-right[
 **3. Output**
 
@@ -167,12 +194,28 @@ on two character variables.
 
 ]
 
+???
+
+Generally, all the instructions can be divided into these four most important
+types: Declaration, Input, Output, and Assignment.
+
+Various types can have various features - e.g., we cannot perform an addition
+on two character variables.
+
 ---
 
 ### How to translate a problem?
 
 - Problem in natural language:    
 *Compute sum of three numbers given by the user*
+
+???
+
+Usually, when we think about data processing, we have a good understanding
+of the problem statement we want to solve. This is, however, formulated in 
+words and abstractions that are completely not understandable for our machine.
+
+We need to translate it to a code.
 
 --
 
@@ -184,6 +227,11 @@ Build a flowchart of the process!
 <img src="figs/Khalife_2006_fig_flowchart1.jpg" style="width: 70%;">
 ]
 
+???
+
+And for that, we need to split it into simple steps that can be then coded
+with our instructions. We can build a flowchart using these building blocks.
+
 --
 
 .pull-right[
@@ -193,7 +241,7 @@ Build a flowchart of the process!
 
 ???
 
-Let's write pseudo-code for that.
+With this, it's much easier to write pseudo-code and then real code.
 
 ---
 
@@ -203,6 +251,16 @@ Let's write pseudo-code for that.
   - variables in memory
   - values
   - next instruction
+
+???
+
+When we write down our program, it's static, but when we want the computer
+to run it, it's becoming dynamic. Each code line changes something, so we need
+to understand what's changing and where.
+
+We need to think in terms of _program state_. Let's see how it works.
+
+--
 
 > **Example**
 
@@ -430,7 +488,8 @@ _(empty)_
 In each of these steps, there can be an error!
 
 E.g., what will happen if we put a character instead of a number for one of
-`a`, `b`, or `c`?
+`a`, `b`, or `c`? It might be able to continue the program, but the number in
+this position will be `NA`, so the sum of the values will also be `NA`.
 
 ---
 class: inverse, right, middle
@@ -444,6 +503,11 @@ class: inverse, right, middle
 > _that these pollution values give highly skewed distribution, so first, we_
 > _need to log-transform the data._
 
+--
+
+_To make it easier, new variable type: `NumericVec` might hold an entire_
+_vector of values._
+
 ---
 class: inverse, right, middle
 
@@ -452,3 +516,4 @@ class: inverse, right, middle
 > Write down all possible causes to the following error:
 
 > _The calculated mean pollution value shows `NaN` (not a number) when printed to the screen._
+
