@@ -70,7 +70,7 @@ Photo by <a href="https://unsplash.com/@greg_rosenke?utm_source=unsplash&utm_med
 
 ---
 
-class: invert, right, middle
+class: inverse, right, middle
 
 ## Overview
 
@@ -127,13 +127,19 @@ In each of these three steps there can be an error!
 > **variable** = space allocated in RAM to hold some data
 
 - **variable type**
-  - character
+  - character/string
   - numeric
   - date
 
---
+- *example*    
+`String name`
 
 **2. Input**
+
+- from keyboard or from file
+
+- *example*    
+`KeyboardRead name`
 
 ]
 
@@ -142,4 +148,307 @@ In each of these three steps there can be an error!
 Various types can have various features - e.g., we cannot perform an addition
 on two character variables.
 
+--
 
+.pull-right[
+**3. Output**
+
+- to a file or to the screen (*standard output*)
+
+- *example*    
+`ScreenWrite "Good morning, dear ", name`
+
+**4. Assignment**
+
+- *example*    
+`var_name <- value`    
+`var_name <- expression`
+
+
+]
+
+---
+
+### How to translate a problem?
+
+- Problem in natural language:    
+*Compute sum of three numbers given by the user*
+
+--
+
+.pull-left[
+Build a flowchart of the process!
+
+*building blocks*
+
+<img src="figs/Khalife_2006_fig_flowchart1.jpg" style="width: 70%;">
+]
+
+--
+
+.pull-right[
+<img src="figs/Khalife_2006_fig_flowchart2.jpg" style="width: 65%;">
+
+]
+
+???
+
+Let's write pseudo-code for that.
+
+---
+
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+> **Example**
+
+.pull-left[
+**Program area**
+
+```
+[x] Numeric a, b, c
+[ ] KeyboardRead a
+[ ] KeyboardRead b
+[ ] KeyboardRead c
+[ ] Numeric total
+[ ] total <- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+_(empty)_
+]
+
+---
+
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+> **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[x] KeyboardRead a
+[ ] KeyboardRead b
+[ ] KeyboardRead c
+[ ] Numeric total
+[ ] total <- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` |
+:----:|:-----:|:----:|
+ `NA` | `NA`  | `NA` |
+
+]
+
+---
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+> **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[ ] KeyboardRead a
+[x] KeyboardRead b
+[ ] KeyboardRead c
+[ ] Numeric total
+[ ] total <- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` |
+:----:|:-----:|:----:|
+ `19` | `NA`  | `NA` |
+
+]
+
+---
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+> **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[ ] KeyboardRead a
+[ ] KeyboardRead b
+[x] KeyboardRead c
+[ ] Numeric total
+[ ] total <- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` |
+:----:|:-----:|:----:|
+ `19` | `2`  | `NA` |
+
+]
+
+---
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+> **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[ ] KeyboardRead a
+[ ] KeyboardRead b
+[ ] KeyboardRead c
+[x] Numeric total
+[ ] total <- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` |
+:----:|:-----:|:----:|
+ `19` | `2`  | `126` |
+
+]
+
+---
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+> **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[ ] KeyboardRead a
+[ ] KeyboardRead b
+[ ] KeyboardRead c
+[ ] Numeric total
+[x] total <- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` | `total` |
+:----:|:-----:|:----:|:-------:|
+ `19` | `2`  | `126` |  `NA`   |
+
+]
+
+---
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+> **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[ ] KeyboardRead a
+[ ] KeyboardRead b
+[ ] KeyboardRead c
+[ ] Numeric total
+[ ] total <- a + b + c
+[x] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` | `total` |
+:----:|:-----:|:----:|:-------:|
+ `19` | `2`  | `126` |  `147`  |
+
+]
+
+???
+
+In each of these steps, there can be an error!
+
+E.g., what will happen if we put a character instead of a number for one of
+`a`, `b`, or `c`?
+
+---
+class: inverse, right, middle
+
+### Exercise 1
+
+> Write a pseudocode that can be used to solve the following problem:
+
+> _We received a CSV file with pollution values measured once per hour during_
+> _last 24 hours. We need to compute mean pollution value. However, we know_
+> _that these pollution values give highly skewed distribution, so first, we_
+> _need to log-transform the data._
+
+---
+class: inverse, right, middle
+
+### Exercise 2
+
+> Write down all possible causes to the following error:
+
+> _The calculated mean pollution value shows `NaN` (not a number) when printed to the screen._

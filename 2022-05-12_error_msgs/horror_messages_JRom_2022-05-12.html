@@ -4,7 +4,7 @@
     <title>How not to panic</title>
     <meta charset="utf-8" />
     <meta name="author" content="Julia Romanowska" />
-    <meta name="date" content="2022-05-06" />
+    <meta name="date" content="2022-05-10" />
     <script src="horror_messages_JRom_2022-05-12_files/header-attrs/header-attrs.js"></script>
     <script src="horror_messages_JRom_2022-05-12_files/fabric/fabric.min.js"></script>
     <link href="horror_messages_JRom_2022-05-12_files/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
@@ -51,7 +51,7 @@ Photo by &lt;a href="https://unsplash.com/@greg_rosenke?utm_source=unsplash&amp;
 
 ---
 
-class: invert, right, middle
+class: inverse, right, middle
 
 ## Overview
 
@@ -108,13 +108,19 @@ In each of these three steps there can be an error!
 &gt; **variable** = space allocated in RAM to hold some data
 
 - **variable type**
-  - character
+  - character/string
   - numeric
   - date
 
---
+- *example*    
+`String name`
 
 **2. Input**
+
+- from keyboard or from file
+
+- *example*    
+`KeyboardRead name`
 
 ]
 
@@ -123,7 +129,306 @@ In each of these three steps there can be an error!
 Various types can have various features - e.g., we cannot perform an addition
 on two character variables.
 
+--
 
+.pull-right[
+**3. Output**
+
+- to a file or to the screen (*standard output*)
+
+- *example*    
+`ScreenWrite "Good morning, dear ", name`
+
+**4. Assignment**
+
+- *example*    
+`var_name &lt;- value`    
+`var_name &lt;- expression`
+
+
+]
+
+---
+
+### How to translate a problem?
+
+- Problem in natural language:    
+*Compute sum of three numbers given by the user*
+
+--
+
+.pull-left[
+Build a flowchart of the process!
+
+*building blocks*
+
+&lt;img src="figs/Khalife_2006_fig_flowchart1.jpg" style="width: 70%;"&gt;
+]
+
+--
+
+.pull-right[
+&lt;img src="figs/Khalife_2006_fig_flowchart2.jpg" style="width: 65%;"&gt;
+
+]
+
+---
+
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+&gt; **Example**
+
+.pull-left[
+**Program area**
+
+```
+[x] Numeric a, b, c
+[ ] KeyboardRead a
+[ ] KeyboardRead b
+[ ] KeyboardRead c
+[ ] Numeric total
+[ ] total &lt;- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+_(empty)_
+]
+
+---
+
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+&gt; **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[x] KeyboardRead a
+[ ] KeyboardRead b
+[ ] KeyboardRead c
+[ ] Numeric total
+[ ] total &lt;- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` |
+:----:|:-----:|:----:|
+ `NA` | `NA`  | `NA` |
+
+]
+
+---
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+&gt; **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[ ] KeyboardRead a
+[x] KeyboardRead b
+[ ] KeyboardRead c
+[ ] Numeric total
+[ ] total &lt;- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` |
+:----:|:-----:|:----:|
+ `19` | `NA`  | `NA` |
+
+]
+
+---
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+&gt; **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[ ] KeyboardRead a
+[ ] KeyboardRead b
+[x] KeyboardRead c
+[ ] Numeric total
+[ ] total &lt;- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` |
+:----:|:-----:|:----:|
+ `19` | `2`  | `NA` |
+
+]
+
+---
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+&gt; **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[ ] KeyboardRead a
+[ ] KeyboardRead b
+[ ] KeyboardRead c
+[x] Numeric total
+[ ] total &lt;- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` |
+:----:|:-----:|:----:|
+ `19` | `2`  | `126` |
+
+]
+
+---
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+&gt; **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[ ] KeyboardRead a
+[ ] KeyboardRead b
+[ ] KeyboardRead c
+[ ] Numeric total
+[x] total &lt;- a + b + c
+[ ] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` | `total` |
+:----:|:-----:|:----:|:-------:|
+ `19` | `2`  | `126` |  `NA`   |
+
+]
+
+---
+### Program execution
+
+- _program state:_
+  - variables in memory
+  - values
+  - next instruction
+
+&gt; **Example**
+
+.pull-left[
+**Program area**
+
+```
+[ ] Numeric a, b, c
+[ ] KeyboardRead a
+[ ] KeyboardRead b
+[ ] KeyboardRead c
+[ ] Numeric total
+[ ] total &lt;- a + b + c
+[x] ScreenWrite "Sum is equal to ", total
+```
+]
+
+.pull-right[
+**Data area**
+
+ `a`  |  `b`  |  `c` | `total` |
+:----:|:-----:|:----:|:-------:|
+ `19` | `2`  | `126` |  `147`  |
+
+]
+
+???
+
+In each of these steps, there can be an error!
+
+E.g., what will happen if we put a character instead of a number for one of
+`a`, `b`, or `c`?
+
+---
+class: inverse, right, middle
+
+### Exercise 1
+
+&gt; Write a pseudocode that can be used to solve the following problem:
+
+&gt; _We received a CSV file with pollution values measured once per hour during_
+&gt; _last 24 hours. We need to compute mean pollution value. However, we know_
+&gt; _that these pollution values give highly skewed distribution, so first, we_
+&gt; _need to log-transform the data._
+
+---
+class: inverse, right, middle
+
+### Exercise 2
+
+&gt; Write down all possible causes to the following error:
+
+&gt; _The calculated mean pollution value shows `NaN` (not a number) when printed to the screen._
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

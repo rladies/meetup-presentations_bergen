@@ -1,0 +1,100 @@
+---
+title: "Cheatsheet"
+author: "Julia Romanowska"
+date: '2022-05-10'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+> This is based on the work presented in Khalife, J. T. **(2006)**. 
+> _Threshold for the introduction of programming: Providing learners with a_
+> _simple computer model._ Proceedings of the International Conference on
+> Information Technology Interfaces, ITI, 71–76. 
+> https://doi.org/10.1109/iti.2006.1708454
+
+## Generic instructions
+
+We can use pseudocode to write down instructions before putting everything
+into a runnable code.
+
+### Declaration
+
+Each variable has a type, e.g.,
+
+- `numeric` (any number, integer or float),
+- `string` (one or more characters, surrounded by \"),
+- `date` (date and/or time),
+- `boolean` (`TRUE` or `FALSE`).
+
+If we declare a variable without assigning a value to it, it has always
+the default value: `NA` = _no value_.
+
+In pseudo-code, it's good to declare a variable _before_ we assign anything
+to it.
+
+```
+Numeric a
+```
+
+This reserves an empty space in RAM that is enough to hold any single numeric
+value and then, stores the address of this RAM space under name `a`.
+
+> NOTE: when writing R code, we do not need to _declare_ a variable before
+> assigning a value, system will do it invisibly for us when executing the code.
+> However, when learning how to translate a problem from natural language to a
+> code, it's a good idea to show each declaration explicitly.
+
+> NOTE (2): **Be careful when naming variables!** In each programming
+> language, there are special names that should not be used as variable
+> names, e.g., `pi`, `break`. Short, abbreviated names are discouraged (e.g.,
+> `dnt2`, `tmp_a`), since these are not telling what type of values they 
+> would store. Try names such as `blood_pressure` or `AllPatientsHospital` instead.
+
+### Input
+
+From a file or keyboard (standard input).
+
+```
+KeyboardRead name
+```
+
+This waits for the user to enter a sequence of signs and press `Enter` on a
+keyboard. Then, the sequence of signs will be stored in the variable `name`.
+
+> NOTE: the _type_ of the variable needs to be defined beforehand.
+
+### Output
+
+To the screen (standard output) or to a file.
+
+```
+ScreenWrite "Today is ", day_of_week
+```
+
+### Assignment
+
+To store values in memory, e.g., when performing some operations on values,
+we need to assign these to variables.
+
+```
+circumf <- 2*pi*radius
+```
+
+> NOTE: _Before_ this line of pseudocode, there should be declaration of
+> `circumf` and `radius` numeric variables. `pi` is usually pre-defined in
+> various programming languages.
+
+## Diagram of instructions flow
+
+When translating a problem from natual language to pseudo-code, it's useful
+to create a diagram that shows small steps that are needed for the computer
+to perform a task.
+
+Here are building blocks:
+
+<center>
+<img src="figs/Khalife_2006_fig_flowchart1.jpg" style="width: 50%;">
+</center>

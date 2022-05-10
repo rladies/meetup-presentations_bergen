@@ -51,7 +51,6 @@ _Write 'YES/NO'_
 |    | `Caused by error in '...':` | | 
 |    | `! object 'HRf' not found` |          |
 | C  | `Error in ... : non-numeric argument to binary operator` |     |
-| D  |  | | 
 
 ### Do you know what might be the cause of each error from the previous question?
 
@@ -60,6 +59,8 @@ _Write 'YES/NO'_
 |    |            | _before_ | _after_ 
 |----|------------|----------|---------
 | A  | `Cannot allocate a vector of size ...` |          |
-| B  |  |          |
-| C  |  |     |
-| D  |  | | 
+| B  | `Error in 'mutate()':`  |  | 
+|    | `! Problem while computing ...` | | 
+|    | `Caused by error in '...':` | | 
+|    | `! object 'HRf' not found` |          |
+| C  | `Error in ... : non-numeric argument to binary operator` |     |
