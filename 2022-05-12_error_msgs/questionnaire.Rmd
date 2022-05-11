@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-These questions are ment to check what is the most difficult for you and
+These questions are meant to check what is the most difficult for you and
 whether this short workshop helped you.
 
 Answer the questions _before_ and _after_ today's session.
