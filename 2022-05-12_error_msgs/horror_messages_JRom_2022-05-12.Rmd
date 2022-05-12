@@ -492,6 +492,21 @@ E.g., what will happen if we put a character instead of a number for one of
 this position will be `NA`, so the sum of the values will also be `NA`.
 
 ---
+
+class: middle, center
+
+### Successful program
+
+Requirements:
+
+<img src="figs/circle-check-solid.svg" style="width:20px;"> _enough memory (RAM)_
+
+- _all variables present_
+- _enough disk space_
+- _permission to read/write_
+
+
+---
 class: inverse, right, middle
 
 ### Exercise 1
