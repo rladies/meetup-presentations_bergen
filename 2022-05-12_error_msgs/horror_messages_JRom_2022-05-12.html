@@ -11,6 +11,8 @@
     <script src="horror_messages_JRom_2022-05-12_files/xaringanExtra-scribble/scribble.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
     <script src="horror_messages_JRom_2022-05-12_files/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="horror_messages_JRom_2022-05-12_files/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="horror_messages_JRom_2022-05-12_files/tile-view/tile-view.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -136,7 +138,26 @@ In each of these three steps there can be an error!
 
 ### Types of instructions
 
-.pull-left[
+**1. Declaration**
+
+**2. Input**
+
+**3. Output**
+
+**4. Assignment**
+
+???
+
+Generally, all the instructions can be divided into these four most important
+types: Declaration, Input, Output, and Assignment.
+
+Various types can have various features - e.g., we cannot perform an addition
+on two character variables.
+
+---
+
+### Types of instructions
+
 **1. Declaration**
 
 &gt; **variable** = space allocated in RAM to hold some data
@@ -149,6 +170,10 @@ In each of these three steps there can be an error!
 - *example*    
 `String name`
 
+---
+
+### Types of instructions
+
 **2. Input**
 
 - from keyboard or from file
@@ -156,9 +181,10 @@ In each of these three steps there can be an error!
 - *example*    
 `KeyboardRead name`
 
-]
+---
 
-.pull-right[
+### Types of instructions
+
 **3. Output**
 
 - to a file or to the screen (*standard output*)
@@ -166,22 +192,16 @@ In each of these three steps there can be an error!
 - *example*    
 `ScreenWrite "Good morning, dear ", name`
 
+---
+
+### Types of instructions
+
 **4. Assignment**
 
 - *example*    
 `var_name &lt;- value`    
 `var_name &lt;- expression`
 
-
-]
-
-???
-
-Generally, all the instructions can be divided into these four most important
-types: Declaration, Input, Output, and Assignment.
-
-Various types can have various features - e.g., we cannot perform an addition
-on two character variables.
 
 ---
 
@@ -474,15 +494,17 @@ this position will be `NA`, so the sum of the values will also be `NA`.
 
 ---
 
+class: middle, center
+
 ### Successful program
 
 Requirements:
 
 &lt;img src="figs/circle-check-solid.svg" style="width:20px;"&gt; _enough memory (RAM)_
 
-- _all variables present_
-- _enough disk space_
-- _permission to read/write_
+&lt;img src="figs/circle-check-solid.svg" style="width:20px;"&gt; _all variables present_
+
+&lt;img src="figs/circle-check-solid.svg" style="width:20px;"&gt; _permission to read from/write to disk_
 
 
 ---

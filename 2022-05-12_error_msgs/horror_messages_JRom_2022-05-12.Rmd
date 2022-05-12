@@ -31,11 +31,13 @@ library(xaringanthemer)
 style_duo_accent(
   primary_color = "#1381B0",
   secondary_color = "#FF961C",
-  inverse_header_color = "#FFFFFF"
+  inverse_header_color = "#FFFFFF",
+  base_font_size = "25px"
 )
 library(xaringanExtra)
 use_scribble()
 use_fit_screen()
+use_tile_view()
 ```
 
 background-image: url("figs/greg-rosenke-WX4LFn24RxQ-unsplash.jpg")
@@ -155,7 +157,26 @@ In each of these three steps there can be an error!
 
 ### Types of instructions
 
-.pull-left[
+**1. Declaration**
+
+**2. Input**
+
+**3. Output**
+
+**4. Assignment**
+
+???
+
+Generally, all the instructions can be divided into these four most important
+types: Declaration, Input, Output, and Assignment.
+
+Various types can have various features - e.g., we cannot perform an addition
+on two character variables.
+
+---
+
+### Types of instructions
+
 **1. Declaration**
 
 > **variable** = space allocated in RAM to hold some data
@@ -168,6 +189,10 @@ In each of these three steps there can be an error!
 - *example*    
 `String name`
 
+---
+
+### Types of instructions
+
 **2. Input**
 
 - from keyboard or from file
@@ -175,9 +200,10 @@ In each of these three steps there can be an error!
 - *example*    
 `KeyboardRead name`
 
-]
+---
 
-.pull-right[
+### Types of instructions
+
 **3. Output**
 
 - to a file or to the screen (*standard output*)
@@ -185,22 +211,16 @@ In each of these three steps there can be an error!
 - *example*    
 `ScreenWrite "Good morning, dear ", name`
 
+---
+
+### Types of instructions
+
 **4. Assignment**
 
 - *example*    
 `var_name <- value`    
 `var_name <- expression`
 
-
-]
-
-???
-
-Generally, all the instructions can be divided into these four most important
-types: Declaration, Input, Output, and Assignment.
-
-Various types can have various features - e.g., we cannot perform an addition
-on two character variables.
 
 ---
 
@@ -501,9 +521,9 @@ Requirements:
 
 <img src="figs/circle-check-solid.svg" style="width:20px;"> _enough memory (RAM)_
 
-- _all variables present_
-- _enough disk space_
-- _permission to read/write_
+<img src="figs/circle-check-solid.svg" style="width:20px;"> _all variables present_
+
+<img src="figs/circle-check-solid.svg" style="width:20px;"> _permission to read from/write to disk_
 
 
 ---
