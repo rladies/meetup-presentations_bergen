@@ -141,6 +141,9 @@ __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/281945467/
 code available [on github](https://github.com/aniaskrzydlo/datavis),    
 and __recording__ available [on R-Ladies Global YouTube channel](https://www.youtube.com/watch?v=pVkv1XGTcwo)
 
+### 18. ~~E~~Horror messages
+
+[Presentation available](2022-05-12_error_msgs/horror_messages_JRom_2022-05-12.html)
 
 ## COMING UP!
 
