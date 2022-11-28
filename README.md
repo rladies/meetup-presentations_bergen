@@ -7,13 +7,10 @@ If you want to contribute or have questions, do not hesitate to contact us:
 
 * Jonelle Villar [\@jonellevillar](https://github.com/jonellevillar)
 * Julia Romanowska [\@jromanowska](https://github.com/jromanowska)
-* Astrid Lunde (https://www.uib.no/en/persons/Astrid.Lunde)
-* Diandian Yi [\@diandianyi](https://github.com/DiandianYi)
 
 # R-Ladies Bergen on the net
 
 * [Meetup web-page](https://www.meetup.com/rladies-bergen/) - all the meetings will be announced here; register here!
-* [Facebook page](https://www.facebook.com/R-Ladies-Bergen-113661500068523/)
 * [Twitter account](https://twitter.com/@RLadiesBergen)
 * email: bergen@rladies.org
 
@@ -36,7 +33,7 @@ __Date__ 15.06.2020, 4PM (CEST)
 __Date__ 03.09.2020, 6:15PM (CEST)
 
 
-### 5. Guest talk: Athanasia Mowinckel [\@Athanasiamo](https://github.com/Athanasiamo)
+### 5. Guest talk: Athanasia Mowinckel [\@drmowinckels](https://github.com/drmowinckels)
 
 __Date__ 06.10.2020, 4:30PM (CEST)
 
@@ -120,12 +117,16 @@ and __recording__ available [on R-Ladies Global YouTube channel](https://youtu.b
 
 ### 15. FAIR research data & citable code
 
+Guest talk by Jenny Ostrup from University of Bergen Library.
+
 __Date__ October 7, 2021, 12:30PM (CEST)
 
 __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/280789276/
 and __slides__ available [on Zenodo](https://zenodo.org/record/5553307#.YV7iY3uxVrk)
 
 ### 16. exploratory data analysis (EDA) workflow
+
+Guest talk by Priyanka Gagneja.
 
 __Date__ October 21, 2021, 3PM (CEST)
 
@@ -135,6 +136,8 @@ and __recording__ available [on YouTube](https://youtu.be/UeIE4uZ6Jns)
 
 ### 17. Data visualization in R
 
+Guest talk by [Ania Skrzydło](https://github.com/aniaskrzydlo) from Epsilon (PL).
+
 __Date__ November 30, 2021, 5:00PM (CEST)
 
 __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/281945467/ ,    
@@ -143,7 +146,28 @@ and __recording__ available [on R-Ladies Global YouTube channel](https://www.you
 
 ### 18. ~~E~~Horror messages
 
+__Date__ May 12, 2022, 12:00PM (CEST)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/285436625/
+
 [Presentation available](2022-05-12_error_msgs/horror_messages_JRom_2022-05-12.html)
+
+### 19. Making and publishing your first R package
+
+Guest talk by Sarah Popov, event organized by Jessica Louise Ray.
+
+__Date__ August 17, 2022, 6:00PM (CEST)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/287835483/    
+and (virtual) https://www.meetup.com/rladies-bergen/events/287836013/
+
 
 ## COMING UP!
 
+### 20. Winter meetup
+
+Get together and discuss.
+
+__Date__ November 29, 2022, 10:45 AM (CET)
+
+__Original Meetup page__ https://www.meetup.com/rladies-bergen/events/289743592/
