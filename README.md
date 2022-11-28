@@ -171,3 +171,5 @@ Get together and discuss.
 __Date__ November 29, 2022, 10:45 AM (CET)
 
 __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/289743592/
+
+[Presentation available](2022-11-29_reproducible_quarto_documents/JRom_reproducible.html)
