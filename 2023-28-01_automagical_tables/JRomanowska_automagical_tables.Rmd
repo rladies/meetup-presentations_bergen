@@ -1,0 +1,206 @@
+---
+author: "Julia Romanowska"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    seal: false
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  hiline = TRUE
+)
+library(fontawesome)
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#1381B0",
+  secondary_color = "#FF961C",
+  inverse_header_color = "#FFFFFF",
+  base_font_size = "25px"
+)
+library(xaringanExtra)
+use_scribble()
+use_fit_screen()
+use_tile_view()
+```
+
+background-image: url("https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1494&q=80")
+background-size: cover
+
+class: left, top, inverse
+
+<p style="font-weight: 900; font-family: Georgia; font-size: 2.5rem; color: white; text-shadow: 2px 2px black;">
+Auto-magical tables in R
+</p>
+
+<p style="font-weight: 900; font-family: Georgia; font-size: 1.8rem; color: white; text-shadow: 2px 2px black;">
+Julia Romanowska
+</p>
+
+<p style="font-weight: 900; font-family: Georgia; font-size: 1rem; color: white; text-shadow: 2px 2px black;">
+January 28, 2023
+</p>
+
+
+<p style="font-size: 12pt; font-weight: bold; right: 10px; bottom: 20px; position: absolute; ">
+Photo by <a href="https://unsplash.com/@jplenio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Johannes Plenio</a> on <a href="https://unsplash.com/photos/DKix6Un55mw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+</p>
+
+???
+
+
+
+---
+
+class: inverse, left, middle
+
+## Overview
+
+### Get the data
+
+### Design the table
+
+### Create a table
+
+### Hands-on
+
+### Extras
+
+---
+
+## Get the data
+
+- from analyses in R:
+
+```{r, eval=FALSE}
+analysis_results <- glm(
+  outcome ~ exposure + covariate,
+  data = input_data_hospitals
+)
+```
+
+- from analyses elsewhere:
+
+```{r, eval=FALSE}
+library(haven) # reading from SAS, SPSS, etc.
+library(readr) # reading from text files
+```
+
+---
+
+## Magical tables
+
+- [{finalfit}](https://finalfit.org/index.html) + [rmarkdown::kable()](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
+
+- [{parameters}](https://easystats.github.io/parameters/) + [rmarkdown::kable()](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
+
+???
+
+There are some packages that create outputs automatically. Most of the time, you
+can use this at least as a starting point for your publication. However, you
+will often need to adjust the default output beyond what's available by the
+function options.
+
+---
+
+## Design the table
+
+`r fa("pen-fancy", height = "1.5em")` + `r fa("scroll", height = "1.5em")` (pen + paper)
+
+--
+
+- do I have all the data?
+
+    - get extra info from the data or the model object?
+
+- what type of table?
+
+- target readers?
+
+???
+
+Sometimes, the output of the analysis gives one table but we would also like
+to include some extra information. Then, we need to first merge tables manually.
+
+Or vice-versa: sometimes, the output includes too much details, while we want
+to show only a small part of it, then we should filter first, to operate faster
+and simpler on the final set of the data.
+
+- Table 1 (characteristics of the study population) will look differently from
+any table showing results.
+- Do we need some special grouping?
+- Do we need colors?
+- Formatting of numbers?
+- Maybe we want to merge some cells into one?
+- ...
+
+**All this might influence the choice of the tool!**
+
+---
+
+## Create a table
+
+**Which package to choose?**
+
+- [{gt}](https://gt.rstudio.com/)    
+adapt the table for publication
+
+--
+
+    - [{gtsummary}](https://www.danieldsjoberg.com/gtsummary/index.html)    
+    easily create 'Table 1' or tables with statistical results!
+    
+    - [{gtExtras}](https://jthomasmock.github.io/gtExtras/index.html)    
+    extra functionality for {gt}, e.g., plots inside tables!
+
+---
+
+## Create a table
+
+**Which package to choose?**
+
+- [{flextable}](https://davidgohel.github.io/flextable/index.html)    
+similar to {gt}, but has some other functionality, e.g., merging cells automatically
+
+--
+
+- [{DT}](https://rstudio.github.io/DT/)    
+interactive tables in .html!
+
+--
+
+- \* [{reactable}](https://glin.github.io/reactable/index.html)    
+interactive table - more advanced
+
+- \* [{forestplot}](https://cran.r-project.org/web/packages/forestplot/)    
+narrow usage and not so flexible
+
+- \* [{formattable}](https://renkun-ken.github.io/formattable/)    
+very similar functionality to {gt} and {flextable}
+
+???
+
+There are also other, some mentioned here, I will not talk about.
+
+---
+
+## Hands-on example
+
+### Table 1 with {gtsummary} and {gt}
+
+### Table with results, using {flextable}
+
+### Interactive table with {DT}

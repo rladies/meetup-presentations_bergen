@@ -162,8 +162,6 @@ __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/287835483/
 and (virtual) https://www.meetup.com/rladies-bergen/events/287836013/
 
 
-## COMING UP!
-
 ### 20. Winter meetup
 
 Get together and discuss.
@@ -173,3 +171,18 @@ __Date__ November 29, 2022, 10:45 AM (CET)
 __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/289743592/
 
 [Presentation available](2022-11-29_reproducible_quarto_documents/JRom_reproducible.html)
+
+## COMING UP!
+
+### 21. Auto-magical tables in R
+
+About making tables in R, using some of the many packages made for that.
+
+__Date__ January 28, 2023, 09:00 AM (CET)
+
+__Original Meetup pages:__
+
+1. __virtual event:__ https://www.meetup.com/rladies-bergen/events/290100296/
+1. __physical meetup:__ https://www.meetup.com/rladies-bergen/events/290100305/
+
+Presentation available soon
