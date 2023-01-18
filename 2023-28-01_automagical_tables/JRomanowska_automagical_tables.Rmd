@@ -116,6 +116,14 @@ function options.
 
 ---
 
+## Magical tables - {finalfit}
+
+???
+
+flexbook: show demo from the help page
+
+---
+
 ## Design the table
 
 `r fa("pen-fancy", height = "1.5em")` + `r fa("scroll", height = "1.5em")` (pen + paper)
