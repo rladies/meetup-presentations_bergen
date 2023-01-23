@@ -29,12 +29,19 @@ style_duo_accent(
   primary_color = "#1381B0",
   secondary_color = "#FF961C",
   inverse_header_color = "#FFFFFF",
-  base_font_size = "25px"
+  base_font_size = "22px",
+  code_font_size = "0.7rem"
 )
 library(xaringanExtra)
 use_scribble()
 use_fit_screen()
 use_tile_view()
+
+library(flipbookr)
+
+library(finalfit)
+library(dplyr)
+library(parameters)
 ```
 
 background-image: url("https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1494&q=80")
@@ -42,15 +49,15 @@ background-size: cover
 
 class: left, top, inverse
 
-<p style="font-weight: 900; font-family: Georgia; font-size: 2.5rem; color: white; text-shadow: 2px 2px black;">
+<p style="font-weight: 900; font-family: Georgia; font-size: 3rem; color: white; text-shadow: 2px 2px black;">
 Auto-magical tables in R
 </p>
 
-<p style="font-weight: 900; font-family: Georgia; font-size: 1.8rem; color: white; text-shadow: 2px 2px black;">
+<p style="font-weight: 900; font-family: Georgia; font-size: 2.5rem; color: white; text-shadow: 2px 2px black;">
 Julia Romanowska
 </p>
 
-<p style="font-weight: 900; font-family: Georgia; font-size: 1rem; color: white; text-shadow: 2px 2px black;">
+<p style="font-weight: 900; font-family: Georgia; font-size: 1.5rem; color: white; text-shadow: 2px 2px black;">
 January 28, 2023
 </p>
 
@@ -96,7 +103,7 @@ analysis_results <- glm(
 
 ```{r, eval=FALSE}
 library(haven) # reading from SAS, SPSS, etc.
-library(readr) # reading from text files
+library(readr) # reading from text files (.csv, .txt, etc.)
 ```
 
 ---
@@ -118,9 +125,94 @@ function options.
 
 ## Magical tables - {finalfit}
 
+```{r, eval=c(-1, -2)}
+library(finalfit)
+library(dplyr)
+
+data(colon_s)
+colon_s %>% glimpse()
+```
+
 ???
 
-flexbook: show demo from the help page
+These will be examples that we can find on the official documentation webpage.
+The data here is on colon cancer suvival after surgery.
+
+---
+
+```{r table1_finalfit_example, include = FALSE}
+explanatory <- c(
+  "age",
+  "age.factor",
+  "sex.factor",
+  "obstruct.factor"
+)
+dependent <- "perfor.factor" #BREAK
+table1 <- summary_factorlist(
+  colon_s,
+  dependent, 
+  explanatory,
+  p = TRUE,
+  add_dependent_label = TRUE
+) #BREAK
+knitr::kable(
+  table1,
+  row.names = FALSE,
+  align = c("l", "l", "r", "r", "r")
+) #BREAK
+```
+
+`r chunk_reveal("table1_finalfit_example", break_type = "user", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.45, 0.5))`
+
+---
+
+```{r table2_finalfit_example, include = FALSE}
+explanatory <- c(
+  "age.factor",
+  "sex.factor",
+  "obstruct.factor",
+  "perfor.factor"
+)
+dependent <- "mort_5yr" #BREAK
+table_res_log_regression <- finalfit(
+  colon_s,
+  dependent,
+  explanatory
+) #BREAK
+knitr::kable(
+  table_res_log_regression,
+  row.names = FALSE,
+  align = c("l", "l", "r", "r", "r", "r")
+) #BREAK
+```
+
+`r chunk_reveal("table2_finalfit_example", break_type = "user", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.45, 0.5))`
+
+---
+
+## Magical tables - {parameters}
+
+```{r, eval = -1}
+library(parameters)
+
+data(iris)
+as_tibble(iris)
+```
+
+---
+
+```{r table2_parameters, include = FALSE}
+model <- lm(
+  Sepal.Length ~ Species * Petal.Length,
+  data = iris
+) #BREAK
+model_parameters(model) #BREAK
+
+mp <- model_parameters(model)
+print_md(mp) #BREAK
+```
+
+`r chunk_reveal("table2_parameters", break_type = "user", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.4, 0.55))`
 
 ---
 
@@ -199,16 +291,24 @@ narrow usage and not so flexible
 - \* [{formattable}](https://renkun-ken.github.io/formattable/)    
 very similar functionality to {gt} and {flextable}
 
+- \* [{modelsummary}](https://vincentarelbundock.github.io/modelsummary/)    
+summarising results of statistical analyses and datasets
+
 ???
 
 There are also other, some mentioned here, I will not talk about.
 
 ---
 
+class: inverse
+
 ## Hands-on example
 
-### Table 1 with {gtsummary} and {gt}
+<br>
+
+### Descriptive table with {gtsummary} and {gt}
 
 ### Table with results, using {flextable}
 
 ### Interactive table with {DT}
+

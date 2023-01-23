@@ -1,0 +1,47 @@
+# DESCRIPTION: Adjust the datasets
+# AUTHOR: Julia Romanowska
+# DATE CREATED: 2023-01-23
+# DATE LAST MODIFIED:
+
+# SETUP ----
+library(medicaldata)
+library(tidyverse)
+library(here)
+
+# READ DATA ----
+data(indo_rct)
+indo_rct <- as_tibble(indo_rct)
+
+skimr::skim(indo_rct)
+
+# MANIPULATE ----
+indo_rct_adj <- indo_rct %>%
+  mutate(
+    gender_female = if_else(
+      gender == "1_female", TRUE, FALSE
+    ),
+    type = as.factor(if_else(
+      type != "0_no SOD",
+      as.character(type),
+      NA_character_
+    )),
+    sod_any = if_else(
+      sod == "1_yes", TRUE, FALSE
+    ),
+    sodsom_documented = if_else(
+      sodsom == "1_yes", TRUE, FALSE
+    ),
+    across(
+      c(pep, recpanc, difcan, precut, paninj, psphinc, acinar, bsphinc, amp,
+        pdstent, train),
+      ~ if_else(.x == "1_yes", TRUE, FALSE)
+    )
+  )
+skimr::skim(indo_rct_adj)
+
+# SAVE DATA ----
+write_delim(
+  indo_rct_adj,
+  here("2023-01-28", "DATA", "indo_rct_adjusted.txt"),
+  delim = "\t"
+)

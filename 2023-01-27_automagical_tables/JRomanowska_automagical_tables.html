@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>JRomanowska_automagical_tables.knit</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Julia Romanowska" />
+    <script src="JRomanowska_automagical_tables_files/header-attrs/header-attrs.js"></script>
+    <script src="JRomanowska_automagical_tables_files/fabric/fabric.min.js"></script>
+    <link href="JRomanowska_automagical_tables_files/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="JRomanowska_automagical_tables_files/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <script src="JRomanowska_automagical_tables_files/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="JRomanowska_automagical_tables_files/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="JRomanowska_automagical_tables_files/tile-view/tile-view.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+background-image: url("https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1494&amp;q=80")
+background-size: cover
+
+class: left, top, inverse
+
+&lt;p style="font-weight: 900; font-family: Georgia; font-size: 3rem; color: white; text-shadow: 2px 2px black;"&gt;
+Auto-magical tables in R
+&lt;/p&gt;
+
+&lt;p style="font-weight: 900; font-family: Georgia; font-size: 2.5rem; color: white; text-shadow: 2px 2px black;"&gt;
+Julia Romanowska
+&lt;/p&gt;
+
+&lt;p style="font-weight: 900; font-family: Georgia; font-size: 1.5rem; color: white; text-shadow: 2px 2px black;"&gt;
+January 28, 2023
+&lt;/p&gt;
+
+
+&lt;p style="font-size: 12pt; font-weight: bold; right: 10px; bottom: 20px; position: absolute; "&gt;
+Photo by &lt;a href="https://unsplash.com/@jplenio?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"&gt;Johannes Plenio&lt;/a&gt; on &lt;a href="https://unsplash.com/photos/DKix6Un55mw?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"&gt;Unsplash&lt;/a&gt;
+&lt;/p&gt;
+
+???
+
+
+
+---
+
+class: inverse, left, middle
+
+## Overview
+
+### Get the data
+
+### Design the table
+
+### Create a table
+
+### Hands-on
+
+### Extras
+
+---
+
+## Get the data
+
+- from analyses in R:
+
+
+```r
+analysis_results &lt;- glm(
+  outcome ~ exposure + covariate,
+  data = input_data_hospitals
+)
+```
+
+- from analyses elsewhere:
+
+
+```r
+library(haven) # reading from SAS, SPSS, etc.
+library(readr) # reading from text files (.csv, .txt, etc.)
+```
+
+---
+
+## Magical tables
+
+- [{finalfit}](https://finalfit.org/index.html) + [rmarkdown::kable()](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
+
+- [{parameters}](https://easystats.github.io/parameters/) + [rmarkdown::kable()](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html)
+
+???
+
+There are some packages that create outputs automatically. Most of the time, you
+can use this at least as a starting point for your publication. However, you
+will often need to adjust the default output beyond what's available by the
+function options.
+
+---
+
+## Magical tables - {finalfit}
+
+
+```r
+## library(finalfit)
+## library(dplyr)
+
+data(colon_s)
+colon_s %&gt;% glimpse()
+```
+
+```
+## Rows: 929
+## Columns: 32
+## $ id              &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,…
+## $ rx              &lt;fct&gt; Lev+5FU, Lev+5FU, Obs, Lev+5FU, Obs, Lev+5FU, Lev, Obs…
+## $ sex             &lt;dbl&gt; 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, …
+## $ age             &lt;dbl&gt; 43, 63, 71, 66, 69, 57, 77, 54, 46, 68, 47, 52, 64, 68…
+## $ obstruct        &lt;dbl&gt; NA, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1,…
+## $ perfor          &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ adhere          &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, …
+## $ nodes           &lt;dbl&gt; 5, 1, 7, 6, 22, 9, 5, 1, 2, 1, 1, 2, 1, 3, 4, 1, 6, 1,…
+## $ status          &lt;dbl&gt; 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, …
+## $ differ          &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, …
+## $ extent          &lt;dbl&gt; 3, 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, …
+## $ surg            &lt;dbl&gt; 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, …
+## $ node4           &lt;dbl&gt; 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, …
+## $ time            &lt;dbl&gt; 1521, 3087, 963, 293, 659, 1767, 420, 3192, 3173, 3308…
+## $ sex.factor      &lt;fct&gt; Male, Male, Female, Female, Male, Female, Male, Male, …
+## $ rx.factor       &lt;fct&gt; Lev+5FU, Lev+5FU, Obs, Lev+5FU, Obs, Lev+5FU, Lev, Obs…
+## $ obstruct.factor &lt;fct&gt; NA, No, No, Yes, No, No, No, No, No, No, No, No, No, Y…
+## $ perfor.factor   &lt;fct&gt; No, No, No, No, No, No, No, No, No, No, No, No, No, No…
+## $ adhere.factor   &lt;fct&gt; No, No, Yes, No, No, No, No, No, Yes, No, Yes, No, No,…
+## $ differ.factor   &lt;fct&gt; Moderate, Moderate, Moderate, Moderate, Moderate, Mode…
+## $ extent.factor   &lt;fct&gt; Serosa, Serosa, Muscle, Serosa, Serosa, Serosa, Serosa…
+## $ surg.factor     &lt;fct&gt; Short, Short, Short, Long, Long, Short, Long, Short, S…
+## $ node4.factor    &lt;fct&gt; Yes, No, Yes, Yes, Yes, Yes, Yes, No, No, No, No, No, …
+## $ status.factor   &lt;fct&gt; Died, Alive, Died, Died, Died, Died, Died, Alive, Aliv…
+## $ age.factor      &lt;fct&gt; 40-59 years, 60+ years, 60+ years, 60+ years, 60+ year…
+## $ loccomp         &lt;dbl&gt; NA, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1,…
+## $ loccomp.factor  &lt;fct&gt; NA, No, Yes, Yes, No, No, No, No, Yes, No, Yes, No, No…
+## $ time.years      &lt;dbl&gt; 4.1671233, 8.4575342, 2.6383562, 0.8027397, 1.8054795,…
+## $ mort_5yr        &lt;fct&gt; Died, Alive, Died, Died, Died, Died, Died, Alive, Aliv…
+## $ age.10          &lt;dbl&gt; 4.3, 6.3, 7.1, 6.6, 6.9, 5.7, 7.7, 5.4, 4.6, 6.8, 4.7,…
+## $ mort_5yr.num    &lt;dbl&gt; 2, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, …
+## $ hospital        &lt;fct&gt; hospital_5, hospital_3, hospital_5, hospital_4, hospit…
+```
+
+???
+
+These will be examples that we can find on the official documentation webpage.
+The data here is on colon cancer suvival after surgery.
+
+---
+
+
+
+count: false
+ 
+
+.panel1-table1_finalfit_example-user[
+
+```r
+*explanatory &lt;- c(
+* "age",
+* "age.factor",
+* "sex.factor",
+* "obstruct.factor"
+*) 
+*dependent &lt;- "perfor.factor"
+```
+]
+ 
+.panel2-table1_finalfit_example-user[
+
+]
+
+---
+count: false
+ 
+
+.panel1-table1_finalfit_example-user[
+
+```r
+explanatory &lt;- c(
+  "age",
+  "age.factor",
+  "sex.factor",
+  "obstruct.factor"
+)
+dependent &lt;- "perfor.factor"
+*table1 &lt;- summary_factorlist(
+* colon_s,
+* dependent,
+* explanatory,
+* p = TRUE,
+* add_dependent_label = TRUE
+*) 
+```
+]
+ 
+.panel2-table1_finalfit_example-user[
+
+]
+
+---
+count: false
+ 
+
+.panel1-table1_finalfit_example-user[
+
+```r
+explanatory &lt;- c(
+  "age",
+  "age.factor",
+  "sex.factor",
+  "obstruct.factor"
+)
+dependent &lt;- "perfor.factor"
+table1 &lt;- summary_factorlist(
+  colon_s,
+  dependent,
+  explanatory,
+  p = TRUE,
+  add_dependent_label = TRUE
+)
+*knitr::kable(
+* table1,
+* row.names = FALSE,
+* align = c("l", "l", "r", "r", "r")
+*) 
+```
+]
+ 
+.panel2-table1_finalfit_example-user[
+
+|Dependent: Perforation |            |          No|         Yes|     p|
+|:----------------------|:-----------|-----------:|-----------:|-----:|
+|Age (years)            |Mean (SD)   | 59.8 (11.9)| 58.4 (13.3)| 0.542|
+|Age                    |&lt;40 years   |    68 (7.5)|     2 (7.4)| 1.000|
+|                       |40-59 years |  334 (37.0)|   10 (37.0)|      |
+|                       |60+ years   |  500 (55.4)|   15 (55.6)|      |
+|Sex                    |Female      |  432 (47.9)|   13 (48.1)| 1.000|
+|                       |Male        |  470 (52.1)|   14 (51.9)|      |
+|Obstruction            |No          |  715 (81.2)|   17 (63.0)| 0.035|
+|                       |Yes         |  166 (18.8)|   10 (37.0)|      |
+]
+
+&lt;style&gt;
+.panel1-table1_finalfit_example-user {
+  color: black;
+  width: 46.421052631579%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel2-table1_finalfit_example-user {
+  color: black;
+  width: 51.5789473684211%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel3-table1_finalfit_example-user {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+&lt;/style&gt;
+
+
+
+---
+
+
+
+count: false
+ 
+
+.panel1-table2_finalfit_example-user[
+
+```r
+*explanatory &lt;- c(
+* "age.factor",
+* "sex.factor",
+* "obstruct.factor",
+* "perfor.factor"
+*) 
+*dependent &lt;- "mort_5yr"
+```
+]
+ 
+.panel2-table2_finalfit_example-user[
+
+]
+
+---
+count: false
+ 
+
+.panel1-table2_finalfit_example-user[
+
+```r
+explanatory &lt;- c(
+  "age.factor",
+  "sex.factor",
+  "obstruct.factor",
+  "perfor.factor"
+)
+dependent &lt;- "mort_5yr"
+*table_res_log_regression &lt;- finalfit(
+* colon_s,
+* dependent,
+* explanatory
+*) 
+```
+]
+ 
+.panel2-table2_finalfit_example-user[
+
+]
+
+---
+count: false
+ 
+
+.panel1-table2_finalfit_example-user[
+
+```r
+explanatory &lt;- c(
+  "age.factor",
+  "sex.factor",
+  "obstruct.factor",
+  "perfor.factor"
+)
+dependent &lt;- "mort_5yr"
+table_res_log_regression &lt;- finalfit(
+  colon_s,
+  dependent,
+  explanatory
+)
+*knitr::kable(
+* table_res_log_regression,
+* row.names = FALSE,
+* align = c("l", "l", "r", "r", "r", "r")
+*) 
+```
+]
+ 
+.panel2-table2_finalfit_example-user[
+
+|Dependent: Mortality 5 year |            |      Alive|       Died|          OR (univariable)|        OR (multivariable)|
+|:---------------------------|:-----------|----------:|----------:|-------------------------:|-------------------------:|
+|Age                         |&lt;40 years   |  31 (46.3)|  36 (53.7)|                         -|                         -|
+|                            |40-59 years | 208 (61.4)| 131 (38.6)| 0.54 (0.32-0.92, p=0.023)| 0.57 (0.34-0.98, p=0.041)|
+|                            |60+ years   | 272 (53.4)| 237 (46.6)| 0.75 (0.45-1.25, p=0.270)| 0.81 (0.48-1.36, p=0.426)|
+|Sex                         |Female      | 243 (55.6)| 194 (44.4)|                         -|                         -|
+|                            |Male        | 268 (56.1)| 210 (43.9)| 0.98 (0.76-1.27, p=0.889)| 0.98 (0.75-1.28, p=0.902)|
+|Obstruction                 |No          | 408 (56.7)| 312 (43.3)|                         -|                         -|
+|                            |Yes         |  89 (51.1)|  85 (48.9)| 1.25 (0.90-1.74, p=0.189)| 1.25 (0.90-1.76, p=0.186)|
+|Perforation                 |No          | 497 (56.0)| 391 (44.0)|                         -|                         -|
+|                            |Yes         |  14 (51.9)|  13 (48.1)| 1.18 (0.54-2.55, p=0.672)| 1.12 (0.51-2.44, p=0.770)|
+]
+
+&lt;style&gt;
+.panel1-table2_finalfit_example-user {
+  color: black;
+  width: 46.421052631579%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel2-table2_finalfit_example-user {
+  color: black;
+  width: 51.5789473684211%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel3-table2_finalfit_example-user {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+&lt;/style&gt;
+
+
+
+---
+
+## Magical tables - {parameters}
+
+
+```r
+## library(parameters)
+
+data(iris)
+as_tibble(iris)
+```
+
+```
+## # A tibble: 150 × 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+##  1          5.1         3.5          1.4         0.2 setosa 
+##  2          4.9         3            1.4         0.2 setosa 
+##  3          4.7         3.2          1.3         0.2 setosa 
+##  4          4.6         3.1          1.5         0.2 setosa 
+##  5          5           3.6          1.4         0.2 setosa 
+##  6          5.4         3.9          1.7         0.4 setosa 
+##  7          4.6         3.4          1.4         0.3 setosa 
+##  8          5           3.4          1.5         0.2 setosa 
+##  9          4.4         2.9          1.4         0.2 setosa 
+## 10          4.9         3.1          1.5         0.1 setosa 
+## # … with 140 more rows
+```
+
+---
+
+
+
+count: false
+ 
+
+.panel1-table2_parameters-user[
+
+```r
+*model &lt;- lm(
+* Sepal.Length ~ Species * Petal.Length,
+* data = iris
+*) 
+```
+]
+ 
+.panel2-table2_parameters-user[
+
+]
+
+---
+count: false
+ 
+
+.panel1-table2_parameters-user[
+
+```r
+model &lt;- lm(
+  Sepal.Length ~ Species * Petal.Length,
+  data = iris
+)
+*model_parameters(model)
+```
+]
+ 
+.panel2-table2_parameters-user[
+
+```
+## Parameter                           | Coefficient |   SE |         95% CI | t(144) |      p
+## -------------------------------------------------------------------------------------------
+## (Intercept)                         |        4.21 | 0.41 | [ 3.41,  5.02] |  10.34 | &lt; .001
+## Species [versicolor]                |       -1.81 | 0.60 | [-2.99, -0.62] |  -3.02 | 0.003 
+## Species [virginica]                 |       -3.15 | 0.63 | [-4.41, -1.90] |  -4.97 | &lt; .001
+## Petal Length                        |        0.54 | 0.28 | [ 0.00,  1.09] |   1.96 | 0.052 
+## Species [versicolor] * Petal Length |        0.29 | 0.30 | [-0.30,  0.87] |   0.97 | 0.334 
+## Species [virginica] * Petal Length  |        0.45 | 0.29 | [-0.12,  1.03] |   1.56 | 0.120
+```
+]
+
+---
+count: false
+ 
+
+.panel1-table2_parameters-user[
+
+```r
+model &lt;- lm(
+  Sepal.Length ~ Species * Petal.Length,
+  data = iris
+)
+model_parameters(model)
+
+*mp &lt;- model_parameters(model)
+*print_md(mp)
+```
+]
+ 
+.panel2-table2_parameters-user[
+
+```
+## Parameter                           | Coefficient |   SE |         95% CI | t(144) |      p
+## -------------------------------------------------------------------------------------------
+## (Intercept)                         |        4.21 | 0.41 | [ 3.41,  5.02] |  10.34 | &lt; .001
+## Species [versicolor]                |       -1.81 | 0.60 | [-2.99, -0.62] |  -3.02 | 0.003 
+## Species [virginica]                 |       -3.15 | 0.63 | [-4.41, -1.90] |  -4.97 | &lt; .001
+## Petal Length                        |        0.54 | 0.28 | [ 0.00,  1.09] |   1.96 | 0.052 
+## Species [versicolor] * Petal Length |        0.29 | 0.30 | [-0.30,  0.87] |   0.97 | 0.334 
+## Species [virginica] * Petal Length  |        0.45 | 0.29 | [-0.12,  1.03] |   1.56 | 0.120
+```
+
+
+
+|Parameter                           | Coefficient |   SE |            95% CI | t(144) |      p |
+|:-----------------------------------|:-----------:|:----:|:-----------------:|:------:|:------:|
+|(Intercept)                         |        4.21 | 0.41 |      (3.41, 5.02) |  10.34 | &lt; .001 |
+|Species (versicolor)                |       -1.81 | 0.60 |    (-2.99, -0.62) |  -3.02 | 0.003  |
+|Species (virginica)                 |       -3.15 | 0.63 |    (-4.41, -1.90) |  -4.97 | &lt; .001 |
+|Petal Length                        |        0.54 | 0.28 | (-4.76e-03, 1.09) |   1.96 | 0.052  |
+|Species (versicolor) * Petal Length |        0.29 | 0.30 |     (-0.30, 0.87) |   0.97 | 0.334  |
+|Species (virginica) * Petal Length  |        0.45 | 0.29 |     (-0.12, 1.03) |   1.56 | 0.120  |
+]
+
+&lt;style&gt;
+.panel1-table2_parameters-user {
+  color: black;
+  width: 41.2631578947368%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel2-table2_parameters-user {
+  color: black;
+  width: 56.7368421052632%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel3-table2_parameters-user {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+&lt;/style&gt;
+
+
+
+---
+
+## Design the table
+
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1.5em;width:1.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M373.5 27.11C388.5 9.885 410.2 0 433 0C476.6 0 512 35.36 512 78.98C512 101.8 502.1 123.5 484.9 138.5L277.7 319L192.1 234.3L373.5 27.11zM255.1 341.7L235.9 425.1C231.9 442.2 218.9 455.8 202 460.5L24.35 510.3L119.7 414.9C122.4 415.6 125.1 416 128 416C145.7 416 160 401.7 160 384C160 366.3 145.7 352 128 352C110.3 352 96 366.3 96 384C96 386.9 96.38 389.6 97.08 392.3L1.724 487.6L51.47 309.1C56.21 293.1 69.8 280.1 86.9 276.1L170.3 256.9L255.1 341.7z"/></svg> + <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1.5em;width:1.69em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M48 32C21.5 32 0 53.5 0 80v64C0 152.9 7.125 160 16 160H96V80C96 53.5 74.5 32 48 32zM256 380.6V320h224V128c0-53-43-96-96-96H111.6C121.8 45.38 128 61.88 128 80V384c0 38.88 34.62 69.63 74.75 63.13C234.3 442 256 412.5 256 380.6zM288 352v32c0 52.88-43 96-96 96h272c61.88 0 112-50.13 112-112c0-8.875-7.125-16-16-16H288z"/></svg> (pen + paper)
+
+--
+
+- do I have all the data?
+
+    - get extra info from the data or the model object?
+
+- what type of table?
+
+- target readers?
+
+???
+
+Sometimes, the output of the analysis gives one table but we would also like
+to include some extra information. Then, we need to first merge tables manually.
+
+Or vice-versa: sometimes, the output includes too much details, while we want
+to show only a small part of it, then we should filter first, to operate faster
+and simpler on the final set of the data.
+
+- Table 1 (characteristics of the study population) will look differently from
+any table showing results.
+- Do we need some special grouping?
+- Do we need colors?
+- Formatting of numbers?
+- Maybe we want to merge some cells into one?
+- ...
+
+**All this might influence the choice of the tool!**
+
+---
+
+## Create a table
+
+**Which package to choose?**
+
+- [{gt}](https://gt.rstudio.com/)    
+adapt the table for publication
+
+--
+
+    - [{gtsummary}](https://www.danieldsjoberg.com/gtsummary/index.html)    
+    easily create 'Table 1' or tables with statistical results!
+    
+    - [{gtExtras}](https://jthomasmock.github.io/gtExtras/index.html)    
+    extra functionality for {gt}, e.g., plots inside tables!
+
+---
+
+## Create a table
+
+**Which package to choose?**
+
+- [{flextable}](https://davidgohel.github.io/flextable/index.html)    
+similar to {gt}, but has some other functionality, e.g., merging cells automatically
+
+--
+
+- [{DT}](https://rstudio.github.io/DT/)    
+interactive tables in .html!
+
+--
+
+- \* [{reactable}](https://glin.github.io/reactable/index.html)    
+interactive table - more advanced
+
+- \* [{forestplot}](https://cran.r-project.org/web/packages/forestplot/)    
+narrow usage and not so flexible
+
+- \* [{formattable}](https://renkun-ken.github.io/formattable/)    
+very similar functionality to {gt} and {flextable}
+
+- \* [{modelsummary}](https://vincentarelbundock.github.io/modelsummary/)    
+summarising results of statistical analyses and datasets
+
+???
+
+There are also other, some mentioned here, I will not talk about.
+
+---
+
+class: inverse
+
+## Hands-on example
+
+&lt;br&gt;
+
+### Descriptive table with {gtsummary} and {gt}
+
+### Table with results, using {flextable}
+
+### Interactive table with {DT}
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
