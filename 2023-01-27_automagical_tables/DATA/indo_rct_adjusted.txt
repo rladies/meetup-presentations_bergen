@@ -1,0 +1,603 @@
+id	site	age	risk	outcome	pep	recpanc	psphinc	precut	difcan	pneudil	amp	paninj	acinar	brush	asa81	asa325	asa	prophystent	therastent	pdstent	bsphinc	bstent	chole	pbmal	train	status	type	rx	bleed	gender_female	sod_any	sodsom_documented
+1001	1_UM	26	2	1_yes	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1002	1_UM	24	1	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	1_yes	1_yes	0_no	FALSE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1003	1_UM	57	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+1004	1_UM	29	2	1_yes	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1005	1_UM	38	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	0_inpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	TRUE
+1006	1_UM	59	3	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	0_inpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1007	1_UM	60	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1008	1_UM	29	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	NA	1_indomethacin	2	FALSE	FALSE	FALSE
+1009	1_UM	53	2	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	TRUE	1_yes	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1010	1_UM	20	2	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	1_yes	1_yes	0_no	FALSE	0_inpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1011	1_UM	51	3	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1012	1_UM	19	2.5	1_yes	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1013	1_UM	57	1	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1014	1_UM	44	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	1_yes	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1015	1_UM	33	1.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	1_yes	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1016	1_UM	46	2.5	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	1_yes	1_yes	0_no	TRUE	0_inpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1017	1_UM	38	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1018	1_UM	46	1.5	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	2	TRUE	FALSE	FALSE
+1019	1_UM	63	1	1_yes	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1020	1_UM	60	2.5	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1021	1_UM	32	2	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	0_inpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1022	1_UM	48	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1023	1_UM	44	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+1024	1_UM	49	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+1025	1_UM	54	3.5	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1026	1_UM	29	4	1_yes	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+1027	1_UM	47	2	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	FALSE
+1028	1_UM	42	4	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	1	TRUE	TRUE	TRUE
+1029	1_UM	61	3.5	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+1030	1_UM	70	2	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	0_inpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1031	1_UM	66	2	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	1_yes	1_yes	0_no	0_no	FALSE	FALSE	1_yes	0_no	1_yes	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1032	1_UM	51	1.5	1_yes	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	TRUE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	1_yes	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	2	TRUE	FALSE	FALSE
+1033	1_UM	48	3.5	1_yes	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+1034	1_UM	23	2.5	1_yes	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	TRUE	0_inpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1035	1_UM	43	3	1_yes	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	0_inpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+1036	1_UM	35	1.5	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1037	1_UM	54	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1038	1_UM	21	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+1039	1_UM	32	4	1_yes	FALSE	TRUE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1040	1_UM	46	1	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	0_inpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1041	1_UM	38	3.5	0_no	TRUE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1042	1_UM	61	2.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1043	1_UM	32	3	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1044	1_UM	71	2	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	1	TRUE	TRUE	FALSE
+1045	1_UM	57	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+1046	1_UM	59	2	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	0_inpatient	1_type 1	1_indomethacin	NA	FALSE	TRUE	FALSE
+1047	1_UM	46	1	1_yes	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	1_yes	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	1	FALSE	FALSE	FALSE
+1048	1_UM	75	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1049	1_UM	54	2	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+1050	1_UM	55	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+1051	1_UM	51	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	1_yes	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	2	FALSE	FALSE	FALSE
+1052	1_UM	19	2.5	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1053	1_UM	53	1	1_yes	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+1054	1_UM	52	4.5	0_no	TRUE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	TRUE
+1055	1_UM	45	1.5	1_yes	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1056	1_UM	42	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1057	1_UM	33	3.5	1_yes	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	TRUE
+1058	1_UM	63	2	1_yes	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	FALSE	0_no	1_yes	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	TRUE
+1059	1_UM	59	2	1_yes	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1060	1_UM	28	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+1061	1_UM	61	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	1_yes	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	0_inpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1062	1_UM	62	2	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	0_inpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1063	1_UM	58	1	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1064	1_UM	46	3	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1065	1_UM	75	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	FALSE	TRUE	FALSE
+1066	1_UM	62	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1067	1_UM	34	1.5	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	2	FALSE	FALSE	FALSE
+1068	1_UM	35	2	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+1069	1_UM	58	2	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+1070	1_UM	34	1.5	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1071	1_UM	59	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	1_yes	1_yes	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1072	1_UM	67	2.5	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1073	1_UM	36	2.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	0_inpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1074	1_UM	42	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+1075	1_UM	47	1.5	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1076	1_UM	67	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1077	1_UM	34	2.5	1_yes	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	FALSE
+1078	1_UM	43	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1079	1_UM	48	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	0_inpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+1080	1_UM	26	2.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1081	1_UM	46	2.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	TRUE	FALSE
+1082	1_UM	55	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	TRUE	0_no	0_no	1_yes	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	1	FALSE	FALSE	FALSE
+1083	1_UM	56	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+1084	1_UM	47	3.5	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	TRUE
+1085	1_UM	73	2	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	1_yes	1_yes	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1086	1_UM	41	2	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	0_inpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1087	1_UM	40	1	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1088	1_UM	61	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	FALSE	TRUE	FALSE
+1089	1_UM	63	2	1_yes	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1090	1_UM	90	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1091	1_UM	57	1.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1092	1_UM	28	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1093	1_UM	38	2	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1094	1_UM	69	2.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1095	1_UM	70	2	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1096	1_UM	38	3.5	0_no	FALSE	FALSE	TRUE	TRUE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+1097	1_UM	56	2.5	1_yes	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1098	1_UM	61	1.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1099	1_UM	36	3	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+1100	1_UM	37	2	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	FALSE
+1101	1_UM	36	1.5	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	0_inpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1102	1_UM	76	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1103	1_UM	66	1.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1104	1_UM	48	1	1_yes	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1105	1_UM	63	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	0_inpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1106	1_UM	40	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+1107	1_UM	21	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+1108	1_UM	53	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	1_yes	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1109	1_UM	38	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1110	1_UM	36	2	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	2	TRUE	TRUE	FALSE
+1111	1_UM	36	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+1112	1_UM	56	1.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1113	1_UM	39	4	0_no	TRUE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1114	1_UM	70	1	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	1_yes	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1115	1_UM	47	1.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	0_inpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1116	1_UM	48	3.5	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	FALSE	TRUE	TRUE
+1117	1_UM	32	3	1_yes	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+1118	1_UM	40	3	1_yes	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+1119	1_UM	69	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	FALSE
+1120	1_UM	53	2	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+1121	1_UM	31	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1122	1_UM	58	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1123	1_UM	21	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1124	1_UM	30	3	1_yes	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+1125	1_UM	31	4	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1126	1_UM	30	3	1_yes	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1127	1_UM	36	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	1_yes	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1128	1_UM	51	2.5	0_no	TRUE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1129	1_UM	41	3.5	1_yes	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	2	FALSE	TRUE	FALSE
+1130	1_UM	50	4	1_yes	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	2	TRUE	TRUE	TRUE
+1131	1_UM	58	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	TRUE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+1132	1_UM	47	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	0_inpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+1133	1_UM	43	2	1_yes	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	FALSE	TRUE	FALSE
+1135	1_UM	43	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1136	1_UM	56	2	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1137	1_UM	44	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+1138	1_UM	44	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1139	1_UM	42	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1140	1_UM	30	4	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1141	1_UM	54	1	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+1142	1_UM	67	3.5	1_yes	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+1143	1_UM	52	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1144	1_UM	44	1.5	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	1_yes	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	2	FALSE	FALSE	FALSE
+1145	1_UM	34	2	1_yes	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	2	FALSE	FALSE	FALSE
+1146	1_UM	23	2	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+1147	1_UM	28	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+1148	1_UM	67	3	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+1149	1_UM	54	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1150	1_UM	53	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	2	TRUE	TRUE	FALSE
+1151	1_UM	23	2	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1152	1_UM	56	2	1_yes	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+1153	1_UM	28	2	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1154	1_UM	58	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1155	1_UM	56	2	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+1156	1_UM	29	3.5	1_yes	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+1157	1_UM	50	3	1_yes	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+1158	1_UM	51	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+1159	1_UM	36	3.5	1_yes	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+1160	1_UM	57	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+1161	1_UM	49	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1162	1_UM	63	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+1163	1_UM	64	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	FALSE	TRUE	FALSE
+1164	1_UM	65	2	1_yes	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+1165	1_UM	34	2	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2001	2_IU	27	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2002	2_IU	62	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2003	2_IU	26	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2004	2_IU	40	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2005	2_IU	55	3.5	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2006	2_IU	26	2	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+2007	2_IU	49	4.5	0_no	TRUE	FALSE	TRUE	TRUE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2008	2_IU	43	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2009	2_IU	32	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2010	2_IU	49	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2011	2_IU	38	3	1_yes	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2012	2_IU	48	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2013	2_IU	28	3	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2014	2_IU	55	3	0_no	FALSE	FALSE	TRUE	TRUE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2015	2_IU	24	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2016	2_IU	43	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	NA	FALSE	TRUE	TRUE
+2017	2_IU	28	3	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2018	2_IU	50	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2019	2_IU	52	3	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2020	2_IU	45	4	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2021	2_IU	33	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2022	2_IU	67	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2023	2_IU	31	2.5	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2024	2_IU	33	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2025	2_IU	50	2	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2026	2_IU	36	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2027	2_IU	52	2	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2028	2_IU	29	5	1_yes	TRUE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2029	2_IU	41	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2030	2_IU	34	3.5	1_yes	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2031	2_IU	52	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2032	2_IU	62	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2033	2_IU	52	3	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+2034	2_IU	54	1.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+2035	2_IU	41	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2036	2_IU	62	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2037	2_IU	70	2	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2038	2_IU	31	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2039	2_IU	41	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2040	2_IU	20	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2041	2_IU	24	1.5	1_yes	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2042	2_IU	48	3.5	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	FALSE	TRUE	FALSE
+2043	2_IU	20	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2044	2_IU	40	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2045	2_IU	25	1.5	1_yes	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2046	2_IU	45	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2047	2_IU	48	3.5	0_no	FALSE	TRUE	TRUE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+2048	2_IU	56	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2049	2_IU	24	2	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	0_inpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	FALSE
+2050	2_IU	25	1.5	1_yes	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	1	TRUE	FALSE	FALSE
+2051	2_IU	43	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2052	2_IU	44	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2053	2_IU	46	4	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	0_inpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2054	2_IU	57	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2055	2_IU	65	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2056	2_IU	19	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2057	2_IU	75	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2058	2_IU	55	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2059	2_IU	41	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2060	2_IU	29	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2061	2_IU	41	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2062	2_IU	36	3.5	1_yes	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2063	2_IU	27	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2064	2_IU	41	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	TRUE
+2065	2_IU	41	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2066	2_IU	42	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2067	2_IU	38	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2068	2_IU	74	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	1	FALSE	TRUE	FALSE
+2069	2_IU	39	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2070	2_IU	29	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2071	2_IU	39	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2072	2_IU	71	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2073	2_IU	47	3	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+2074	2_IU	47	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2075	2_IU	37	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2076	2_IU	42	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2077	2_IU	25	3	0_no	FALSE	FALSE	TRUE	TRUE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	FALSE	TRUE	FALSE
+2078	2_IU	80	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+2079	2_IU	67	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2080	2_IU	53	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2081	2_IU	61	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2082	2_IU	42	4	0_no	FALSE	TRUE	TRUE	TRUE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2083	2_IU	66	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2084	2_IU	35	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	1_yes	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2085	2_IU	65	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2086	2_IU	43	2	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+2087	2_IU	44	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2088	2_IU	44	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2089	2_IU	46	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	1_yes	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2090	2_IU	47	5.5	1_yes	TRUE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2091	2_IU	55	3.5	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2092	2_IU	29	4	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2093	2_IU	66	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2094	2_IU	65	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2095	2_IU	49	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	NA	FALSE	TRUE	TRUE
+2096	2_IU	31	3	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2097	2_IU	60	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2098	2_IU	48	5	0_no	TRUE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2099	2_IU	56	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2100	2_IU	35	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2101	2_IU	19	3	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2102	2_IU	27	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2103	2_IU	50	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2104	2_IU	40	2	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2105	2_IU	45	4.5	0_no	TRUE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2106	2_IU	40	4	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2107	2_IU	63	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2108	2_IU	63	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+2109	2_IU	40	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2110	2_IU	22	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2111	2_IU	53	3	0_no	FALSE	FALSE	TRUE	TRUE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	1	TRUE	TRUE	TRUE
+2112	2_IU	63	3	1_yes	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	1	TRUE	TRUE	FALSE
+2113	2_IU	46	4	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2114	2_IU	21	4	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2115	2_IU	34	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2116	2_IU	55	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2117	2_IU	58	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2118	2_IU	41	4.5	1_yes	FALSE	FALSE	TRUE	TRUE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	FALSE	TRUE	FALSE
+2119	2_IU	40	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2120	2_IU	48	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	FALSE	TRUE	TRUE
+2121	2_IU	54	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2122	2_IU	48	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2123	2_IU	46	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2124	2_IU	30	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2125	2_IU	31	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2126	2_IU	42	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2127	2_IU	75	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2128	2_IU	56	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2129	2_IU	56	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2130	2_IU	53	2.5	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2131	2_IU	59	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2132	2_IU	59	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2133	2_IU	29	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2134	2_IU	42	2	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2135	2_IU	45	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2136	2_IU	40	4.5	0_no	FALSE	FALSE	TRUE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2137	2_IU	24	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2138	2_IU	31	3.5	0_no	FALSE	FALSE	TRUE	TRUE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2139	2_IU	66	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2140	2_IU	38	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2141	2_IU	52	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2142	2_IU	52	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2143	2_IU	27	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2144	2_IU	66	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2145	2_IU	35	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2146	2_IU	62	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2147	2_IU	34	4	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2148	2_IU	47	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	1_yes	1_yes	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2149	2_IU	46	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2150	2_IU	46	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	2	TRUE	TRUE	TRUE
+2151	2_IU	28	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2152	2_IU	59	2.5	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2153	2_IU	37	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2154	2_IU	48	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2155	2_IU	43	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2156	2_IU	22	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2157	2_IU	41	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2158	2_IU	49	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2159	2_IU	25	4	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2160	2_IU	63	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	TRUE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2161	2_IU	27	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	FALSE
+2162	2_IU	52	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2163	2_IU	34	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2164	2_IU	30	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2165	2_IU	53	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2166	2_IU	57	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2167	2_IU	44	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2168	2_IU	49	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2169	2_IU	38	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2170	2_IU	64	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	1_yes	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+2171	2_IU	44	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2172	2_IU	32	2	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2173	2_IU	53	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	TRUE
+2174	2_IU	39	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2175	2_IU	36	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2176	2_IU	32	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2177	2_IU	35	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2178	2_IU	54	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2179	2_IU	24	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2180	2_IU	38	4.5	0_no	TRUE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2181	2_IU	48	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	TRUE
+2182	2_IU	26	4.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	1_yes	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	FALSE	TRUE	TRUE
+2183	2_IU	47	2.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+2184	2_IU	69	3.5	0_no	FALSE	TRUE	TRUE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+2185	2_IU	67	3	1_yes	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2186	2_IU	56	4	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2187	2_IU	43	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2188	2_IU	25	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2189	2_IU	61	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2190	2_IU	47	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2192	2_IU	58	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2193	2_IU	38	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2194	2_IU	48	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2195	2_IU	57	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	1_yes	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2196	2_IU	44	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2197	2_IU	47	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2198	2_IU	28	2.5	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2199	2_IU	31	1.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+2200	2_IU	33	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2201	2_IU	55	4.5	0_no	FALSE	TRUE	TRUE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	FALSE
+2202	2_IU	46	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2203	2_IU	53	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2204	2_IU	40	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2205	2_IU	51	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2206	2_IU	49	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2207	2_IU	60	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2208	2_IU	30	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2209	2_IU	35	3	1_yes	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2210	2_IU	40	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2211	2_IU	35	2.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	1_yes	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2212	2_IU	36	2	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+2213	2_IU	67	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2214	2_IU	47	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2215	2_IU	38	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2216	2_IU	28	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2217	2_IU	63	1	1_yes	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2218	2_IU	66	2	1_yes	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	1_yes	1_yes	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	FALSE
+2219	2_IU	75	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2220	2_IU	51	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2221	2_IU	53	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2222	2_IU	51	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	0_no	1_yes	TRUE	TRUE	0_no	1_yes	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2223	2_IU	26	2.5	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	1_yes	1_yes	FALSE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	TRUE
+2224	2_IU	45	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	FALSE	TRUE	FALSE
+2225	2_IU	32	3	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2226	2_IU	35	2.5	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	TRUE	1_yes	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+2227	2_IU	27	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2228	2_IU	35	2	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+2229	2_IU	34	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2230	2_IU	51	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2231	2_IU	52	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	0_inpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2232	2_IU	54	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2233	2_IU	60	4	0_no	FALSE	TRUE	TRUE	TRUE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2234	2_IU	38	3	1_yes	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2235	2_IU	48	3	1_yes	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2236	2_IU	48	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	NA	1_indomethacin	NA	FALSE	FALSE	FALSE
+2237	2_IU	35	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2238	2_IU	55	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2239	2_IU	35	3.5	1_yes	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2240	2_IU	38	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	1	TRUE	TRUE	TRUE
+2241	2_IU	59	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2242	2_IU	30	4	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2243	2_IU	60	3	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2244	2_IU	36	4.5	0_no	FALSE	FALSE	TRUE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2245	2_IU	29	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2246	2_IU	33	3.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	FALSE
+2247	2_IU	67	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2248	2_IU	70	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2249	2_IU	42	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2250	2_IU	55	2.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+2251	2_IU	52	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2252	2_IU	52	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2253	2_IU	47	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2254	2_IU	72	2.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2255	2_IU	32	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	FALSE	TRUE	FALSE
+2256	2_IU	59	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2257	2_IU	37	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2258	2_IU	60	3.5	1_yes	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+2259	2_IU	28	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2260	2_IU	60	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2261	2_IU	44	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2262	2_IU	35	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2263	2_IU	27	5	0_no	FALSE	FALSE	TRUE	TRUE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2264	2_IU	40	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2265	2_IU	33	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2266	2_IU	59	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2267	2_IU	44	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2268	2_IU	34	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2269	2_IU	72	3.5	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2270	2_IU	51	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2271	2_IU	62	3	1_yes	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2272	2_IU	37	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2273	2_IU	51	2	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2274	2_IU	31	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2275	2_IU	33	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2276	2_IU	28	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2277	2_IU	43	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2278	2_IU	36	4.5	1_yes	TRUE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2279	2_IU	56	2	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+2280	2_IU	42	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2281	2_IU	38	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2282	2_IU	77	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2283	2_IU	62	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2284	2_IU	20	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2285	2_IU	62	2.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	1_yes	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	FALSE
+2286	2_IU	56	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2287	2_IU	24	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2288	2_IU	53	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2289	2_IU	44	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2290	2_IU	36	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2291	2_IU	64	2.5	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+2292	2_IU	27	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2293	2_IU	54	3	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+2294	2_IU	54	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2295	2_IU	30	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2296	2_IU	50	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2297	2_IU	30	3	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2298	2_IU	46	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2299	2_IU	68	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2300	2_IU	52	4.5	0_no	FALSE	FALSE	TRUE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2301	2_IU	40	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2302	2_IU	48	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2303	2_IU	67	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	1_yes	0_no	1_yes	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2304	2_IU	24	2.5	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2305	2_IU	29	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2306	2_IU	48	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	1_yes	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2307	2_IU	66	1	1_yes	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+2308	2_IU	41	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	FALSE
+2309	2_IU	30	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2310	2_IU	34	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2311	2_IU	44	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2312	2_IU	32	3	1_yes	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	2	FALSE	TRUE	TRUE
+2313	2_IU	43	2	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2314	2_IU	58	2	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2315	2_IU	23	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	2	FALSE	TRUE	TRUE
+2316	2_IU	47	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	2	TRUE	TRUE	TRUE
+2317	2_IU	49	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	TRUE
+2318	2_IU	46	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2319	2_IU	31	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	2	TRUE	TRUE	TRUE
+2320	2_IU	40	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2321	2_IU	45	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2322	2_IU	49	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	1_yes	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2323	2_IU	39	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2324	2_IU	34	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2325	2_IU	55	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2326	2_IU	31	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2327	2_IU	41	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2328	2_IU	51	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	FALSE	TRUE	TRUE
+2329	2_IU	49	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2330	2_IU	49	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2331	2_IU	37	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2332	2_IU	51	3	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2333	2_IU	45	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2334	2_IU	30	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2335	2_IU	38	3.5	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2336	2_IU	46	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2337	2_IU	44	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2338	2_IU	34	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	FALSE
+2339	2_IU	41	3	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2340	2_IU	41	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2341	2_IU	34	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2342	2_IU	47	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2343	2_IU	25	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2344	2_IU	43	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2345	2_IU	64	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2346	2_IU	31	4	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	TRUE
+2347	2_IU	49	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2348	2_IU	48	4.5	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2349	2_IU	53	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	1_yes	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2350	2_IU	53	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2351	2_IU	55	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2352	2_IU	50	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	TRUE
+2353	2_IU	37	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2354	2_IU	51	4	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	"NA_NA"	"NA_NA"	"NA_NA"	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2355	2_IU	44	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2356	2_IU	48	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2357	2_IU	30	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2358	2_IU	61	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2359	2_IU	57	2.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2360	2_IU	24	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2361	2_IU	48	4	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2362	2_IU	63	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	FALSE	TRUE	FALSE
+2363	2_IU	29	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2364	2_IU	52	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	1_yes	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2365	2_IU	55	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2366	2_IU	48	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2367	2_IU	50	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2368	2_IU	23	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2369	2_IU	50	3	0_no	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2370	2_IU	41	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2371	2_IU	24	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2372	2_IU	27	3.5	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	FALSE	TRUE	FALSE
+2373	2_IU	63	1.5	1_yes	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	1	TRUE	TRUE	FALSE
+2374	2_IU	36	4	1_yes	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	1	TRUE	TRUE	TRUE
+2375	2_IU	26	2	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2376	2_IU	59	2	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2377	2_IU	53	3.5	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2378	2_IU	67	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2379	2_IU	40	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2380	2_IU	42	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	FALSE
+2381	2_IU	52	3	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2382	2_IU	41	3.5	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	FALSE
+2383	2_IU	72	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	1_yes	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2384	2_IU	54	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+2385	2_IU	38	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2386	2_IU	23	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2387	2_IU	35	3	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2388	2_IU	49	2	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+2389	2_IU	54	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2390	2_IU	44	2	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+2391	2_IU	64	4	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2392	2_IU	39	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2393	2_IU	50	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2394	2_IU	34	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	TRUE
+2395	2_IU	31	2	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+2396	2_IU	44	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+2397	2_IU	52	3	1_yes	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2398	2_IU	26	3.5	1_yes	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2399	2_IU	55	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2400	2_IU	61	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+2401	2_IU	28	3	1_yes	TRUE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	FALSE
+2402	2_IU	40	2	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	FALSE	TRUE	TRUE
+2403	2_IU	42	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2404	2_IU	38	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2405	2_IU	40	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+2406	2_IU	40	3	1_yes	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2407	2_IU	22	3.5	0_no	FALSE	FALSE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	FALSE	TRUE	FALSE
+2408	2_IU	31	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+2409	2_IU	21	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	FALSE	TRUE	FALSE
+2410	2_IU	54	2	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	FALSE	TRUE	TRUE
+2411	2_IU	48	4	0_no	TRUE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+2412	2_IU	47	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+2413	2_IU	36	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	1_yes	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+2414	2_IU	34	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+3001	3_UK	47	2.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	TRUE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+3002	3_UK	52	1	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	NA	0_placebo	NA	FALSE	FALSE	FALSE
+3003	3_UK	47	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	TRUE
+3004	3_UK	43	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	0_placebo	NA	TRUE	TRUE	FALSE
+3005	3_UK	37	3	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+3006	3_UK	50	1.5	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+3007	3_UK	47	2.5	1_yes	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+3008	3_UK	51	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	TRUE	1_yes	0_no	0_no	FALSE	1_outpatient	1_type 1	1_indomethacin	NA	FALSE	TRUE	FALSE
+3009	3_UK	53	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+3010	3_UK	43	2.5	0_no	FALSE	FALSE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	3_type 3	1_indomethacin	NA	TRUE	TRUE	TRUE
+3011	3_UK	44	3.5	0_no	FALSE	TRUE	TRUE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	FALSE	TRUE	FALSE
+3012	3_UK	78	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	TRUE	TRUE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+3013	3_UK	41	3	1_yes	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	TRUE	1_outpatient	2_type 2	0_placebo	NA	FALSE	TRUE	TRUE
+3014	3_UK	33	3.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	TRUE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	1_type 1	0_placebo	NA	TRUE	TRUE	FALSE
+3015	3_UK	61	4	0_no	FALSE	TRUE	FALSE	FALSE	TRUE	1_yes	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+3016	3_UK	25	1.5	0_no	TRUE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	1_yes	1_yes	0_no	FALSE	0_inpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE
+3017	3_UK	52	1	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	1_yes	0_no	1_yes	1_yes	0_no	TRUE	TRUE	0_no	1_yes	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+3018	3_UK	34	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	0_no	FALSE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	TRUE
+3019	3_UK	56	2	0_no	FALSE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	0_no	1_yes	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	FALSE
+3020	3_UK	27	3	0_no	TRUE	TRUE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	1_indomethacin	NA	TRUE	TRUE	FALSE
+3021	3_UK	39	2	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	FALSE	0_no	0_no	0_no	FALSE	1_outpatient	NA	0_placebo	NA	TRUE	FALSE	FALSE
+3022	3_UK	50	2.5	0_no	FALSE	TRUE	TRUE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	FALSE	1_outpatient	2_type 2	0_placebo	NA	TRUE	TRUE	TRUE
+4001	4_Case	29	1.5	0_no	FALSE	FALSE	FALSE	FALSE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	1_yes	0_no	TRUE	1_outpatient	1_type 1	0_placebo	NA	TRUE	FALSE	FALSE
+4002	4_Case	40	1.5	0_no	FALSE	FALSE	FALSE	FALSE	FALSE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	0_no	0_no	0_no	TRUE	1_outpatient	1_type 1	1_indomethacin	NA	TRUE	TRUE	FALSE
+4003	4_Case	73	2	0_no	FALSE	FALSE	FALSE	TRUE	TRUE	0_no	FALSE	FALSE	FALSE	0_no	0_no	0_no	0_no	1_yes	0_no	TRUE	TRUE	1_yes	0_no	0_no	TRUE	1_outpatient	NA	1_indomethacin	NA	TRUE	FALSE	FALSE

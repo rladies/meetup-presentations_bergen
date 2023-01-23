@@ -36,12 +36,13 @@ indo_rct_adj <- indo_rct %>%
         pdstent, train),
       ~ if_else(.x == "1_yes", TRUE, FALSE)
     )
-  )
+  ) %>%
+  select(-gender, -sod, -sodsom)
 skimr::skim(indo_rct_adj)
 
 # SAVE DATA ----
 write_delim(
   indo_rct_adj,
-  here("2023-01-28", "DATA", "indo_rct_adjusted.txt"),
+  here("2023-01-27_automagical_tables", "DATA", "indo_rct_adjusted.txt"),
   delim = "\t"
 )

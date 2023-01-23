@@ -302,7 +302,7 @@ There are also other, some mentioned here, I will not talk about.
 
 class: inverse
 
-## Hands-on example
+## Hands-on examples
 
 <br>
 
