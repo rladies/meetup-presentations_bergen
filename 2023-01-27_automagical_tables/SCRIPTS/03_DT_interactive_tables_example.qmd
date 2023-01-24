@@ -4,28 +4,85 @@ author: "Julia Romanowska"
 format:
   html:
     toc: true
-    df-print: "paged"
+    df-print: paged
     theme: "cosmo"
     highlight: "github"
+    code-fold: true
+    embed-resources: true
 ---
 
-## Quarto
+```{r setup, include=FALSE}
+library(fontawesome)
+library(medicaldata)
+library(DT)
+library(tidyverse)
+library(here)
+library(glue)
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
+data(abm)
+abm <- as_tibble(abm)
 ```
 
-You can add options to executable code like this 
+
+## Quarto/Rmarkdown
+
+[{DT}](https://rstudio.github.io/DT/) package outputs pretty tables as .html
+files, using the JavaScript language to obtain interactivity. Therefore, it's
+best to use them by including the code within a
+[Quarto](https://quarto.org/docs/computations/r.html) or
+`r fa("markdown")` RMarkdown document.
+
+## Read some data
+
+Usually, when creating a report in Quarto/Rmarkdown, we want to summarise the
+entire analysis. First, we read the data and provide a short description:
 
 ```{r}
-#| echo: false
-2 * 2
+skimr::skim(abm)
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+## Run analyses
+
+We want to check whether any of the variables are associated with the outcome,
+so we can run many univariate logistic regressions.
+
+```{r, warning=FALSE}
+explanatory <- names(abm)[c(-1,-22)]
+dependent <- "abm"
+
+all_glmuni_results <- finalfit::glmuni(abm, dependent, explanatory)
+all_glmuni_results_tidy <- map(
+  all_glmuni_results,
+  ~ broom::tidy(.x, conf.int = TRUE, exp = TRUE)
+) %>% 
+  bind_rows() %>%
+  filter(!(term %in% c("(Intercept)", "blood_cult")))
+```
+
+Since there are many results, we can display it in a nice DT table:
+
+```{r}
+datatable(
+  all_glmuni_results_tidy %>%
+    select(-statistic) %>%
+    # make a column displaying the confidence interval nicely
+    mutate(
+      CI = sprintf("%.2f - %.2f", conf.low, conf.high),
+      across(c(estimate, p.value, std.error), ~ signif(.x, 2))
+    ) %>%
+    select(term, estimate, CI, std.error, p.value),
+  colnames = c("Dependent variable", "OR", "95% CI", "std error", "p-value"),
+  # class = "order-column",
+  class = 'cell-border stripe',
+  caption = "Table 1: results of univariate GLM runs",
+  filter = "top", # show filtering options on top of each column
+  rownames = FALSE, # don't show row names
+  options = list(
+    pageLength = 5, # how many items per page?
+    buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
+    dom = 'Bfrtip'
+  ),
+  extensions = "Buttons"
+)
+```
+
