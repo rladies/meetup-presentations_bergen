@@ -185,4 +185,4 @@ __Original Meetup pages:__
 1. __virtual event:__ https://www.meetup.com/rladies-bergen/events/290100296/
 1. __physical meetup:__ https://www.meetup.com/rladies-bergen/events/290100305/
 
-Presentation available soon
+[Materials and presentation available here](2023-01-27_automagical_tables/README.html)
