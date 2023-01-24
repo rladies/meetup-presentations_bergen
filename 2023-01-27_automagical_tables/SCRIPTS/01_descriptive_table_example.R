@@ -1,8 +1,8 @@
 # DESCRIPTION: Example of using {gt} and {gtsummary} to create pretty tables
 #   that are automatically populated with correct numbers.
 # AUTHOR: Julia Romanowska
-# DATE CREATED: 2023-01-29
-# DATE LAST MODIFIED:
+# DATE CREATED: 2023-01-23
+# DATE LAST MODIFIED: 2023-01-24
 
 # SETUP ----
 library(medicaldata)
@@ -94,24 +94,57 @@ nicer_descr_table
 # adding rows grouping - switching to {gt} package
 nicer_descr_table_gt <- nicer_descr_table %>%
   as_gt(
-    rowname_col = "Characteristic"
+    rowname_col = "label"
   ) %>%
   tab_row_group(
     label = "Clinical suspicion of sphincter of Oddi dysfunction",
     rows = 3:8,
     id = "group1"
+  ) %>%
+  tab_stubhead(
+    label = md("**Characteristic**")
   )
 nicer_descr_table_gt
 
+nicer_descr_table_gt 
+
+
 # columns width
-nicer_descr_table_gt %>%
+final_descr_table <- nicer_descr_table_gt %>%
   cols_width(
     starts_with("stat") ~ px(90)
   ) %>%
-  text_transform(
-    locations = cells_row_groups(groups = "group1"),
-    fn = function(x){paste0("   ", x)}
+  tab_stub_indent(
+    rows = 3:8,
+    indent = 3
+  ) %>%
+  tab_stub_indent(
+    rows = 6:8,
+    indent = 5
   ) %>%
   fmt_markdown(columns = everything())
+final_descr_table
+
+# EXTRAS ----
+# if you want, you can play around with {gtExtras} package - adding colors, 
+#   icons, etc., or applying whole themes to your gt table:
+#   https://jthomasmock.github.io/gtExtras/reference/index.html#themes
 
 # EXPORT ----
+# simple - just use a needed file extension to specify type of output!
+gtsave(
+  final_descr_table,
+  file = here("RESULTS", "Table01_description.html")
+)
+
+gtsave(
+  final_descr_table,
+  file = here("RESULTS", "Table01_description.docx")
+)
+
+gtsave(
+  final_descr_table,
+  file = here("RESULTS", "Table01_description.tex")
+)
+
+
