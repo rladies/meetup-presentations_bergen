@@ -473,8 +473,8 @@ model &lt;- lm(
 ## Species [versicolor]                |       -1.81 | 0.60 | [-2.99, -0.62] |  -3.02 | 0.003 
 ## Species [virginica]                 |       -3.15 | 0.63 | [-4.41, -1.90] |  -4.97 | &lt; .001
 ## Petal Length                        |        0.54 | 0.28 | [ 0.00,  1.09] |   1.96 | 0.052 
-## Species [versicolor] * Petal Length |        0.29 | 0.30 | [-0.30,  0.87] |   0.97 | 0.334 
-## Species [virginica] * Petal Length  |        0.45 | 0.29 | [-0.12,  1.03] |   1.56 | 0.120
+## Species [versicolor] × Petal Length |        0.29 | 0.30 | [-0.30,  0.87] |   0.97 | 0.334 
+## Species [virginica] × Petal Length  |        0.45 | 0.29 | [-0.12,  1.03] |   1.56 | 0.120
 ```
 ]
 
@@ -505,8 +505,8 @@ model_parameters(model)
 ## Species [versicolor]                |       -1.81 | 0.60 | [-2.99, -0.62] |  -3.02 | 0.003 
 ## Species [virginica]                 |       -3.15 | 0.63 | [-4.41, -1.90] |  -4.97 | &lt; .001
 ## Petal Length                        |        0.54 | 0.28 | [ 0.00,  1.09] |   1.96 | 0.052 
-## Species [versicolor] * Petal Length |        0.29 | 0.30 | [-0.30,  0.87] |   0.97 | 0.334 
-## Species [virginica] * Petal Length  |        0.45 | 0.29 | [-0.12,  1.03] |   1.56 | 0.120
+## Species [versicolor] × Petal Length |        0.29 | 0.30 | [-0.30,  0.87] |   0.97 | 0.334 
+## Species [virginica] × Petal Length  |        0.45 | 0.29 | [-0.12,  1.03] |   1.56 | 0.120
 ```
 
 
@@ -517,8 +517,8 @@ model_parameters(model)
 |Species (versicolor)                |       -1.81 | 0.60 |    (-2.99, -0.62) |  -3.02 | 0.003  |
 |Species (virginica)                 |       -3.15 | 0.63 |    (-4.41, -1.90) |  -4.97 | &lt; .001 |
 |Petal Length                        |        0.54 | 0.28 | (-4.76e-03, 1.09) |   1.96 | 0.052  |
-|Species (versicolor) * Petal Length |        0.29 | 0.30 |     (-0.30, 0.87) |   0.97 | 0.334  |
-|Species (virginica) * Petal Length  |        0.45 | 0.29 |     (-0.12, 1.03) |   1.56 | 0.120  |
+|Species (versicolor) × Petal Length |        0.29 | 0.30 |     (-0.30, 0.87) |   0.97 | 0.334  |
+|Species (virginica) × Petal Length  |        0.45 | 0.29 |     (-0.12, 1.03) |   1.56 | 0.120  |
 ]
 
 &lt;style&gt;
@@ -554,7 +554,7 @@ model_parameters(model)
 
 ## Design the table
 
-<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1.5em;width:1.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M373.5 27.11C388.5 9.885 410.2 0 433 0C476.6 0 512 35.36 512 78.98C512 101.8 502.1 123.5 484.9 138.5L277.7 319L192.1 234.3L373.5 27.11zM255.1 341.7L235.9 425.1C231.9 442.2 218.9 455.8 202 460.5L24.35 510.3L119.7 414.9C122.4 415.6 125.1 416 128 416C145.7 416 160 401.7 160 384C160 366.3 145.7 352 128 352C110.3 352 96 366.3 96 384C96 386.9 96.38 389.6 97.08 392.3L1.724 487.6L51.47 309.1C56.21 293.1 69.8 280.1 86.9 276.1L170.3 256.9L255.1 341.7z"/></svg> + <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1.5em;width:1.69em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M48 32C21.5 32 0 53.5 0 80v64C0 152.9 7.125 160 16 160H96V80C96 53.5 74.5 32 48 32zM256 380.6V320h224V128c0-53-43-96-96-96H111.6C121.8 45.38 128 61.88 128 80V384c0 38.88 34.62 69.63 74.75 63.13C234.3 442 256 412.5 256 380.6zM288 352v32c0 52.88-43 96-96 96h272c61.88 0 112-50.13 112-112c0-8.875-7.125-16-16-16H288z"/></svg> (pen + paper)
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1.5em;width:1.5em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M373.5 27.1C388.5 9.9 410.2 0 433 0c43.6 0 79 35.4 79 79c0 22.8-9.9 44.6-27.1 59.6L277.7 319l-10.3-10.3-64-64L193 234.3 373.5 27.1zM170.3 256.9l10.4 10.4 64 64 10.4 10.4-19.2 83.4c-3.9 17.1-16.9 30.7-33.8 35.4L24.4 510.3l95.4-95.4c2.6 .7 5.4 1.1 8.3 1.1c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32c0 2.9 .4 5.6 1.1 8.3L1.7 487.6 51.5 310c4.7-16.9 18.3-29.9 35.4-33.8l83.4-19.2z"/></svg> + <svg aria-hidden="true" role="img" viewBox="0 0 576 512" style="height:1.5em;width:1.69em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M0 80v48c0 17.7 14.3 32 32 32H48 96V80c0-26.5-21.5-48-48-48S0 53.5 0 80zM112 32c10 13.4 16 30 16 48V384c0 35.3 28.7 64 64 64s64-28.7 64-64v-5.3c0-32.4 26.3-58.7 58.7-58.7H480V128c0-53-43-96-96-96H112zM464 480c61.9 0 112-50.1 112-112c0-8.8-7.2-16-16-16H314.7c-14.7 0-26.7 11.9-26.7 26.7V384c0 53-43 96-96 96H368h96z"/></svg> (pen + paper)
 
 --
 
@@ -638,7 +638,7 @@ There are also other, some mentioned here, I will not talk about.
 
 class: inverse
 
-## Hands-on example
+## Hands-on examples
 
 &lt;br&gt;
 
@@ -647,6 +647,7 @@ class: inverse
 ### Table with results, using {flextable}
 
 ### Interactive table with {DT}
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

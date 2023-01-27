@@ -98,7 +98,7 @@ theme_zebra(nicer_results_cath_regression)
 # EXPORT ----
 save_as_docx(
   nicer_results_cath_regression,
-  path = here("RESULTS", "Table02_log_regr_cath.docx")
+  path = here("2023-01-27_automagical_tables", "RESULTS", "Table02_log_regr_cath.docx")
 )
 
 save_as_html(

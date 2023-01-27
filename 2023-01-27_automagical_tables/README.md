@@ -4,7 +4,7 @@ on 27.01.2023 (https://www.meetup.com/rladies-bergen/events/290100305/).
 Watch the [presentation](JRomanowska_automagical_tables.html) and checkout
 the examples:
 
-- using {gt} and {gtsummary} to [create descriptive table](SCRITS/01_descriptive_table_example.R);
+- using {gt} and {gtsummary} to [create descriptive table](SCRIPTS/01_descriptive_table_example.R);
 
 - using {flextable} to [create table with results](SCRIPTS/02_flextable_example.R);
 
