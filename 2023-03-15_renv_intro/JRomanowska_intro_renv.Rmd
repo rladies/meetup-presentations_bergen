@@ -51,13 +51,28 @@ class: inverse, middle, center
 
 ### reproducibility
 
+???
+
+One of the points to consider when creating reproducible code is the versions 
+of software one uses.
+
 --
 
 ### peace of mind
 
+???
+
+Remember the last time you needed to get back to a project after a longer break
+and suddenly you get some errors because packages were updated in the meantime?
+
 --
 
 ### collaboration
+
+???
+
+No need to ask collaborators to try to re-install certain packages after your 
+code would not run on their machines!
 
 ---
 
@@ -96,35 +111,121 @@ to the previous state as encoded in the lockfile if your attempts to update
 packages introduced some new problems.
 
 
+> `snapshot()` records: pkg version and installation source
+
+> `restore()` attempts to re-install the packages based on the info saved
+
 ---
 
 ## Details - file structure
+
+.pull-left[
+new files and folders in your project:
+
+- `r fa("file", fill = "gray")` `.Rprofile`
+- `r fa("file", fill = "gray")` `renv.lock`
+- `r fa("file", fill = "gray")` `renv/activate.R`
+- `r fa("folder", fill = "gray")` `renv/library`
+- `r fa("file", fill = "gray")` `renv/settings.dcf`
+]
+
+--
+
+.pull-right[
+<br>
+<br>
+&larr; _commit to git_    
+&larr; _commit to git_    
+&larr; _commit to git_    
+&larr; _ignore in git_
+]
+
+???
+
+| File  |	Usage |
+|-------|-------|
+| .Rprofile |	Used to activate renv for new R sessions launched in the project. |
+| renv.lock |	The lockfile, describing the state of your project’s library at some point in time. |
+| renv/activate.R |	The activation script run by the project .Rprofile. |
+| renv/library |	The private project library. |
+| renv/settings.dcf |	Project settings – see ?settings for more details. |
 
 ---
 
 ## Details - dependency discovery
 
+- `renv::dependencies()` searches for `library()` calls
+
+???
+
+This should work, but sometimes we're using only one function from a package,
+without loading it. Or the package is not easily found in standard sources.
+Or we don't want {renv} to search through some files. We can adjust that manually.
+
+--
+
+- you can create `r fa("file", fill = "gray")` `_dependencies.R` with only `library()` calls
+
+- use `r fa("file", fill = "gray")` `.gitignore` and `r fa("file", fill = "gray")``.renvignore`
+
+- add `r fa("file", fill = "gray")` `DESCRIPTION` file to the project
+
+???
+
+- `_dependencies.R` or `DESCRIPTION` works in a similar way: telling {renv}
+which packages to include _explicitly_
+
+- `.renvignore` lists files that {renv} should not read
+
 ---
 
 ## Details - cache
+
+- packages live in global _cache_ = _main library dir_
+
+- `r fa("folder", fill = "gray")` `library` in each project has links to cache
+
+???
+
+Use of cached packages makes `restore()` and `install()` faster and saves disk
+space. You can always disable cache for each project separately or globally.
+
+--
+
+> _NOTE: this will not work across disks on Windows!_
+
+???
+
+If you're working on a network disk but have all the libraries installed on a
+local disk, you should either move the projects to the local disk or the main
+library to a network disk.
 
 ---
 
 ## `r fa("triangle-exclamation")` Caveats
 
-- takes care only of R-packages
+- takes care only of R-packages (see also `?renv::equip()`)
 
-- package version needs to be available (online/offline)
+- package version needs to be available (online/offline) - _default sources_
+
+    - CRAN,
+    - GitHub/Gitlab,
+    - Bioconductor,
+    - Bitbucket
 
 - all things reproducibility:    
-[Building reproducible analytical pipelines with R](https://raps-with-r.dev/) `r fa("book")`
+`r fa("book", fill = "gray")` [Building reproducible analytical pipelines with R](https://raps-with-r.dev/)
 
 ???
 
 This is not a panaceum! If an R-package depends on an external library, this
-will have to be installed manually.
+will have to be installed manually. `renv::equip()` can help for some software
+on Windows.
 
 Copy of the version of the package needs to be either online or offline.
+
+You can add sources manually, through settings - check
+[vignette for details](https://rstudio.github.io/renv/articles/renv.html#custom-r-package-repositories).
 
 ---
 
