@@ -172,8 +172,6 @@ __Original Meetup page__ https://www.meetup.com/rladies-bergen/events/289743592/
 
 [Presentation available](2022-11-29_reproducible_quarto_documents/JRom_reproducible.html)
 
-## COMING UP!
-
 ### 21. Auto-magical tables in R
 
 About making tables in R, using some of the many packages made for that.
@@ -186,3 +184,16 @@ __Original Meetup pages:__
 1. __physical meetup:__ https://www.meetup.com/rladies-bergen/events/290100305/
 
 [Materials and presentation available here](2023-01-27_automagical_tables/README.html)
+
+## COMING UP!
+
+### 22. Efficient dependency management with {renv}
+
+First meeting in a series about [{renv}](https://rstudio.github.io/renv/articles/renv.html) package.
+Short presentation by Julia Romanowska and then we can chat.
+
+__Date__ March 15, 2023, 09:00 AM (CET)
+
+__Original Meetup page:__ https://www.meetup.com/rladies-bergen/events/291632166/
+
+[Presentation available here](2023-03-15_renv_intro/JRomanowska_intro_renv.html)
