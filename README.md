@@ -185,8 +185,6 @@ __Original Meetup pages:__
 
 [Materials and presentation available here](2023-01-27_automagical_tables/README.html)
 
-## COMING UP!
-
 ### 22. Efficient dependency management with {renv}
 
 First meeting in a series about [{renv}](https://rstudio.github.io/renv/articles/renv.html) package.
@@ -197,3 +195,12 @@ __Date__ March 15, 2023, 09:00 AM (CET)
 __Original Meetup page:__ https://www.meetup.com/rladies-bergen/events/291632166/
 
 [Presentation available here](2023-03-15_renv_intro/JRomanowska_intro_renv.html)
+
+## COMING UP!
+
+### 23. Basics of data visualization - theory and practice
+
+__Date__ April 20, 2023, 03:00 PM (CEST)
+
+__Original Meetup page:__ https://www.meetup.com/rladies-bergen/events/292377117/
+
