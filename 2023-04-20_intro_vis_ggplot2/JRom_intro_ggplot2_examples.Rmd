@@ -1,0 +1,222 @@
+---
+title: "Data visualization basics"
+subtitle: "-- examples in {ggplot2}"
+author: "_Julia Romanowska_"
+date: "April 20, 2023"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [xaringan-themer.css,add-theme.css]
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(xaringanthemer)
+style_solarized_light(
+  code_font_size = "0.7rem",
+  code_inline_font_size = "0.9rem"
+)
+
+library(xaringanExtra)
+use_clipboard()
+use_scribble()
+use_tile_view()
+use_fit_screen()
+
+knitr::opts_chunk$set(
+  fig.width = 6,
+  message = FALSE,
+  warning = FALSE,
+  comment = "",
+  cache = F,
+  echo = FALSE,
+  dpi = 150
+)
+
+library(flipbookr)
+library(tidyverse)
+library(palmerpenguins)
+library(fontawesome)
+```
+
+
+class: inverse, left, middle
+
+## `r fa("laptop-code")` {ggplot2} basics
+
+---
+
+### A plot in {ggplot2} consists of several layers:
+
+--
+
+1. data
+
+2. aesthetics (`aes`) ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-aesthetics))
+
+3. `geom`s ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-geoms))
+
+4. `scale`s ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-scales))
+
+5. `theme` ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-themes))
+
+???
+
+1. data
+    - strict format: tidy data!
+    - one row per datapoint
+    - all grouping must be included in the data
+
+2. aesthetics (`aes`) ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-aesthetics))
+    - how to map the data to the graph?
+    - which column is *x*, *y*, ...
+    - which column provides grouping (based on the grouping, one can either connect points into lines, split a graph into several facets, or color differently each group)
+
+3. `geom`s ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-geoms))
+    - how to visualize the data?
+    - points (`geom_point`), lines (`geom_line`), bars (`geom_bar`), etc.
+    - `geom`s are connected to `stat`s that conduct any necessary pre-processing of data (e.g., `geom_histogram` would first calculate the number of observations in each bin through `stat_bin`)
+
+4. `scale`s ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-scales))
+    - any type of data representation on the plot
+    - coordinates: `scale_x_continuous`, `scale_x_discrete`, `scale_x_date`, etc.
+    - colors: `scale_color_manual`, `scale_colour_brewer`, `scale_fill_continuous`, etc.
+
+5. `theme` ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-themes))
+    - visual aspects
+    - size and types of fonts
+    - positioning of axes, legends, etc.
+
+Each layer is added to the previous one with a `+` sign. The result can be saved to an object and added upon later.
+
+---
+
+class: inverse, left, middle
+
+## Example plot with {ggplot2}
+
+---
+
+## Data
+
+<div style="float: right; position: fixed; right: 10px; top: 10px;">
+<img style="float: right; position: relative; width: 120px" src="libs/figs/palmer_penguins_logo.png" alt="palmer penguins R package logo"/><br>
+</div>
+
+[palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
+
+<br>
+
+```{r}
+penguins
+```
+
+???
+
+I will be using this simple dataset with morphological data of penguins living on a certain island.
+
+--
+
+> **IMPORTANT** start with tidy data!
+
+**each row is an observation, each column is a variable**
+
+---
+
+```{r penguins_species_simple, include = FALSE}
+ggplot(data = penguins) +
+  aes(
+  	x = bill_length_mm,
+    y = bill_depth_mm
+  ) +
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+`r chunk_reveal("penguins_species_simple", break_type = "auto", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.5, 0.45))`
+
+---
+
+```{r penguins_species, include = FALSE}
+ggplot(data = penguins) +
+  aes(
+  	x = bill_length_mm,
+    y = bill_depth_mm
+  ) +
+  geom_point(
+    aes(color = species,
+    shape = species),
+      size = 2
+   ) + 
+  geom_smooth(
+  	method = "lm",
+    se = FALSE,
+    aes(color = species)
+  )
+penguins_default <- last_plot()
+```
+
+`r chunk_reveal("penguins_species", break_type = "auto", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.5, 0.45))`
+
+???
+
+Basics of ggplot2:
+
+- layers
+- 'aesthetics' + data + geom
+
+---
+
+class: inverse, left, middle
+
+_...back to theory..._
+
+---
+
+```{r penguins_species2, include = FALSE}
+penguins_default +
+  scale_color_manual(
+    values = c("darkorange",
+               "darkorchid",
+               "cyan4")
+    ) +
+  facet_grid(rows = vars(species)) +
+  labs(title = 
+    "Penguin species differentation") +
+  labs(subtitle = 
+    "based on bill depth and bill length") +
+  xlab("bill length (mm)") +
+  ylab("bill depth (mm)") +
+  theme_minimal() +
+  theme(
+    plot.title =
+      element_text(face = "bold"),
+    plot.subtitle =
+      element_text(face = "italic")) +
+  theme(legend.position = "none")
+```
+
+`r chunk_reveal("penguins_species2", break_type = "auto", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.5, 0.45))`
+
+???
+
+OK, that was the basic graph, but we can modify everything:
+
+- change of color,
+- split into sub-graphs,
+- adding graph title (and subtitle, caption)
+- adding axes titles
+- styling
+
+
+---
+
+class: inverse, center, middle
+
+# `r fa("laptop-code")` Hands-on
+

@@ -1,0 +1,11 @@
+.title-slide {
+  background-image: url(libs/figs/ray-hennessy-6-JIDCnZG2E-unsplash.jpg);
+  background-size: cover;
+  color: black;
+}
+.title-slide h1, h2, h3, h4{
+  text-align: left;
+}
+.title-slide .remark-slide-number {
+  display: none;
+}

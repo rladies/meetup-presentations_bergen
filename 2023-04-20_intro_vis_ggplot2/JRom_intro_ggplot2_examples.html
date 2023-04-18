@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data visualization basics</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Julia Romanowska" />
+    <meta name="date" content="2023-04-20" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="add-theme.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Data visualization basics
+]
+.subtitle[
+## – examples in {ggplot2}
+]
+.author[
+### <em>Julia Romanowska</em>
+]
+.date[
+### April 20, 2023
+]
+
+---
+
+
+
+
+
+class: inverse, left, middle
+
+## <svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M128 96h384v256h64V80C576 53.63 554.4 32 528 32h-416C85.63 32 64 53.63 64 80V352h64V96zM624 384h-608C7.25 384 0 391.3 0 400V416c0 35.25 28.75 64 64 64h512c35.25 0 64-28.75 64-64v-16C640 391.3 632.8 384 624 384zM365.9 286.2C369.8 290.1 374.9 292 380 292s10.23-1.938 14.14-5.844l48-48c7.812-7.813 7.812-20.5 0-28.31l-48-48c-7.812-7.813-20.47-7.813-28.28 0c-7.812 7.813-7.812 20.5 0 28.31l33.86 33.84l-33.86 33.84C358 265.7 358 278.4 365.9 286.2zM274.1 161.9c-7.812-7.813-20.47-7.813-28.28 0l-48 48c-7.812 7.813-7.812 20.5 0 28.31l48 48C249.8 290.1 254.9 292 260 292s10.23-1.938 14.14-5.844c7.812-7.813 7.812-20.5 0-28.31L240.3 224l33.86-33.84C281.1 182.4 281.1 169.7 274.1 161.9z"/></svg> {ggplot2} basics
+
+---
+
+### A plot in {ggplot2} consists of several layers:
+
+--
+
+1. data
+
+2. aesthetics (`aes`) ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-aesthetics))
+
+3. `geom`s ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-geoms))
+
+4. `scale`s ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-scales))
+
+5. `theme` ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-themes))
+
+???
+
+1. data
+    - strict format: tidy data!
+    - one row per datapoint
+    - all grouping must be included in the data
+
+2. aesthetics (`aes`) ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-aesthetics))
+    - how to map the data to the graph?
+    - which column is *x*, *y*, ...
+    - which column provides grouping (based on the grouping, one can either connect points into lines, split a graph into several facets, or color differently each group)
+
+3. `geom`s ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-geoms))
+    - how to visualize the data?
+    - points (`geom_point`), lines (`geom_line`), bars (`geom_bar`), etc.
+    - `geom`s are connected to `stat`s that conduct any necessary pre-processing of data (e.g., `geom_histogram` would first calculate the number of observations in each bin through `stat_bin`)
+
+4. `scale`s ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-scales))
+    - any type of data representation on the plot
+    - coordinates: `scale_x_continuous`, `scale_x_discrete`, `scale_x_date`, etc.
+    - colors: `scale_color_manual`, `scale_colour_brewer`, `scale_fill_continuous`, etc.
+
+5. `theme` ([original documentation](https://ggplot2.tidyverse.org/reference/index.html#section-themes))
+    - visual aspects
+    - size and types of fonts
+    - positioning of axes, legends, etc.
+
+Each layer is added to the previous one with a `+` sign. The result can be saved to an object and added upon later.
+
+---
+
+class: inverse, left, middle
+
+## Example plot with {ggplot2}
+
+---
+
+## Data
+
+&lt;div style="float: right; position: fixed; right: 10px; top: 10px;"&gt;
+&lt;img style="float: right; position: relative; width: 120px" src="libs/figs/palmer_penguins_logo.png" alt="palmer penguins R package logo"/&gt;&lt;br&gt;
+&lt;/div&gt;
+
+[palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
+
+&lt;br&gt;
+
+
+```
+# A tibble: 344 × 8
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;
+```
+
+???
+
+I will be using this simple dataset with morphological data of penguins living on a certain island.
+
+--
+
+&gt; **IMPORTANT** start with tidy data!
+
+**each row is an observation, each column is a variable**
+
+---
+
+
+
+count: false
+ 
+
+.panel1-penguins_species_simple-auto[
+
+```r
+*ggplot(data = penguins)
+```
+]
+ 
+.panel2-penguins_species_simple-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species_simple_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species_simple-auto[
+
+```r
+ggplot(data = penguins) +
+* aes(
+* 	x = bill_length_mm,
+*   y = bill_depth_mm
+* )
+```
+]
+ 
+.panel2-penguins_species_simple-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species_simple_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species_simple-auto[
+
+```r
+ggplot(data = penguins) +
+  aes(
+  	x = bill_length_mm,
+    y = bill_depth_mm
+  ) +
+* geom_point()
+```
+]
+ 
+.panel2-penguins_species_simple-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species_simple_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species_simple-auto[
+
+```r
+ggplot(data = penguins) +
+  aes(
+  	x = bill_length_mm,
+    y = bill_depth_mm
+  ) +
+  geom_point() +
+* geom_smooth(method = "lm")
+```
+]
+ 
+.panel2-penguins_species_simple-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species_simple_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-penguins_species_simple-auto {
+  color: black;
+  width: 51.5789473684211%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel2-penguins_species_simple-auto {
+  color: black;
+  width: 46.421052631579%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel3-penguins_species_simple-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+&lt;/style&gt;
+
+
+
+---
+
+
+
+count: false
+ 
+
+.panel1-penguins_species-auto[
+
+```r
+*ggplot(data = penguins)
+```
+]
+ 
+.panel2-penguins_species-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species-auto[
+
+```r
+ggplot(data = penguins) +
+* aes(
+* 	x = bill_length_mm,
+*   y = bill_depth_mm
+* )
+```
+]
+ 
+.panel2-penguins_species-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species-auto[
+
+```r
+ggplot(data = penguins) +
+  aes(
+  	x = bill_length_mm,
+    y = bill_depth_mm
+  ) +
+* geom_point(
+*   aes(color = species,
+*   shape = species),
+*     size = 2
+*  )
+```
+]
+ 
+.panel2-penguins_species-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species-auto[
+
+```r
+ggplot(data = penguins) +
+  aes(
+  	x = bill_length_mm,
+    y = bill_depth_mm
+  ) +
+  geom_point(
+    aes(color = species,
+    shape = species),
+      size = 2
+   ) +
+* geom_smooth(
+* 	method = "lm",
+*   se = FALSE,
+*   aes(color = species)
+* )
+```
+]
+ 
+.panel2-penguins_species-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species-auto[
+
+```r
+ggplot(data = penguins) +
+  aes(
+  	x = bill_length_mm,
+    y = bill_depth_mm
+  ) +
+  geom_point(
+    aes(color = species,
+    shape = species),
+      size = 2
+   ) +
+  geom_smooth(
+  	method = "lm",
+    se = FALSE,
+    aes(color = species)
+  )
+*penguins_default &lt;- last_plot()
+```
+]
+ 
+.panel2-penguins_species-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-penguins_species-auto {
+  color: black;
+  width: 51.5789473684211%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel2-penguins_species-auto {
+  color: black;
+  width: 46.421052631579%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel3-penguins_species-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+&lt;/style&gt;
+
+
+
+???
+
+Basics of ggplot2:
+
+- layers
+- 'aesthetics' + data + geom
+
+---
+
+class: inverse, left, middle
+
+_...back to theory..._
+
+---
+
+
+
+count: false
+ 
+
+.panel1-penguins_species2-auto[
+
+```r
+*penguins_default
+```
+]
+ 
+.panel2-penguins_species2-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species2_auto_01_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species2-auto[
+
+```r
+penguins_default +
+* scale_color_manual(
+*   values = c("darkorange",
+*              "darkorchid",
+*              "cyan4")
+*   )
+```
+]
+ 
+.panel2-penguins_species2-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species2_auto_02_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species2-auto[
+
+```r
+penguins_default +
+  scale_color_manual(
+    values = c("darkorange",
+               "darkorchid",
+               "cyan4")
+    ) +
+* facet_grid(rows = vars(species))
+```
+]
+ 
+.panel2-penguins_species2-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species2_auto_03_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species2-auto[
+
+```r
+penguins_default +
+  scale_color_manual(
+    values = c("darkorange",
+               "darkorchid",
+               "cyan4")
+    ) +
+  facet_grid(rows = vars(species)) +
+* labs(title =
+*   "Penguin species differentation")
+```
+]
+ 
+.panel2-penguins_species2-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species2_auto_04_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species2-auto[
+
+```r
+penguins_default +
+  scale_color_manual(
+    values = c("darkorange",
+               "darkorchid",
+               "cyan4")
+    ) +
+  facet_grid(rows = vars(species)) +
+  labs(title =
+    "Penguin species differentation") +
+* labs(subtitle =
+*   "based on bill depth and bill length")
+```
+]
+ 
+.panel2-penguins_species2-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species2_auto_05_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species2-auto[
+
+```r
+penguins_default +
+  scale_color_manual(
+    values = c("darkorange",
+               "darkorchid",
+               "cyan4")
+    ) +
+  facet_grid(rows = vars(species)) +
+  labs(title =
+    "Penguin species differentation") +
+  labs(subtitle =
+    "based on bill depth and bill length") +
+* xlab("bill length (mm)")
+```
+]
+ 
+.panel2-penguins_species2-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species2_auto_06_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species2-auto[
+
+```r
+penguins_default +
+  scale_color_manual(
+    values = c("darkorange",
+               "darkorchid",
+               "cyan4")
+    ) +
+  facet_grid(rows = vars(species)) +
+  labs(title =
+    "Penguin species differentation") +
+  labs(subtitle =
+    "based on bill depth and bill length") +
+  xlab("bill length (mm)") +
+* ylab("bill depth (mm)")
+```
+]
+ 
+.panel2-penguins_species2-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species2_auto_07_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species2-auto[
+
+```r
+penguins_default +
+  scale_color_manual(
+    values = c("darkorange",
+               "darkorchid",
+               "cyan4")
+    ) +
+  facet_grid(rows = vars(species)) +
+  labs(title =
+    "Penguin species differentation") +
+  labs(subtitle =
+    "based on bill depth and bill length") +
+  xlab("bill length (mm)") +
+  ylab("bill depth (mm)") +
+* theme_minimal()
+```
+]
+ 
+.panel2-penguins_species2-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species2_auto_08_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species2-auto[
+
+```r
+penguins_default +
+  scale_color_manual(
+    values = c("darkorange",
+               "darkorchid",
+               "cyan4")
+    ) +
+  facet_grid(rows = vars(species)) +
+  labs(title =
+    "Penguin species differentation") +
+  labs(subtitle =
+    "based on bill depth and bill length") +
+  xlab("bill length (mm)") +
+  ylab("bill depth (mm)") +
+  theme_minimal() +
+* theme(
+*   plot.title =
+*     element_text(face = "bold"),
+*   plot.subtitle =
+*     element_text(face = "italic"))
+```
+]
+ 
+.panel2-penguins_species2-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species2_auto_09_output-1.png)&lt;!-- --&gt;
+]
+
+---
+count: false
+ 
+
+.panel1-penguins_species2-auto[
+
+```r
+penguins_default +
+  scale_color_manual(
+    values = c("darkorange",
+               "darkorchid",
+               "cyan4")
+    ) +
+  facet_grid(rows = vars(species)) +
+  labs(title =
+    "Penguin species differentation") +
+  labs(subtitle =
+    "based on bill depth and bill length") +
+  xlab("bill length (mm)") +
+  ylab("bill depth (mm)") +
+  theme_minimal() +
+  theme(
+    plot.title =
+      element_text(face = "bold"),
+    plot.subtitle =
+      element_text(face = "italic")) +
+* theme(legend.position = "none")
+```
+]
+ 
+.panel2-penguins_species2-auto[
+![](JRom_intro_ggplot2_examples_files/figure-html/penguins_species2_auto_10_output-1.png)&lt;!-- --&gt;
+]
+
+&lt;style&gt;
+.panel1-penguins_species2-auto {
+  color: black;
+  width: 51.5789473684211%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel2-penguins_species2-auto {
+  color: black;
+  width: 46.421052631579%;
+  hight: 32%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+.panel3-penguins_species2-auto {
+  color: black;
+  width: NA%;
+  hight: 33%;
+  float: left;
+  padding-left: 1%;
+  font-size: 50%
+}
+&lt;/style&gt;
+
+
+
+???
+
+OK, that was the basic graph, but we can modify everything:
+
+- change of color,
+- split into sub-graphs,
+- adding graph title (and subtitle, caption)
+- adding axes titles
+- styling
+
+
+---
+
+class: inverse, center, middle
+
+# <svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M128 96h384v256h64V80C576 53.63 554.4 32 528 32h-416C85.63 32 64 53.63 64 80V352h64V96zM624 384h-608C7.25 384 0 391.3 0 400V416c0 35.25 28.75 64 64 64h512c35.25 0 64-28.75 64-64v-16C640 391.3 632.8 384 624 384zM365.9 286.2C369.8 290.1 374.9 292 380 292s10.23-1.938 14.14-5.844l48-48c7.812-7.813 7.812-20.5 0-28.31l-48-48c-7.812-7.813-20.47-7.813-28.28 0c-7.812 7.813-7.812 20.5 0 28.31l33.86 33.84l-33.86 33.84C358 265.7 358 278.4 365.9 286.2zM274.1 161.9c-7.812-7.813-20.47-7.813-28.28 0l-48 48c-7.812 7.813-7.812 20.5 0 28.31l48 48C249.8 290.1 254.9 292 260 292s10.23-1.938 14.14-5.844c7.812-7.813 7.812-20.5 0-28.31L240.3 224l33.86-33.84C281.1 182.4 281.1 169.7 274.1 161.9z"/></svg> Hands-on
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
