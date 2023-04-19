@@ -208,4 +208,4 @@ __Original Meetup page:__ https://www.meetup.com/rladies-bergen/events/292377117
 
 [Presentation about {ggplot2}](2023-04-20_intro_vis_ggplot2/PRESENTATION/JRom_intro_ggplot2_examples.html)
 
-[Script](2023-04-20_intro_vis_ggplot2/SCRIPTS)
+[Script, data, and output](https://github.com/rladies/meetup-presentations_bergen/tree/master/2023-04-20_intro_vis_ggplot2)
