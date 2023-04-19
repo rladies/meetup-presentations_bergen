@@ -42,6 +42,8 @@ library(flipbookr)
 library(tidyverse)
 library(palmerpenguins)
 library(fontawesome)
+library(ggbump)
+library(ggiraph)
 ```
 
 
@@ -174,18 +176,151 @@ Basics of ggplot2:
 
 class: inverse, left, middle
 
-_...back to theory..._
+## _...back to theory..._
+
+---
+
+## Bar chart
+
+---
+
+```{r penguins_barchart, include = FALSE}
+ggplot(penguins) +
+  geom_bar(aes(island))
+```
+
+`r chunk_reveal("penguins_barchart", break_type = "auto", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.5, 0.45))`
+
+---
+
+## Line chart
+
+---
+
+```{r penguins_linechart, include = FALSE}
+penguins %>%
+  count(year, sex) %>%
+  ggplot(aes(x = year, y = n)) +
+  geom_line(aes(color = sex))
+```
+
+`r chunk_reveal("penguins_linechart", break_type = "auto", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.5, 0.45))`
+
+---
+
+## Heatmap
+
+---
+
+```{r penguins_heatmap, include = FALSE}
+penguins %>%
+  count(species, island) %>%
+ggplot(aes(x = species, y = island)) +
+  geom_tile(aes(fill = n))
+```
+
+`r chunk_reveal("penguins_heatmap", break_type = "auto", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.5, 0.45))`
+
+---
+
+## Parallel coordinates
+
+### [{ggbump} package](https://github.com/davidsjoberg/ggbump)
+
+---
+
+```{r penguins_parallel, include = FALSE}
+penguins %>%
+  group_by(species) %>%
+  summarise(
+    across(bill_length_mm:body_mass_g, ~ mean(.x, na.rm = TRUE))
+  ) %>%
+  pivot_longer(
+    bill_length_mm:body_mass_g,
+    names_to = "measurement",
+    values_to = "value"
+  ) %>%
+  group_by(measurement) %>%
+  mutate(
+    rank = rank(value)
+  ) %>%
+  ungroup() %>%
+  ggplot(
+    aes(x = measurement, y = rank)
+  ) +
+  geom_bump(aes(color = species, group = species))
+```
+
+`r chunk_reveal("penguins_parallel", break_type = "auto", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.5, 0.45))`
+
+---
+
+class: left, middle
+
+## ...many other geoms and extensions: https://exts.ggplot2.tidyverse.org/gallery/
+
+---
+
+class: inverse, left, middle
+
+## _...back to theory..._
 
 ---
 
 ```{r penguins_species2, include = FALSE}
 penguins_default +
+  facet_grid(rows = vars(species))
+penguins_facet <- last_plot()
+```
+
+`r chunk_reveal("penguins_species2", break_type = "auto", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.5, 0.45))`
+
+---
+
+[{ggiraph} package](https://davidgohel.github.io/ggiraph/)
+
+.pull-left[
+```{r, eval = FALSE, echo = TRUE}
+penguins_facet_interactive <- penguins_facet +
+  geom_point_interactive(
+    aes(
+      color = species,
+      shape = species,
+      tooltip = paste0(sex, ", living on ", island)
+    )
+  )
+girafe(ggobj = penguins_facet_interactive)
+```
+]
+.pull-right[
+```{r penguins_species2_interactive}
+penguins_facet_interactive <- penguins_facet +
+  geom_point_interactive(
+    aes(
+      color = species,
+      shape = species,
+      tooltip = paste0(sex, ", living on ", island)
+    )
+  )
+girafe(ggobj = penguins_facet_interactive)
+```
+]
+
+---
+
+class: inverse, left, middle
+
+## _...back to theory..._
+
+---
+
+```{r penguins_species3, include = FALSE}
+penguins_facet +
   scale_color_manual(
     values = c("darkorange",
                "darkorchid",
                "cyan4")
     ) +
-  facet_grid(rows = vars(species)) +
   labs(title = 
     "Penguin species differentation") +
   labs(subtitle = 
@@ -201,7 +336,7 @@ penguins_default +
   theme(legend.position = "none")
 ```
 
-`r chunk_reveal("penguins_species2", break_type = "auto", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.5, 0.45))`
+`r chunk_reveal("penguins_species3", break_type = "auto", chunk_options = "warning = FALSE", font_size_code = "50%", widths = c(0.5, 0.45))`
 
 ???
 

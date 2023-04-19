@@ -75,7 +75,6 @@ class Scribble {
     window.addEventListener('resize', this.resizeContent.bind(this))
   }
 
-
   getVisibleSlide () {
     return document.querySelector('.remark-visible')
   }
@@ -287,7 +286,15 @@ class Scribble {
     })
   }
 
+  noScribble () {
+    return this.getVisibleSlide()
+      .querySelector('.remark-slide-content')
+      .classList.contains('no-scribble')
+  }
+
   addToolboxToSlide () {
+    if (this.noScribble()) return
+
     const canvasDiv = this.getVisibleSlideOuterContainer()
     canvasDiv.appendChild(this.toolBox)
     if (this.hideToolbox) {
@@ -319,6 +326,8 @@ class Scribble {
   }
 
   toggleToolbox (show) {
+    if (this.noScribble()) return
+
     const isMinimized = this.toolBox.matches('.minimized')
     if (typeof show !== 'undefined' && show === !isMinimized) return
 
@@ -385,7 +394,7 @@ class Scribble {
 
   setPresetColor (ev) {
     let idx = Number(ev.key)
-    if (isNaN(idx) || typeof idx === 'undefined' || idx >= 10) return;
+    if (isNaN(idx) || typeof idx === 'undefined' || idx >= 10) return
     idx = idx === 0 ? 10 : idx
     const presetColor = this.opts.palette[idx - 1]
     this.currColor = presetColor
@@ -395,6 +404,8 @@ class Scribble {
   }
 
   startDrawing () {
+    if (this.noScribble()) return
+
     slideshow.pause()
     this.toggleToolbox(true)
 
@@ -651,14 +662,14 @@ Scribble.prototype.svgs = {
 }
 
 Scribble.prototype.defaultPresetColors = [
-  "#e51c23", // red (1)
-  "#259b24", // green (2)
-  "#9c27b0", // purple (3)
-  "#5677fc", // blue (4)
-  "#ff9800", // orange (5)
-  "#00bcd4", // cyan (6)
-  "#ffc107", // yellow (7)
-  "#009688", // teal (8)
-  "#9e9e9e", // grey (9)
-  "#212121"  // black (0)
+  '#e51c23', // red (1)
+  '#259b24', // green (2)
+  '#9c27b0', // purple (3)
+  '#5677fc', // blue (4)
+  '#ff9800', // orange (5)
+  '#00bcd4', // cyan (6)
+  '#ffc107', // yellow (7)
+  '#009688', // teal (8)
+  '#9e9e9e', // grey (9)
+  '#212121' // black (0)
 ]
