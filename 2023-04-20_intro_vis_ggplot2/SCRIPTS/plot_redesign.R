@@ -107,7 +107,7 @@ points_log_scale_labeled
 
 ggsave(
   filename = here("2023-04-20_intro_vis_ggplot2",
-                  "FIGURES", "01_show_the_data.png"),
+                  "FIGURES", "01_show_the_data.svg"),
   plot = points_log_scale_labeled
 )
 
@@ -217,7 +217,8 @@ decluttered +
   labs(
     title = "Recent years show industry leading in computation used to train
 AI vision systems, although academia led the first push.",
-    subtitle = "Computation is measured in total petaFLOP, which is 10^15 floating-point operations."
+    subtitle = "Computation is measured in total petaFLOP, which is 10^15 floating-point operations.",
+    caption = "my source of data"
   ) +
   geom_text_repel(
     data = data_for_plotting_annotations,
