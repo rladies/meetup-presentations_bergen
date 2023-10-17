@@ -19,7 +19,7 @@ In October 2023, R-Ladies Bergen and R-Ladies Cologne started a series of
 meetings where we go through the book 
 [“Building reproducible analytical pipelines with R” by Bruno Rodrigues](https://raps-with-r.dev/).
 
-[The book club has it's own webpage](Reproducible_pipelines_book_club/README)
+[The book club has it's own webpage](Reproducible_pipelines_book_club/)
 
 # Meeting list
 
