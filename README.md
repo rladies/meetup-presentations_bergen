@@ -11,8 +11,15 @@ If you want to contribute or have questions, do not hesitate to contact us:
 # R-Ladies Bergen on the net
 
 * [Meetup web-page](https://www.meetup.com/rladies-bergen/) - all the meetings will be announced here; register here!
-* [Twitter account](https://twitter.com/@RLadiesBergen)
 * email: bergen@rladies.org
+
+# Book club!
+
+In October 2023, R-Ladies Bergen and R-Ladies Cologne started a series of
+meetings where we go through the book 
+[“Building reproducible analytical pipelines with R” by Bruno Rodrigues](https://raps-with-r.dev/).
+
+[The book club has it's own webpage](Reproducible_pipelines_book_club/README)
 
 # Meeting list
 
@@ -196,8 +203,6 @@ __Original Meetup page:__ https://www.meetup.com/rladies-bergen/events/291632166
 
 [Presentation available here](2023-03-15_renv_intro/JRomanowska_intro_renv.html)
 
-## COMING UP!
-
 ### 23. Basics of data visualization - theory and practice
 
 __Date__ April 20, 2023, 03:00 PM (CEST)
@@ -209,3 +214,30 @@ Presentation from Laura, introduction to data viz _(link coming soon)_
 [Presentation about {ggplot2}](2023-04-20_intro_vis_ggplot2/PRESENTATION/JRom_intro_ggplot2_examples.html)
 
 [Script, data, and output](https://github.com/rladies/meetup-presentations_bergen/tree/master/2023-04-20_intro_vis_ggplot2)
+
+## 24. Hello, Quarto: A World of Possibilities (for Reproducible Publishing)
+
+R-Ladies Bergen and R-Ladies Cologne are kicking off a “Toolbox for 
+Reproducibility” series! We will dive into tips, tricks, and techniques about
+adhering to Coding Best Practices and making our code (and workflows) reproducible.
+
+Here, Mine Çetinkaya-Rundel, professor at Duke University (USA) as well as
+Developer Educator at Posit, was giving a great introduction to [Quarto](https://quarto.org/).
+
+__Date__ October 3, 2023, 4:00 PM (CEST)
+
+__Original Meetup page:__ https://www.meetup.com/rladies-bergen/events/295922921/
+
+[Presentation and materials from Mine](https://github.com/mine-cetinkaya-rundel/quarto-rladies-cologne)
+
+[Recorded talk](https://youtu.be/l3wKGqm2uYs)
+
+
+
+## COMING UP!
+
+## 25. Reproducible pipelines book club no.1
+
+__Date__ October 24, 2023, 4:00 PM (CEST)
+
+__Original Meetup page:__ https://www.meetup.com/rladies-bergen/events/293166749/
