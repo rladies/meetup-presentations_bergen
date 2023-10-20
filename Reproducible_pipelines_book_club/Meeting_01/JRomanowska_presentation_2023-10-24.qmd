@@ -1,0 +1,54 @@
+---
+title: "Introduction to reproducibility"
+author: "Julia Romanowska"
+date: "2023-10-24"
+format: revealjs
+---
+
+## Outline
+
+- Overview of the book
+- Structure of the meetings
+- Why do we need reproducibility?
+- Project start _(based on chapter 3)_
+
+::: {.notes}
+
+Go to mentimeter first!
+
+:::
+
+## Overview of the book
+
+## Structure of the meetings
+
+Proposed structure:
+
+- short presentation
+- exercises/hands-on/live coding
+- discussion
+
+::: {.notes}
+
+Presentation summarises the part from the book.
+
+Use exercises from the book and/or some of your own!
+
+Lastly, let's have time to talk, ask questions, ask for help on your problem...
+
+:::
+
+## Why do we need reproducibility?
+
+::: {.notes}
+
+Ask first and wait for answers.
+
+- do you know how to get to each single figure in the paper you published?
+- do you know what is the content of the file X in a folder you created a year ago?
+- would it be easy to continue on your/your colleague work?
+
+:::
+
+## Project start
+
