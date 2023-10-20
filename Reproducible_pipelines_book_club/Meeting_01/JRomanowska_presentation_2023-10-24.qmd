@@ -2,23 +2,59 @@
 title: "Introduction to reproducibility"
 author: "Julia Romanowska"
 date: "2023-10-24"
-format: revealjs
+format:
+  revealjs:
+    theme: night
+    title-slide-attributes:
+      data-background-image: img/marion-botella-rII0mAgBHpY-unsplash.jpg
+      data-background-size: cover
 ---
+
+
 
 ## Outline
 
 - Overview of the book
 - Structure of the meetings
+- What is reproducibility?
 - Why do we need reproducibility?
 - Project start _(based on chapter 3)_
 
-::: {.notes}
+::: notes
 
 Go to mentimeter first!
 
+Photo by <a href="https://unsplash.com/@marionb_photography?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Marion Botella</a> on <a href="https://unsplash.com/photos/dried-leaves-on-white-concrete-floor-rII0mAgBHpY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
 :::
 
-## Overview of the book
+## Overview of the book 
+
+::: {.columns .incremental}
+::: {.column width="200px"}
+<a href="https://raps-with-r.dev/">
+<img alt="Book cover of 'Building reproducible analytical pipelines with R' by Bruno Rodrigues" src="img/raps_book_cover.png" style="width: 200px;">
+</a>
+:::
+
+::: {.column width="40%"}
+Part 1:
+
+- version control
+- literate programming
+- functional programming
+:::
+
+::: {.column width="40%"}
+Part 2:
+
+- freezing versions
+- packaging code
+- testing
+- automation
+- encapsulation
+:::
+:::
 
 ## Structure of the meetings
 
@@ -28,7 +64,7 @@ Proposed structure:
 - exercises/hands-on/live coding
 - discussion
 
-::: {.notes}
+::: notes
 
 Presentation summarises the part from the book.
 
@@ -38,16 +74,56 @@ Lastly, let's have time to talk, ask questions, ask for help on your problem...
 
 :::
 
+. . .
+
+> _We need your participation!_
+
+::: notes
+You can form teams, so that you will need to only prepare a very small part!
+:::
+
+# Before we start...
+
+## What is reproducibility?
+
+. . .
+
+::: incremental
+Sharing:
+
+- analysis steps
+- inputs, outputs
+- documentation: _data_ + _code_
+- code used to generate each figure
+- notes
+- versions of software, packages, etc.
+:::
+
+::: notes
+Ask first and wait for answers.
+:::
+
+
 ## Why do we need reproducibility?
 
-::: {.notes}
-
+::: notes
 Ask first and wait for answers.
 
 - do you know how to get to each single figure in the paper you published?
 - do you know what is the content of the file X in a folder you created a year ago?
 - would it be easy to continue on your/your colleague work?
+:::
 
+# Fundamentals
+
+## Prerequisites
+
+::: incremental
+- R is not RStudio
+- text file vs. binary file
+- R packages - _installation and use_
+- variables/data in the environment
+- file location, relative and absolute paths
 :::
 
 ## Project start
