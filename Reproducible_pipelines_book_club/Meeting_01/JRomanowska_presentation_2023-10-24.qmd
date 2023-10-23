@@ -10,6 +10,9 @@ format:
       data-background-size: cover
 ---
 
+```{r, include=FALSE}
+library(fontawesome)
+```
 
 
 ## Outline
@@ -114,17 +117,91 @@ Ask first and wait for answers.
 - would it be easy to continue on your/your colleague work?
 :::
 
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+<img id="map_img" src="img/OpenStreetMap.png" style="height: 80%">
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+<img id="map_img" src="img/path_gone_wrong.png" style="height: 80%">
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+<img id="map_img" src="img/path_ok.png" style="height: 80%">
+
 # Fundamentals
 
-## Prerequisites
+## [Prerequisites](https://raps-with-r.dev/prerequisites.html)
 
 ::: incremental
 - R is not RStudio
 - text file vs. binary file
 - R packages - _installation and use_
-- variables/data in the environment
+- variables/data in the environment (memory)
 - file location, relative and absolute paths
+- file extension
 :::
 
-## Project start
+::: notes
+_variables/data in the environment:_
 
+- check it in "Environment" tab or with `ls()` command
+- don't save the image when quitting R:
+
+    - use `R --vanilla` or
+    - change in _Global settings_ in RStudio
+
+_file extension:_
+
+- the part of the file name after the last `.`
+- can be changed by the user - no magic needed!
+- be careful: this should indicate what type of data is in the file
+- R-related data: `.rda`, `.rds`, `.RData`
+:::
+
+## [Project start](https://raps-with-r.dev/project_start.html)
+
+Analysis of data: Housing in Luxembourg
+
+::: incremental
+- **data:** [prices of housing in Luxembourg](https://github.com/b-rodrigues/rap4all/raw/master/datasets/vente-maison-2010-2021.xlsx),    
+`r fa("thumbs-down")` nominal prices,    
+`r fa("thumbs-up")` per commune,    
+`r fa("thumbs-down")` trapped in Excel
+
+
+- write scripts:    
+`r fa("file-excel")` rescue data from Excel,    
+`r fa("euro-sign")` convert to real prices,    
+`r fa("table")` make some plots/tables
+:::
+
+# Hands-on
+
+## [Your project is not done](https://raps-with-r.dev/project_start.html#your-project-is-not-done)
+
+::: incremental
+- How easy would it be for someone else to rerun the analysis?
+- How easy would it be to update the analysis once new data gets published?
+- How easy would it be to reuse this code for other projects?
+- What guarantee do we have that if the scripts get run in 5 years, with the same input data, we get the same output?
+:::
+
+::: notes
+- project documentation + pipeline management + `{renv}`
+- testing!
+- structuring into functions and packaging
+- freezing the code: `{renv}`, Docker
+:::
+
+## {background-image="img/joshua-j-cotten-M5Ve4Nfwbto-unsplash.jpg"}
+
+<p style="position: absolute; bottom: 2px; right: 2px; font-size: 16pt;">
+Photo by <a href="https://unsplash.com/@jcotten?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Joshua J. Cotten</a> on <a href="https://unsplash.com/photos/black-and-brown-bird-on-wooden-fence-M5Ve4Nfwbto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+</p>
+
+## {background-image="img/dewang-gupta-5AW7otY6Ocs-unsplash.jpg"}
+
+<p style="position: absolute; bottom: 2px; right: 2px; font-size: 16pt;">
+Photo by <a href="https://unsplash.com/@dewang?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Dewang Gupta</a> on <a href="https://unsplash.com/photos/rainbow-on-blue-sky-with-gray-clouds-during-daytime-5AW7otY6Ocs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+</p>
