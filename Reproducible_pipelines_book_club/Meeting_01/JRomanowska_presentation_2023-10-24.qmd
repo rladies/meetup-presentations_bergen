@@ -5,6 +5,7 @@ date: "2023-10-24"
 format:
   revealjs:
     theme: night
+    date-format: "YYYY-MM-DD"
     title-slide-attributes:
       data-background-image: img/marion-botella-rII0mAgBHpY-unsplash.jpg
       data-background-size: cover
