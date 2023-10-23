@@ -11,6 +11,6 @@ We'll be meeting every month to go through and discuss the book
 
 ## Meeting list
 
-|   | chapter | date | presentation link | presenter | notes |
+|   | chapters | date | presentation link | presenter | notes |
 |---|---------|------|-------------------|-----------|-------|
-| 1 | 1--3    | 24.10.2023 |             | Julia Romanowska |  |
+| 1 | 1--3    | 24.10.2023 |  [Meeting no.1](Meeting_01/JRomanowska_presentation_2023-10-24.html)  | Julia Romanowska |  |
