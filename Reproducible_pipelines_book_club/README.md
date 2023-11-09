@@ -15,7 +15,7 @@ us (organizers in R-Ladies Bergen and R-Ladies Cologne) and sign up!
 |   | chapters | date | presentation link | presenter | notes |
 |---|---------|------|-------------------|-----------|-------|
 | 1 | 1--3 (Intro)  | 24.10.2023 |  [Meeting no.1](Meeting_01/JRomanowska_presentation_2023-10-24.html)  | Julia Romanowska | | 
-| 2 | 4 (git) | 07.11.2023 | [Meeting no.2]() | Türküler Özgümüş | |
+| 2 | 4 (git) | 07.11.2023 | [Meeting no.2](Meeting_02/RLadiesBergen_ReproducibleBookClubNumber2.html) | Türküler Özgümüş | |
 | 3 | 5 (GitHub) | November/December 2023? |  |  |  |
 | 4 | 6 (Functional programming) | January 2024? |  | Gabe Winter |  |
 | 5 | 7 (Literate programming) | January 2024? |  |  |  |
