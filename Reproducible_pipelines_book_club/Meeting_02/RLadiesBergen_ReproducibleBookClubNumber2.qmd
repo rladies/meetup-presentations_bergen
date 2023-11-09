@@ -1,0 +1,523 @@
+---
+title: "Version Control with Git"
+subtitle: "Reproducible Book Club #2"
+author: "Turkuler Ozgumus"
+date: "2023-11-07"
+format: 
+  revealjs:
+    theme: night
+    code-line-numbers: false
+include-in-header:
+  - text: |
+      <style>
+      #title-slide .title {
+        color: #ffffff;
+      }
+      #title-slide {
+        color: #ffffff;
+      }
+      </style>
+title-slide-attributes: 
+  data-background-image: img/branches.jpg
+---
+
+### Outline
+
+Chapter 4 of Building reproducible analytical pipelines with R
+
+- Version control
+- Git
+- Github
+- Use of Git and Github
+
+---
+
+### Version control
+
+- Keep track of changes on text files
+- It is possible to see  
+  - how the file changed,
+  - who made the changes and, 
+  - when these are made.
+
+---
+
+### So what?
+
+- Easy collaboration
+- Safe backup
+- Adding/not adding new features
+
+---
+
+### Git
+
+- Git is a tool to be used to control the version.
+- It should be installed on the computer before usage.  
+
+---
+
+### Github
+
+- Is an online service to host project repositories.
+- One should have an account to be able to use it.
+- Pros:  
+  - Large community
+  - Continuous integration via Github Actions  
+- Cons:
+  - Owned by Microsoft (privacy issues)
+  - Not possible to self-host an instance of Github
+- There are alternatives: Gitlab, Bitbucket...
+
+---
+
+### Some notes!
+
+- Do not put git repositories into cloud services like Dropbox and Onedrive:
+![](https://media.makeameme.org/created/conflicts-conflicts-everywhere-5ab1de.jpg)
+- Public repository does not mean that everyone can make changes on the files.
+
+---
+
+### Installing Git
+
+- open terminal ( ![](img/linux.png){width="3%"} , ![](img/white_mac.png){width="3%"} ) or command prompt (![](img/Windows_logo_-_2021.svg.png){width="3%"})
+- run
+
+```bash
+which git
+```
+
+or 
+
+```bash
+git --version
+```
+
+---
+
+### Installing Git
+
+- ![](img/linux.png){width="12%"}
+
+```bash
+sudo apt-get update
+sudo apt-get install git
+```
+
+or https://git-scm.com/download/linux
+
+- ![](img/white_mac.png){width="12%"}
+
+https://git-scm.com/download/mac
+
+- ![](img/Windows_logo_-_2021.svg.png){width="2%"}
+
+https://git-scm.com/download/win
+
+---
+
+### Opening a Github account
+
+- Open https://github.com
+
+:::{.fragment}
+![](https://media.makeameme.org/created/yeah-if-you-7tjfok.jpg)
+:::
+
+---
+
+### Git superbasics
+
+- Create a folder called *housing*
+- Save below scripts under this folder  
+    - save_data.R: https://is.gd/7PhUjd  
+    - analysis.R: https://is.gd/qCJEbi
+
+---
+
+### Git superbasics
+
+- On terminal, go to *housing* folder by using
+
+```bash
+cd /path/to/folder/housing
+```
+or
+
+- Open the folder on file explorer  
+  - ![](img/linux.png){width="3%"}, right-click inside the folder and select "Open Terminal here" or similar
+  - ![](img/Windows_logo_-_2021.svg.png){width="3%"}, right-click inside the folder and select "Open Git Bash here" or similar
+  - ![](img/white_mac.png){width="3%"}, activate this option by using google search results for "open terminal at folder macOS"
+
+---
+
+### Git superbasics
+
+- Use ls om terminal/Git bash and check folder contents
+
+```bash
+ls
+```
+
+- We will use terminal/Git bash for the rest
+
+---
+
+### Git superbasics
+
+```bash
+git init
+```
+
+![](img/output.png)
+
+---
+
+### Git superbasics
+
+```bash
+git status
+```
+
+![](img/output2.png)
+
+---
+
+### Git superbasics
+
+```bash
+git add
+```
+
+:::{.fragment}
+*git add* needs file(s) to be specified
+:::
+
+:::{.fragment}
+```bash
+git add .
+```
+:::
+
+:::{.fragment}
+```bash
+git status
+```
+:::
+
+---
+
+### Git superbasics
+
+```bash
+git commit -m "Project start"
+```
+
+:::{.fragment}
+```bash
+git status
+```
+:::
+
+---
+
+### Git superbasics
+
+Make a change from
+
+![](img/script1.png)
+
+to
+
+![](img/script2.png)
+
+---
+
+### Git superbasics
+
+```bash
+git status
+```
+
+:::{.fragment}
+```bash
+git add .
+```
+:::
+
+:::{.fragment}
+```bash
+git commit -m "Added a comment to analysis.R"
+```
+:::
+
+---
+
+### Git superbasics
+
+*how to recover a deleted file before committing the change*
+
+```bash
+rm analysis.R
+```
+
+:::{.fragment}
+```bash
+git status
+```
+:::
+
+:::{.fragment}
+```bash
+git stash
+```
+:::
+
+:::{.fragment}
+```bash
+ls
+```
+:::
+
+:::{.fragment}
+```bash
+git stash drop
+```
+:::
+
+---
+
+### Git superbasics
+
+*how to recover a deleted file after committing the change*
+
+```bash
+rm analysis.R
+```
+
+:::{.fragment}
+```bash
+git status
+```
+:::
+
+:::{.fragment}
+```bash
+git add .
+git commit -m "Removed analysis.R"
+git status
+```
+:::
+
+---
+
+### Git superbasics
+
+*how to recover a deleted file after committing the change*
+
+```bash
+git log
+```
+
+![](img/gitlog1.png)
+
+:::{.fragment}
+```bash
+git revert ab43b4b1069cd98768..HEAD
+```
+:::
+
+---
+
+### Git superbasics
+
+*how to recover a deleted file after committing the change*
+
+```bash
+git log
+```
+
+![](img/gitlog2.png)
+
+---
+
+### Git superbasics
+
+*how to recover a deleted file after committing the change*
+
+```bash
+git revert 8e51867dc5
+```
+
+---
+
+### Git and Github
+
+**Push** -> uploading the changes we did on our local repository to GitHub
+
+---
+
+### Git and Github
+
+- Create a new repository with following:  
+  - Repository name: housing
+  - Public
+  - No README file
+
+---
+
+### Git and Github
+
+![](img/git_new_repo.png)
+
+---
+
+### Git and Github
+
+![](img/git_new_repo_2.png)
+
+---
+
+### Git and Github
+
+![](img/git_repo_start.png)
+
+---
+
+### Git and Github
+
+![](img/git_repo_start_ssh.png)
+
+---
+
+### Git and Github
+
+```bash
+git remote add origin git@github.com:turkulerc/housing.git
+# if you would like to rename the branch from "master" to "main"
+git branch -M main 
+git push -u origin main
+```
+
+:::{.fragment}
+![](img/error.jpg)
+:::
+
+---
+
+### Git and Github
+
+:::{.fragment}
+- Generate a public/private RSA key pair  
+:::
+
+:::{.fragment}
+```bash
+ssh-keygen
+```
+:::
+
+:::{.fragment}
+![](img/sshkey1.png)
+
+- Leave this empty and press enter
+
+:::
+
+---
+
+### Git and Github
+
+:::{.fragment}
+![](img/sshkey2.png)
+
+- Leave this empty, too
+
+:::
+
+:::{.fragment}
+![](img/sshkey3.png)
+- Confirm empty passphase by pressing enter again!
+:::
+
+---
+
+### Git and Github
+
+![](img/sshkey4.png)
+
+
+---
+
+### Git and Github
+
+We need to copy the contents of the id_rsa.pub file to Github 
+
+- go to [https://github.com](https://github.com)
+- go to your profile settings
+- select *SSH and GPG keys*  
+- select *New SSH key*
+- Name this key and paste the contents of id_rsa.pub in the text box and click on “add SSH key”
+
+
+---
+
+### Git and Github
+
+![](img/github_add_ssh.png)
+
+---
+
+### Git and Github
+
+Back to the terminal/Git bash
+
+```bash
+git push -u origin master
+```
+
+:::{.fragment}
+![](img/git_push_success.png)
+:::
+
+:::{.fragment}
+![](img/git_push_success2.png)
+:::
+
+---
+
+### Getting to know Github
+
+[https://github.com](https://github.com)
+
+
+---
+
+### Getting to know Github
+
+![](img/github_new_issue2.png)
+
+
+---
+
+### Minimal, reproducible example (MRE)
+
+- The code needs to be self-contained 
+- Required packages to run the code should be listed --> sessionInfo()
+- Provide code to create any object that the code snippet requires
+
+:::{.fragment}
+  
+- {reprex}
+:::
+
+---
+
+### Some additional resources
+
+-  https://happygitwithr.com/
+-  https://ohshitgit.com/
+
+
+# THANKS! {background-image="img/bw_branches.jpg"}
