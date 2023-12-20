@@ -1,10 +1,8 @@
-# Reproducible pipelines book club :blue_book:
-
-
+# Reproducible pipelines book club <img src="https://img.shields.io/badge/book-club-blue.svg?logo=bookstack">
 
 ## Description
 
-:calendar: We'll be meeting every month to go through and discuss the book
+We'll be meeting every month to go through and discuss the book
 [“Building reproducible analytical pipelines with R” by Bruno Rodrigues](https://raps-with-r.dev/).
 
 :computer: The meetings are held online, on Zoom, and will not be recorded because we want
