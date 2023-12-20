@@ -5,10 +5,10 @@
 We'll be meeting every month to go through and discuss the book
 [“Building reproducible analytical pipelines with R” by Bruno Rodrigues](https://raps-with-r.dev/).
 
-:computer: The meetings are held online, on Zoom, and will not be recorded because we want
+<img src="https://img.shields.io/badge/-online-blue.svg?logo=zoom"> The meetings are held online, on Zoom, and will not be recorded because we want
 all the attendees to discuss freely any topic they want to.
 
-:wave: **The book club needs your participation**, so don't hesitate to contact any of
+**The book club needs your participation**, so don't hesitate to contact any of
 us (organizers in [R-Ladies Bergen](https://www.meetup.com/rladies-bergen/members/?op=leaders)
 and [R-Ladies Cologne](https://www.meetup.com/rladies-cologne/members/?op=leaders))
 and sign up!
