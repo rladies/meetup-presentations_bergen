@@ -20,9 +20,9 @@ and sign up!
 | 1 | [1--3 (Intro)](https://raps-with-r.dev/project_start.html)  | 24.10.2023 |  [Meeting no.1](Meeting_01/JRomanowska_presentation_2023-10-24.html)  | Julia Romanowska | | 
 | 2 | [4 (git)](https://raps-with-r.dev/git.html) | 07.11.2023 | [Meeting no.2](Meeting_02/RLadiesBergen_ReproducibleBookClubNumber2.html) | Türküler Özgümüş | |
 | 3 | ~~5 (GitHub)~~ | ~~November/December 2023?~~ |  |  | _cancelled_ |
-| 4 | [6 (Functional programming)](https://raps-with-r.dev/fprog.html) | 11.01.2024 | [Meeting no.4](https://github.com/gabewinter/reproducible_pipelines/) | Gabe Winter |  |
-| 5 | [7 (Literate programming)](https://raps-with-r.dev/lit_prog.html) | February 2024 |  | Elen Le Foll |  |
-| 6 | [9 (Rewriting the project using Rmd/Qmd)](https://raps-with-r.dev/project_rewrite.html) | February 2024? |  |  |  |
+| 4 | [6 (Functional programming)](https://raps-with-r.dev/fprog.html) | 11.01.2024 | [Meeting no.3](https://github.com/gabewinter/reproducible_pipelines/) | Gabe Winter |  |
+| 5 | [7 (Literate programming)](https://raps-with-r.dev/lit_prog.html) | 08.02.2024 |  | Elen Le Foll |  |
+| 6 | [9 (Rewriting the project using Rmd/Qmd)](https://raps-with-r.dev/project_rewrite.html) | 20.02.2024 |  | Fulya Gökalp |  |
 | 7 | [10 (Freezing packages)](https://raps-with-r.dev/repro_intro.html) | March 2024? |  |  |  |
 | 8 | [11 (Packaging the code)](https://raps-with-r.dev/packages.html) | March 2024? |  |  |  |
 | 9 | [12 (Testing)](https://raps-with-r.dev/testing.html) | April 2024? |  |  |  |
