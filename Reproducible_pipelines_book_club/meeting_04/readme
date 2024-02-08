@@ -1,1 +1,3 @@
-This meeting does not have slides. Rather, we will work our way together through the RMardown `Literate_Programming.Rmd` in RStudio. I recommend that you download all the files from this folder and launch a fresh R session by opening the .RProj file.
+This workshop will be about RMarkdown, including how to use templates and child documents.
+
+There are no presentation slides. Instead, we will work our way together through the RMardown `Literate_Programming.Rmd` in RStudio. I recommend that you download all the files from this folder, then launch a fresh R session by opening the `Literate_Programming.Rproj` R project file.
