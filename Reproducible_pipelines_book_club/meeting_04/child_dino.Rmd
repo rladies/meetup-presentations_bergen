@@ -1,0 +1,32 @@
+---
+title: "rmd_child"
+author: "Elen Le Foll"
+date: "2024-02-08"
+output: html_document
+---
+
+## Analysis of the `r deparse(data)` dataset
+
+### Correlation plot
+
+```{r, echo = F}
+
+print(create_plot(data))
+
+```
+
+### Correlation test statistics
+
+```{r, echo = F}
+
+correlation_test <- function(data){
+  d <- datasaurus_dozen |> 
+  filter(dataset == data) 
+  cor.test(d$x, d$y)
+}
+
+correlation_test(data)
+
+```
+
+[Note:]{.underline} These very impressive plots and statistics were calculated at `r Sys.time()`

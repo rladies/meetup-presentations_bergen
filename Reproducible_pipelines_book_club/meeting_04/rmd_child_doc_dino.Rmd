@@ -1,0 +1,55 @@
+---
+title: "Templating with child documents"
+output:
+  html_document: default
+  pdf_document: default
+date: "2023-01-27"
+---
+
+This hand-out was created for the Reproducible Pipelines Book Club organised by R-Ladies Bergen and R-ladies Cologne. It is based closely on Chapter 7 from "Building reproducible analytical pipelines with R" by Bruno Rodrigues available at: <https://raps-with-r.dev/>.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(datasauRus)
+library(tidyverse)
+
+```
+
+## A function that creates a correlation plot
+
+```{r}
+create_plot <- function(data){
+  datasauRus::datasaurus_dozen |> 
+  filter(dataset == data) |> 
+  ggplot(mapping = aes(x = x, y = y)) +
+  geom_point()
+}
+```
+
+This is how the plotting function works:
+
+```{r}
+create_plot("dots")
+```
+
+Let’s suppose that we want to generate a document that would look like this:
+
+- first a section title, with the dataset used;
+- then a plot
+
+But we don’t want to create these sections for every aesthetic by hand. Instead, we can make use of a child document that gets knitted separately and then embedded in the parent document. The chunk below makes use of this trick:
+
+```{r, results = "asis", eval = TRUE}
+
+res <- lapply(unique(datasaurus_dozen$dataset),
+              function(data){
+  knitr::knit_child("child_dino.rmd",
+     envir = environment(),
+     quiet = TRUE)
+
+})
+
+cat(unlist(res), sep = "\n")
+
+```
+
