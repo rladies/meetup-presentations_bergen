@@ -24,9 +24,9 @@ and sign up!
 | 5 | [7 (Literate programming)](https://raps-with-r.dev/lit_prog.html) | 08.02.2024 | [Meeting no.4](https://github.com/rladies/meetup-presentations_bergen/tree/master/Reproducible_pipelines_book_club/meeting_04) | Elen Le Foll |  |
 | 6 | [9 (Rewriting the project using Rmd/Qmd)](https://raps-with-r.dev/project_rewrite.html) | 20.02.2024 |  | Fulya Gökalp |  |
 | 7 | [10 (Freezing packages)](https://raps-with-r.dev/repro_intro.html) | March 2024? |  |  |  |
-| 8 | [11 (Packaging the code)](https://raps-with-r.dev/packages.html) | March 2024? |  |  |  |
+| 8 | [11 (Packaging the code)](https://raps-with-r.dev/packages.html) | March 2024? |  | Ricardo Serrano |  |
 | 9 | [12 (Testing)](https://raps-with-r.dev/testing.html) | April 2024? |  |  |  |
 | 10 | [13 (Pipelines with targets)](https://raps-with-r.dev/targets.html) | April 2024? | |  |  |
-| 11 | [14 (Pipelines with Docker)](https://raps-with-r.dev/repro_cont.html) | May 2024? |  |  |  |
+| 11 | [14 (Pipelines with Docker)](https://raps-with-r.dev/repro_cont.html) | 07.05.2024 |  | Sahee Rim |  |
 | 12 | [15 (CI/CD)](https://raps-with-r.dev/ci_cd.html) | May 2024? |  |  |  |
 | 13 | Conclusions/extra topics? | May 2024? |  | Bruno Rodrigues |  |
