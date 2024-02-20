@@ -13,3 +13,8 @@ I used the following two codes in the terminal to download the scripts one more 
 
 wget --content-disposition https://is.gd/7PhUjd
 wget --content-disposition https://is.gd/X7XXJg
+
+Reading recommendations at the end of Chapter 9:
+
+Programming with dplyr: https://dplyr.tidyverse.org/articles/programming.html
+http://modern-rstats.eu/defining-your-own-functions.html#functions-that-take-columns-of-data-as-arguments
