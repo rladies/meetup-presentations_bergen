@@ -1,0 +1,113 @@
+---
+title: "Nominal house prices data in Luxembourg"
+author: "Bruno Rodrigues"
+date: "`r Sys.Date()`"
+---
+
+```{r, messages = FALSE}
+library(dplyr)
+library(ggplot2)
+library(purrr)
+library(tidyr)
+```
+
+Let’s load the datasets:
+
+```{r}
+commune_level_data <- read.csv(
+  "../datasets/house_prices_commune_level_data.csv"
+)
+
+country_level_data <- read.csv(
+  "../datasets/house_prices_country_level_data.csv"
+)
+```
+
+Let’s compute the Laspeyeres index for each commune:
+
+```{r}
+get_laspeyeres <- function(dataset){
+
+  which_dataset <- deparse(substitute(dataset))
+
+  group_var <- if(grepl("commune", which_dataset)){
+                quo(locality)
+              } else {
+                NULL
+              }
+  dataset %>%
+    group_by(!!group_var) %>%
+      mutate(p0 = ifelse(year == "2010", average_price_nominal_euros, NA)) %>%
+      fill(p0, .direction = "down") %>%
+      mutate(p0_m2 = ifelse(year == "2010", average_price_m2_nominal_euros, NA)) %>%
+      fill(p0_m2, .direction = "down") %>%
+      ungroup() %>%
+      mutate(pl = average_price_nominal_euros/p0*100,
+             pl_m2 = average_price_m2_nominal_euros/p0_m2*100)
+
+}
+commune_level_data <- get_laspeyeres(commune_level_data)
+
+```
+
+Let’s also compute it for the whole country:
+
+```{r}
+country_level_data <- get_laspeyeres(country_level_data)
+
+```
+
+We are going to create a plot for 5 communes and compare the price evolution in the communes
+to the national price evolution. Let’s first list the communes:
+
+```{r}
+communes <- c("Luxembourg",
+              "Esch-sur-Alzette",
+              "Mamer",
+              "Schengen",
+              "Wincrange")
+
+```
+
+```{r}
+make_plot <- function(commune){
+
+  commune_data <- commune_level_data %>%
+    filter(locality == commune)
+
+  data_to_plot <- bind_rows(
+    country_level_data,
+    commune_data
+  )
+
+  ggplot(data_to_plot) +
+    geom_line(aes(y = pl_m2,
+                  x = year,
+                  group = locality,
+                  colour = locality))
+}
+
+```
+
+```{r, results = "asis"}
+res <- lapply(communes, function(x){
+
+  knitr::knit_child(text = c(
+
+    '\n',
+    '## Plot for commune: `r x`',
+    '\n',
+    '```{r, echo = FALSE}',
+    'print(make_plot(x))',
+    '```'
+
+     ),
+     envir = environment(),
+     quiet = TRUE)
+
+})
+
+cat(unlist(res), sep = "\n")
+
+```
+
