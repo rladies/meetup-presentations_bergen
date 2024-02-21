@@ -239,15 +239,22 @@ __Date__ October 24, 2023, 4:00 PM (CEST)
 
 __Original Meetup page:__ https://www.meetup.com/rladies-bergen/events/293166749/
 
-Presentation materials --- see info at the top of this page.
-
 ## 25. Reproducible pipelines book club no.2
 
 __Date__ November 7, 2023, 4:00 PM (CET)
 
 __Original Meetup page:__ https://www.meetup.com/rladies-bergen/events/296949680/
 
-## COMING UP!
-
 ## 26. Reproducible pipelines book club no.3
 
+## 27. Reproducible pipelines book club no.4
+
+## 28. Reproducible pipelines book club no.5
+
+## 29. Reproducible pipelines book club no.6
+
+## 30. Reproducible pipelines book club no.7
+
+## 31. Reproducible pipelines book club no.8
+
+Presentation materials and links --- see info at the top of this page.
