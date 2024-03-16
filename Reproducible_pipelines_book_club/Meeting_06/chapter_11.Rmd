@@ -1,0 +1,80 @@
+---
+title: | 
+     | Building reproducible  analytical pipelines with R
+     | Chapter 11 - Packaging your code
+author: "B. Rodrigues / Ricardo J. Serrano"
+date: "3/21/2024"
+output: 
+     slidy_presentation:
+          highlight: tango
+          theme: flatly
+          df_print: paged
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, 
+                      eval = FALSE, fig.width = 10, fig.height = 10)
+```
+
+# 
+
+**Learning objectives:**
+
+- How to convert the analysis that we have done so far into a package.
+- List benefits of developing a package.
+- Introduce `{fusen}` package to accelerate the process of building your package.
+- How to turn .Rmd files, including datasets, into a package.
+- Installing and sharing the package.
+- Conclusions
+
+# What is a package in R?
+
+- In R, the fundamental unit of shareable code is the **package**.
+- In simple terms, a package bundles together:
+     * code
+     * data
+     * documentation
+     * tests
+
+- Makes it easier to share with other users.
+
+![Source: https://pixabay.com/](img/package-img.webp)
+
+
+# Benefits of developing an R package
+
+- Reproducibility
+
+- Makes it easier to reuse across projects
+
+- Facilitates collaboration
+
+# Introduction to `{fusen}`
+
+![Source: https://thinkr-open.github.io/fusen/](img/fusen_inflate_functions.png)
+
+# 
+
+```{r load-fusen-script}
+if (!require("fusen")){
+     install.packages("fusen")
+     library(fusen)
+}
+```
+
+Start an R session from your home (or Documents) directory and run the following:
+```{r create-fusen}
+fusen::create_fusen(path = "fusen.quickstart",
+                    template = "minimal")
+```
+
+The `create_fusen` function creates:
+
+- a directory called `fusen.quickstart` in your Home directory
+- creates a `fusen.quickstart.Rproj` file
+- creates subfolders 'dev/' and 'R/
+
+![](img/create_fusen.png)
+
