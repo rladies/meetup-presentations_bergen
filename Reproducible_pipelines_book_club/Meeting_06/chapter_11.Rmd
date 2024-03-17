@@ -40,7 +40,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
 
 - Makes it easier to share with other users.
 
-![Source: https://pixabay.com/](img/package-img.webp)
+![Source: https://pixabay.com/](img/package-img.webp){height=640px width=480px}
 
 
 # Benefits of developing an R package
@@ -76,5 +76,34 @@ The `create_fusen` function creates:
 - creates a `fusen.quickstart.Rproj` file
 - creates subfolders 'dev/' and 'R/
 
-![](img/create_fusen.png)
+![](img/create_fusen.png){height=800px width=1000px}
+
+![](img/dev_folder.png){height=800px width=1000px}
+
+# 
+
+![](img/flat_minimal_rmd.png){height=800px width=1000px}
+
+# 
+
+![](img/0_dev_history_rmd.png){height=800px width=1000px}
+
+# 
+
+Example of `DESCRIPTION` file
+
+![](img/example_description_file.png){height=800px width=1000px}
+
+# 
+
+Run code chunk named 'description' in an R console.
+
+![](img/description_code_chunk_results.png){height=800px width=1000px}
+
+# 
+
+Run 'development-inflate' code chunk.
+
+![](img/development_inflate_results.png){height=800px width=1000px}
+
 
