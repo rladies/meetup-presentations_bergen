@@ -1,6 +1,6 @@
 ---
 title: | 
-     | Building reproducible  analytical pipelines with R
+     | Building reproducible analytical pipelines with R
      | Chapter 11 - Packaging your code
 author: "B. Rodrigues / Ricardo J. Serrano"
 date: "3/21/2024"
