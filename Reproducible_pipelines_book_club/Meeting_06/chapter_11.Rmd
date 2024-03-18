@@ -6,8 +6,9 @@ author: "B. Rodrigues / Ricardo J. Serrano"
 date: "3/21/2024"
 output: 
      slidy_presentation:
+          css: bootstrap.css
           highlight: tango
-          theme: flatly
+          theme: cosmo
           df_print: paged
 editor_options: 
   chunk_output_type: console
@@ -20,18 +21,41 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
 
 # 
 
+**About me**
+
+- Industrial engineer/machinery and equipment appraiser
+- Manufacturing (electronics/pharmaceuticals)
+- 10 years - part-time faculty member in a local college
+- Started a career change in 2019
+- Co-organizer [Orlando Machine Learning and Data Science meetup](https://www.meetup.com/Orlando-MLDS/)
+- [LinkedIn](https://www.linkedin.com/in/ricardojserrano/)
+
+# 
+
 **Learning objectives:**
 
-- How to convert the analysis that we have done so far into a package.
+- How to convert the analysis that we have done so far into a **package**.
 - List benefits of developing a package.
 - Introduce `{fusen}` package to accelerate the process of building your package.
 - How to turn .Rmd files, including datasets, into a package.
 - Installing and sharing the package.
 - Conclusions
 
-# What is a package in R?
+# 
+
+- Have you created an R package?
+
+# 
+
+- Have you created an R package?
+
+- Which R package(s) do you use frequently?
+
+# **What is a package in R?**
 
 - In R, the fundamental unit of shareable code is the **package**.
+![Source: https://pixabay.com/](img/package-img.webp){height=640px width=480px}
+
 - In simple terms, a package bundles together:
      * code
      * data
@@ -40,10 +64,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
 
 - Makes it easier to share with other users.
 
-![Source: https://pixabay.com/](img/package-img.webp){height=640px width=480px}
-
-
-# Benefits of developing an R package
+# **Benefits of developing an R package**
 
 - Reproducibility
 
@@ -53,9 +74,13 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
 
 # Introduction to `{fusen}`
 
-![Source: https://thinkr-open.github.io/fusen/](img/fusen_inflate_functions.png)
+![Source: https://rawgit.com/rstudio/cheatsheets/main/package-development.pdf](img/10-createpackage-packagestructure.png)
 
 # 
+
+![Source: https://thinkr-open.github.io/fusen/](img/fusen_inflate_functions.png)
+
+# **`{fusen}` process steps**
 
 ```{r load-fusen-script}
 if (!require("fusen")){
@@ -105,5 +130,4 @@ Run code chunk named 'description' in an R console.
 Run 'development-inflate' code chunk.
 
 ![](img/development_inflate_results.png){height=800px width=1000px}
-
 
