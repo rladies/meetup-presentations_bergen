@@ -98,28 +98,22 @@ The `create_fusen` function creates:
 
 ![](img/dev_folder.png){height="800px" width="1000px"}
 
-# 
+## `flat_minimal_package.Rmd` file
 
 ![](img/flat_minimal_rmd.png){height="800px" width="1000px"}
 
-# 
+## `0-dev_history.Rmd` file
 
 ![](img/0_dev_history_rmd.png){height="800px" width="1000px"}
 
-# 
-
-Example of `DESCRIPTION` file
+## Example of `DESCRIPTION` file
 
 ![](img/example_description_file.png){height="800px" width="1000px"}
 
-# 
-
-Run code chunk named 'description' in an R console.
+## Run code chunk named 'description' in an R console.
 
 ![](img/description_code_chunk_results.png){height="800px" width="1000px"}
 
-# 
-
-Run 'development-inflate' code chunk.
+## Run 'development-inflate' code chunk.
 
 ![](img/development_inflate_results.png){height="800px" width="1000px"}
