@@ -114,6 +114,74 @@ The `create_fusen` function creates:
 
 ![](img/description_code_chunk_results.png){height="800px" width="1000px"}
 
-## Run 'development-inflate' code chunk.
+## Run 'development-inflate' code chunk in `flat_minimal_package.Rmd` file.
 
 ![](img/development_inflate_results.png){height="800px" width="1000px"}
+
+## Set `pkgdown` documentation website
+
+```{r pkgdown-website}
+usethis::use_pkgdown()
+pkgdown::build_site()
+```
+
+![](img/pkgdown_website.png){height="800px" width="1000px"}
+
+## Turning our Rmds into a package
+
+-   Two `.Rmd` files: `save_data.Rmd` and `analyse_data.Rmd`
+-   Only need one `.Rmd` file
+-   Move two functions from `analyse_data.Rmd` to `save_data.Rmd`
+-   If you've skipped the book previous chapters, fork this [repository](https://github.com/b-rodrigues/housing), and clone it to start afresh.
+-   Switch to `rmd` branch (`git checkout rmd`) and create a branch called `fusen` (`git checkout -b fusen`)
+
+## Create a `{fusen}` flat template in a `dev/` folder
+
+Start a fresh R session inside the `housing/` folder, and run this code:
+
+```{r create-fusen-housing}
+fusen::create_fusen(path = ".",
+                    template = "minimal",
+                    overwrite = TRUE)
+```
+
+![](img/create_fusen_housing.png){height="800px" width="1000px"}
+
+Move `save_data.Rmd` to `dev/` folder
+
+![](img/fusen_housing_dev.png){height="800px" width="1000px"}
+
+## Make changes to `save_data.Rmd`
+
+-   File should like [this](https://raw.githubusercontent.com/b-rodrigues/rap4all/master/rmds/save_data_fusen.Rmd)
+
+-   Run `description` named chunk from the `0-dev-history.Rmd`
+
+-   Document `save-data.Rmd` using `{roxygen2}` -type comments (see example to document `function-get_raw_data`)
+
+-   After the documentation changes, `save_data.Rmd` should look like [this](https://is.gd/anRjt4)
+
+Now, run the `fusen::inflate()`
+
+```{r fusen-inflate-save-data}
+fusen::inflate(flat_file = "dev/save_data.Rmd", vignette_name = "Nominal house prices in Luxembourg")
+```
+
+## Including datasets
+
+-   Go back to `0-dev_history.Rmd` and look for the header "Including datasets"
+-   [0-dev_history.Rmd](https://is.gd/JsJJVN)
+-   Run the chunk code wrapped in `local`
+-   To document the datasets, we need to inflate [data-doc.Rmd](https://is.gd/wjkNAO)
+-   Save the file in `dev/` and inflate it
+
+## Installing and sharing the package
+
+-   To install the package locally, run `remotes::install_local()`
+-   Also, you can publish the code on GitHub
+
+## Conclusions
+
+-   Developing an R package is a rite passage for any user to learn good coding and documentation practices.
+-   For beginners, I would recommend to learn the traditional process (step-by-step) of developing R packages (usethis, devtools, roxygen2, etc.).
+-   When you feel more comfortable, then I would recommend to use `{fusen}`.

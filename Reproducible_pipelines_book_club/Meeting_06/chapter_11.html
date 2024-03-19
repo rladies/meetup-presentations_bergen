@@ -12,7 +12,7 @@
 
   <meta name="author" content="B. Rodrigues/Ricardo J. Serrano">
   <meta name="dcterms.date" content="2024-03-21">
-  <title>quarto-inputf66bd250</title>
+  <title>quarto-input20a7e03d</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -511,9 +511,77 @@ B. Rodrigues/Ricardo J. Serrano
 <h2>Run code chunk named ‘description’ in an R console.</h2>
 <p><img data-src="img/description_code_chunk_results.png" width="1000" height="800"></p>
 </section>
-<section id="run-development-inflate-code-chunk." class="slide level2">
-<h2>Run ‘development-inflate’ code chunk.</h2>
+<section id="run-development-inflate-code-chunk-in-flat_minimal_package.rmd-file." class="slide level2">
+<h2>Run ‘development-inflate’ code chunk in <code>flat_minimal_package.Rmd</code> file.</h2>
 <p><img data-src="img/development_inflate_results.png" width="1000" height="800"></p>
+</section>
+<section id="set-pkgdown-documentation-website" class="slide level2">
+<h2>Set <code>pkgdown</code> documentation website</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>usethis<span class="sc">::</span><span class="fu">use_pkgdown</span>()</span>
+<span id="cb3-2"><a href="#cb3-2"></a>pkgdown<span class="sc">::</span><span class="fu">build_site</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="img/pkgdown_website.png" width="1000" height="800"></p>
+</section>
+<section id="turning-our-rmds-into-a-package" class="slide level2">
+<h2>Turning our Rmds into a package</h2>
+<ul>
+<li>Two <code>.Rmd</code> files: <code>save_data.Rmd</code> and <code>analyse_data.Rmd</code></li>
+<li>Only need one <code>.Rmd</code> file</li>
+<li>Move two functions from <code>analyse_data.Rmd</code> to <code>save_data.Rmd</code></li>
+<li>If you’ve skipped the book previous chapters, fork this <a href="https://github.com/b-rodrigues/housing">repository</a>, and clone it to start afresh.</li>
+<li>Switch to <code>rmd</code> branch (<code>git checkout rmd</code>) and create a branch called <code>fusen</code> (<code>git checkout -b fusen</code>)</li>
+</ul>
+</section>
+<section id="create-a-fusen-flat-template-in-a-dev-folder" class="slide level2">
+<h2>Create a <code>{fusen}</code> flat template in a <code>dev/</code> folder</h2>
+<p>Start a fresh R session inside the <code>housing/</code> folder, and run this code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>fusen<span class="sc">::</span><span class="fu">create_fusen</span>(<span class="at">path =</span> <span class="st">"."</span>,</span>
+<span id="cb4-2"><a href="#cb4-2"></a>                    <span class="at">template =</span> <span class="st">"minimal"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3"></a>                    <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="img/create_fusen_housing.png" width="1000" height="800"></p>
+<p>Move <code>save_data.Rmd</code> to <code>dev/</code> folder</p>
+<p><img data-src="img/fusen_housing_dev.png" width="1000" height="800"></p>
+</section>
+<section id="make-changes-to-save_data.rmd" class="slide level2">
+<h2>Make changes to <code>save_data.Rmd</code></h2>
+<ul>
+<li><p>File should like <a href="https://raw.githubusercontent.com/b-rodrigues/rap4all/master/rmds/save_data_fusen.Rmd">this</a></p></li>
+<li><p>Run <code>description</code> named chunk from the <code>0-dev-history.Rmd</code></p></li>
+<li><p>Document <code>save-data.Rmd</code> using <code>{roxygen2}</code> -type comments (see example to document <code>function-get_raw_data</code>)</p></li>
+<li><p>After the documentation changes, <code>save_data.Rmd</code> should look like <a href="https://is.gd/anRjt4">this</a></p></li>
+</ul>
+<p>Now, run the <code>fusen::inflate()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>fusen<span class="sc">::</span><span class="fu">inflate</span>(<span class="at">flat_file =</span> <span class="st">"dev/save_data.Rmd"</span>, <span class="at">vignette_name =</span> <span class="st">"Nominal house prices in Luxembourg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="including-datasets" class="slide level2">
+<h2>Including datasets</h2>
+<ul>
+<li>Go back to <code>0-dev_history.Rmd</code> and look for the header “Including datasets”</li>
+<li><a href="https://is.gd/JsJJVN">0-dev_history.Rmd</a></li>
+<li>Run the chunk code wrapped in <code>local</code></li>
+<li>To document the datasets, we need to inflate <a href="https://is.gd/wjkNAO">data-doc.Rmd</a></li>
+<li>Save the file in <code>dev/</code> and inflate it</li>
+</ul>
+</section>
+<section id="installing-and-sharing-the-package" class="slide level2">
+<h2>Installing and sharing the package</h2>
+<ul>
+<li>To install the package locally, run <code>remotes::install_local()</code></li>
+<li>Also, you can publish the code on GitHub</li>
+</ul>
+</section>
+<section id="conclusions" class="slide level2">
+<h2>Conclusions</h2>
+<ul>
+<li>Developing an R package is a rite passage for any user to learn good coding and documentation practices.</li>
+<li>For beginners, I would recommend to learn the traditional process (step-by-step) of developing R packages (usethis, devtools, roxygen2, etc.).</li>
+<li>When you feel more comfortable, then I would recommend to use <code>{fusen}</code>.</li>
+</ul>
 <div class="footer footer-default">
 
 </div>
