@@ -1,0 +1,187 @@
+---
+title: | 
+     | Building reproducible analytical pipelines with R
+     | Chapter 11 - Packaging your code
+author: "B. Rodrigues/Ricardo J. Serrano"
+date: "03/21/2024"
+format: 
+     revealjs:
+          theme: dark
+          scrollable: true
+editor: visual
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, eval = FALSE)
+```
+
+## **About me**
+
+-   Industrial engineer/machinery and equipment appraiser
+-   Manufacturing (electronics/pharmaceuticals)
+-   10 years - part-time faculty member in a local college
+-   Started a career change in 2019
+-   Co-organizer [Orlando Machine Learning and Data Science meetup](https://www.meetup.com/Orlando-MLDS/)
+-   [LinkedIn](https://www.linkedin.com/in/ricardojserrano/)
+
+## **Learning objectives:**
+
+-   How to convert the analysis that we have done so far into a **package**.
+-   List benefits of developing a package.
+-   Introduce `{fusen}` package to accelerate the process of building your package.
+-   How to turn .Rmd files, including datasets, into a package.
+-   Installing and sharing the package.
+-   Conclusions
+
+# 
+
+-   Have you created an R package?
+
+# 
+
+-   Have you created an R package?
+
+-   Which R package(s) do you use frequently?
+
+## **What is a package in R?**
+
+-   In R, the fundamental unit of shareable code is the **package**. ![Source: https://pixabay.com/](img/package-img.webp){height="480px" width="320px"}
+
+-   In simple terms, a package bundles together:
+
+    -   code
+    -   data
+    -   documentation
+    -   tests
+
+-   Makes it easier to share with other users.
+
+## **Benefits of developing an R package**
+
+-   Reproducibility
+
+-   Makes it easier to reuse across projects
+
+-   Facilitates collaboration
+
+## Introduction to `{fusen}`
+
+![Source: https://rawgit.com/rstudio/cheatsheets/main/package-development.pdf](img/10-createpackage-packagestructure.png)
+
+# 
+
+![Source: https://thinkr-open.github.io/fusen/](img/fusen_inflate_functions.png)
+
+## **`{fusen}` process steps**
+
+```{r load-fusen-script}
+if (!require("fusen")){
+     install.packages("fusen")
+     library(fusen)
+}
+```
+
+Start an R session from your home (or Documents) directory and run the following:
+
+```{r create-fusen}
+fusen::create_fusen(path = "fusen.quickstart",
+                    template = "minimal")
+```
+
+The `create_fusen` function creates:
+
+-   a directory called `fusen.quickstart` in your Home directory
+-   creates a `fusen.quickstart.Rproj` file
+-   creates subfolders 'dev/' and 'R/
+
+![](img/create_fusen.png){height="800px" width="1000px"}
+
+![](img/dev_folder.png){height="800px" width="1000px"}
+
+## `flat_minimal_package.Rmd` file
+
+![](img/flat_minimal_rmd.png){height="800px" width="1000px"}
+
+## `0-dev_history.Rmd` file
+
+![](img/0_dev_history_rmd.png){height="800px" width="1000px"}
+
+## Example of `DESCRIPTION` file
+
+![](img/example_description_file.png){height="800px" width="1000px"}
+
+## Run code chunk named 'description' in an R console.
+
+![](img/description_code_chunk_results.png){height="800px" width="1000px"}
+
+## Run 'development-inflate' code chunk in `flat_minimal_package.Rmd` file.
+
+![](img/development_inflate_results.png){height="800px" width="1000px"}
+
+## Set `pkgdown` documentation website
+
+```{r pkgdown-website}
+usethis::use_pkgdown()
+pkgdown::build_site()
+```
+
+![](img/pkgdown_website.png){height="800px" width="1000px"}
+
+## Turning our Rmds into a package
+
+-   Two `.Rmd` files: `save_data.Rmd` and `analyse_data.Rmd`
+-   Only need one `.Rmd` file
+-   Move two functions from `analyse_data.Rmd` to `save_data.Rmd`
+-   If you've skipped the book previous chapters, fork this [repository](https://github.com/b-rodrigues/housing), and clone it to start afresh.
+-   Switch to `rmd` branch (`git checkout rmd`) and create a branch called `fusen` (`git checkout -b fusen`)
+
+## Create a `{fusen}` flat template in a `dev/` folder
+
+Start a fresh R session inside the `housing/` folder, and run this code:
+
+```{r create-fusen-housing}
+fusen::create_fusen(path = ".",
+                    template = "minimal",
+                    overwrite = TRUE)
+```
+
+![](img/create_fusen_housing.png){height="800px" width="1000px"}
+
+Move `save_data.Rmd` to `dev/` folder
+
+![](img/fusen_housing_dev.png){height="800px" width="1000px"}
+
+## Make changes to `save_data.Rmd`
+
+-   File should like [this](https://raw.githubusercontent.com/b-rodrigues/rap4all/master/rmds/save_data_fusen.Rmd)
+
+-   Run `description` named chunk from the `0-dev-history.Rmd`
+
+-   Document `save-data.Rmd` using `{roxygen2}` -type comments (see example to document `function-get_raw_data`)
+
+-   After the documentation changes, `save_data.Rmd` should look like [this](https://is.gd/anRjt4)
+
+Now, run the `fusen::inflate()`
+
+```{r fusen-inflate-save-data}
+fusen::inflate(flat_file = "dev/save_data.Rmd", vignette_name = "Nominal house prices in Luxembourg")
+```
+
+## Including datasets
+
+-   Go back to `0-dev_history.Rmd` and look for the header "Including datasets"
+-   [0-dev_history.Rmd](https://is.gd/JsJJVN)
+-   Run the chunk code wrapped in `local`
+-   To document the datasets, we need to inflate [data-doc.Rmd](https://is.gd/wjkNAO)
+-   Save the file in `dev/` and inflate it
+
+## Installing and sharing the package
+
+-   To install the package locally, run `remotes::install_local()`
+-   Also, you can publish the code on GitHub
+
+## Conclusions
+
+-   Developing an R package is a rite passage for any user to learn good coding and documentation practices.
+-   For beginners, I would recommend to learn the traditional process (step-by-step) of developing R packages (usethis, devtools, roxygen2, etc.).
+-   When you feel more comfortable, then I would recommend to use `{fusen}`.
