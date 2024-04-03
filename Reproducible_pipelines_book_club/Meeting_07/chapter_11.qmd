@@ -32,6 +32,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, eval = FALS
 -   How to turn .Rmd files, including datasets, into a package.
 -   Installing and sharing the package.
 -   Conclusions
+-   Q & A
 
 # 
 
@@ -185,3 +186,5 @@ fusen::inflate(flat_file = "dev/save_data.Rmd", vignette_name = "Nominal house p
 -   Developing an R package is a rite passage for any user to learn good coding and documentation practices.
 -   For beginners, I would recommend to learn the traditional process (step-by-step) of developing R packages (usethis, devtools, roxygen2, etc.).
 -   When you feel more comfortable, then I would recommend to use `{fusen}`.
+
+## Q & A
