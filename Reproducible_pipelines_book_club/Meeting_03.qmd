@@ -1,0 +1,852 @@
+
+# Functional programming
+
+
+## Introduction
+
+- Using functions is an easy way to quickly improve reproducibility - no more copy/paste errors!
+- The concept is "do not repeat yourself"
+
+
+### Function usage:
+
+Example: You have a typo that repeats in all of your datasets (for example "a", instead of "A" and "c" instead of "C")
+```{r, eval = F}
+library(tidyverse)
+
+original_data1 = tibble(letters = c("a", "B", "c","D"),
+                        numbers = c(1,22,3,4))
+
+original_data2 = tibble(letters = c("c","a", "D", "B"),
+                        numbers = c(3,4,1,22))
+
+original_data3 = tibble(letters = c("D","c", "B", "a"),
+                        numbers = c(22,3,4,1))
+```
+
+Doing it manually
+```{r}
+new_data1 = original_data1 %>% 
+  mutate(letters = recode(letters,"a" = "A"),
+         numbers = recode(numbers,"22" = 2))
+
+new_data2 = original_data2 %>% 
+  mutate(letters = recode(letters,"a" = "A"),
+         numbers = recode(numbers,"22" = 2))
+
+new_data3 = original_data3 %>% 
+  mutate(letters = recode(letters,"a" = "A"),
+         numbers = recode(numbers,"22" = 2))
+```
+
+
+Doing it with a function
+```{r}
+
+fix_typo = function(data){
+  
+  temp_data = data %>% 
+    mutate(letters = recode(letters,"a" = "A"),
+         numbers = recode(numbers,"22" = 2))
+  
+  return(temp_data)
+}
+
+new_data1 = fix_typo(original_data1);new_data1
+new_data2 = fix_typo(original_data2)
+new_data3 = fix_typo(original_data3)
+
+```
+
+### Function parts:
+
+function_name = function(replace_data, re){
+
+  temporary_data = replace_data %>%
+    actions...
+
+  return(temporary_data)
+
+}
+
+
+
+
+### The state of your program
+
+1.Create a function that prints a sentence:
+```{r}
+printer = function(name, food){
+  print(paste0(name, " likes ", food))
+}
+
+printer("Gabe", "pizza")
+```
+2. List all objects you have:
+```{r, eval = F}
+ls()
+```
+- Note that the function is listed, but no new objects were created.
+
+3. Embed the food options within the function and print a new item each time.
+```{r}
+printer = function(name){
+  food = sample(c("pizza", "falafel", "cake"), 1)
+  print(paste0(name, " likes ", food))
+}
+
+printer("Gabe")
+```
+
+- You can set seed to stop generating random draws
+```{r}
+printer = function(name, seed){
+  set.seed(seed)
+  food = sample(c("pizza", "falafel", "cake"), 1)
+  print(paste0(name, " likes ", food))
+}
+
+printer("Gabe", seed = 123124)
+```
+4. Create an object with the randomly selected food:
+```{r}
+printer = function(name){
+  food = sample(c("pizza", "falafel", "cake"), 1)
+  
+  food_vector <<- append(vector(), food)
+  
+  print(paste0(name, " likes ", food))
+   }
+
+printer("Gabe")
+```
+```{r}
+ls()
+```
+```{r}
+food_vector
+```
+
+5. Create a list with all of the the randomly selected food items:
+```{r}
+printer = function(name){
+  food = sample(c("pizza", "falafel", "cake"), 1)
+  
+  if(exists("food_list")){
+    food_list <<- append(food_list, food)
+  } else {
+    food_list <<- append(list(), food)
+  }
+  
+  print(paste0(name, " likes ", food))
+   }
+
+printer("Gabe")
+```
+```{r}
+food_list
+```
+
+However, we want to avoid using functions that change the state as much as
+possible!
+
+```{r, eval = F}
+printer = function(name, food_list = list()){
+  
+  food = sample(c("pizza", "falafel", "cake"), 1)
+  
+  food_list = append(food_list, food)
+  
+  print(paste0(name, " likes ", food))
+   }
+
+printer("Gabe")
+
+
+```
+
+The difference now is that we made `food_list` the second argument of the
+function. Also, we defined it as being optional by writing:
+
+```{r, eval = F}
+food_list = list()
+```
+
+
+## Writing good functions
+
+### 1) Create self-contained functions
+
+That is, all external arguments are listed as function parameters. 
+
+```{r, eval = F}
+bad = function(x){
+  x + y
+}
+```
+
+```{r, eval = F}
+good <- function(x, y){
+  x + y
+}
+```
+
+PS: It's possible to define a function that explicitly takes another function
+as an input:
+
+```{r}
+calc <- function(number, other_function){
+  other_function(number)
+}
+```
+
+```{r}
+calc(4, sqrt)
+
+calc(10, log10)
+```
+
+If you don't know how many arguments the function you're wrapping has, you can use the `...`:
+
+```{r}
+calc <- function(number, other_function, ...){
+  other_function(number, ...)
+}
+```
+
+```{r}
+data = c(1, 2, NA, 3) 
+
+calc(data, mean, na.rm = TRUE)
+
+```
+
+
+### 2) Create error warnings
+
+Prevent errors to occurr unnoticed by creating stop/warning messages. 
+
+For example, some functions cannot be used with negative values:
+```{r}
+data = sqrt(-5)
+```
+```{r}
+log10(-10)
+```
+
+It is useful to redefine these functions to raise an error function instead:
+
+```{r}
+strict_sqrt <- function(x){
+
+  if(x < 0) stop("x is negative")
+
+  sqrt(x)
+
+}
+```
+
+This function now throws an error for negative `x`:
+
+```{r, eval = F}
+strict_sqrt(-10)
+```
+
+Functions like this (that return functions) are called *function factories*.
+
+The `{purrr}` package also comes with function factories that you might find
+useful (`{possibly}`, `{safely}` and `{quietly}`).
+
+
+### Optional arguments
+
+It is possible to make functions’ arguments optional, by using `NULL`. 
+
+```{r}
+sum_y <- function(x, y = NULL){
+
+  if(is.null(y)){
+    print("optional argument y is NULL")
+    
+    x
+  } 
+  
+  else {
+    print("y is present")
+    
+    x+y
+  }
+
+}
+
+```
+
+```{r}
+x = c(1,2,3,4)
+y = c(4,3,2,1)
+
+sum_y(x)
+```
+```{r}
+sum_y(x, y)
+```
+
+### Recursive functions
+
+A function that calls itself in its own body is called a recursive function. 
+
+In R, they are quite slow. 
+
+```{r}
+fact_iter <- function(n){
+  result = 1
+  for(i in 1:n){
+    result = result * i
+  }
+  result
+}
+
+
+fact_recur <- function(n){
+  if(n == 0 || n == 1){
+  result = 1
+  } else {
+    n * fact_recur(n-1)
+  }
+}
+```
+
+Using the `{microbenchmark}` package we can benchmark the code:
+
+```{r, eval = FALSE}
+microbenchmark::microbenchmark(
+  fact_recur(50),
+  fact_iter(50)
+)
+```
+
+We see that the recursive factorial function is 10 times slower than the iterative version. If you're working with more complex functions, this is a problem. 
+
+Make recursive functions faster using *trampolining* with such packages: 
+
+[`{trampoline}`](https://rdinnager.github.io/trampoline/)^[https://rdinnager.github.io/trampoline/]
+
+ [`{memoise}`](https://memoise.r-lib.org/)^[https://memoise.r-lib.org/] 
+
+
+
+### Anonymous functions
+
+It is possible to define a function and not give it a name. 
+
+```{r, eval = F}
+function(x)(x+1)(10)
+```
+
+Or:
+
+```{r, eval = F}
+(\(x)(x+1))(10)
+```
+
+
+### Function lists
+
+- Write simple functions that only perform one task. 
+- They are easier to maintain, test, document and debug. 
+- Then chain the small functions using the `|>` operator.
+
+```
+a |> f() |> g() |> h()
+```
+where `a` is for example a path to a data set, and where `f()`, `g()` and `h()` successively read, clean, and plot the data.
+
+
+- Lists are the second important ingredient of functional programming. 
+- They are extremely flexible, and most of the very complex objects classes that you manipulate are actually lists, but just fancier. For example, a data frame is a list:
+
+```{r}
+data(mtcars)
+
+typeof(mtcars)
+```
+
+A fitted model is a list:
+
+```{r}
+my_model <- lm(hp ~ mpg, data = mtcars)
+
+typeof(my_model)
+```
+A `ggplot` is a list:
+
+```{r}
+library(ggplot2)
+
+my_plot <- ggplot(data = mtcars) +
+  geom_line(aes(y = hp, x = mpg))
+
+typeof(my_plot)
+```
+
+### Lists can hold many things
+
+If you write a function that needs to return many objects, the only solution is to place them inside a list. 
+
+
+```{r}
+cars = function(data){
+my_summary = mean(data$hp)
+my_model = lm(hp ~ mpg, data = mtcars)
+my_plot = ggplot(data = mtcars) +
+  geom_line(aes(y = hp, x = mpg))
+
+result = list(my_summary = my_summary, my_model = my_model, my_plot= my_plot)
+
+return(result)
+  
+}
+```
+
+
+```{r}
+res = cars(mtcars)
+```
+
+
+```{r}
+res$my_summary
+```
+
+
+```{r}
+res$my_model
+```
+
+
+```{r}
+res$my_plot
+
+```
+
+### Lists as the cure to loops
+
+Loops are incredibly useful, and you are likely familiar with them. The problem with loops is that they are a concept from iterative programming, not functional programming, and this is a problem because loops rely on changing the state of your program to run. For example, let's suppose that you wish to use a for-loop
+to compute the sum of the first 100 integers:
+
+```{r}
+result <- 0
+
+for (i in 1:100){
+  result <- result + i
+}
+
+print(result)
+```
+
+If you run `ls()` now, you should see that there's a variable `i` in your global environment. This could cause issues further down in your pipeline if you need to re-use `i`. 
+
+
+```{r}
+my_list = list(
+  c(5, 8, 2, 9), 
+  'cat', 
+  'dog', 
+  c('koala', 'panda', 'rabbit'), 
+  TRUE, 
+  3.14)
+```
+
+Define a function to calculate the length of each element
+
+```{r}
+length_fun <- function(x) {
+  return(length(x))
+}
+```
+
+Use lapply to apply the length_fun function to each element of the list
+```{r}
+lapply(my_list, length_fun)
+```
+
+Alternatively, if you have a single data set, you can apply: 
+
+```{r}
+my_data = tibble(col1 = c(1,2,3,4),
+              col2 = c(5,6,7,8),
+              col3 = c(9,10,11,12)) 
+
+
+# create a function
+midrange = function(x){(min(x) + max(x)) / 2}
+```
+
+
+```{r}
+# Apply the midrange function to each row of the iris dataset
+apply(my_data, 1, midrange)
+```
+
+
+```{r}
+# Apply the midrange function to each column of the dataset
+apply(my_data, 2, midrange)
+
+```
+
+#### `Filter()`. 
+`Filter()` filters data where the elements of objects within the list satisfy a predicate.
+
+```{r}
+a_list = list(seq(1, 5),
+         "Hey",
+         c(8942387,12323))
+
+Filter(is.character, a_list)
+```
+#### `Negate()` 
+
+ `Negate()` is a function factory that takes a boolean function as an input and returns the opposite boolean function. 
+ 
+ 
+
+```{r}
+Filter(Negate(is.character),a_list)
+```
+
+#### `local()` 
+
+ `local()` runs code in a temporary environment that gets discarded at the end, leaving the state of the program intact.
+
+```{r}
+local({a = 2})
+```
+
+Variable `a` was created inside this local environment. Checking if it exists now
+yields `FALSE`:
+
+```{r}
+ls()
+```
+
+
+
+### purrr
+
+`apply()` is a family of functions that loop over a list and applying a function to the elements of the list
+`lapply()` 
+`sapply()`
+`vapply()`
+`mapply()`
+`tapply()`
+
+but it is not quite easy to remember which function does what, and there are inconsistencies in the order of arguments and types of output.
+
+
+`{purrr}` solves this issue by offering the `map()` family of functions, which behave in a very consistent way. 
+
+see functions `map`, `walk`, `reduce()`,`accumulate()`
+
+Read through the [documentation of the
+package](https://purrr.tidyverse.org/reference/index.html)^[https://purrr.tidyverse.org/reference/index.html] and take the time to learn about all it has to offer.
+
+### withr
+
+`{withr}` has many useful functions which I encourage
+you to [familiarize yourself with](https://withr.r-lib.org/reference/index.html)^[https://withr.r-lib.org/reference/index.html].
+
+
+
+### Functional OOP 
+
+Important topic if you want to program packages, but not addressed in details in this chapter.
+
+You can create functions that will do different things depending the type of object the user gives.
+
+For example
+
+```{r}
+print(5)
+print(head(mtcars))
+print(str(mtcars))
+```
+
+There are actually many `print()` functions. For example, type
+`print.data.frame` is the `print` function for `data.frame` objects. 
+
+So what `print()` does, is look at the class of its argument `x`, and then look for the right `print` function to call. 
+
+To learn more about R’s different OOP systems, take a look at @wickham2019.
+
+## Closing remarks:
+
+- Write pure self-contained functions
+- Replace loops with higher-order functions (`lapply()`,`map()`,...) 
+
+
+
+_______________________________________________________________
+
+If there is time: create rooms to work together on "Data frames"
+
+
+### Data frames
+As mentioned in the introduction of this section, data frames are a special type
+of list of atomic vectors. This means that just as I can use `lapply()` to
+compute the square root of the elements of an atomic vector, as shown
+previously, I can also operate on all the columns of a data frame. For example,
+it is possible to determine the class of every column of a data frame like this:
+
+```{r}
+lapply(iris, class)
+```
+
+Unlike a list however, the elements of a data frame must be of the same length.
+Data frames remain very flexible though, and using what we have learned until
+now it is possible to use the data frame as a structure for all our
+computations. For example, suppose that we have a data frame that contains data
+on unemployment for the different subnational divisions of the Grand-Duchy of
+Luxembourg, the country the author of this book hails from. Let’s suppose that I
+want to generate several plots, per subnational division and per year.
+Typically, we would use a loop for this, but we can use what we’ve learned here,
+as well as some functions from the `{dplyr}`, `{purrr}`, `{ggplot2}` and
+`{tidyr}` packages. I will be downloading data that I made available inside a
+package, but instead of installing the package, I will download the `.rda` file
+directly (which is the file format of packaged data) and then load that data
+into our R session (instead of downloading from the long Github url, I download
+the data from a shortened *is.gd* link):
+
+```{r}
+# Create a temporary file
+unemp_path <- tempfile(fileext = ".rda")
+
+# Download the data and save it to the path of the temporary file
+# avoids having to install the package from Github
+download.file(
+  "https://is.gd/l57cNX",
+  destfile = unemp_path)
+
+# Load the data. The data is now available as 'unemp'
+load(unemp_path)
+
+```
+
+Let’s load the required packages and take a look at the data:
+
+```{r}
+library(dplyr)
+library(purrr)
+library(ggplot2)
+library(tidyr)
+
+glimpse(unemp)
+
+```
+
+Column names are self-descriptive, but the `level` column needs some
+explanations. `level` contains the administrative divisions of the country, so
+the country of Luxembourg, then the Cantons and then the Communes.
+
+Remember that Luxembourg can refer to the country, the canton or the commune of
+Luxembourg. Now let’s suppose that I want a separate plot for the three communes
+of Luxembourg, Esch-sur-Alzette and Wiltz. Instead of creating three separate
+data frames and feeding them to the same ggplot code, I can instead take
+advantage of the fact that data frames are lists, and are thus quite flexible.
+Let’s start with filtering:
+
+```{r}
+filtered_unemp <- unemp %>%
+  filter(
+    level == "Commune",
+    place_name %in% c("Luxembourg", "Esch-sur-Alzette", "Wiltz")
+   )
+
+glimpse(filtered_unemp)
+```
+
+We are now going to use the fact that data frames are lists, and that lists can
+hold any type of object. For example, remember this list from before where one
+of the elements is a data frame, and the second one a formula:
+
+```{r}
+list(
+  "a" = head(mtcars),
+  "b" = ~lm(y ~ x)
+  )
+```
+
+`{dplyr}` comes with a function called `group_nest()` which groups the data
+frame by a variable (such that the next computations will be performed
+group-wise) and then nests the other columns into a smaller data frame. Let’s
+try it and see what happens:
+
+
+```{r}
+nested_unemp <- filtered_unemp %>%
+  group_nest(place_name)
+```
+
+Let’s see what this looks like:
+
+```{r}
+nested_unemp
+```
+
+`nested_unemp` is a new data frame of 3 rows, one per commune
+("Esch-sur-Alzette", "Luxembourg", "Wiltz"), and of two columns, one for the
+names of the communes, and the other contains every other variable inside a
+smaller data frame. So this is a data frame that has one column where each
+element of that column is itself a data frame. Such a column is called a
+list-column. This is essentially a list of lists.
+
+Let’s now think about this for a moment. If the column titled `data` is a list
+of data frames, it should be possible to use a function like `map()` or
+`lapply()` to apply a function on each of these data frames. Remember that
+`map()` or `lapply()` require a list of elements of whatever type and a function
+that accepts objects of this type as input. So this means that we could apply a
+function that plots the data to each element of the column titled `data`. Since
+each element of this column is a data frame, this function needs a data frame as
+an input. As a first and simple example to illustrate this, let’s suppose that we
+want to determine the number of rows of each data frame. This is how we would do
+it:
+
+```{r}
+nested_unemp %>%
+  mutate(nrows = map(data, nrow))
+ # ’data’ is the name of
+ # the list-column that contains
+ # the smaller data frames
+```
+
+The new column, titled `nrows` is a list of integers. We can simplify it by
+converting it directly to an atomic vector of integers by using `map_int()`
+instead of `map()`:
+
+```{r}
+nested_unemp %>%
+  mutate(nrows = map_int(data, nrow))
+```
+
+Let’s try a more complex example now. What if we want to filter rows (of course,
+the simplest way would be to filter the rows we need before nesting the
+data frame)? We need to apply the function `filter()` where its first argument
+is a data frame and the second argument is a predicate:
+
+```{r}
+nested_unemp %>%
+  mutate(nrows = map(data, \(x)filter(x, year == 2015)))
+```
+
+In this case, we need to use an anonymous function. This is because `filter()`
+has two arguments and we need to make clear what it is we are mapping over and
+what argument stays fixed; we are mapping over (iterating) the data frames but
+the predicate `year == 2015` stays fixed.
+
+We are now ready to plot our data. The best way to continue is to first get the
+function right by creating one plot for one single commune. Let’s select the
+dataset for the commune of `Luxembourg`:
+
+```{r}
+lux_data <- nested_unemp %>%
+  filter(place_name == "Luxembourg") %>%
+  unnest(data)
+```
+
+To plot this data, we can now write the required `ggplot2()` code:
+
+```{r}
+ggplot(data = lux_data) +
+  theme_minimal() +
+  geom_line(
+    aes(year, unemployment_rate_in_percent, group = 1)
+   ) +
+  labs(title = "Unemployment in Luxembourg")
+
+```
+
+To turn the lines of code above into a function, you need to think about how
+many arguments that function would have. There is an obvious one, the data
+itself (in the snippet above, the data is the `lux_data` object). Another one
+that is less obvious is in the title:
+
+```
+labs(title = "Unemployment in Luxembourg")
+```
+
+Ideally, we would want that title to change depending on the data set. So we
+could write the function like so:
+
+```{r}
+make_plot <- function(x, y){
+  ggplot(data = x) +
+    theme_minimal() +
+    geom_line(
+      aes(year, unemployment_rate_in_percent, group = 1)
+      ) +
+    labs(title = paste("Unemployment in", y))
+}
+
+```
+
+Let’s try it on our data:
+
+```{r}
+make_plot(lux_data, "Luxembourg")
+```
+
+Ok, so now, we simply need to apply this function to our nested data frame:
+
+```{r}
+nested_unemp <- nested_unemp %>%
+  mutate(plots = map2(
+    .x = data, # column of data frames
+    .y = place_name, # column of commune names
+    .f = make_plot
+  ))
+
+nested_unemp
+```
+
+If you look at the `plots` column, you see that it is a list of `gg` objects:
+these are our plots. Let’s take a look at them:
+
+```{r}
+nested_unemp$plots
+```
+
+We could also have used an anonymous function (but it is more difficult to get
+right):
+
+```{r}
+nested_unemp %>%
+  mutate(plots2 = map2(
+    .x = data,
+    .y = place_name,
+    .f = \(.x,.y)(
+                ggplot(data = .x) +
+                  theme_minimal() +
+                  geom_line(
+                    aes(year, unemployment_rate_in_percent, group = 1)
+                   ) +
+                  labs(title = paste("Unemployment in", .y))
+                  )
+           )
+         ) %>%
+  pull(plots2)
+
+```
+
+This list-column based workflow is extremely powerful and I highly advise you to
+take the required time to master it. Remember, we never want to have to repeat
+ourselves. This approach might seem more complicated than calling `make_plot()`
+three times, but imagine that you need to do this for several countries, several
+variables, etc... What are you going to do, copy and paste code everywhere? This
+gets very tedious and more importantly, very error-prone, because now you’ve
+just introduced many points of failure by having so much copy-pasted code. You
+could of course use a loop instead of this list-column based workflow. But as
+mentioned, the issue with loops is that you have to interact with the global
+environment, which can lead to other issues. But whatever you end up using, you
+need to avoid copy and pasting at all costs.
+
+
