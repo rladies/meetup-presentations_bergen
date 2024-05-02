@@ -26,7 +26,7 @@ and sign up!
 | 7 | ~~[10 (Freezing packages)](https://raps-with-r.dev/repro_intro.html)~~ | ~~07.03.2024~~ |  | Julia Romanowska | _cancelled_ |
 | 8 | [11 (Packaging the code)](https://raps-with-r.dev/packages.html) | 04.04.2024 | [Meeting no.7](Meeting_07/chapter_11.html) | Ricardo Serrano |  |
 | 9 | [12 (Testing)](https://raps-with-r.dev/testing.html) | 16.04.2024 |  | Gabe Winter |  |
-| 10 | [13 (Pipelines with targets)](https://raps-with-r.dev/targets.html) | April 2024? | |  |  |
+| 10 | [13 (Pipelines with targets)](https://raps-with-r.dev/targets.html) | 25.04.2024 | | Elham Ali |  |
 | 11 | [14 (Pipelines with Docker)](https://raps-with-r.dev/repro_cont.html) | 07.05.2024 |  | Sahee Rim |  |
-| 12 | [15 (CI/CD)](https://raps-with-r.dev/ci_cd.html) | May 2024? |  |  |  |
+| 12 | [15 (CI/CD)](https://raps-with-r.dev/ci_cd.html) | 14.05.2024 |  | Angelica Becerra |  |
 | 13 | Conclusions/extra topics? | May 2024? |  | Bruno Rodrigues |  |
