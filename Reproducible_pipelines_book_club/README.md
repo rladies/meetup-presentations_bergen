@@ -29,4 +29,4 @@ and sign up!
 | 10 | [13 (Pipelines with targets)](https://raps-with-r.dev/targets.html) | 25.04.2024 | | Elham Ali |  |
 | 11 | [14 (Pipelines with Docker)](https://raps-with-r.dev/repro_cont.html) | 07.05.2024 |  | Sahee Rim |  |
 | 12 | [15 (CI/CD)](https://raps-with-r.dev/ci_cd.html) | 14.05.2024 |  | Angelica Becerra |  |
-| 13 | Conclusions/extra topics? | May 2024? |  | Bruno Rodrigues |  |
+| 13 | Q&A with the author | 20.06.2024 |  | Bruno Rodrigues |  |
